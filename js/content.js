@@ -21,7 +21,7 @@ const SITE = {
     projects: {
       axport: "https://semiconductor-trade-project-1st.vercel.app/",
       hanjeongseon: "https://hanjungsun-marketing-project-2nd-gamma.vercel.app/home/?lang=ko",
-      tradenews: ""
+      tradenews: "https://trade-news-room.vercel.app/"
     },
     // 공개용 원본 보고서입니다. 보고서 본문은 한국어입니다.
     reports: {
@@ -32,6 +32,11 @@ const SITE = {
         brandSite: "https://hanjeongsun-vietnam.vercel.app/",
         homeDemo: "assets/projects/hanjungsun/home-demo.mp4",
         promo: "assets/projects/hanjungsun/promotion.mp4"
+      },
+      tradenews: {
+        lesson: "https://trade-news-room.vercel.app/#learn-urea",
+        statistics: "assets/projects/tradenews/learning-statistics.png",
+        simulation: "assets/projects/tradenews/supply-simulation.png"
       }
     }
   },
@@ -270,7 +275,18 @@ const SITE = {
               "화면과 학습 흐름 개선"
             ],
             focus: ["국제 이슈에 대한 호기심을 학습 도구로 구체화하는 과정"],
-            note: "개인 프로젝트의 프로토타입으로, 학습 흐름과 기능을 계속 발전시키고 있습니다."
+            caseStudy: {
+              workflow: "요소 공급망 학습실에서는 뉴스 요약과 출처를 읽고, 수입처 통계와 조달 비중 시뮬레이터를 살펴본 뒤 퀴즈와 용어 확인, 학습 메모로 이어집니다. 메모, 퀴즈 응답과 완료 표시는 현재 브라우저에 저장됩니다.",
+              designIntent: "수입처의 변화와 공급망 의존도를 살펴보도록, 품목 범위와 단위를 설명하는 통계 그래프와 가격 및 조달 비중을 바꾸는 학습용 모형을 구분해 배치했습니다. 그래프만으로 변화의 원인을 단정하거나 모형의 계산값을 실제 수급 전망으로 받아들이지 않도록 안내합니다.",
+              artifactReview: "2026-11-11 공개 사이트 동작 확인에서 조달 비중 변경에 따라 비용과 잔여 물량이 갱신되고, 퀴즈 응답, 학습 메모와 완료 표시가 새로고침 뒤에도 유지되는 것을 확인했습니다. 연결한 화면은 이때의 구현 상태를 보여줍니다.",
+              limits: "학습 기록은 계정 연동 없이 해당 브라우저에 저장됩니다. 안내 챗봇은 사이트 내부 자료를 찾는 규칙 기반 기능입니다. 시뮬레이터는 단순화한 학습 모형이며, 이번 동작 확인은 외부 뉴스와 통계의 정확성 또는 학습 효과 검증을 뜻하지 않습니다."
+            },
+            materials: [
+              {"id": "lesson", "label": "요소 공급망 학습실 (한국어)"},
+              {"id": "statistics", "label": "통계와 출처 안내 화면 (한국어)"},
+              {"id": "simulation", "label": "조달 비중 시뮬레이터 화면 (한국어)"}
+            ],
+            note: "개인 프로젝트의 프로토타입으로, 학습 흐름과 기능을 계속 발전시키고 있습니다. 공개 사이트에는 Docklab이라는 이름을 사용합니다."
           }
         ],
         extraTitle: "추가 프로젝트와 활동",
@@ -551,7 +567,18 @@ const SITE = {
               "Refined the screens and learning flow"
             ],
             focus: ["Turning curiosity about international issues into a learning tool"],
-            note: "A personal project prototype whose learning flow and features I continue to develop."
+            caseStudy: {
+              workflow: "The urea supply chain lesson moves from a news summary and sources to import statistics and a sourcing simulator, followed by quizzes, key terms and learning notes. Notes, quiz answers and completion marks are saved in the current browser.",
+              designIntent: "To explore changes in import sources and supply dependence, I separated statistical charts explaining product scope and units from a learning model with adjustable prices and sourcing shares. The guidance explains that the chart alone cannot establish causes and that the model does not forecast actual supply conditions.",
+              artifactReview: "A check of the public site on November 11, 2026 confirmed that changing sourcing shares updates costs and remaining supply, and that quiz answers, learning notes and completion marks persist after a refresh. The linked screenshots show the implementation at that time.",
+              limits: "Learning records are stored in the current browser without account syncing. The guide chatbot uses rules to find content within the site. The simulator is a simplified learning model; the behavior check does not validate external news, statistical accuracy or learning outcomes."
+            },
+            materials: [
+              {"id": "lesson", "label": "Urea supply chain lesson (Korean)"},
+              {"id": "statistics", "label": "Statistics and source guidance (Korean UI)"},
+              {"id": "simulation", "label": "Sourcing simulator (Korean UI)"}
+            ],
+            note: "A personal project prototype whose learning flow and features I continue to develop. The public site uses the name Docklab."
           }
         ],
         extraTitle: "Other projects and activities",
@@ -832,7 +859,18 @@ const SITE = {
               "改进页面与学习流程"
             ],
             focus: ["把对国际议题的好奇心具体化为学习工具的过程"],
-            note: "这是个人项目的原型，我正在持续完善学习流程与功能。"
+            caseStudy: {
+              workflow: "尿素供应链学习室从新闻摘要与来源出发，依次查看进口来源统计与采购比例模拟器，再进行测验、术语学习与笔记记录。笔记、测验答案与完成标记保存在当前浏览器中。",
+              designIntent: "为了观察进口来源的变化与供应依赖，我将说明商品范围和单位的统计图表，与可调整价格和采购比例的学习模型分开呈现。页面提示，不能仅凭图表断定变化原因，也不能将模型计算值当作实际供需预测。",
+              artifactReview: "2026年11月11日对公开网站的功能检查确认，调整采购比例会更新成本与剩余供应量，测验答案、学习笔记和完成标记在刷新后仍会保留。链接中的截图展示了当时的实现状态。",
+              limits: "学习记录保存在当前浏览器中，不支持账户同步。引导聊天机器人通过规则查找站内内容。模拟器是简化的学习模型；此次功能检查不代表对外部新闻、统计准确性或学习效果的验证。"
+            },
+            materials: [
+              {"id": "lesson", "label": "尿素供应链学习室（韩语）"},
+              {"id": "statistics", "label": "统计与来源说明页面（韩语界面）"},
+              {"id": "simulation", "label": "采购比例模拟器（韩语界面）"}
+            ],
+            note: "这是个人项目的原型，我正在持续完善学习流程与功能。公开网站使用Docklab这一名称。"
           }
         ],
         extraTitle: "其他项目与活动",
@@ -1113,7 +1151,18 @@ const SITE = {
               "改進頁面與學習流程"
             ],
             focus: ["把對國際議題的好奇心具體化為學習工具的過程"],
-            note: "這是個人專案的原型，我持續調整學習流程並完善功能。"
+            caseStudy: {
+              workflow: "尿素供應鏈學習室從新聞摘要與來源出發，依序查看進口來源統計與採購比例模擬器，再進行測驗、術語學習與筆記紀錄。筆記、測驗答案與完成標記儲存在目前使用的瀏覽器中。",
+              designIntent: "為了觀察進口來源的變化與供應依賴，我將說明商品範圍和單位的統計圖表，與可調整價格及採購比例的學習模型分開呈現。頁面提醒，不能只憑圖表斷定變化原因，也不能將模型計算值當作實際供需預測。",
+              artifactReview: "2026年11月11日的公開網站功能檢查確認，調整採購比例會更新成本與剩餘供應量，測驗答案、學習筆記和完成標記在重新整理後仍會保留。連結中的螢幕擷取畫面呈現當時的實作狀態。",
+              limits: "學習紀錄儲存在目前使用的瀏覽器中，沒有帳號同步功能。導覽聊天機器人依照規則查找站內內容。模擬器是簡化的學習模型；本次功能檢查不代表對外部新聞、統計準確性或學習成效的驗證。"
+            },
+            materials: [
+              {"id": "lesson", "label": "尿素供應鏈學習室（韓語）"},
+              {"id": "statistics", "label": "統計與來源說明頁面（韓語介面）"},
+              {"id": "simulation", "label": "採購比例模擬器（韓語介面）"}
+            ],
+            note: "這是個人專案的原型，我持續調整學習流程並完善功能。公開網站使用Docklab這個名稱。"
           }
         ],
         extraTitle: "其他專案與活動",
@@ -1394,7 +1443,18 @@ const SITE = {
               "画面と学習の流れを改善"
             ],
             focus: ["国際問題への好奇心を学習ツールとして具体化する過程"],
-            note: "個人プロジェクトのプロトタイプとして、学習の流れと機能を継続して改善しています。"
+            caseStudy: {
+              workflow: "尿素の供給網を扱う学習室では、ニュースの要約と出典から始め、輸入先の統計と調達比率シミュレーターを確認した後、クイズ、用語の確認、学習メモへと進みます。メモ、クイズの回答、完了マークは現在のブラウザーに保存されます。",
+              designIntent: "輸入先の変化と供給依存度を考えるため、品目の範囲と単位を示す統計グラフと、価格や調達比率を変える学習用モデルを分けて配置しました。グラフだけで変化の原因を断定せず、モデルの計算値を実際の需給予測として扱わないよう案内しています。",
+              artifactReview: "2026年11月11日の公開サイトの動作確認で、調達比率を変えると費用と残存供給量が更新され、クイズの回答、学習メモ、完了マークが再読み込み後も保持されることを確認しました。リンク先の画面は当時の実装状態を示しています。",
+              limits: "学習記録はアカウント同期なしで現在のブラウザーに保存されます。案内チャットボットは規則に従ってサイト内の内容を検索します。シミュレーターは簡略化した学習モデルであり、今回の動作確認は外部ニュースや統計の正確性、学習効果の検証を意味しません。"
+            },
+            materials: [
+              {"id": "lesson", "label": "尿素の供給網を学ぶ学習室（韓国語）"},
+              {"id": "statistics", "label": "統計と出典の説明画面（韓国語UI）"},
+              {"id": "simulation", "label": "調達比率シミュレーター（韓国語UI）"}
+            ],
+            note: "個人プロジェクトのプロトタイプとして、学習の流れと機能を継続して改善しています。公開サイトではDocklabという名前を使っています。"
           }
         ],
         extraTitle: "その他のプロジェクトと活動",
