@@ -12,6 +12,7 @@
 const SITE = {
   defaultLang: "ko",
   profile: {
+    headerName: "Jung Juyeon",
     photo: "" // 예: "assets/profile.jpg"
   },
   links: {
@@ -52,6 +53,7 @@ const SITE = {
     /* ======================= 한국어 ======================= */
     ko: {
       htmlLang: "ko",
+      header: { navigationLabel: "주 메뉴", languageLabel: "언어 선택" },
       meta: {
         title: "정주연 Juyeon Jung | Portfolio",
         description: "정주연(Juyeon Jung)의 포트폴리오."
@@ -61,6 +63,7 @@ const SITE = {
         eyebrow: "JUYEON JUNG",
         name: "정주연",
         headline: "국제 통상 이슈를 탐구하고, AI와 협업하여 도구로 만듭니다.",
+        headlineBreakAfter: "국제 통상 이슈를 탐구하고,",
         intro: "중국과 동아시아를 공부하고, 해외 파트너와 협업해 왔습니다. 무역과 국제정책에 대한 관심을 바탕으로 자료를 읽고 정리하며, AI를 활용해 생각을 구체적인 도구로 만들고 있습니다.",
         politicalEconomyInterest: "국제정치경제",
         photo: "프로필 사진",
@@ -78,6 +81,7 @@ const SITE = {
       about: {
         label: "ABOUT",
         title: "중국과 동아시아에 대한 공부를 국제정치경제와 통상정책으로 이어갑니다",
+        titleBreakAfter: "중국과 동아시아에 대한 공부를",
         body: [
           "한양대학교에서 중어중문학을 전공하고 중국경제통상학을 부전공했습니다. 국립대만대학교에서는 2년간 중국어로 전공수업을 이수하며 중국문학과 복수학위를 취득했습니다.",
           "이후 엑스포럼 글로벌전략사업팀 인턴으로 해외 미디어 파트너와 소통하고 국제행사 운영을 지원했습니다.",
@@ -149,6 +153,7 @@ const SITE = {
             role: "인턴",
             period: "2026.03 – 2026.06",
             events: "관련 행사: Smart Tech Korea 2026, TechCon 2026",
+            summary: "해외 미디어 파트너 18개사와 소통하며 협업 진행 현황을 관리하고 국제행사 운영을 지원했습니다.",
             duties: [
               "해외 미디어 파트너 후보 조사, 영문 제안과 후속 연락",
               "해외 미디어 파트너 18개사와 소통하고 협업 진행 현황 관리",
@@ -167,7 +172,6 @@ const SITE = {
         label: "PROJECTS",
         title: "대표 프로젝트",
         intro: "무역과 국제 이슈에서 출발한 문제를 웹 도구로 정리해 온 기록입니다.",
-        kicker: "PROJECT",
         labels: {
           materials: "프로젝트 자료",
           nextSteps: "발표 피드백과 개선 계획",
@@ -334,6 +338,14 @@ const SITE = {
         label: "CONTACT",
         title: "연락하기",
         text: "협업 제안이나 문의는 이메일로 편하게 연락해 주세요.",
+        form: {
+          nameLabel: "이름",
+          emailLabel: "회신받을 이메일",
+          messageLabel: "내용",
+          submitLabel: "이메일 작성창 열기",
+          hint: "작성한 내용을 이메일 앱으로 옮깁니다. 보내기는 이메일 앱에서 완료합니다.",
+          subject: "포트폴리오 문의"
+        },
         email: "이메일 보내기",
         github: "GitHub",
         linkedin: "LinkedIn"
@@ -344,6 +356,7 @@ const SITE = {
     /* ======================= English ======================= */
     en: {
       htmlLang: "en",
+      header: { navigationLabel: "Main navigation", languageLabel: "Select language" },
       meta: {
         title: "Juyeon Jung | Portfolio",
         description: "Juyeon Jung's portfolio."
@@ -353,6 +366,7 @@ const SITE = {
         eyebrow: "JUYEON JUNG",
         name: "Juyeon Jung",
         headline: "I explore international trade issues and collaborate with AI to turn that exploration into tools.",
+        headlineBreakAfter: "I explore international trade issues",
         intro: "I have studied China and East Asia and worked with overseas partners. Driven by an interest in trade and international policy, I read and organize information, and use AI to turn ideas into practical tools.",
         politicalEconomyInterest: "International political economy",
         photo: "Profile photo",
@@ -370,6 +384,7 @@ const SITE = {
       about: {
         label: "ABOUT",
         title: "Connecting my studies of China and East Asia with international political economy and trade policy",
+        titleBreakAfter: "Connecting my studies of China and East Asia",
         body: [
           "I majored in Chinese Language and Literature at Hanyang University, with a minor in Chinese Economy and Trade. At National Taiwan University, I took two years of major courses taught in Chinese and earned a dual degree in Chinese Literature.",
           "As an intern on the Global Strategy Business Team at EXPORUM, I communicated with overseas media partners and supported the operation of international events.",
@@ -441,6 +456,7 @@ const SITE = {
             role: "Intern",
             period: "Mar 2026 – Jun 2026",
             events: "Events: Smart Tech Korea 2026, TechCon 2026",
+            summary: "Communicated with 18 overseas media partners, tracked collaboration progress, and supported international event operations.",
             duties: [
               "Researched potential overseas media partners; sent proposals and follow-ups in English",
               "Communicated with 18 overseas media partners and tracked collaboration progress",
@@ -459,7 +475,6 @@ const SITE = {
         label: "PROJECTS",
         title: "Selected projects",
         intro: "A record of turning questions from trade and international issues into web tools.",
-        kicker: "PROJECT",
         labels: {
           materials: "Project materials",
           nextSteps: "Presentation feedback and planned improvements",
@@ -626,6 +641,14 @@ const SITE = {
         label: "CONTACT",
         title: "Get in touch",
         text: "For collaboration or questions, feel free to reach out by email.",
+        form: {
+          nameLabel: "Name",
+          emailLabel: "Reply email",
+          messageLabel: "Message",
+          submitLabel: "Open email draft",
+          hint: "Your text opens in your email app. Send the email from there.",
+          subject: "Portfolio inquiry"
+        },
         email: "Send an email",
         github: "GitHub",
         linkedin: "LinkedIn"
@@ -636,6 +659,7 @@ const SITE = {
     /* ======================= 简体中文 ======================= */
     "zh-Hans": {
       htmlLang: "zh-CN",
+      header: { navigationLabel: "主导航", languageLabel: "选择语言" },
       meta: {
         title: "郑主缘 Juyeon Jung | Portfolio",
         description: "郑主缘（Juyeon Jung）的个人作品集。"
@@ -645,6 +669,7 @@ const SITE = {
         eyebrow: "JUYEON JUNG",
         name: "郑主缘",
         headline: "我探索国际贸易议题，并与 AI 协作，将探索转化为工具。",
+        headlineBreakAfter: "我探索国际贸易议题，",
         intro: "我学习中国与东亚，并有与海外合作伙伴协作的经验。基于对贸易与国际政策的兴趣，我阅读并整理资料，运用AI把想法变成具体的工具。",
         politicalEconomyInterest: "国际政治经济",
         photo: "个人照片",
@@ -662,6 +687,7 @@ const SITE = {
       about: {
         label: "ABOUT",
         title: "以中国与东亚的学习为基础，探索国际政治经济与贸易政策",
+        titleBreakAfter: "以中国与东亚的学习为基础，",
         body: [
           "我在汉阳大学主修中语中文学，辅修中国经济通商学。在国立台湾大学，我用两年时间以中文修读专业课程，并取得中国文学系双学位。",
           "之后，我在EXPORUM全球战略事业组担任实习生，负责与海外媒体合作伙伴沟通，并协助国际活动的运营。",
@@ -733,6 +759,7 @@ const SITE = {
             role: "实习生",
             period: "2026.03 – 2026.06",
             events: "相关活动：Smart Tech Korea 2026、TechCon 2026",
+            summary: "与18家海外媒体合作伙伴沟通，管理合作进度，并协助国际活动的运营。",
             duties: [
               "调研海外媒体合作伙伴候选，发送英文提案并跟进联系",
               "与18家海外媒体合作伙伴沟通，管理合作进度",
@@ -751,7 +778,6 @@ const SITE = {
         label: "PROJECTS",
         title: "代表项目",
         intro: "从贸易与国际议题出发，把问题整理成网页工具的记录。",
-        kicker: "PROJECT",
         labels: {
           materials: "项目资料",
           nextSteps: "展示反馈与后续改进计划",
@@ -918,6 +944,14 @@ const SITE = {
         label: "CONTACT",
         title: "联系我",
         text: "如有合作提议或问题，欢迎通过邮件联系我。",
+        form: {
+          nameLabel: "姓名",
+          emailLabel: "回复邮箱",
+          messageLabel: "内容",
+          submitLabel: "打开邮件撰写窗口",
+          hint: "填写的内容会转到邮件应用中。请在邮件应用中完成发送。",
+          subject: "作品集咨询"
+        },
         email: "发送邮件",
         github: "GitHub",
         linkedin: "LinkedIn"
@@ -928,6 +962,7 @@ const SITE = {
     /* ======================= 繁體中文 ======================= */
     "zh-Hant": {
       htmlLang: "zh-TW",
+      header: { navigationLabel: "主要導覽", languageLabel: "選擇語言" },
       meta: {
         title: "鄭主緣 Juyeon Jung | Portfolio",
         description: "鄭主緣（Juyeon Jung）的個人作品集。"
@@ -937,6 +972,7 @@ const SITE = {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
         headline: "我探索國際貿易議題，並與 AI 協作，將探索轉化為工具。",
+        headlineBreakAfter: "我探索國際貿易議題，",
         intro: "我學習中國與東亞，並有與海外合作夥伴協作的經驗。基於對貿易與國際政策的興趣，我閱讀並整理資料，運用AI把想法變成具體的工具。",
         politicalEconomyInterest: "國際政治經濟",
         photo: "個人照片",
@@ -954,6 +990,7 @@ const SITE = {
       about: {
         label: "ABOUT",
         title: "以中國與東亞的學習為基礎，探索國際政治經濟與貿易政策",
+        titleBreakAfter: "以中國與東亞的學習為基礎，",
         body: [
           "我在漢陽大學主修中語中文學，輔修中國經濟通商學。在國立臺灣大學，我用兩年時間以中文修讀專業課程，並取得中國文學系雙學位。",
           "之後，我在EXPORUM全球戰略事業組擔任實習生，負責與海外媒體合作夥伴溝通，並協助國際活動的營運。",
@@ -1025,6 +1062,7 @@ const SITE = {
             role: "實習生",
             period: "2026.03 – 2026.06",
             events: "相關活動：Smart Tech Korea 2026、TechCon 2026",
+            summary: "與18家海外媒體合作夥伴溝通，管理合作進度，並協助國際活動的營運。",
             duties: [
               "調研海外媒體合作夥伴候選，傳送英文提案並跟進聯絡",
               "與18家海外媒體合作夥伴溝通，管理合作進度",
@@ -1043,7 +1081,6 @@ const SITE = {
         label: "PROJECTS",
         title: "代表專案",
         intro: "從貿易與國際議題出發，把問題整理成網頁工具的記錄。",
-        kicker: "PROJECT",
         labels: {
           materials: "專案資料",
           nextSteps: "發表回饋與後續改善規劃",
@@ -1210,6 +1247,14 @@ const SITE = {
         label: "CONTACT",
         title: "聯絡我",
         text: "如有合作提議或問題，歡迎透過電子郵件聯絡我。",
+        form: {
+          nameLabel: "姓名",
+          emailLabel: "回覆用電子郵件地址",
+          messageLabel: "內容",
+          submitLabel: "開啟郵件撰寫視窗",
+          hint: "填寫的內容會移至電子郵件應用程式。請在應用程式中完成寄送。",
+          subject: "作品集洽詢"
+        },
         email: "寄送電子郵件",
         github: "GitHub",
         linkedin: "LinkedIn"
@@ -1220,6 +1265,7 @@ const SITE = {
     /* ======================= 日本語 ======================= */
     ja: {
       htmlLang: "ja",
+      header: { navigationLabel: "メインナビゲーション", languageLabel: "言語を選択" },
       meta: {
         title: "鄭主緣 Juyeon Jung | Portfolio",
         description: "鄭主緣（Juyeon Jung）のポートフォリオ。"
@@ -1229,6 +1275,7 @@ const SITE = {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
         headline: "国際通商の課題を探究し、AIと協働して、その探究をツールに形にします。",
+        headlineBreakAfter: "国際通商の課題を探究し、",
         intro: "中国と東アジアについて学び、海外パートナーと協業してきました。貿易と国際政策への関心をもとに資料を読んで整理し、AIを活用して考えを具体的なツールにしています。",
         politicalEconomyInterest: "国際政治経済",
         photo: "プロフィール写真",
@@ -1246,6 +1293,7 @@ const SITE = {
       about: {
         label: "ABOUT",
         title: "中国と東アジアの学びを、国際政治経済と通商政策につなげます",
+        titleBreakAfter: "中国と東アジアの学びを、",
         body: [
           "漢陽大学で中語中文学を専攻し、中国経済通商学を副専攻しました。国立台湾大学では2年間、中国語で専攻科目を履修し、中国文学科の複数学位を取得しました。",
           "その後、EXPORUMのグローバル戦略事業チームでインターンとして、海外メディアパートナーとのやり取りと国際イベントの運営をサポートしました。",
@@ -1317,6 +1365,7 @@ const SITE = {
             role: "インターン",
             period: "2026.03 – 2026.06",
             events: "関連イベント：Smart Tech Korea 2026、TechCon 2026",
+            summary: "海外メディアパートナー18社と連絡を取り、協業の進捗を管理し、国際イベントの運営をサポートしました。",
             duties: [
               "海外メディアパートナー候補の調査、英文での提案とフォローアップ連絡",
               "海外メディアパートナー18社とのやり取りと協業の進捗管理",
@@ -1335,7 +1384,6 @@ const SITE = {
         label: "PROJECTS",
         title: "代表プロジェクト",
         intro: "貿易と国際問題から出発した課題を、Webツールとして形にしてきた記録です。",
-        kicker: "PROJECT",
         labels: {
           materials: "プロジェクト資料",
           nextSteps: "発表のフィードバックと改善計画",
@@ -1502,6 +1550,14 @@ const SITE = {
         label: "CONTACT",
         title: "連絡先",
         text: "協業のご提案やお問い合わせは、メールでお気軽にご連絡ください。",
+        form: {
+          nameLabel: "お名前",
+          emailLabel: "返信先メールアドレス",
+          messageLabel: "内容",
+          submitLabel: "メール作成画面を開く",
+          hint: "入力内容をメールアプリに移します。送信はメールアプリで完了してください。",
+          subject: "ポートフォリオのお問い合わせ"
+        },
         email: "メールを送る",
         github: "GitHub",
         linkedin: "LinkedIn"
