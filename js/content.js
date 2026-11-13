@@ -182,6 +182,7 @@ const SITE = {
           outcome: "결과",
           rooms: "공개된 학습실",
           limits: "한계와 다음 단계",
+          lessons: "돌아보며",
           report: "가상 기업 보고서 보기 (한국어 HTML)",
           question: "핵심 질문", contribution: "내가 맡은 핵심",
           period: "기간", type: "유형", status: "상태",
@@ -213,7 +214,8 @@ const SITE = {
                 own: "학습 주제와 뉴스 선정, 학습실의 구성과 순서, 화면에 담을 내용은 직접 기획했고, 만들어진 결과물을 확인하며 고쳤습니다."
               },
               outcome: "공개 사이트에 학습실 5개를 만들었고, 학습실마다 뉴스와 연결된 시뮬레이터를 하나씩 두었습니다. 무역 뉴스 탐색, 용어사전, 무역 맵, 브라우저에 저장되는 학습 기록과 사이트 안의 학습 내용을 찾아 주는 안내 챗봇도 함께 구현했습니다.",
-              limits: "학습 기록은 계정 연동 없이 해당 브라우저에 저장되고, 안내 챗봇은 사이트 안의 자료를 찾는 규칙 기반 기능입니다. 시뮬레이터는 단순화한 학습 모형이며, 외부 뉴스와 통계의 정확성이나 학습 효과는 아직 따로 검증하지 않았습니다. 앞으로 학습실을 5개 안팎으로 더 추가할 계획입니다."
+              limits: "학습 기록은 계정 연동 없이 해당 브라우저에 저장되고, 안내 챗봇은 사이트 안의 자료를 찾는 규칙 기반 기능입니다. 시뮬레이터는 단순화한 학습 모형이며, 외부 뉴스와 통계의 정확성이나 학습 효과는 아직 따로 검증하지 않았습니다. 앞으로 학습실을 5개 안팎으로 더 추가할 계획입니다.",
+              lessons: "혼자 공부하려고 만들었지만, 시간이 부족해 꾸준히 관리하지 못했고 실제 공부에는 아직 거의 쓰지 못했습니다. 만드는 것과 계속 쓰는 것은 다른 일이라는 걸 알게 됐습니다. 학습실을 더 채우고, 제가 실제로 쓰는 도구가 되도록 발전시키고 싶습니다."
             },
             // 학습실을 추가할 때: 공개 사이트 주소 #learn-아이디 의 아이디와 제목, 시뮬레이터 이름을 한 줄 넣습니다.
             rooms: [
@@ -252,7 +254,8 @@ const SITE = {
                 own: "홈페이지와 보고서의 정보 구조, 규제 검토와 참고점수, 자료 부족을 나누어 보여 주는 방식은 직접 기획했고, 화면과 문구를 확인하며 고쳤습니다."
               },
               outcome: "다섯 영역의 요약과 상세 근거, 보고서 내보내기를 연결한 웹 대시보드를 팀으로 완성했습니다. 공개한 가상 기업의 미국 수출 보고서(2026-11-11 작성, 분석 기준일 2026-11-10)에는 조건부 검토 상태와 근거 반영률 56%가 표시되고, 자료가 없는 가격과 물류 항목은 자료 부족으로 나타납니다. 56%는 이 보고서 예시의 값입니다.",
-              limits: "일부 통계 조회 실패와 기업 기재값의 유효기간 때문에 미평가 항목이 남아 있습니다. 참고점수와 근거 반영률은 수출 성공확률이나 판단 정확도를 뜻하지 않습니다. 통계의 대상 범위와 기준일, 입력 자료의 유효성은 추가로 확인해야 합니다."
+              limits: "일부 통계 조회 실패와 기업 기재값의 유효기간 때문에 미평가 항목이 남아 있습니다. 참고점수와 근거 반영률은 수출 성공확률이나 판단 정확도를 뜻하지 않습니다. 통계의 대상 범위와 기준일, 입력 자료의 유효성은 추가로 확인해야 합니다.",
+              lessons: "처음 해 보는 일, 처음 접하는 개념, 처음 만드는 대시보드라 전체 흐름을 따라가기에도 벅찼습니다. 그 안에서 제가 할 수 있는 디자인에 집중했습니다."
             },
             note: "팀 프로젝트입니다. 분석 엔진과 전체 서비스는 팀 결과물이며, 제 기여는 위에 적은 범위입니다."
           },
@@ -280,7 +283,8 @@ const SITE = {
                 own: "HOME에 담을 정보와 일정 역산 방식, 뉴스 구분 기준, 소개 홈페이지와 홍보영상의 구성은 직접 기획했고, 결과물을 확인하며 고쳤습니다."
               },
               outcome: "팀 시연 영상의 HOME 구간에서 캘린더, 이벤트 설정과 뉴스 화면을 확인할 수 있습니다. 별도로 제작한 베트남 소개 홈페이지와 홍보영상도 함께 공개합니다.",
-              limits: "베트남 진출을 가정한 교육용 프로토타입이며, 발표자료의 업무 시간 비교는 실측이 아닌 추정치입니다. 발표에서는 뉴스를 모으는 데서 나아가 한정선의 진출에 어떤 의미가 있는지 보여 달라는 피드백을 받았습니다. 그래서 기회는 초록, 주의는 노랑, 위험은 빨강, 근거가 부족하면 회색으로 보류하는 영향 분류와 필터를 계획하고 있으며, 아직 구현하지 않았습니다."
+              limits: "베트남 진출을 가정한 교육용 프로토타입이며, 발표자료의 업무 시간 비교는 실측이 아닌 추정치입니다. 발표에서는 뉴스를 모으는 데서 나아가 한정선의 진출에 어떤 의미가 있는지 보여 달라는 피드백을 받았습니다. 그래서 기회는 초록, 주의는 노랑, 위험은 빨강, 근거가 부족하면 회색으로 보류하는 영향 분류와 필터를 계획하고 있으며, 아직 구현하지 않았습니다.",
+              lessons: "두 번째 대시보드 프로젝트에서 처음으로 기능 하나를 직접 기획하고 구현까지 해 봤습니다. 이렇다 할 성과로 이어지지는 못했지만, 기획한 것을 동작하는 화면으로 만들어 본 첫 경험이었습니다."
             },
             materials: [
               {"id": "brandSite", "label": "베트남 소개 홈페이지 (교육용 프로토타입)"},
@@ -478,6 +482,7 @@ const SITE = {
           outcome: "Outcome",
           rooms: "Published lessons",
           limits: "Limits and next steps",
+          lessons: "Looking back",
           report: "View sample company report (HTML in Korean)",
           question: "Key question", contribution: "My key contribution",
           period: "Period", type: "Type", status: "Status",
@@ -508,7 +513,8 @@ const SITE = {
                 own: "I planned the topics and news selection, the structure and order of each lesson, and what goes on each screen, then reviewed and corrected the results."
               },
               outcome: "The public site has five lessons, each with a simulator tied to its news story. It also includes trade news browsing, a glossary, a trade map, a learning log saved in the browser and a guide chatbot that finds content within the site.",
-              limits: "Learning records are stored in the current browser without account syncing, and the guide chatbot uses rules to find content within the site. The simulators are simplified learning models; the accuracy of external news and statistics and the learning effect have not been separately verified. I plan to add about five more lessons."
+              limits: "Learning records are stored in the current browser without account syncing, and the guide chatbot uses rules to find content within the site. The simulators are simplified learning models; the accuracy of external news and statistics and the learning effect have not been separately verified. I plan to add about five more lessons.",
+              lessons: "I built it for my own study, but without enough time I could not maintain it steadily, and I have barely used it for actual studying yet. I learned that building a tool and continuing to use it are different things. I want to add more lessons and develop it into a tool I actually use."
             },
             rooms: [
               { id: "urea", title: "Urea shortage and import diversification (2021)", tool: "Sourcing share simulator" },
@@ -546,7 +552,8 @@ const SITE = {
                 own: "I planned the information structure of the home page and report and how regulatory review, reference scores and missing data are shown separately, then reviewed and corrected the screens and wording."
               },
               outcome: "The team completed a web dashboard linking summaries and detailed evidence for five areas with report export. The published sample U.S. export report (created November 11, 2026; analysis reference date November 10, 2026) shows a conditional review status and 56% evidence coverage, and marks price and logistics items without data as insufficient. The 56% is a value from this sample report.",
-              limits: "Failed statistical lookups and the validity period of company inputs leave some items unevaluated. The reference score and evidence coverage do not represent export success probability or decision accuracy. Statistical scope, reference dates and input validity still need checking."
+              limits: "Failed statistical lookups and the validity period of company inputs leave some items unevaluated. The reference score and evidence coverage do not represent export success probability or decision accuracy. Statistical scope, reference dates and input validity still need checking.",
+              lessons: "New tasks, unfamiliar concepts and my first dashboard made it hard even to keep up with the overall flow. Within that, I focused on the design work I could do."
             },
             note: "Team project. The analysis engine and the overall service are team work; my contribution is the scope listed above."
           },
@@ -574,7 +581,8 @@ const SITE = {
                 own: "I planned what HOME shows, how schedules are worked backward, how news is categorized, and the structure of the website and video, then reviewed and corrected the results."
               },
               outcome: "The HOME section of the team demo video shows the calendar, event settings and news screens. The separately created Vietnam introduction website and promotional video are also provided.",
-              limits: "This is a training prototype for an assumed Vietnam market entry, and the work-time comparisons in the presentation are estimates, not measurements. Presentation feedback asked me to show what the news means for Hanjungsun's entry, beyond collecting it. I am planning an impact classification and filter with opportunity in green, caution in yellow, risk in red and undetermined items in gray; it is not implemented yet."
+              limits: "This is a training prototype for an assumed Vietnam market entry, and the work-time comparisons in the presentation are estimates, not measurements. Presentation feedback asked me to show what the news means for Hanjungsun's entry, beyond collecting it. I am planning an impact classification and filter with opportunity in green, caution in yellow, risk in red and undetermined items in gray; it is not implemented yet.",
+              lessons: "In my second dashboard project, I planned and implemented a feature myself for the first time. It did not lead to notable results, but it was my first experience turning something I planned into a working screen."
             },
             materials: [
               {"id": "brandSite", "label": "Vietnam introduction website (training prototype)"},
@@ -772,6 +780,7 @@ const SITE = {
           outcome: "成果",
           rooms: "已公开的学习室",
           limits: "局限与下一步",
+          lessons: "回顾",
           report: "查看虚拟企业报告（韩文HTML）",
           question: "核心问题", contribution: "我的核心贡献",
           period: "时间", type: "类型", status: "状态",
@@ -802,7 +811,8 @@ const SITE = {
                 own: "学习主题与新闻的选定、学习室的结构与顺序、页面要呈现的内容均由我亲自策划，并在检查成果后加以修改。"
               },
               outcome: "公开网站上已有5个学习室，每个学习室都配有一个与新闻相关的模拟器。网站还实现了贸易新闻浏览、术语词典、贸易地图、保存在浏览器中的学习记录，以及查找站内学习内容的引导聊天机器人。",
-              limits: "学习记录保存在当前浏览器中，不支持账户同步；引导聊天机器人通过规则查找站内内容。模拟器是简化的学习模型，外部新闻与统计的准确性及学习效果尚未另行验证。我计划再增加5个左右的学习室。"
+              limits: "学习记录保存在当前浏览器中，不支持账户同步；引导聊天机器人通过规则查找站内内容。模拟器是简化的学习模型，外部新闻与统计的准确性及学习效果尚未另行验证。我计划再增加5个左右的学习室。",
+              lessons: "这是我为自学而做的网站，但由于时间不足，没能持续维护，实际学习中也还几乎没有用上。我体会到，做出一个工具和持续使用它是两回事。我希望继续充实学习室，把它发展成自己真正会用的工具。"
             },
             rooms: [
               { id: "urea", title: "尿素短缺与进口来源多元化（2021）", tool: "采购比例模拟器" },
@@ -840,7 +850,8 @@ const SITE = {
                 own: "主页与报告的信息结构，以及将监管审查、参考分数与资料不足分开呈现的方式，均由我亲自策划，并在核查页面与措辞后加以修改。"
               },
               outcome: "团队完成了将五个领域的摘要、详细依据与报告导出连接起来的网页仪表板。公开的虚拟企业对美出口报告（2026-11-11生成，分析基准日2026-11-10）显示有条件审查状态与56%的依据覆盖比例，缺少资料的价格和物流项目标为资料不足。56%是这份示例报告中的数值。",
-              limits: "部分统计查询失败及企业填报值的有效期等因素，使部分项目尚未评估。参考分数和依据覆盖比例不代表出口成功概率或判断准确性。仍需核查统计范围、基准日期与输入资料的有效性。"
+              limits: "部分统计查询失败及企业填报值的有效期等因素，使部分项目尚未评估。参考分数和依据覆盖比例不代表出口成功概率或判断准确性。仍需核查统计范围、基准日期与输入资料的有效性。",
+              lessons: "一切都是第一次：第一次做的工作、第一次接触的概念、第一次制作的仪表板，光是跟上整体流程就很吃力。在这样的情况下，我专注于自己能做好的设计工作。"
             },
             note: "团队项目。分析引擎与整体服务为团队成果，我的贡献为上述范围。"
           },
@@ -868,7 +879,8 @@ const SITE = {
                 own: "HOME要呈现的信息、日程倒推方式、新闻分类标准，以及介绍网站与宣传视频的结构，均由我亲自策划，并在检查成果后加以修改。"
               },
               outcome: "团队演示视频的HOME部分展示了日历、活动设置与新闻界面，同时提供单独制作的越南介绍网站和宣传视频。",
-              limits: "这是以越南市场进入情境为假设的培训原型，演示资料中的工作时间比较为估算值而非实测。展示反馈建议在汇集新闻之外，呈现新闻对Hanjungsun进入越南市场的意义。我正在规划以绿色表示机会、黄色表示注意、红色表示风险、依据不足时以灰色暂缓判断的影响分类与筛选，目前尚未实现。"
+              limits: "这是以越南市场进入情境为假设的培训原型，演示资料中的工作时间比较为估算值而非实测。展示反馈建议在汇集新闻之外，呈现新闻对Hanjungsun进入越南市场的意义。我正在规划以绿色表示机会、黄色表示注意、红色表示风险、依据不足时以灰色暂缓判断的影响分类与筛选，目前尚未实现。",
+              lessons: "在第二个仪表板项目中，我第一次亲自策划并实现了一个功能。虽然没有取得显著成果，但这是我第一次把自己策划的内容做成可以运行的页面。"
             },
             materials: [
               {"id": "brandSite", "label": "越南介绍网站（培训原型）"},
@@ -1066,6 +1078,7 @@ const SITE = {
           outcome: "成果",
           rooms: "已公開的學習室",
           limits: "限制與下一步",
+          lessons: "回顧",
           report: "查看虛擬企業報告（韓文HTML）",
           question: "核心問題", contribution: "我的核心貢獻",
           period: "時間", type: "類型", status: "狀態",
@@ -1096,7 +1109,8 @@ const SITE = {
                 own: "學習主題與新聞的選定、學習室的架構與順序、介面要呈現的內容，都由我親自規劃，並在確認成果後加以修改。"
               },
               outcome: "公開網站上已有5個學習室，每個學習室都搭配一個與新聞相關的模擬器。網站也實作了貿易新聞瀏覽、術語詞典、貿易地圖、儲存在瀏覽器中的學習紀錄，以及查找站內學習內容的導覽聊天機器人。",
-              limits: "學習紀錄儲存在目前使用的瀏覽器中，沒有帳號同步功能；導覽聊天機器人依照規則查找站內內容。模擬器是簡化的學習模型，外部新聞與統計的準確性及學習成效尚未另行驗證。我規劃再增加5個左右的學習室。"
+              limits: "學習紀錄儲存在目前使用的瀏覽器中，沒有帳號同步功能；導覽聊天機器人依照規則查找站內內容。模擬器是簡化的學習模型，外部新聞與統計的準確性及學習成效尚未另行驗證。我規劃再增加5個左右的學習室。",
+              lessons: "這是我為自學而做的網站，但因為時間不足，沒能持續維護，實際學習中也還幾乎沒有用上。我體會到，做出一個工具和持續使用它是兩回事。我希望繼續充實學習室，把它發展成自己真正會用的工具。"
             },
             rooms: [
               { id: "urea", title: "尿素短缺與進口來源多元化（2021）", tool: "採購比例模擬器" },
@@ -1134,7 +1148,8 @@ const SITE = {
                 own: "首頁與報告的資訊架構，以及將法規檢視、參考分數與資料不足分開呈現的方式，都由我親自規劃，並在確認介面與用語後加以修改。"
               },
               outcome: "團隊完成了將五個領域的摘要、詳細依據與報告匯出串連起來的網頁儀表板。公開的虛擬企業對美出口報告（2026-11-11產出，分析基準日2026-11-10）顯示有條件檢視狀態與56%的依據涵蓋比例，缺乏資料的價格及物流項目標示為資料不足。56%是這份範例報告中的數值。",
-              limits: "部分統計查詢失敗及企業填報值的有效期限等因素，使部分項目仍未評估。參考分數與依據涵蓋比例不代表出口成功機率或判斷準確性。仍需確認統計範圍、基準日期與輸入資料的有效性。"
+              limits: "部分統計查詢失敗及企業填報值的有效期限等因素，使部分項目仍未評估。參考分數與依據涵蓋比例不代表出口成功機率或判斷準確性。仍需確認統計範圍、基準日期與輸入資料的有效性。",
+              lessons: "一切都是第一次：第一次做的工作、第一次接觸的概念、第一次製作的儀表板，光是跟上整體流程就很吃力。在這樣的情況下，我專注於自己能做好的設計工作。"
             },
             note: "團隊專案。分析引擎與整體服務為團隊成果，我的貢獻為上述範圍。"
           },
@@ -1162,7 +1177,8 @@ const SITE = {
                 own: "HOME要呈現的資訊、時程回推方式、新聞分類標準，以及介紹網站與宣傳影片的架構，都由我親自規劃，並在確認成果後加以修改。"
               },
               outcome: "團隊展示影片的HOME部分呈現行事曆、活動設定與新聞介面，並提供另外製作的越南介紹網站及宣傳影片。",
-              limits: "這是以越南市場進入情境為假設的訓練原型，簡報中的工作時間比較為估計值而非實測。發表回饋建議在彙整新聞之外，呈現新聞對Hanjungsun進入越南市場的意義。我正在規劃以綠色表示機會、黃色表示注意、紅色表示風險、依據不足時以灰色暫緩判斷的影響分類與篩選，目前尚未實作。"
+              limits: "這是以越南市場進入情境為假設的訓練原型，簡報中的工作時間比較為估計值而非實測。發表回饋建議在彙整新聞之外，呈現新聞對Hanjungsun進入越南市場的意義。我正在規劃以綠色表示機會、黃色表示注意、紅色表示風險、依據不足時以灰色暫緩判斷的影響分類與篩選，目前尚未實作。",
+              lessons: "在第二個儀表板專案中，我第一次親自規劃並實作了一個功能。雖然沒有取得顯著成果，但這是我第一次把自己規劃的內容做成可以運作的頁面。"
             },
             materials: [
               {"id": "brandSite", "label": "越南介紹網站（訓練原型）"},
@@ -1360,6 +1376,7 @@ const SITE = {
           outcome: "成果",
           rooms: "公開中の学習室",
           limits: "限界と次のステップ",
+          lessons: "振り返り",
           report: "架空企業の報告書を見る（韓国語HTML）",
           question: "中心となる問い", contribution: "私の主な貢献",
           period: "期間", type: "種類", status: "状態",
@@ -1390,7 +1407,8 @@ const SITE = {
                 own: "学習テーマとニュースの選定、学習室の構成と順序、画面に載せる内容は自分で企画し、できあがったものを確認しながら修正しました。"
               },
               outcome: "公開サイトに5つの学習室をつくり、それぞれにニュースと連動したシミュレーターを1つずつ置きました。貿易ニュースの閲覧、用語集、貿易マップ、ブラウザーに保存される学習記録、サイト内の学習内容を案内するチャットボットもあわせて実装しました。",
-              limits: "学習記録はアカウント同期なしで現在のブラウザーに保存され、案内チャットボットは規則に従ってサイト内の内容を検索します。シミュレーターは簡略化した学習モデルであり、外部ニュースや統計の正確性、学習効果はまだ別途検証していません。今後、学習室を5つ前後追加する予定です。"
+              limits: "学習記録はアカウント同期なしで現在のブラウザーに保存され、案内チャットボットは規則に従ってサイト内の内容を検索します。シミュレーターは簡略化した学習モデルであり、外部ニュースや統計の正確性、学習効果はまだ別途検証していません。今後、学習室を5つ前後追加する予定です。",
+              lessons: "自分の勉強のためにつくりましたが、時間が足りず継続して管理できず、実際の勉強にはまだほとんど使えていません。つくることと使い続けることは別だと気づきました。学習室を充実させ、自分が実際に使うツールに育てたいと考えています。"
             },
             rooms: [
               { id: "urea", title: "尿素水不足と輸入先の多角化（2021）", tool: "調達比率シミュレーター" },
@@ -1428,7 +1446,8 @@ const SITE = {
                 own: "ホームページと報告書の情報構造、規制の検討と参考スコア、資料不足を分けて示す方法は自分で企画し、画面と文言を確認しながら修正しました。"
               },
               outcome: "5つの領域の要約と詳細な根拠、報告書出力をつないだWebダッシュボードをチームで完成させました。公開した架空企業の米国輸出報告書（2026-11-11作成、分析基準日2026-11-10）には条件付き検討という状態と根拠の反映率56%が表示され、資料のない価格と物流の項目は資料不足と示されます。56%はこの報告書例の値です。",
-              limits: "一部の統計照会の失敗や企業記載値の有効期間などにより、未評価の項目が残っています。参考スコアと根拠の反映率は輸出成功確率や判断の正確性を示しません。統計の対象範囲、基準日、入力資料の有効性は引き続き確認が必要です。"
+              limits: "一部の統計照会の失敗や企業記載値の有効期間などにより、未評価の項目が残っています。参考スコアと根拠の反映率は輸出成功確率や判断の正確性を示しません。統計の対象範囲、基準日、入力資料の有効性は引き続き確認が必要です。",
+              lessons: "初めての業務、初めて触れる概念、初めてのダッシュボードで、全体の流れについていくだけで精一杯でした。その中で、自分にできるデザインに力を注ぎました。"
             },
             note: "チームプロジェクトです。分析エンジンとサービス全体はチームの成果物であり、私の貢献は上記の範囲です。"
           },
@@ -1456,7 +1475,8 @@ const SITE = {
                 own: "HOMEに載せる情報、日程の逆算方法、ニュースの区分基準、紹介サイトと広報動画の構成は自分で企画し、成果物を確認しながら修正しました。"
               },
               outcome: "チームのデモ動画のHOME部分では、カレンダー、イベント設定、ニュース画面を確認できます。別途制作したベトナム紹介サイトと広報動画も掲載しています。",
-              limits: "ベトナム市場への進出を想定した教育用プロトタイプであり、発表資料の作業時間比較は実測ではなく推定値です。発表では、ニュースを集めるだけでなくHanjungsunの進出にとっての意味を示してほしいという意見を受けました。機会は緑、注意は黄、リスクは赤、根拠不足は灰色で保留とする影響分類と絞り込みを計画しており、まだ実装していません。"
+              limits: "ベトナム市場への進出を想定した教育用プロトタイプであり、発表資料の作業時間比較は実測ではなく推定値です。発表では、ニュースを集めるだけでなくHanjungsunの進出にとっての意味を示してほしいという意見を受けました。機会は緑、注意は黄、リスクは赤、根拠不足は灰色で保留とする影響分類と絞り込みを計画しており、まだ実装していません。",
+              lessons: "2つ目のダッシュボードプロジェクトで、初めて機能を1つ自分で企画し、実装まで行いました。目立った成果にはつながりませんでしたが、企画したものを動く画面にした初めての経験でした。"
             },
             materials: [
               {"id": "brandSite", "label": "ベトナム紹介サイト（教育用プロトタイプ）"},

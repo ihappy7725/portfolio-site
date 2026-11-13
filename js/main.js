@@ -213,7 +213,7 @@
           ? `<p class="sub-title">${esc(L.rooms)} <span class="count">${it.rooms.length}</span></p>
             <ol class="room-list">${it.rooms.map((r) => `<li><a href="${esc(url.replace(/#.*$/, "") + "#learn-" + r.id)}" target="_blank" rel="noopener">${esc(r.title)}</a><span class="meta">${esc(r.tool)}</span></li>`).join("")}</ol>`
           : "";
-        const caseStudy = block("process") + ai + block("outcome") + rooms + block("limits");
+        const caseStudy = block("process") + ai + block("outcome") + rooms + block("limits") + block("lessons");
         const materialUrls = (SITE.links.projectMaterials || {})[it.id] || {};
         const materials = (it.materials || []).map((material) => {
           const materialUrl = materialUrls[material.id];
