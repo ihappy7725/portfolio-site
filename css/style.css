@@ -198,7 +198,18 @@ details.more:not([open]) > summary .when-open { display: none; }
 details.project-details { margin-top: 24px; padding-top: 0; border-top: 0; }
 .project-details-body { margin-top: 16px; padding-top: 4px; border-top: 1px solid var(--line); }
 .project-details-body > .body, .project-details-body > .bullets { max-width: 90ch; }
-.project .note { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+.project .note { font-size: 13px; color: var(--text-muted); margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); }
+.ai-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin: 4px 0 0; max-width: 90ch; }
+.ai-split > div { background: var(--primary-soft); border-radius: 12px; padding: 12px 14px; }
+.ai-split dt { font-size: 13px; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px; }
+.ai-split dd { margin: 0; font-size: 15px; color: var(--text-sub); }
+.sub-title .count { display: inline-block; min-width: 22px; margin-left: 4px; padding: 0 7px; border-radius: 11px; background: var(--primary-soft); color: var(--primary-dark); font-size: 12px; text-align: center; vertical-align: 1px; }
+.room-list { margin: 4px 0 0; padding-left: 22px; max-width: 90ch; }
+.room-list li { margin: 5px 0; font-size: 15px; color: var(--text-sub); }
+.room-list a { color: var(--text); font-weight: 600; text-underline-offset: 3px; }
+.room-list a:hover { color: var(--primary); }
+.room-list .meta { margin-left: 8px; font-size: 13px; }
+@media (max-width: 640px) { .ai-split { grid-template-columns: minmax(0, 1fr); } }
 .project .link-row { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 18px; }
 .project .link-row .btn { font-size: 13px; padding: 9px 17px; }
 .project p.body { color: var(--text-sub); font-size: 15px; }

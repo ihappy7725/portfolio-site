@@ -46,7 +46,7 @@
     const n = t.nav;
     $("header-name").textContent = SITE.profile.headerName;
     $("site-nav").setAttribute("aria-label", t.header.navigationLabel);
-    $("site-nav").innerHTML = ["about", "experience", "projects", "now", "notes", "contact"]
+    $("site-nav").innerHTML = ["about", "projects", "experience", "now", "notes", "contact"]
       .filter((k) => k !== "notes" || t.notes.items.length > 0)
       .map((k) => `<a href="#${k}">${esc(n[k])}</a>`)
       .join("");
@@ -197,12 +197,23 @@
         const url = (SITE.links.projects || {})[it.id];
         const reportUrl = (SITE.links.reports || {})[it.id];
         const reportType = /\.pdf(?:[?#]|$)/i.test(reportUrl || "") ? "application/pdf" : "text/html";
-        const result = it.result ? `<p class="sub-title">${esc(L.result)}</p><p class="body">${esc(it.result)}</p>` : "";
         const note = it.note ? `<p class="note">${esc(it.note)}</p>` : "";
-        const caseStudy = ["workflow", "designIntent", "aiUse", "artifactReview", "limits", "nextSteps"]
-          .filter((key) => it.caseStudy && it.caseStudy[key])
-          .map((key) => `<p class="sub-title">${esc(L[key])}</p><p class="body">${esc(it.caseStudy[key])}</p>`)
-          .join("");
+        const cs = it.caseStudy || {};
+        const block = (key) => cs[key] ? `<p class="sub-title">${esc(L[key])}</p><p class="body">${esc(cs[key])}</p>` : "";
+        // AI 활용은 "AI에게 맡긴 일"과 "직접 정하고 확인한 일"을 나눠 보여줍니다.
+        const ai = cs.ai
+          ? `<p class="sub-title">${esc(L.aiUse)}</p>
+            <dl class="ai-split">
+              <div><dt>${esc(L.aiDelegated)}</dt><dd>${esc(cs.ai.delegated)}</dd></div>
+              <div><dt>${esc(L.aiOwn)}</dt><dd>${esc(cs.ai.own)}</dd></div>
+            </dl>`
+          : "";
+        // 학습실 목록: 프로젝트 주소 뒤에 #learn-아이디 를 붙여 해당 학습실로 바로 이동합니다.
+        const rooms = url && (it.rooms || []).length
+          ? `<p class="sub-title">${esc(L.rooms)} <span class="count">${it.rooms.length}</span></p>
+            <ol class="room-list">${it.rooms.map((r) => `<li><a href="${esc(url.replace(/#.*$/, "") + "#learn-" + r.id)}" target="_blank" rel="noopener">${esc(r.title)}</a><span class="meta">${esc(r.tool)}</span></li>`).join("")}</ol>`
+          : "";
+        const caseStudy = block("process") + ai + block("outcome") + rooms + block("limits");
         const materialUrls = (SITE.links.projectMaterials || {})[it.id] || {};
         const materials = (it.materials || []).map((material) => {
           const materialUrl = materialUrls[material.id];
@@ -240,11 +251,9 @@
             <div class="project-details-body">
               <dl class="project-status"><dt>${esc(L.status)}</dt><dd>${esc(it.status)}</dd></dl>
               <p class="sub-title">${esc(L.role)}</p>${list(it.role)}
-              ${result}
               ${caseStudy}
-              <p class="sub-title">${esc(L.focus)}</p>${list(it.focus)}
-              ${note}
               ${materialLinks}
+              ${note}
             </div>
           </details>
           ${link}
@@ -255,7 +264,7 @@
     const extra = p.extra
       .map(
         (e) => `<div class="extra-item"><strong>${esc(e.name)}</strong>
-          <p class="meta">${esc(e.meta)}</p><p class="tool-item">${esc(e.desc)}</p></div>`
+          ${e.meta ? `<p class="meta">${esc(e.meta)}</p>` : ""}<p class="tool-item">${esc(e.desc)}</p></div>`
       )
       .join("");
 
