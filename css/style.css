@@ -218,7 +218,7 @@ details.more:not([open]) > summary .when-open { display: none; }
 details.project-details { margin-top: 18px; padding-top: 0; border-top: 0; }
 details.project-details > summary { font-size: 13px; color: var(--text-muted); }
 details.project-details > summary:hover { color: var(--primary); }
-.project-details-body { margin-top: 14px; padding-top: 18px; border-top: 1px solid var(--line); }
+.project-details-body { margin-top: 14px; padding-top: 18px; }
 .project-details-body h4 { font-size: 15px; color: var(--text); margin-bottom: 12px; }
 .project-process { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; list-style: none; }
 .project-process li { position: relative; min-width: 0; border-top: 1px solid var(--line); padding-top: 10px; }
