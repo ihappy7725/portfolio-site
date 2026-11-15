@@ -181,6 +181,19 @@ details.more:not([open]) > summary .when-open { display: none; }
 .experience-skills { margin-top: 20px; }
 .experience-skills .tag { background: var(--sky); font-size: 14px; }
 .experience-details { display: grid; gap: 12px; margin-top: 24px; }
+.experience-case h4 { color: var(--text); font-size: 17px; margin-bottom: 10px; }
+.experience-case + .experience-case { border-top: 1px solid var(--line); padding-top: 26px; margin-top: 26px; }
+.workflow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 20px 0; list-style: none; }
+.workflow li { min-width: 0; padding: 12px; border-radius: 12px; background: var(--primary-soft); color: var(--primary-dark); font-size: 14px; }
+.workflow li > span { display: block; font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 5px; }
+.comparison-scroll { overflow-x: auto; margin: 18px 0 12px; border: 1px solid var(--line); border-radius: 12px; }
+.comparison-table { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: left; font-size: 14px; }
+.comparison-table th, .comparison-table td { padding: 12px 14px; vertical-align: top; overflow-wrap: anywhere; }
+.comparison-table thead { background: var(--bg-alt); color: var(--text); }
+.comparison-table th:first-child { width: 28%; }
+.comparison-table tbody tr + tr { border-top: 1px solid var(--line); }
+.comparison-table tbody th { color: var(--text); font-weight: 600; }
+.evidence-caption { color: var(--text-muted); font-size: 13px; line-height: 1.7; }
 
 /* ===== Projects ===== */
 .projects-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
@@ -190,6 +203,25 @@ details.more:not([open]) > summary .when-open { display: none; }
 .project .summary { color: var(--text-sub); font-size: 16px; margin-bottom: 24px; }
 .project-meta { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
 .project-meta > div { max-width: 100%; background: var(--primary-soft); padding: 4px 12px; border-radius: 16px; font-size: 12px; color: var(--primary-dark); }
+.project-question { color: var(--text); font-size: 16px; line-height: 1.8; margin-bottom: 24px; }
+.project-question > strong { display: block; color: var(--primary); font-size: 13px; margin-bottom: 5px; }
+.research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.research-stage { min-width: 0; border-top: 2px solid var(--line); padding-top: 14px; }
+.research-stage h4 { color: var(--primary-dark); font-size: 14px; margin-bottom: 10px; line-height: 1.55; }
+.research-implications { background: var(--bg-alt); border-color: var(--primary); border-radius: 0 0 12px 12px; padding: 14px; }
+.project-contribution { margin-top: 24px; }
+.project-contribution h4 { color: var(--primary); font-size: 14px; margin-bottom: 6px; }
+.component-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 12px 0 20px; }
+.component-list > li { min-width: 0; padding: 14px; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 14px; }
+.component-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.component-head strong { font-size: 15px; }
+.component-head a { text-underline-offset: 3px; }
+.component-head a:hover { color: var(--primary); }
+.component-list p { font-size: 14px; color: var(--text-sub); }
+.component-state { font-size: 12px; padding: 2px 8px; border-radius: 999px; color: var(--text-sub); border: 1px solid var(--line); background: var(--card); }
+.component-state.working { color: var(--primary-dark); background: var(--primary-soft); }
+.legacy-project { margin-top: 24px; }
+.legacy-project > summary { font-size: 14px; }
 .project-status { display: flex; flex-wrap: wrap; gap: 6px 14px; background: var(--primary-soft); border-radius: 12px; padding: 10px 14px; margin-top: 16px; font-size: 14px; }
 .project-status dt { color: var(--primary-dark); font-weight: 600; }
 .project-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; }
@@ -262,6 +294,7 @@ details.project-details { margin-top: 24px; padding-top: 0; border-top: 0; }
   .hero { padding-top: 64px; padding-bottom: 72px; }
   .strengths { grid-template-columns: 1fr; }
   .project-overview { gap: 24px; }
+  .research-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .contact-grid { gap: 32px; }
   .extra-list { grid-template-columns: 1fr; }
 }
@@ -284,6 +317,9 @@ details.project-details { margin-top: 24px; padding-top: 0; border-top: 0; }
   .exp-head h3 { font-size: 19px; }
   .experience-summary { font-size: 16px; }
   .experience-skills .tag { font-size: 13px; }
+  .workflow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .component-list { grid-template-columns: minmax(0, 1fr); }
+  .comparison-table th, .comparison-table td { padding: 10px; }
   .project-topline { gap: 10px; }
   .project h3 { font-size: 21px; }
   .project-overview, .now-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }

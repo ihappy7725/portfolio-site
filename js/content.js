@@ -5,7 +5,7 @@
  * - 링크 추가: SITE.links 에 주소를 넣으면 버튼이 나타나고, 비워두면 버튼이 숨겨집니다.
  * - 프로필 사진: assets 폴더에 사진을 넣고 SITE.profile.photo 에 경로를 적으세요. 예) "assets/profile.jpg"
  * - 새 프로젝트 추가: 각 언어의 projects.items 에 같은 id 로 항목을 하나씩 추가하세요.
- * - Trade News Room 학습실 추가: 각 언어의 tradenews 항목 rooms 에 { id, title, tool } 을 한 줄씩 넣으세요.
+ * - Trade News Room 학습실 추가: 각 언어의 tradedatalab.legacyProject.rooms 에 { id, title, tool } 을 한 줄씩 넣으세요.
  *   id 는 공개 사이트 주소의 #learn-아이디 와 같아야 합니다. 개수는 자동으로 표시됩니다.
  * - 탐구 기록 추가: 각 언어의 notes.items 에 title, date(YYYY-MM-DD), summary, tags, link 를 넣으세요.
  *   제목, 요약과 태그는 다섯 언어에 함께 작성합니다. 글이 없으면 섹션과 메뉴가 숨겨집니다.
@@ -24,11 +24,18 @@ const SITE = {
     projects: {
       axport: "https://semiconductor-trade-project-1st.vercel.app/",
       hanjeongseon: "https://hanjungsun-marketing-project-2nd-gamma.vercel.app/home/?lang=ko",
-      tradenews: "https://trade-news-room.vercel.app/"
+      tradenews: "https://trade-news-room.vercel.app/",
+      tradedatalab: ""
     },
     // 공개용 원본 보고서입니다. 보고서 본문은 한국어입니다.
     reports: {
       axport: "assets/projects/axport/axport-us-sample-report.html"
+    },
+    // Trade Data Lab 전체 주소와 구성 요소 주소를 구분합니다.
+    projectComponents: {
+      tradenews: "https://trade-news-room.vercel.app/",
+      policyline: "https://policy-line-eight.vercel.app/",
+      tradeweave: "https://trade-data-lab.vercel.app/"
     },
     projectMaterials: {
       hanjeongseon: {
@@ -36,10 +43,8 @@ const SITE = {
         homeDemo: "assets/projects/hanjungsun/home-demo.mp4",
         promo: "assets/projects/hanjungsun/promotion.mp4"
       },
-      tradenews: {
-        statistics: "assets/projects/tradenews/learning-statistics.png",
-        simulation: "assets/projects/tradenews/supply-simulation.png"
-      }
+      tradenews: { statistics: "assets/projects/tradenews/learning-statistics.png", simulation: "assets/projects/tradenews/supply-simulation.png" },
+      tradedatalab: { statistics: "assets/projects/tradenews/learning-statistics.png", simulation: "assets/projects/tradenews/supply-simulation.png" }
     }
   },
   languages: [
@@ -55,17 +60,14 @@ const SITE = {
     ko: {
       htmlLang: "ko",
       header: { navigationLabel: "주 메뉴", languageLabel: "언어 선택" },
-      meta: {
-        title: "정주연 Juyeon Jung | Portfolio",
-        description: "정주연(Juyeon Jung)의 포트폴리오."
-      },
+      meta: { title: "정주연 Juyeon Jung | 국제통상과 정책 탐구", description: "무역 뉴스와 정책 원문, 교역 통계를 연결하는 도구와 국제 협업 경험을 기록합니다." },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "정주연",
-        headline: "국제 통상 이슈를 탐구하고, AI와 협업하여 도구로 만듭니다.",
-        headlineBreakAfter: "국제 통상 이슈를 탐구하고,",
-        intro: "중국과 동아시아를 공부하고, 해외 파트너와 협업해 왔습니다. 무역과 국제정책에 대한 관심을 바탕으로 자료를 읽고 정리하며, AI를 활용해 생각을 구체적인 도구로 만들고 있습니다.",
+        headline: "무역 뉴스를 읽고, 관련 정책과 교역 통계를 한눈에 살펴보는 도구를 만듭니다.",
+        headlineBreakAfter: "무역 뉴스를 읽고,",
+        intro: "무역 AX 교육과정에서 흩어진 정보를 보기 쉽게 정리하는 웹 대시보드를 제작하고 있습니다. 개인 프로젝트 Trade Data Lab에서는 뉴스와 정책 원문, 교역 통계를 모아 국가별 거래 구조와 정책 발표 전후의 변화를 살펴보는 서비스를 개발하고 있습니다. 별도의 기업 연계 캡스톤에서는 공공서비스 제공 기관의 AI 상담 챗봇 개발을 시작할 예정입니다.",
         politicalEconomyInterest: "국제정치경제",
         photo: "프로필 사진",
         ctaProjects: "프로젝트 보기",
@@ -74,20 +76,20 @@ const SITE = {
       strengths: {
         title: "강점",
         items: [
-          { title: "글로벌 커뮤니케이션", desc: "중국어와 영어로 해외 파트너와 소통" },
-          { title: "AI 활용", desc: "생성형 AI로 아이디어를 웹 도구로 구현" },
-          { title: "끈기", desc: "낯선 언어 환경에서도 학습 방식을 조정하며 끝까지 적응" }
+          { title: "글로벌 및 지역 이해", desc: "중국과 동아시아에 대한 학업, 대만에서의 수학과 영문 대외 소통 경험을 연결합니다." },
+          { title: "무역 및 시장 데이터 분석", desc: "자료를 정리하고 비교하는 웹 도구를 만듭니다. Python과 pandas, NumPy는 기초 학습과 실습 단계입니다." },
+          { title: "프로젝트와 이해관계자 조율", desc: "해외 미디어와 기관, 제작 협력사의 요청과 일정을 정리하고 운영팀과 전달 사항을 조율했습니다." }
         ]
       },
       about: {
         label: "ABOUT",
-        title: "중국과 동아시아에 대한 공부를 국제정치경제와 통상정책으로 이어갑니다",
-        titleBreakAfter: "중국과 동아시아에 대한 공부를",
+        title: "지역을 공부하고, 현장에서 협업하며, 무역 정보를 정리합니다",
+        titleBreakAfter: "지역을 공부하고,",
         body: [
-          "한양대학교에서 중어중문학을 전공하고 중국경제통상학을 부전공했습니다. 국립대만대학교에서는 2년간 중국어로 전공수업을 이수하며 중국문학과 복수학위를 취득했습니다.",
-          "이후 엑스포럼 글로벌전략사업팀 인턴으로 해외 미디어 파트너와 소통하고 국제행사 운영을 지원했습니다.",
-          "현재는 한국무역협회 무역 AX마스터 과정에서 무역 실무, 데이터 활용과 생성형 AI를 배우며 웹 도구를 만드는 경험을 쌓고 있습니다.",
-          "장기적으로 중국과 동아시아, 국제정치경제와 국제통상 및 무역정책을 깊이 공부하고, 자료와 데이터를 근거로 국제 이슈를 설명하는 역량을 키우고자 합니다. 미국 국제관계 및 공공정책 분야 석사 진학을 준비하며, 탐구 내용을 프로젝트와 기록으로 쌓아가고 있습니다."
+          "한양대학교에서 중어중문학을 전공하고 중국경제통상학을 부전공했으며, 국립대만대학교에서 중국문학 복수학위를 취득했습니다. 대만에서 2년간 중국어로 전공수업을 이수하며 중화권의 언어와 사회를 이해하는 기반을 쌓았습니다.",
+          "엑스포럼 글로벌전략사업팀 인턴으로 해외 미디어 협업, 해외 연사와 기관의 초청 및 일정 조율, 산업 행사 자료 조사를 지원했습니다. 서로 다른 관계자의 요청과 조건을 정리하고, 확인한 내용을 문서로 전달하는 실무를 경험했습니다.",
+          "현재는 무역 AX 교육과정에서 정보 탐색과 비교를 돕는 웹 대시보드를 제작하고 있습니다. 개인 프로젝트 Trade Data Lab에서는 뉴스를 읽은 뒤 관련 정책 원문과 통계를 확인하고, 국가별 교역 구조와 정책 발표 전후의 변화를 살펴볼 수 있는 서비스를 개발합니다.",
+          "별도의 기업 연계 캡스톤에서는 공공서비스 제공 기관과 협업하는 AI 상담 챗봇 개발에 참여할 예정입니다. 프로젝트를 통해 기관의 요구를 파악하고 실제 서비스로 구체화하는 경험을 쌓고자 합니다."
         ],
         moreOpen: "학력, 자격, 활용 도구 펼쳐 보기",
         moreClose: "접기",
@@ -165,9 +167,34 @@ const SITE = {
               "해외 연사 일정과 이동 동선 조율, 현장 안내와 행사 운영 지원"
             ],
             caseText: "협업 조건을 실제 게시 결과와 대조하며 최종 보고서를 정리했습니다. STK 전시회는 9개 매체, TechCon 컨퍼런스는 7개 매체의 게재 근거를 확인했습니다. 확인된 게시물의 화면과 링크를 남겼습니다. 미진행 항목과 확인되지 않은 노출은 구분해 후속 업무를 파악할 수 있도록 정리했습니다.",
-            skills: ["해외 파트너 커뮤니케이션", "일정 조율", "진행 현황 관리", "근거를 확인하는 보고 방식"]
+            skills: ["해외 파트너 커뮤니케이션", "일정 조율", "진행 현황 관리", "근거를 확인하는 보고 방식"],
+            cases: [
+              {
+                id: "buyers",
+                title: "국내외 바이어 프로그램 비교조사",
+                summary: "국내외 바이어 프로그램 20개 사례를 지원 혜택, 참여 조건과 비용 정산 방식으로 비교했습니다. 미팅, 출석과 사후 평가가 지원 혜택과 어떻게 연결되는지 정리해 보고했습니다.",
+                workflow: ["사례 수집", "혜택과 조건 비교", "차이점 요약", "업무 참고자료 보고"],
+                comparison: {
+                  headers: ["비교 항목", "확인한 내용"],
+                  rows: [
+                    ["지원 혜택", "항공과 숙박, 이동 지원, 라운지와 네트워킹"],
+                    ["참여 조건", "최소 미팅 수, 행사 출석과 사후 평가"],
+                    ["정산 방식", "사전 지원 또는 참여 조건을 충족한 뒤 비용 정산"]
+                  ]
+                },
+                caption: "2026년 4월의 비교표와 업무일지를 바탕으로 조사 항목을 재구성했습니다. 프로그램별 현재 참가 조건을 안내하는 자료는 아닙니다."
+              },
+              {
+                id: "verification",
+                title: "해외 미디어 협업 결과 확인",
+                workflow: ["협업 조건 확인", "실제 게시 결과 대조", "링크와 화면 기록", "진행 상태 구분"],
+                caption: "2026년 6월 16일의 본인 명의 진행 보고서와 업무일지에 근거한 재구성입니다. 약속한 조건, 미진행과 확인 불가를 구분했습니다.",
+                summary: "협업 조건을 실제 게시 결과와 대조하며 최종 보고서를 정리했습니다. STK 전시회는 9개 매체, TechCon 컨퍼런스는 7개 매체의 게재 근거를 확인했습니다. 확인된 게시물의 화면과 링크를 남겼습니다. 미진행 항목과 확인되지 않은 노출은 구분해 후속 업무를 파악할 수 있도록 정리했습니다."
+              }
+            ]
           }
-        ]
+        ],
+        casesTitle: "조사와 근거 확인 사례"
       },
       projects: {
         label: "PROJECTS",
@@ -184,52 +211,97 @@ const SITE = {
           limits: "한계와 다음 단계",
           lessons: "돌아보며",
           report: "가상 기업 보고서 보기 (한국어 HTML)",
-          question: "핵심 질문", contribution: "내가 맡은 핵심",
-          period: "기간", type: "유형", status: "상태",
-          problem: "해결하려던 문제", role: "내가 맡은 일",
-          moreOpen: "자세히 보기", moreClose: "접기", link: "프로젝트 보기"
+          question: "핵심 질문",
+          contribution: "내가 맡은 핵심",
+          period: "기간",
+          type: "유형",
+          status: "상태",
+          problem: "해결하려던 문제",
+          role: "내가 맡은 일",
+          moreOpen: "자세히 보기",
+          moreClose: "접기",
+          link: "프로젝트 보기",
+          background: "배경과 문제",
+          methodology: "접근 방법",
+          implications: "확인한 점과 의미",
+          components: "구성 서비스",
+          working: "동작 확인",
+          planned: "기획 단계",
+          legacyProject: "이전 프로젝트 기록"
         },
-        // 순서: 개인 연구와 가장 가까운 Trade News Room을 먼저 보여줍니다.
+        // 순서: 개인 개발 프로젝트 Trade Data Lab을 먼저 보여줍니다.
         items: [
           {
-            id: "tradenews",
-            name: "Trade News Room | 뉴스 속 무역 공부방",
-            question: "세계 무역 뉴스의 배경과 개념을 데이터와 연결해 이해하고, 그 이해를 학습 기록으로 어떻게 쌓아갈 수 있을까?",
-            contribution: "실제 무역 뉴스를 골라 학습 주제를 정하고, 뉴스 요약과 출처에서 통계, 시뮬레이터, 퀴즈와 학습 기록으로 이어지는 학습 흐름을 직접 기획했습니다. 기능 구현과 화면 디자인에는 AI를 활용했습니다. 지금은 학습실 5개를 공개했고 계속 늘려 가고 있습니다.",
-            summary: "세계 무역 뉴스를 출발점으로 개념과 데이터를 함께 이해하는 학습 웹사이트",
+            id: "tradedatalab",
+            name: "Trade Data Lab | 무역 뉴스와 정책, 교역 통계를 함께 보는 웹 도구",
+            summary: "흩어진 뉴스와 정책 원문, 통계를 질문별로 연결하는 개인 프로젝트입니다. 국가별 거래 구조와 정책 발표 전후의 교역 변화를 직접 살펴볼 수 있도록 서비스를 구성하고 있습니다.",
+            question: "뉴스에서 본 무역 이슈를 정책 원문과 교역 통계로 어떻게 확인하고 비교할 수 있을까?",
+            contribution: "프로젝트의 질문, 서비스별 역할과 공통 표시 원칙을 기획했습니다. Trade News Room, Policyline, Tradeweave를 제작하고, 나머지 서비스의 구성과 연결 방식을 정리하고 있습니다.",
             period: "2026",
             type: "개인 프로젝트",
-            status: "학습실 5개 공개, 5개 안팎을 더 추가할 계획",
-            problem: "실제 무역 이슈의 배경과 연결된 개념을 이해하고, 학습 내용을 기록하고 싶었습니다.",
+            status: "Trade News Room, Policyline, Tradeweave 동작 / 나머지 구성 기획 중",
+            problem: "뉴스, 정책 원문과 교역 통계가 서로 다른 곳에 있고 자료의 기간과 단위도 달라, 하나의 이슈에 필요한 자료를 연결해 비교하기 어렵습니다.",
             role: [
-              "학습 주제와 뉴스 선정",
-              "뉴스 요약과 출처, 통계, 시뮬레이터, 퀴즈, 학습 기록으로 이어지는 학습 흐름 기획",
-              "AI를 활용한 기능 구현과 화면 디자인",
-              "학습실을 추가하며 화면과 학습 흐름 개선"
+              "무역 이슈를 질문별 서비스로 나누는 프로젝트 기획",
+              "Trade News Room, Policyline, Tradeweave의 제작과 기능 구성",
+              "출처, 기준 기간과 단위, 사실과 해석의 표시 원칙 정리",
+              "Fact Desk, Report Plain, Trade Notebook의 후속 구성 기획"
             ],
             caseStudy: {
-              process: "학습실마다 실제 무역 뉴스 하나를 출발점으로 삼습니다. 뉴스 요약과 출처를 읽고, 통계 그래프나 시뮬레이터에서 숫자를 직접 바꿔 본 뒤, 퀴즈와 용어 확인, 학습 메모로 이어집니다. 실제 통계 그래프와 단순화한 학습용 모형을 구분해 배치하고, 그래프만으로 변화의 원인을 단정하거나 모형의 계산값을 실제 전망으로 받아들이지 않도록 안내했습니다.",
-              ai: {
-                delegated: "기능 구현과 화면 디자인",
-                own: "학습 주제와 뉴스 선정, 학습실의 구성과 순서, 화면에 담을 내용은 직접 기획했고, 만들어진 결과물을 확인하며 고쳤습니다."
-              },
-              outcome: "공개 사이트에 학습실 5개를 만들었고, 학습실마다 뉴스와 연결된 시뮬레이터를 하나씩 두었습니다. 무역 뉴스 탐색, 용어사전, 무역 맵, 브라우저에 저장되는 학습 기록과 사이트 안의 학습 내용을 찾아 주는 안내 챗봇도 함께 구현했습니다.",
-              limits: "학습 기록은 계정 연동 없이 해당 브라우저에 저장되고, 안내 챗봇은 사이트 안의 자료를 찾는 규칙 기반 기능입니다. 시뮬레이터는 단순화한 학습 모형이며, 외부 뉴스와 통계의 정확성이나 학습 효과는 아직 따로 검증하지 않았습니다. 앞으로 학습실을 5개 안팎으로 더 추가할 계획입니다.",
-              lessons: "혼자 공부하려고 만들었지만, 시간이 부족해 꾸준히 관리하지 못했고 실제 공부에는 아직 거의 쓰지 못했습니다. 만드는 것과 계속 쓰는 것은 다른 일이라는 걸 알게 됐습니다. 학습실을 더 채우고, 제가 실제로 쓰는 도구가 되도록 발전시키고 싶습니다."
+              background: "무역 이슈를 확인하려면 뉴스, 정부 발표와 교역 통계를 각각 찾아봐야 합니다. 자료마다 기간과 단위가 달라 바로 비교하기도 어렵습니다. 필요한 자료를 질문별로 모아, 원문과 숫자를 오가며 살펴볼 수 있도록 기획했습니다.",
+              methodology: "Trade News Room은 뉴스와 무역 개념의 학습을, Policyline은 정책 발표 전후의 교역액 비교를, Tradeweave는 교역 상대국과 거래 집중도의 확인을 담당합니다. 서비스별로 출처와 기준 기간, 단위를 표시하고, 확인된 사실과 해석을 구분하는 것을 공통 원칙으로 삼았습니다.",
+              implications: "뉴스의 설명을 그대로 받아들이기 전에 관련 원문과 수치를 확인하고, 더 살펴볼 질문을 찾도록 돕습니다. 정책 발표 전후의 변화만으로 정책 효과나 우회 수출을 확정하지 않으며, 데이터로 확인할 수 있는 범위와 남는 불확실성을 함께 설명합니다.",
+              limits: "기획서의 전체 구성은 완성 목표이며, 데이터 연결과 자동 갱신의 실제 구현 범위는 서비스별로 구분해야 합니다. 정책 발표와 같은 시기의 교역 변화를 정책의 인과효과나 우회 수출의 증거로 단정하지 않습니다."
             },
-            // 학습실을 추가할 때: 공개 사이트 주소 #learn-아이디 의 아이디와 제목, 시뮬레이터 이름을 한 줄 넣습니다.
-            rooms: [
-              { id: "urea", title: "요소수 대란과 수입처 다변화 (2021)", tool: "조달 비중 시뮬레이터" },
-              { id: "graphite", title: "중국의 흑연 수출 허가제 (2023)", tool: "공급 감소와 가격 시뮬레이터" },
-              { id: "gallium", title: "갈륨과 게르마늄 수출 허가제 (2023)", tool: "재고와 허가 대기 기간 시뮬레이터" },
-              { id: "tariff", title: "한미 무역합의와 15% 관세 (2025)", tool: "관세 부담 시뮬레이터" },
-              { id: "redsea", title: "홍해 사태와 희망봉 우회 (2023)", tool: "항로와 운임 시뮬레이터" }
+            components: [
+              { id: "tradenews", name: "Trade News Room", status: "working", description: "무역 뉴스와 관련 개념을 학습실, 그래프와 퀴즈로 살펴보는 서비스입니다." },
+              { id: "policyline", name: "Policyline", status: "working", description: "정책 발표 전후의 교역액 변화를 살펴보는 서비스입니다." },
+              { id: "tradeweave", name: "Tradeweave", status: "working", description: "국가별 교역 상대국과 거래 집중도를 살펴보는 서비스입니다." },
+              { id: "factdesk", name: "Fact Desk", status: "planned", description: "Trade News Room 안에서 확인된 사실, 해석과 불확실한 점을 나누어 보여줄 기능을 기획하고 있습니다." },
+              { id: "reportplain", name: "Report Plain", status: "planned", description: "보고서의 주장, 근거와 한계를 원문 쪽수와 함께 정리하는 서비스를 기획하고 있습니다." },
+              { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "질문, 데이터, 발견과 한계를 담은 분석 노트를 공개하는 구성을 기획하고 있습니다." }
             ],
+            note: "Trade Data Lab은 계속 확장하는 개인 프로젝트입니다. Fact Desk는 Trade News Room 내부의 계획 기능이며, Report Plain과 Trade Notebook은 기획 중입니다.",
+            legacyProject: {
+              id: "tradenews",
+              name: "Trade News Room | 뉴스 속 무역 공부방",
+              question: "세계 무역 뉴스의 배경과 개념을 데이터와 연결해 이해하고, 그 이해를 학습 기록으로 어떻게 쌓아갈 수 있을까?",
+              contribution: "실제 무역 뉴스를 골라 학습 주제를 정하고, 뉴스 요약과 출처에서 통계, 시뮬레이터, 퀴즈와 학습 기록으로 이어지는 학습 흐름을 직접 기획했습니다. 기능 구현과 화면 디자인에는 AI를 활용했습니다. 지금은 학습실 5개를 공개했고 계속 늘려 가고 있습니다.",
+              summary: "세계 무역 뉴스를 출발점으로 개념과 데이터를 함께 이해하는 학습 웹사이트",
+              period: "2026",
+              type: "개인 프로젝트",
+              status: "학습실 5개 공개, 5개 안팎을 더 추가할 계획",
+              problem: "실제 무역 이슈의 배경과 연결된 개념을 이해하고, 학습 내용을 기록하고 싶었습니다.",
+              role: [
+                "학습 주제와 뉴스 선정",
+                "뉴스 요약과 출처, 통계, 시뮬레이터, 퀴즈, 학습 기록으로 이어지는 학습 흐름 기획",
+                "AI를 활용한 기능 구현과 화면 디자인",
+                "학습실을 추가하며 화면과 학습 흐름 개선"
+              ],
+              caseStudy: {
+                process: "학습실마다 실제 무역 뉴스 하나를 출발점으로 삼습니다. 뉴스 요약과 출처를 읽고, 통계 그래프나 시뮬레이터에서 숫자를 직접 바꿔 본 뒤, 퀴즈와 용어 확인, 학습 메모로 이어집니다. 실제 통계 그래프와 단순화한 학습용 모형을 구분해 배치하고, 그래프만으로 변화의 원인을 단정하거나 모형의 계산값을 실제 전망으로 받아들이지 않도록 안내했습니다.",
+                ai: { delegated: "기능 구현과 화면 디자인", own: "학습 주제와 뉴스 선정, 학습실의 구성과 순서, 화면에 담을 내용은 직접 기획했고, 만들어진 결과물을 확인하며 고쳤습니다." },
+                outcome: "공개 사이트에 학습실 5개를 만들었고, 학습실마다 뉴스와 연결된 시뮬레이터를 하나씩 두었습니다. 무역 뉴스 탐색, 용어사전, 무역 맵, 브라우저에 저장되는 학습 기록과 사이트 안의 학습 내용을 찾아 주는 안내 챗봇도 함께 구현했습니다.",
+                limits: "학습 기록은 계정 연동 없이 해당 브라우저에 저장되고, 안내 챗봇은 사이트 안의 자료를 찾는 규칙 기반 기능입니다. 시뮬레이터는 단순화한 학습 모형이며, 외부 뉴스와 통계의 정확성이나 학습 효과는 아직 따로 검증하지 않았습니다. 앞으로 학습실을 5개 안팎으로 더 추가할 계획입니다.",
+                lessons: "혼자 공부하려고 만들었지만, 시간이 부족해 꾸준히 관리하지 못했고 실제 공부에는 아직 거의 쓰지 못했습니다. 만드는 것과 계속 쓰는 것은 다른 일이라는 걸 알게 됐습니다. 학습실을 더 채우고, 제가 실제로 쓰는 도구가 되도록 발전시키고 싶습니다."
+              },
+              rooms: [
+                { id: "urea", title: "요소수 대란과 수입처 다변화 (2021)", tool: "조달 비중 시뮬레이터" },
+                { id: "graphite", title: "중국의 흑연 수출 허가제 (2023)", tool: "공급 감소와 가격 시뮬레이터" },
+                { id: "gallium", title: "갈륨과 게르마늄 수출 허가제 (2023)", tool: "재고와 허가 대기 기간 시뮬레이터" },
+                { id: "tariff", title: "한미 무역합의와 15% 관세 (2025)", tool: "관세 부담 시뮬레이터" },
+                { id: "redsea", title: "홍해 사태와 희망봉 우회 (2023)", tool: "항로와 운임 시뮬레이터" }
+              ],
+              materials: [
+                { id: "statistics", label: "통계와 출처 안내 화면 (한국어)" },
+                { id: "simulation", label: "조달 비중 시뮬레이터 화면 (한국어)" }
+              ],
+              note: "계속 발전시키고 있는 개인 프로젝트입니다."
+            },
             materials: [
-              {"id": "statistics", "label": "통계와 출처 안내 화면 (한국어)"},
-              {"id": "simulation", "label": "조달 비중 시뮬레이터 화면 (한국어)"}
-            ],
-            note: "계속 발전시키고 있는 개인 프로젝트입니다."
+              { id: "statistics", label: "Trade News Room: 통계와 출처 안내 화면 (한국어)" },
+              { id: "simulation", label: "Trade News Room: 조달 비중 시뮬레이터 화면 (한국어)" }
+            ]
           },
           {
             id: "axport",
@@ -241,21 +313,16 @@ const SITE = {
             type: "무역 AX마스터 교육 팀 프로젝트",
             status: "프로토타입 결과물",
             problem: "규제, 시장성, 가격, 물류, 안정성 정보가 흩어져 있었습니다. 한 화면에 모으더라도 규제상 제약, 사업성 점수와 자료가 없는 항목이 같은 무게로 읽히면 판단을 잘못 이끌 수 있었습니다.",
-            role: [
-              "메인 홈페이지 기획과 UI/UX 디자인",
-              "반응형 레이아웃과 다국어 화면",
-              "PDF 보고서와 분석 결과 보고서의 구성 및 문구 개선",
-              "서비스 소개와 발표자료 작업"
-            ],
+            role: ["메인 홈페이지 기획과 UI/UX 디자인", "반응형 레이아웃과 다국어 화면", "PDF 보고서와 분석 결과 보고서의 구성 및 문구 개선", "서비스 소개와 발표자료 작업"],
             caseStudy: {
               process: "홈페이지에서는 서비스 소개와 이용 방법으로 다섯 검토 영역과 이용 흐름을 안내했습니다. 보고서는 요약에서 상세 근거로 이어지게 하고, 규제 검토를 사업성 참고점수와 분리했습니다. 자료가 없는 항목은 자료 부족으로 표시하고, 데이터 기준일을 함께 보여 주도록 구성했습니다.",
-              ai: {
-                delegated: "랜딩페이지 디자인 구성 (ChatGPT Codex, Gemini)",
-                own: "홈페이지와 보고서의 정보 구조, 규제 검토와 참고점수, 자료 부족을 나누어 보여 주는 방식은 직접 기획했고, 화면과 문구를 확인하며 고쳤습니다."
-              },
+              ai: { delegated: "랜딩페이지 디자인 구성 (ChatGPT Codex, Gemini)", own: "홈페이지와 보고서의 정보 구조, 규제 검토와 참고점수, 자료 부족을 나누어 보여 주는 방식은 직접 기획했고, 화면과 문구를 확인하며 고쳤습니다." },
               outcome: "다섯 영역의 요약과 상세 근거, 보고서 내보내기를 연결한 웹 대시보드를 팀으로 완성했습니다. 공개한 가상 기업의 미국 수출 보고서(2026-11-11 작성, 분석 기준일 2026-11-10)에는 조건부 검토 상태와 근거 반영률 56%가 표시되고, 자료가 없는 가격과 물류 항목은 자료 부족으로 나타납니다. 56%는 이 보고서 예시의 값입니다.",
               limits: "일부 통계 조회 실패와 기업 기재값의 유효기간 때문에 미평가 항목이 남아 있습니다. 참고점수와 근거 반영률은 수출 성공확률이나 판단 정확도를 뜻하지 않습니다. 통계의 대상 범위와 기준일, 입력 자료의 유효성은 추가로 확인해야 합니다.",
-              lessons: "처음 해 보는 일, 처음 접하는 개념, 처음 만드는 대시보드라 전체 흐름을 따라가기에도 벅찼습니다. 그 안에서 제가 할 수 있는 디자인에 집중했습니다."
+              lessons: "처음 해 보는 일, 처음 접하는 개념, 처음 만드는 대시보드라 전체 흐름을 따라가기에도 벅찼습니다. 그 안에서 제가 할 수 있는 디자인에 집중했습니다.",
+              background: "반도체 수출 사전 검토에는 규제, 시장성, 가격, 물류와 안정성 정보가 함께 필요합니다. 흩어진 자료를 모으는 것에 더해 규제에 따른 제약, 사업성 참고점수와 자료 부족이 서로 다른 판단 근거임을 보여주는 것이 과제였습니다.",
+              methodology: "교육 팀 프로젝트로 다섯 영역을 살펴보는 대시보드 프로토타입을 만들었습니다. 저는 홈페이지와 보고서의 정보 구조를 다듬고, 요약에서 상세 근거로 이어지도록 구성했습니다. 규제 검토를 참고점수와 분리하고 데이터 기준일과 확인하지 못한 정보를 표시했습니다.",
+              implications: "수출 검토를 돕는 화면에서는 점수뿐 아니라 근거의 범위와 비어 있는 정보도 읽을 수 있어야 한다는 점을 배웠습니다. 결과물은 사전 검토용 프로토타입이며, 실제 수출 성과나 규제 판단의 정확성을 검증한 사례는 아닙니다."
             },
             note: "팀 프로젝트입니다. 분석 엔진과 전체 서비스는 팀 결과물이며, 제 기여는 위에 적은 범위입니다."
           },
@@ -284,12 +351,15 @@ const SITE = {
               },
               outcome: "팀 시연 영상의 HOME 구간에서 캘린더, 이벤트 설정과 뉴스 화면을 확인할 수 있습니다. 별도로 제작한 베트남 소개 홈페이지와 홍보영상도 함께 공개합니다.",
               limits: "베트남 진출을 가정한 교육용 프로토타입이며, 발표자료의 업무 시간 비교는 실측이 아닌 추정치입니다. 발표에서는 뉴스를 모으는 데서 나아가 한정선의 진출에 어떤 의미가 있는지 보여 달라는 피드백을 받았습니다. 그래서 기회는 초록, 주의는 노랑, 위험은 빨강, 근거가 부족하면 회색으로 보류하는 영향 분류와 필터를 계획하고 있으며, 아직 구현하지 않았습니다.",
-              lessons: "두 번째 대시보드 프로젝트에서 처음으로 기능 하나를 직접 기획하고 구현까지 해 봤습니다. 이렇다 할 성과로 이어지지는 못했지만, 기획한 것을 동작하는 화면으로 만들어 본 첫 경험이었습니다."
+              lessons: "두 번째 대시보드 프로젝트에서 처음으로 기능 하나를 직접 기획하고 구현까지 해 봤습니다. 이렇다 할 성과로 이어지지는 못했지만, 기획한 것을 동작하는 화면으로 만들어 본 첫 경험이었습니다.",
+              background: "한국 식품 브랜드의 베트남 다낭 진출을 가정한 팀 프로젝트입니다. 현지 정보와 마케팅 준비 일정이 흩어져 있을 때 담당자가 다음 행동을 정하기 어렵다는 문제를 다뤘습니다.",
+              methodology: "저는 HOME에서 현지 일정, 뉴스와 업무 진척을 연결하고 목표일부터 준비 일정을 역산하도록 기획하고 구현했습니다. 탐색용 기사와 확인된 공지를 구분했으며, 별도로 베트남 소개 홈페이지와 홍보영상을 제작했습니다.",
+              implications: "정보를 한곳에 모으는 데서 나아가 준비 일정과 다음 행동으로 연결하는 구성이 중요하다는 점을 확인했습니다. 뉴스의 기회와 위험을 시각화하는 기능은 아직 개선 계획이며, 실제 시장 진출이나 마케팅 효과를 검증한 결과물은 아닙니다."
             },
             materials: [
-              {"id": "brandSite", "label": "베트남 소개 홈페이지 (교육용 프로토타입)"},
-              {"id": "homeDemo", "label": "HOME 시연 (팀 영상 발췌, 한국어)"},
-              {"id": "promo", "label": "베트남 홍보영상"}
+              { id: "brandSite", label: "베트남 소개 홈페이지 (교육용 프로토타입)" },
+              { id: "homeDemo", label: "HOME 시연 (팀 영상 발췌, 한국어)" },
+              { id: "promo", label: "베트남 홍보영상" }
             ],
             note: "팀 프로젝트입니다. 전체 대시보드는 팀 결과물이며, 제 기여는 HOME, 베트남 소개 홈페이지와 홍보영상을 중심으로 위에 적은 범위입니다."
           }
@@ -298,7 +368,6 @@ const SITE = {
         extraOpen: "펼쳐 보기",
         extraClose: "접기",
         extra: [
-          { name: "KOTRA 공개 재무자료 분석", meta: "2025.10 – 2025.11 | 대학 수업 프로젝트", desc: "ALIO의 2020–2024년 공개 재무자료를 정리하고 재무구조와 주요 지표 변화를 비교해 보고서와 발표자료로 구성" },
           { name: "KITA 보고서 스터디", meta: "학습 활동", desc: "국제통상 이슈를 읽고 발제 자료 준비. CPTPP 관련 보고서의 국외 파트 발제 준비와 소개글 작성" },
           { name: "그 외 활동", desc: "인문과학대학 학생회 서기 (2023), 목요채플 합창 봉사 (2025), 댄스동아리 Ars Amandi (2022), 카페 ZITTEN 근무 (2022–2023)" }
         ]
@@ -306,15 +375,17 @@ const SITE = {
       now: {
         label: "NOW",
         title: "지금 하고 있는 일",
-        asOf: "기준일 2026.11.10",
-        statement: "지금은 무역 실무와 AI 활용을 배우며, 국제 이슈에 대한 관심을 프로젝트와 기록으로 발전시키고 있습니다. 영어와 분석의 기초를 보완하고, 중국과 동아시아의 통상 및 정책 문제를 더 깊이 공부하기 위해 대학원 진학을 준비하고 있습니다.",
+        asOf: "기준일 2026.11.15",
+        statement: "무역 AX 교육과정에서 웹 대시보드를 만들고, 개인 프로젝트 Trade Data Lab을 개발하고 있습니다. 별도 기업 연계 캡스톤의 AI 상담 챗봇 개발을 준비하며, 영어와 분석의 기초를 보완하고 통상 및 정책 분야의 다음 학업과 실무 경험을 준비합니다.",
         doingTitle: "현재 진행 중",
         doing: [
-          "무역 AX마스터 과정 수강과 팀 프로젝트 경험 정리",
-          "영어와 TOEFL 학습",
-          "미국 국제관계 및 공공정책 분야 석사 진학 준비",
-          "국제기구와 국제정책 분야 인턴십 지원 및 진로 탐색",
-          "개인 포트폴리오와 국제 이슈에 관한 탐구 기록 축적"
+          "무역 AX마스터 과정 수강과 팀 프로젝트 경험 정리 (2026.12.18 수료 예정)",
+          "Trade Data Lab 개발과 뉴스, 정책 원문 및 교역 통계를 연결하는 서비스 구성",
+          "별도 기업 연계 캡스톤의 공공서비스 제공 기관 AI 상담 챗봇 개발 착수 준비",
+          "TOEFL 100+를 목표로 영어 학습과 경제학 및 통계 기초 보완",
+          "2027년 통상 분야 RA 또는 기업 GR 및 통상전략 인턴 지원을 목표로 준비",
+          "2028년 가을 미국 국제관계 및 공공정책 분야 석사 입학을 목표로 준비",
+          "국제기구와 국제정책 분야의 진로 탐색, 개인 포트폴리오와 탐구 기록 축적"
         ],
         interestsTitle: "관심 분야",
         interests: [
@@ -356,16 +427,16 @@ const SITE = {
       htmlLang: "en",
       header: { navigationLabel: "Main navigation", languageLabel: "Select language" },
       meta: {
-        title: "Juyeon Jung | Portfolio",
-        description: "Juyeon Jung's portfolio."
+        title: "Juyeon Jung | Global Trade & Policy Research",
+        description: "A record of building tools that connect trade news, original policy documents and trade statistics, alongside international collaboration experience."
       },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "Juyeon Jung",
-        headline: "I explore international trade issues and collaborate with AI to turn that exploration into tools.",
-        headlineBreakAfter: "I explore international trade issues",
-        intro: "I have studied China and East Asia and worked with overseas partners. Driven by an interest in trade and international policy, I read and organize information, and use AI to turn ideas into practical tools.",
+        headline: "I read trade news and build tools to view related policies and trade statistics at a glance.",
+        headlineBreakAfter: "I read trade news",
+        intro: "In the Trade AX training program, I am building web dashboards that make scattered information easier to review. In my personal project, Trade Data Lab, I am developing services that bring news, original policy documents and trade statistics together to explore country-level trade structures and changes before and after policy announcements. In a separate capstone with an industry partner, I am preparing to begin developing an AI advisory chatbot for an organization that provides public services.",
         politicalEconomyInterest: "International political economy",
         photo: "Profile photo",
         ctaProjects: "View projects",
@@ -374,20 +445,29 @@ const SITE = {
       strengths: {
         title: "Strengths",
         items: [
-          { title: "Global communication", desc: "Working with overseas partners in Chinese and English" },
-          { title: "Using AI", desc: "Turning ideas into web tools with generative AI" },
-          { title: "Persistence", desc: "Adapting my learning methods to see things through in an unfamiliar language environment" }
+          {
+            title: "Global & Regional Expertise",
+            desc: "Connecting my studies of China and East Asia, time studying in Taiwan and experience communicating with external partners in English."
+          },
+          {
+            title: "Trade & Market Data Analytics",
+            desc: "Building web tools to organize and compare information. My Python, pandas and NumPy skills are at an introductory study and practice level."
+          },
+          {
+            title: "Project & Stakeholder Management",
+            desc: "Organized requests and schedules across overseas media, institutions and production partners, and coordinated information with the operations team."
+          }
         ]
       },
       about: {
         label: "ABOUT",
-        title: "Connecting my studies of China and East Asia with international political economy and trade policy",
-        titleBreakAfter: "Connecting my studies of China and East Asia",
+        title: "Studying regions, working with partners and organizing trade information",
+        titleBreakAfter: "Studying regions,",
         body: [
-          "I majored in Chinese Language and Literature at Hanyang University, with a minor in Chinese Economy and Trade. At National Taiwan University, I took two years of major courses taught in Chinese and earned a dual degree in Chinese Literature.",
-          "As an intern on the Global Strategy Business Team at EXPORUM, I communicated with overseas media partners and supported the operation of international events.",
-          "I am currently in the Trade AX Master program at the Korea International Trade Association (KITA), learning trade practice, data use, and generative AI while building web tools.",
-          "In the long term, I want to deepen my understanding of China and East Asia, international political economy, international trade and trade policy, and strengthen my ability to explain international issues using source materials and data. I am preparing for master's programs in international relations and public policy in the U.S. and documenting my exploration through projects and notes."
+          "I majored in Chinese Language and Literature at Hanyang University, with a minor in Chinese Economy and Trade, and earned a dual degree in Chinese Literature at National Taiwan University. Two years of major coursework taught in Chinese in Taiwan gave me a foundation for understanding the language and societies of the Chinese-speaking world.",
+          "As an intern on EXPORUM's Global Strategy Business Team, I supported overseas media collaboration, invitations and scheduling for international speakers and institutions, and research on industry events. I gained experience organizing different stakeholders' requests and conditions and communicating verified information in writing.",
+          "I am currently building web dashboards in the Trade AX training program to support information discovery and comparison. In my personal project, Trade Data Lab, I am developing services that let users move from news to original policy documents and statistics and explore country-level trade structures and changes before and after policy announcements.",
+          "In a separate capstone with an industry partner, I plan to participate in developing an AI advisory chatbot in collaboration with an organization that provides public services. Through the project, I hope to gain experience understanding an institution's requirements and turning them into a working service."
         ],
         moreOpen: "Show education, certifications and tools",
         moreClose: "Close",
@@ -465,9 +545,44 @@ const SITE = {
               "Coordinated schedules and travel for overseas speakers; supported on-site guidance and event operations"
             ],
             caseText: "I compiled the final report by comparing collaboration terms with actual published results. I confirmed publication evidence for 9 media outlets for the STK exhibition and 7 for the TechCon conference. I kept screenshots and links of the confirmed posts. I distinguished items not carried out from unverified exposure so that follow-up tasks were clear.",
-            skills: ["Overseas partner communication", "Schedule coordination", "Progress tracking", "Evidence-based reporting"]
+            skills: ["Overseas partner communication", "Schedule coordination", "Progress tracking", "Evidence-based reporting"],
+            cases: [
+              {
+                id: "buyers",
+                title: "Comparing buyer programs across domestic and international events",
+                summary: "Compared 20 buyer program examples across domestic and international events by benefits, participation requirements and reimbursement arrangements. I summarized and reported how meetings, attendance and post-event evaluation were linked to support benefits.",
+                workflow: [
+                  "Collect examples",
+                  "Compare benefits and conditions",
+                  "Summarize differences",
+                  "Report findings for work reference"
+                ],
+                comparison: {
+                  headers: ["Comparison criterion", "What I examined"],
+                  rows: [
+                    ["Support benefits", "Flights and accommodation, transport, lounges and networking"],
+                    ["Participation requirements", "Minimum meetings, event attendance and post-event evaluation"],
+                    ["Reimbursement arrangements", "Support in advance or reimbursement after participation requirements are met"]
+                  ]
+                },
+                caption: "The comparison criteria are reconstructed from the April 2026 comparison sheet and work diary. This is not a guide to the programs' current participation rules."
+              },
+              {
+                id: "verification",
+                title: "Checking overseas media collaboration outcomes",
+                workflow: [
+                  "Check agreed provisions",
+                  "Compare actual publications",
+                  "Record links and screenshots",
+                  "Separate progress statuses"
+                ],
+                caption: "Reconstructed from progress reports issued in my name on June 16, 2026 and my work diary. I distinguished agreed provisions, items not carried out and items that could not be confirmed.",
+                summary: "I compiled the final report by comparing collaboration terms with actual published results. I confirmed publication evidence for 9 media outlets for the STK exhibition and 7 for the TechCon conference. I kept screenshots and links of the confirmed posts. I distinguished items not carried out from unverified exposure so that follow-up tasks were clear."
+              }
+            ]
           }
-        ]
+        ],
+        casesTitle: "Research and evidence-checking examples"
       },
       projects: {
         label: "PROJECTS",
@@ -484,50 +599,129 @@ const SITE = {
           limits: "Limits and next steps",
           lessons: "Looking back",
           report: "View sample company report (HTML in Korean)",
-          question: "Key question", contribution: "My key contribution",
-          period: "Period", type: "Type", status: "Status",
-          problem: "Problem", role: "My role",
-          moreOpen: "Details", moreClose: "Close", link: "View project"
+          question: "Key question",
+          contribution: "My key contribution",
+          period: "Period",
+          type: "Type",
+          status: "Status",
+          problem: "Problem",
+          role: "My role",
+          moreOpen: "Details",
+          moreClose: "Close",
+          link: "View project",
+          background: "Background & Problem",
+          methodology: "Methodology",
+          implications: "Findings & Implications",
+          components: "Component services",
+          working: "Working",
+          planned: "Planned",
+          legacyProject: "Earlier project record"
         },
         items: [
           {
-            id: "tradenews",
-            name: "Trade News Room | Learning trade through the news",
-            question: "How can the background and concepts behind world trade news be understood through connections with data, and how can that understanding be built into a learning record?",
-            contribution: "I chose real trade news stories as learning topics and planned a learning flow that moves from a news summary and sources to statistics, a simulator, quizzes and a learning log. I used AI for implementation and screen design. Five lessons are now published, and I keep adding more.",
-            summary: "A learning website that starts from world trade news to understand concepts and data together",
+            id: "tradedatalab",
+            name: "Trade Data Lab | Web tools for trade news, policy and trade statistics",
+            summary: "A personal project connecting scattered news, original policy documents and statistics around specific questions. I am building a set of services for exploring countries' trading relationships and changes in trade around policy announcements.",
+            question: "How can trade issues in the news be checked and compared using original policy documents and trade statistics?",
+            contribution: "I planned the project's questions, the role of each service and shared presentation principles. I built Trade News Room, Policyline and Tradeweave, and am planning the structure and connections of the remaining services.",
             period: "2026",
             type: "Personal project",
-            status: "Five lessons published; about five more planned",
-            problem: "I wanted to understand the background and concepts behind real trade issues, and keep a record of what I learned.",
+            status: "Trade News Room, Policyline and Tradeweave working / remaining components planned",
+            problem: "News, original policy documents and trade statistics are scattered across different sources. Different periods and units make it difficult to connect and compare the materials needed to examine an issue.",
             role: [
-              "Selected learning topics and news stories",
-              "Planned the flow from news summary and sources to statistics, simulator, quiz and learning log",
-              "Implementation and screen design with AI",
-              "Refining the screens and learning flow as new lessons are added"
+              "Planned a project organized around services for specific trade questions",
+              "Built and structured the features of Trade News Room, Policyline and Tradeweave",
+              "Defined principles for displaying sources, reference periods, units, facts and interpretations",
+              "Planned the further structure of Fact Desk, Report Plain and Trade Notebook"
             ],
             caseStudy: {
-              process: "Each lesson starts from one real trade news story. Learners read a summary and its sources, change the numbers in a statistical chart or simulator, then move on to a quiz, key terms and learning notes. I kept real statistical charts separate from simplified learning models, and the guidance explains that a chart alone cannot establish causes and that model outputs are not real forecasts.",
-              ai: {
-                delegated: "Implementation and screen design",
-                own: "I planned the topics and news selection, the structure and order of each lesson, and what goes on each screen, then reviewed and corrected the results."
-              },
-              outcome: "The public site has five lessons, each with a simulator tied to its news story. It also includes trade news browsing, a glossary, a trade map, a learning log saved in the browser and a guide chatbot that finds content within the site.",
-              limits: "Learning records are stored in the current browser without account syncing, and the guide chatbot uses rules to find content within the site. The simulators are simplified learning models; the accuracy of external news and statistics and the learning effect have not been separately verified. I plan to add about five more lessons.",
-              lessons: "I built it for my own study, but without enough time I could not maintain it steadily, and I have barely used it for actual studying yet. I learned that building a tool and continuing to use it are different things. I want to add more lessons and develop it into a tool I actually use."
+              background: "Examining a trade issue requires finding news, government announcements and trade statistics separately. Different periods and units also make direct comparison difficult. I planned a way to bring the necessary materials together around specific questions so users can move between original documents and figures.",
+              methodology: "Trade News Room supports learning from news and trade concepts, Policyline compares trade values before and after policy announcements, and Tradeweave explores trading partners and concentration. Shared principles are to display each service's sources, reference periods and units, and to distinguish confirmed facts from interpretation.",
+              implications: "The project helps users check original documents and figures before accepting a news account, and identify questions that need further examination. Changes before and after an announcement alone do not establish policy effects or confirm rerouted exports. The services explain both what the data can show and the uncertainty that remains.",
+              limits: "The full structure in the plan is a target state. Data connections and automatic updates must be distinguished by what each service actually implements. Trade changes around an announcement are not treated as proof of a policy's causal effect or export rerouting."
             },
-            rooms: [
-              { id: "urea", title: "Urea shortage and import diversification (2021)", tool: "Sourcing share simulator" },
-              { id: "graphite", title: "China's graphite export licensing (2023)", tool: "Supply cut and price simulator" },
-              { id: "gallium", title: "Gallium and germanium export licensing (2023)", tool: "Inventory and licensing wait simulator" },
-              { id: "tariff", title: "The Korea–US trade deal and the 15% tariff (2025)", tool: "Tariff incidence simulator" },
-              { id: "redsea", title: "Red Sea attacks and the Cape of Good Hope detour (2023)", tool: "Route and freight rate simulator" }
+            components: [
+              {
+                id: "tradenews",
+                name: "Trade News Room",
+                status: "working",
+                description: "A service for exploring trade news and related concepts through learning rooms, graphs and quizzes."
+              },
+              {
+                id: "policyline",
+                name: "Policyline",
+                status: "working",
+                description: "A service for exploring changes in trade values before and after policy announcements."
+              },
+              {
+                id: "tradeweave",
+                name: "Tradeweave",
+                status: "working",
+                description: "A service for exploring countries' trading partners and trade concentration."
+              },
+              {
+                id: "factdesk",
+                name: "Fact Desk",
+                status: "planned",
+                description: "A planned feature within Trade News Room separating confirmed facts, interpretation and uncertainty."
+              },
+              {
+                id: "reportplain",
+                name: "Report Plain",
+                status: "planned",
+                description: "A planned service organizing reports' claims, evidence and limits alongside original page references."
+              },
+              {
+                id: "tradenotebook",
+                name: "Trade Notebook",
+                status: "planned",
+                description: "A planned format for publishing analytical notes structured around a question, data, findings and limitations."
+              }
             ],
+            note: "Trade Data Lab is an evolving personal project. Fact Desk is planned as a feature within Trade News Room; Report Plain and Trade Notebook are at the planning stage.",
+            legacyProject: {
+              id: "tradenews",
+              name: "Trade News Room | Learning trade through the news",
+              question: "How can the background and concepts behind world trade news be understood through connections with data, and how can that understanding be built into a learning record?",
+              contribution: "I chose real trade news stories as learning topics and planned a learning flow that moves from a news summary and sources to statistics, a simulator, quizzes and a learning log. I used AI for implementation and screen design. Five lessons are now published, and I keep adding more.",
+              summary: "A learning website that starts from world trade news to understand concepts and data together",
+              period: "2026",
+              type: "Personal project",
+              status: "Five lessons published; about five more planned",
+              problem: "I wanted to understand the background and concepts behind real trade issues, and keep a record of what I learned.",
+              role: [
+                "Selected learning topics and news stories",
+                "Planned the flow from news summary and sources to statistics, simulator, quiz and learning log",
+                "Implementation and screen design with AI",
+                "Refining the screens and learning flow as new lessons are added"
+              ],
+              caseStudy: {
+                process: "Each lesson starts from one real trade news story. Learners read a summary and its sources, change the numbers in a statistical chart or simulator, then move on to a quiz, key terms and learning notes. I kept real statistical charts separate from simplified learning models, and the guidance explains that a chart alone cannot establish causes and that model outputs are not real forecasts.",
+                ai: {
+                  delegated: "Implementation and screen design",
+                  own: "I planned the topics and news selection, the structure and order of each lesson, and what goes on each screen, then reviewed and corrected the results."
+                },
+                outcome: "The public site has five lessons, each with a simulator tied to its news story. It also includes trade news browsing, a glossary, a trade map, a learning log saved in the browser and a guide chatbot that finds content within the site.",
+                limits: "Learning records are stored in the current browser without account syncing, and the guide chatbot uses rules to find content within the site. The simulators are simplified learning models; the accuracy of external news and statistics and the learning effect have not been separately verified. I plan to add about five more lessons.",
+                lessons: "I built it for my own study, but without enough time I could not maintain it steadily, and I have barely used it for actual studying yet. I learned that building a tool and continuing to use it are different things. I want to add more lessons and develop it into a tool I actually use."
+              },
+              rooms: [
+                { id: "urea", title: "Urea shortage and import diversification (2021)", tool: "Sourcing share simulator" },
+                { id: "graphite", title: "China's graphite export licensing (2023)", tool: "Supply cut and price simulator" },
+                { id: "gallium", title: "Gallium and germanium export licensing (2023)", tool: "Inventory and licensing wait simulator" },
+                { id: "tariff", title: "The Korea–US trade deal and the 15% tariff (2025)", tool: "Tariff incidence simulator" },
+                { id: "redsea", title: "Red Sea attacks and the Cape of Good Hope detour (2023)", tool: "Route and freight rate simulator" }
+              ],
+              materials: [
+                { id: "statistics", label: "Statistics and source guidance (Korean UI)" },
+                { id: "simulation", label: "Sourcing simulator (Korean UI)" }
+              ],
+              note: "A personal project I continue to develop. The site is in Korean."
+            },
             materials: [
-              {"id": "statistics", "label": "Statistics and source guidance (Korean UI)"},
-              {"id": "simulation", "label": "Sourcing simulator (Korean UI)"}
-            ],
-            note: "A personal project I continue to develop. The site is in Korean."
+              { id: "statistics", label: "Trade News Room: Statistics and source guidance (Korean UI)" },
+              { id: "simulation", label: "Trade News Room: Sourcing simulator (Korean UI)" }
+            ]
           },
           {
             id: "axport",
@@ -553,7 +747,10 @@ const SITE = {
               },
               outcome: "The team completed a web dashboard linking summaries and detailed evidence for five areas with report export. The published sample U.S. export report (created November 11, 2026; analysis reference date November 10, 2026) shows a conditional review status and 56% evidence coverage, and marks price and logistics items without data as insufficient. The 56% is a value from this sample report.",
               limits: "Failed statistical lookups and the validity period of company inputs leave some items unevaluated. The reference score and evidence coverage do not represent export success probability or decision accuracy. Statistical scope, reference dates and input validity still need checking.",
-              lessons: "New tasks, unfamiliar concepts and my first dashboard made it hard even to keep up with the overall flow. Within that, I focused on the design work I could do."
+              lessons: "New tasks, unfamiliar concepts and my first dashboard made it hard even to keep up with the overall flow. Within that, I focused on the design work I could do.",
+              background: "Preliminary semiconductor export reviews require information on regulation, market potential, pricing, logistics and stability. The challenge was to bring scattered material together while making clear that regulatory restrictions, business reference scores and missing evidence support different kinds of judgments.",
+              methodology: "The training team built a dashboard prototype covering five areas. I refined the information structure of the homepage and report, linking summaries to detailed evidence. I separated regulatory review from reference scores and displayed data reference dates and information that could not be confirmed.",
+              implications: "I learned that an export review interface needs to show the scope of its evidence and the gaps as well as its scores. The output is a preliminary review prototype, not a validated record of export performance or regulatory assessment accuracy."
             },
             note: "Team project. The analysis engine and the overall service are team work; my contribution is the scope listed above."
           },
@@ -582,12 +779,15 @@ const SITE = {
               },
               outcome: "The HOME section of the team demo video shows the calendar, event settings and news screens. The separately created Vietnam introduction website and promotional video are also provided.",
               limits: "This is a training prototype for an assumed Vietnam market entry, and the work-time comparisons in the presentation are estimates, not measurements. Presentation feedback asked me to show what the news means for Hanjungsun's entry, beyond collecting it. I am planning an impact classification and filter with opportunity in green, caution in yellow, risk in red and undetermined items in gray; it is not implemented yet.",
-              lessons: "In my second dashboard project, I planned and implemented a feature myself for the first time. It did not lead to notable results, but it was my first experience turning something I planned into a working screen."
+              lessons: "In my second dashboard project, I planned and implemented a feature myself for the first time. It did not lead to notable results, but it was my first experience turning something I planned into a working screen.",
+              background: "This team project assumed a Korean food brand's entry into Da Nang, Vietnam. It addressed the difficulty of deciding what to do next when local information and marketing preparation schedules are scattered.",
+              methodology: "I planned and implemented HOME to connect local events, news and work progress, with preparation schedules counted back from a target date. I separated articles for browsing from confirmed announcements and also created the Vietnam introduction website and promotional video.",
+              implications: "I found that bringing information together is most useful when it connects to preparation schedules and next actions. Visualizing news as opportunities and risks remains a planned improvement; the prototype does not demonstrate actual market entry or validated marketing effectiveness."
             },
             materials: [
-              {"id": "brandSite", "label": "Vietnam introduction website (training prototype)"},
-              {"id": "homeDemo", "label": "HOME demo (team video excerpt, Korean)"},
-              {"id": "promo", "label": "Vietnam promotional video"}
+              { id: "brandSite", label: "Vietnam introduction website (training prototype)" },
+              { id: "homeDemo", label: "HOME demo (team video excerpt, Korean)" },
+              { id: "promo", label: "Vietnam promotional video" }
             ],
             note: "Team project. The full dashboard is a team output; my contribution is the scope listed above, centered on HOME, the Vietnam introduction website and the promotional video."
           }
@@ -596,23 +796,31 @@ const SITE = {
         extraOpen: "Show",
         extraClose: "Close",
         extra: [
-          { name: "KOTRA public financial data analysis", meta: "Oct 2025 – Nov 2025 | University course project", desc: "Organized ALIO's 2020–2024 public financial data, compared changes in financial structure and key indicators, and built a report and presentation" },
-          { name: "KITA report study group", meta: "Study activity", desc: "Read about international trade issues and prepared discussion materials. Prepared to present the overseas section of a CPTPP-related report and wrote an introductory text" },
-          { name: "Other activities", desc: "Student council secretary, College of Humanities (2023); chapel choir volunteer (2025); Ars Amandi dance club (2022); Cafe ZITTEN (2022–2023)" }
+          {
+            name: "KITA report study group",
+            meta: "Study activity",
+            desc: "Read about international trade issues and prepared discussion materials. Prepared to present the overseas section of a CPTPP-related report and wrote an introductory text"
+          },
+          {
+            name: "Other activities",
+            desc: "Student council secretary, College of Humanities (2023); chapel choir volunteer (2025); Ars Amandi dance club (2022); Cafe ZITTEN (2022–2023)"
+          }
         ]
       },
       now: {
         label: "NOW",
         title: "What I'm doing now",
-        asOf: "As of Nov 10, 2026",
-        statement: "I am learning trade practice and how to use AI, and developing my interest in international issues through projects and notes. I am strengthening my English and analytical foundations while preparing for graduate school to study trade and policy issues in China and East Asia in greater depth.",
+        asOf: "As of Nov 15, 2026",
+        statement: "I am building web dashboards in the Trade AX training program and developing my personal project, Trade Data Lab. I am preparing to begin an AI advisory chatbot in a separate industry-linked capstone, strengthening my English and analytical foundations, and preparing for further study and work in trade and policy.",
         doingTitle: "In progress",
         doing: [
-          "Taking the Trade AX Master program and documenting team project experience",
-          "Studying English and preparing for the TOEFL",
-          "Preparing for master's programs in international relations and public policy in the U.S.",
-          "Applying for internships and exploring careers in international organizations and international policy",
-          "Building my personal portfolio and documenting my exploration of international issues"
+          "Taking the Trade AX Master program and documenting team projects (completion expected Dec 18, 2026)",
+          "Developing Trade Data Lab and services that connect news, original policy documents and trade statistics",
+          "Preparing to begin a separate industry-linked capstone chatbot for a public-service organization",
+          "Studying toward a TOEFL score of 100+ and strengthening foundations in economics and statistics",
+          "Preparing to apply for trade research assistant roles or corporate government relations and trade strategy internships in 2027",
+          "Preparing for the goal of fall 2028 entry to U.S. master's programs in international relations and public policy",
+          "Exploring international organization and policy careers and building a portfolio and exploration notes"
         ],
         interestsTitle: "Interests",
         interests: [
@@ -653,17 +861,14 @@ const SITE = {
     "zh-Hans": {
       htmlLang: "zh-CN",
       header: { navigationLabel: "主导航", languageLabel: "选择语言" },
-      meta: {
-        title: "郑主缘 Juyeon Jung | Portfolio",
-        description: "郑主缘（Juyeon Jung）的个人作品集。"
-      },
+      meta: { title: "郑主缘 Juyeon Jung | 国际贸易与政策探索", description: "记录连接贸易新闻、政策原文与贸易统计的工具制作，以及国际协作经验。" },
       nav: { about: "关于我", experience: "经历", projects: "项目", now: "近况", notes: "探索记录", contact: "联系" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "郑主缘",
-        headline: "我探索国际贸易议题，并与 AI 协作，将探索转化为工具。",
-        headlineBreakAfter: "我探索国际贸易议题，",
-        intro: "我学习中国与东亚，并有与海外合作伙伴协作的经验。基于对贸易与国际政策的兴趣，我阅读并整理资料，运用AI把想法变成具体的工具。",
+        headline: "我阅读贸易新闻，并开发工具，让相关政策与贸易统计一目了然。",
+        headlineBreakAfter: "我阅读贸易新闻，",
+        intro: "我正在贸易AX培训课程中制作网页仪表板，将分散的信息整理得更便于查看。在个人项目Trade Data Lab中，我汇集新闻、政策原文与贸易统计，开发用于观察各国贸易结构及政策发布前后变化的服务。在另一个企业合作结业项目中，我计划开始为提供公共服务的机构开发AI咨询聊天机器人。",
         politicalEconomyInterest: "国际政治经济",
         photo: "个人照片",
         ctaProjects: "查看项目",
@@ -672,20 +877,20 @@ const SITE = {
       strengths: {
         title: "优势",
         items: [
-          { title: "全球沟通", desc: "用中文和英文与海外合作伙伴沟通" },
-          { title: "AI运用", desc: "借助生成式AI把想法实现为网页工具" },
-          { title: "坚持", desc: "在陌生的语言环境中调整学习方法，坚持到底" }
+          { title: "全球视野与区域理解", desc: "结合中国与东亚相关学习、在台湾修读课程，以及用英语与外部伙伴沟通的经验。" },
+          { title: "贸易与市场数据分析", desc: "制作整理和比较资料的网页工具。Python、pandas与NumPy仍处于基础学习和练习阶段。" },
+          { title: "项目与利益相关方协调", desc: "整理海外媒体、机构和制作合作方的需求及日程，并与运营团队协调信息传递。" }
         ]
       },
       about: {
         label: "ABOUT",
-        title: "以中国与东亚的学习为基础，探索国际政治经济与贸易政策",
-        titleBreakAfter: "以中国与东亚的学习为基础，",
+        title: "学习区域知识，参与实际协作，整理贸易信息",
+        titleBreakAfter: "学习区域知识，",
         body: [
-          "我在汉阳大学主修中语中文学，辅修中国经济通商学。在国立台湾大学，我用两年时间以中文修读专业课程，并取得中国文学系双学位。",
-          "之后，我在EXPORUM全球战略事业组担任实习生，负责与海外媒体合作伙伴沟通，并协助国际活动的运营。",
-          "目前我正在参加韩国贸易协会的贸易AX大师课程，学习贸易实务、数据运用和生成式AI，积累制作网页工具的经验。",
-          "长期来看，我希望深入学习中国与东亚、国际政治经济、国际贸易与贸易政策，提升依据资料和数据解释国际议题的能力。我正在准备申请美国国际关系与公共政策领域的硕士课程，并将探索内容逐步整理为项目与记录。"
+          "我在汉阳大学主修中语中文学，辅修中国经济通商学，并在国立台湾大学取得中国文学双学位。在台湾用两年时间以中文修读专业课程，为理解华语地区的语言与社会打下了基础。",
+          "作为EXPORUM全球战略事业组的实习生，我协助海外媒体合作、海外演讲嘉宾与机构的邀请及日程协调，并开展产业活动资料调查。我积累了整理不同合作方的需求与条件、将确认后的信息写成文档并传达的实务经验。",
+          "目前，我在贸易AX培训课程中制作支持信息查找与比较的网页仪表板。在个人项目Trade Data Lab中，我开发的服务让用户在阅读新闻后查看相关政策原文与统计，并观察各国贸易结构及政策发布前后的变化。",
+          "在另一个企业合作结业项目中，我计划参与AI咨询聊天机器人的开发，与提供公共服务的机构合作。我希望通过项目积累理解机构需求并将其具体化为实际服务的经验。"
         ],
         moreOpen: "展开学历、证书与工具",
         moreClose: "收起",
@@ -763,9 +968,27 @@ const SITE = {
               "协调海外演讲嘉宾的日程和行程，支持现场引导与活动运营"
             ],
             caseText: "我将合作条件与实际发布结果进行对照，整理最终报告。确认了STK展会9家媒体、TechCon大会7家媒体的刊登依据。我保留了已确认发布内容的截图和链接，并将未执行事项与未经确认的曝光分别记录，以便明确后续工作。",
-            skills: ["海外合作伙伴沟通", "日程协调", "进度管理", "基于证据的汇报方式"]
+            skills: ["海外合作伙伴沟通", "日程协调", "进度管理", "基于证据的汇报方式"],
+            cases: [
+              {
+                id: "buyers",
+                title: "国内外买家项目比较调查",
+                summary: "按照支持福利、参与条件和费用结算方式，比较了国内外20个买家项目案例，整理并汇报了商务洽谈、出席与活动后评价如何同支持福利联系起来。",
+                workflow: ["收集案例", "比较福利与条件", "归纳差异", "提交工作参考资料"],
+                comparison: { headers: ["比较项目", "核对内容"], rows: [["支持福利", "机票与住宿、交通支持、休息室与交流活动"], ["参与条件", "最低洽谈次数、活动出席与活动后评价"], ["结算方式", "提前提供支持，或满足参与条件后报销费用"]] },
+                caption: "根据2026年4月的比较表与工作日志重构调查项目，不是各项目当前参与规则的说明。"
+              },
+              {
+                id: "verification",
+                title: "核对海外媒体合作结果",
+                workflow: ["核对合作条件", "对照实际发布结果", "记录链接与页面", "区分进展状态"],
+                caption: "根据2026年6月16日署有本人姓名的进展报告和工作日志重构，区分约定条件、未执行事项与无法确认的事项。",
+                summary: "我将合作条件与实际发布结果进行对照，整理最终报告。确认了STK展会9家媒体、TechCon大会7家媒体的刊登依据。我保留了已确认发布内容的截图和链接，并将未执行事项与未经确认的曝光分别记录，以便明确后续工作。"
+              }
+            ]
           }
-        ]
+        ],
+        casesTitle: "资料调查与依据核对案例"
       },
       projects: {
         label: "PROJECTS",
@@ -782,50 +1005,91 @@ const SITE = {
           limits: "局限与下一步",
           lessons: "回顾",
           report: "查看虚拟企业报告（韩文HTML）",
-          question: "核心问题", contribution: "我的核心贡献",
-          period: "时间", type: "类型", status: "状态",
-          problem: "想解决的问题", role: "我的工作",
-          moreOpen: "查看详情", moreClose: "收起", link: "查看项目"
+          question: "核心问题",
+          contribution: "我的核心贡献",
+          period: "时间",
+          type: "类型",
+          status: "状态",
+          problem: "想解决的问题",
+          role: "我的工作",
+          moreOpen: "查看详情",
+          moreClose: "收起",
+          link: "查看项目",
+          background: "背景与问题",
+          methodology: "研究与实现方法",
+          implications: "发现与启示",
+          components: "组成服务",
+          working: "已确认可运行",
+          planned: "规划阶段",
+          legacyProject: "原有项目记录"
         },
         items: [
           {
-            id: "tradenews",
-            name: "Trade News Room | 新闻里的贸易学习室",
-            question: "如何将全球贸易新闻的背景与概念同数据联系起来加以理解，并将这些理解逐步积累为学习记录？",
-            contribution: "我挑选真实的贸易新闻作为学习主题，亲自策划了从新闻摘要与来源出发，依次连接统计、模拟器、测验和学习记录的学习流程。功能实现与页面设计借助了AI。目前已公开5个学习室，并在持续增加。",
-            summary: "以全球贸易新闻为起点，同时理解概念与数据的学习网站",
+            id: "tradedatalab",
+            name: "Trade Data Lab | 结合贸易新闻、政策与贸易统计的网页工具",
+            summary: "这是一个围绕具体问题，将分散的新闻、政策原文与统计资料连接起来的个人项目。我正在构建一组服务，让使用者可以直接查看各国贸易结构，以及政策发布前后的贸易变化。",
+            question: "如何通过政策原文与贸易统计，核查并比较新闻中的贸易议题？",
+            contribution: "我规划了项目的问题、各项服务的分工与共同的信息呈现原则，制作了Trade News Room、Policyline和Tradeweave，并正在整理其他服务的结构与连接方式。",
             period: "2026",
             type: "个人项目",
-            status: "已公开5个学习室，计划再增加5个左右",
-            problem: "我希望理解真实贸易议题背后的背景与相关概念，并记录学习内容。",
+            status: "Trade News Room、Policyline、Tradeweave可运行 / 其余部分规划中",
+            problem: "新闻、政策原文与贸易统计分散在不同来源中，资料的时间范围和单位也各不相同，难以将研究一个议题所需的资料连接起来进行比较。",
             role: [
-              "选定学习主题与新闻",
-              "策划从新闻摘要与来源到统计、模拟器、测验和学习记录的学习流程",
-              "借助AI完成功能实现与页面设计",
-              "在增加学习室的过程中改进页面与学习流程"
+              "将贸易议题拆分为围绕具体问题的服务，规划整体项目",
+              "制作Trade News Room、Policyline和Tradeweave，并组织其功能",
+              "制定来源、基准时间、单位以及事实与解读的呈现原则",
+              "规划Fact Desk、Report Plain和Trade Notebook的后续结构"
             ],
             caseStudy: {
-              process: "每个学习室都以一则真实的贸易新闻为起点。学习者先阅读新闻摘要与来源，在统计图表或模拟器中亲自调整数字，再进行测验、术语学习与学习笔记。我将真实的统计图表与简化的学习模型分开呈现，并提示不能仅凭图表断定变化原因，也不能把模型计算值当作实际预测。",
-              ai: {
-                delegated: "功能实现与页面设计",
-                own: "学习主题与新闻的选定、学习室的结构与顺序、页面要呈现的内容均由我亲自策划，并在检查成果后加以修改。"
-              },
-              outcome: "公开网站上已有5个学习室，每个学习室都配有一个与新闻相关的模拟器。网站还实现了贸易新闻浏览、术语词典、贸易地图、保存在浏览器中的学习记录，以及查找站内学习内容的引导聊天机器人。",
-              limits: "学习记录保存在当前浏览器中，不支持账户同步；引导聊天机器人通过规则查找站内内容。模拟器是简化的学习模型，外部新闻与统计的准确性及学习效果尚未另行验证。我计划再增加5个左右的学习室。",
-              lessons: "这是我为自学而做的网站，但由于时间不足，没能持续维护，实际学习中也还几乎没有用上。我体会到，做出一个工具和持续使用它是两回事。我希望继续充实学习室，把它发展成自己真正会用的工具。"
+              background: "核查贸易议题时，需要分别查找新闻、政府公告与贸易统计。不同资料的时间范围和单位也使直接比较变得困难。因此，我规划了按问题汇集所需资料的方式，让使用者能够对照原文与数字进行查看。",
+              methodology: "Trade News Room负责新闻与贸易概念的学习，Policyline用于比较政策发布前后的贸易额，Tradeweave用于查看贸易伙伴与贸易集中度。共同原则是标明各项服务的来源、基准时间和单位，并区分已确认的事实与解读。",
+              implications: "项目帮助使用者在接受新闻中的解释之前，先核对相关原文与数字，并找到需要继续查看的问题。仅凭政策发布前后的变化，不能确定政策效果或确认转道出口；服务同时说明数据能反映的范围与仍然存在的不确定性。",
+              limits: "规划书中的整体结构是最终目标，各项数据连接与自动更新的实际实现范围应按服务分别说明。不能将政策发布同期的贸易变化视为政策因果效果或转道出口的证明。"
             },
-            rooms: [
-              { id: "urea", title: "尿素短缺与进口来源多元化（2021）", tool: "采购比例模拟器" },
-              { id: "graphite", title: "中国石墨出口许可制（2023）", tool: "供应减少与价格模拟器" },
-              { id: "gallium", title: "镓和锗出口许可制（2023）", tool: "库存与许可等待期模拟器" },
-              { id: "tariff", title: "韩美贸易协议与15%关税（2025）", tool: "关税归宿模拟器" },
-              { id: "redsea", title: "红海危机与绕行好望角（2023）", tool: "航线与运费模拟器" }
+            components: [
+              { id: "tradenews", name: "Trade News Room", status: "working", description: "通过学习室、图表与测验，查看贸易新闻及相关概念的服务。" },
+              { id: "policyline", name: "Policyline", status: "working", description: "查看政策发布前后贸易额变化的服务。" },
+              { id: "tradeweave", name: "Tradeweave", status: "working", description: "查看各国贸易伙伴与贸易集中度的服务。" },
+              { id: "factdesk", name: "Fact Desk", status: "planned", description: "计划在Trade News Room内加入的功能，用于区分已确认的事实、解读与不确定之处。" },
+              { id: "reportplain", name: "Report Plain", status: "planned", description: "正在规划将报告的主张、证据与局限同原文页码一起整理的服务。" },
+              { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "正在规划发布按问题、数据、发现与局限组织的分析笔记。" }
             ],
+            note: "Trade Data Lab是一个持续扩展的个人项目。Fact Desk是Trade News Room内部的计划功能，Report Plain与Trade Notebook仍在规划中。",
+            legacyProject: {
+              id: "tradenews",
+              name: "Trade News Room | 新闻里的贸易学习室",
+              question: "如何将全球贸易新闻的背景与概念同数据联系起来加以理解，并将这些理解逐步积累为学习记录？",
+              contribution: "我挑选真实的贸易新闻作为学习主题，亲自策划了从新闻摘要与来源出发，依次连接统计、模拟器、测验和学习记录的学习流程。功能实现与页面设计借助了AI。目前已公开5个学习室，并在持续增加。",
+              summary: "以全球贸易新闻为起点，同时理解概念与数据的学习网站",
+              period: "2026",
+              type: "个人项目",
+              status: "已公开5个学习室，计划再增加5个左右",
+              problem: "我希望理解真实贸易议题背后的背景与相关概念，并记录学习内容。",
+              role: ["选定学习主题与新闻", "策划从新闻摘要与来源到统计、模拟器、测验和学习记录的学习流程", "借助AI完成功能实现与页面设计", "在增加学习室的过程中改进页面与学习流程"],
+              caseStudy: {
+                process: "每个学习室都以一则真实的贸易新闻为起点。学习者先阅读新闻摘要与来源，在统计图表或模拟器中亲自调整数字，再进行测验、术语学习与学习笔记。我将真实的统计图表与简化的学习模型分开呈现，并提示不能仅凭图表断定变化原因，也不能把模型计算值当作实际预测。",
+                ai: { delegated: "功能实现与页面设计", own: "学习主题与新闻的选定、学习室的结构与顺序、页面要呈现的内容均由我亲自策划，并在检查成果后加以修改。" },
+                outcome: "公开网站上已有5个学习室，每个学习室都配有一个与新闻相关的模拟器。网站还实现了贸易新闻浏览、术语词典、贸易地图、保存在浏览器中的学习记录，以及查找站内学习内容的引导聊天机器人。",
+                limits: "学习记录保存在当前浏览器中，不支持账户同步；引导聊天机器人通过规则查找站内内容。模拟器是简化的学习模型，外部新闻与统计的准确性及学习效果尚未另行验证。我计划再增加5个左右的学习室。",
+                lessons: "这是我为自学而做的网站，但由于时间不足，没能持续维护，实际学习中也还几乎没有用上。我体会到，做出一个工具和持续使用它是两回事。我希望继续充实学习室，把它发展成自己真正会用的工具。"
+              },
+              rooms: [
+                { id: "urea", title: "尿素短缺与进口来源多元化（2021）", tool: "采购比例模拟器" },
+                { id: "graphite", title: "中国石墨出口许可制（2023）", tool: "供应减少与价格模拟器" },
+                { id: "gallium", title: "镓和锗出口许可制（2023）", tool: "库存与许可等待期模拟器" },
+                { id: "tariff", title: "韩美贸易协议与15%关税（2025）", tool: "关税归宿模拟器" },
+                { id: "redsea", title: "红海危机与绕行好望角（2023）", tool: "航线与运费模拟器" }
+              ],
+              materials: [
+                { id: "statistics", label: "统计与来源说明页面（韩语界面）" },
+                { id: "simulation", label: "采购比例模拟器（韩语界面）" }
+              ],
+              note: "这是我持续完善的个人项目，网站内容为韩语。"
+            },
             materials: [
-              {"id": "statistics", "label": "统计与来源说明页面（韩语界面）"},
-              {"id": "simulation", "label": "采购比例模拟器（韩语界面）"}
-            ],
-            note: "这是我持续完善的个人项目，网站内容为韩语。"
+              { id: "statistics", label: "Trade News Room: 统计与来源说明页面（韩语界面）" },
+              { id: "simulation", label: "Trade News Room: 采购比例模拟器（韩语界面）" }
+            ]
           },
           {
             id: "axport",
@@ -837,21 +1101,16 @@ const SITE = {
             type: "贸易AX大师课程 团队项目",
             status: "原型成果",
             problem: "法规、市场性、价格、物流、稳定性等信息分散各处。即使汇集到一个页面，如果监管限制、商业评分与缺少资料的项目被以同等分量解读，也可能误导判断。",
-            role: [
-              "主页策划与UI/UX设计",
-              "响应式布局与多语言页面",
-              "PDF报告与分析报告的结构和措辞改进",
-              "服务介绍与演示资料制作"
-            ],
+            role: ["主页策划与UI/UX设计", "响应式布局与多语言页面", "PDF报告与分析报告的结构和措辞改进", "服务介绍与演示资料制作"],
             caseStudy: {
               process: "主页通过服务介绍和使用说明展示五个审查领域及使用流程。报告从摘要连接到详细依据，并将监管审查与商业可行性参考分数分开。缺少资料的项目标为资料不足，同时显示数据基准日期。",
-              ai: {
-                delegated: "落地页设计布局（ChatGPT Codex、Gemini）",
-                own: "主页与报告的信息结构，以及将监管审查、参考分数与资料不足分开呈现的方式，均由我亲自策划，并在核查页面与措辞后加以修改。"
-              },
+              ai: { delegated: "落地页设计布局（ChatGPT Codex、Gemini）", own: "主页与报告的信息结构，以及将监管审查、参考分数与资料不足分开呈现的方式，均由我亲自策划，并在核查页面与措辞后加以修改。" },
               outcome: "团队完成了将五个领域的摘要、详细依据与报告导出连接起来的网页仪表板。公开的虚拟企业对美出口报告（2026-11-11生成，分析基准日2026-11-10）显示有条件审查状态与56%的依据覆盖比例，缺少资料的价格和物流项目标为资料不足。56%是这份示例报告中的数值。",
               limits: "部分统计查询失败及企业填报值的有效期等因素，使部分项目尚未评估。参考分数和依据覆盖比例不代表出口成功概率或判断准确性。仍需核查统计范围、基准日期与输入资料的有效性。",
-              lessons: "一切都是第一次：第一次做的工作、第一次接触的概念、第一次制作的仪表板，光是跟上整体流程就很吃力。在这样的情况下，我专注于自己能做好的设计工作。"
+              lessons: "一切都是第一次：第一次做的工作、第一次接触的概念、第一次制作的仪表板，光是跟上整体流程就很吃力。在这样的情况下，我专注于自己能做好的设计工作。",
+              background: "半导体出口初步审查需要综合法规、市场潜力、价格、物流与稳定性信息。问题不仅是汇集分散资料，还要说明法规限制、商业参考分数和资料不足代表不同的判断依据。",
+              methodology: "培训团队制作了覆盖五个领域的仪表板原型。我改进首页和报告的信息结构，使摘要能够连接到详细依据，并将法规审查与参考分数分开，标明数据基准日和无法确认的信息。",
+              implications: "我认识到，辅助出口审查的界面不仅要呈现分数，还应展示依据的适用范围与资料空缺。成果是初步审查原型，不是对实际出口成效或法规判断准确性的验证。"
             },
             note: "团队项目。分析引擎与整体服务为团队成果，我的贡献为上述范围。"
           },
@@ -865,27 +1124,21 @@ const SITE = {
             type: "贸易AX大师课程 团队项目",
             status: "展示版本原型，新闻影响可视化为后续计划",
             problem: "当地信息与营销活动准备日程分散，难以把握下一步该做什么。",
-            role: [
-              "HOME页面的策划与实现",
-              "以目标日期为基准倒推准备日程的日历",
-              "在一个页面整合当地日程、新闻与工作进度",
-              "设计将新闻分为文章列表与已确认公告的标准",
-              "策划并制作越南介绍网站与宣传视频"
-            ],
+            role: ["HOME页面的策划与实现", "以目标日期为基准倒推准备日程的日历", "在一个页面整合当地日程、新闻与工作进度", "设计将新闻分为文章列表与已确认公告的标准", "策划并制作越南介绍网站与宣传视频"],
             caseStudy: {
               process: "团队仪表板将当地调研与日程、内容制作、创作者合作和效果管理相连接。我在HOME中汇集当地日程、新闻与准备状态，帮助用户确定下一步行动。我将便于探索的新闻列表与已确认的公告分开，区分信息发现与判断依据的核查。",
-              ai: {
-                delegated: "HOME功能实现、介绍网站设计与宣传视频制作（Claude Code、Codex、Google Flow、Higgsfield）",
-                own: "HOME要呈现的信息、日程倒推方式、新闻分类标准，以及介绍网站与宣传视频的结构，均由我亲自策划，并在检查成果后加以修改。"
-              },
+              ai: { delegated: "HOME功能实现、介绍网站设计与宣传视频制作（Claude Code、Codex、Google Flow、Higgsfield）", own: "HOME要呈现的信息、日程倒推方式、新闻分类标准，以及介绍网站与宣传视频的结构，均由我亲自策划，并在检查成果后加以修改。" },
               outcome: "团队演示视频的HOME部分展示了日历、活动设置与新闻界面，同时提供单独制作的越南介绍网站和宣传视频。",
               limits: "这是以越南市场进入情境为假设的培训原型，演示资料中的工作时间比较为估算值而非实测。展示反馈建议在汇集新闻之外，呈现新闻对Hanjungsun进入越南市场的意义。我正在规划以绿色表示机会、黄色表示注意、红色表示风险、依据不足时以灰色暂缓判断的影响分类与筛选，目前尚未实现。",
-              lessons: "在第二个仪表板项目中，我第一次亲自策划并实现了一个功能。虽然没有取得显著成果，但这是我第一次把自己策划的内容做成可以运行的页面。"
+              lessons: "在第二个仪表板项目中，我第一次亲自策划并实现了一个功能。虽然没有取得显著成果，但这是我第一次把自己策划的内容做成可以运行的页面。",
+              background: "这是以韩国食品品牌进入越南岘港市场为假设的团队项目，处理当地信息与营销准备日程分散、负责人难以决定下一步行动的问题。",
+              methodology: "我策划并实现HOME，将当地活动、新闻与工作进度连接起来，从目标日期倒排准备日程。我将浏览用新闻与已确认的公告区分开来，并另行制作越南介绍网站和宣传视频。",
+              implications: "我认识到，信息集中后还需要连接准备日程和下一步行动。将新闻可视化为机会与风险仍是后续改进计划，原型不代表实际市场进入成果或已经验证的营销效果。"
             },
             materials: [
-              {"id": "brandSite", "label": "越南介绍网站（培训原型）"},
-              {"id": "homeDemo", "label": "HOME演示（团队视频节选，韩语）"},
-              {"id": "promo", "label": "越南宣传视频"}
+              { id: "brandSite", label: "越南介绍网站（培训原型）" },
+              { id: "homeDemo", label: "HOME演示（团队视频节选，韩语）" },
+              { id: "promo", label: "越南宣传视频" }
             ],
             note: "团队项目。整体仪表板为团队成果，我的贡献以上述范围为限，主要包括HOME、越南介绍网站与宣传视频。"
           }
@@ -894,7 +1147,6 @@ const SITE = {
         extraOpen: "展开",
         extraClose: "收起",
         extra: [
-          { name: "KOTRA公开财务资料分析", meta: "2025.10 – 2025.11 | 大学课程项目", desc: "整理ALIO 2020–2024年公开财务资料，比较财务结构与主要指标变化，并制作报告与演示资料" },
           { name: "KITA报告研读小组", meta: "学习活动", desc: "阅读国际通商议题并准备讨论材料。准备就CPTPP相关报告的国外部分作专题分享，并撰写介绍文字" },
           { name: "其他活动", desc: "人文科学学院学生会书记（2023）、礼拜合唱志愿服务（2025）、舞蹈社团 Ars Amandi（2022）、咖啡店 ZITTEN 工作（2022–2023）" }
         ]
@@ -902,15 +1154,17 @@ const SITE = {
       now: {
         label: "NOW",
         title: "现在在做的事",
-        asOf: "基准日 2026.11.10",
-        statement: "目前我在学习贸易实务与AI应用，将对国际议题的兴趣转化为项目和记录。我正在补强英语与分析基础，并准备申请研究生课程，以更深入地学习中国与东亚的贸易和政策问题。",
+        asOf: "基准日 2026.11.15",
+        statement: "我正在贸易AX培训课程中制作网页仪表板，并开发个人项目Trade Data Lab。同时准备在另一个企业合作结业项目中开始开发AI咨询聊天机器人，补强英语与分析基础，为贸易及政策领域的后续学习和实务经验做准备。",
         doingTitle: "进行中",
         doing: [
-          "参加贸易AX大师课程，整理团队项目经验",
-          "学习英语与准备TOEFL",
-          "准备申请美国国际关系与公共政策领域的硕士课程",
-          "申请国际组织与国际政策领域的实习，探索职业方向",
-          "积累个人作品集与国际议题的探索记录"
+          "修读贸易AX大师课程并整理团队项目经验（预计2026.12.18结业）",
+          "开发Trade Data Lab，构建连接新闻、政策原文与贸易统计的服务",
+          "准备开始企业合作结业项目，为提供公共服务的机构开发AI咨询聊天机器人",
+          "以TOEFL 100+为目标学习英语，并补强经济学和统计基础",
+          "以2027年申请贸易领域研究助理或企业政府关系与贸易战略实习为目标做准备",
+          "以2028年秋季进入美国国际关系与公共政策硕士项目为目标做准备",
+          "探索国际组织与国际政策领域的职业方向，积累个人作品集与探索记录"
         ],
         interestsTitle: "关注领域",
         interests: [
@@ -951,17 +1205,14 @@ const SITE = {
     "zh-Hant": {
       htmlLang: "zh-TW",
       header: { navigationLabel: "主要導覽", languageLabel: "選擇語言" },
-      meta: {
-        title: "鄭主緣 Juyeon Jung | Portfolio",
-        description: "鄭主緣（Juyeon Jung）的個人作品集。"
-      },
+      meta: { title: "鄭主緣 Juyeon Jung | 國際貿易與政策探究", description: "記錄串連貿易新聞、政策原文與貿易統計的工具製作，以及國際協作經驗。" },
       nav: { about: "關於我", experience: "經歷", projects: "專案", now: "近況", notes: "探究紀錄", contact: "聯絡" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "我探索國際貿易議題，並與 AI 協作，將探索轉化為工具。",
-        headlineBreakAfter: "我探索國際貿易議題，",
-        intro: "我學習中國與東亞，並有與海外合作夥伴協作的經驗。基於對貿易與國際政策的興趣，我閱讀並整理資料，運用AI把想法變成具體的工具。",
+        headline: "我閱讀貿易新聞，並製作工具，讓相關政策與貿易統計一目了然。",
+        headlineBreakAfter: "我閱讀貿易新聞，",
+        intro: "我正在貿易AX培訓課程中製作網頁儀表板，將分散的資訊整理得更便於查看。在個人專案Trade Data Lab中，我彙整新聞、政策原文與貿易統計，開發用來觀察各國貿易結構及政策發布前後變化的服務。在另一項企業合作實作專案中，我計畫開始為提供公共服務的機構開發AI諮詢聊天機器人。",
         politicalEconomyInterest: "國際政治經濟",
         photo: "個人照片",
         ctaProjects: "檢視專案",
@@ -970,20 +1221,20 @@ const SITE = {
       strengths: {
         title: "優勢",
         items: [
-          { title: "全球溝通", desc: "用中文和英文與海外合作夥伴溝通" },
-          { title: "AI運用", desc: "藉助生成式AI把想法實現為網頁工具" },
-          { title: "堅持", desc: "在陌生的語言環境中調整學習方法，堅持到底" }
+          { title: "全球視野與區域理解", desc: "結合中國與東亞相關學習、在臺灣修讀課程，以及使用英語與外部夥伴溝通的經驗。" },
+          { title: "貿易與市場資料分析", desc: "製作整理與比較資料的網頁工具。Python、pandas與NumPy仍處於基礎學習和練習階段。" },
+          { title: "專案與利害關係人協調", desc: "整理海外媒體、機構和製作合作夥伴的需求及時程，並與營運團隊協調資訊傳遞。" }
         ]
       },
       about: {
         label: "ABOUT",
-        title: "以中國與東亞的學習為基礎，探索國際政治經濟與貿易政策",
-        titleBreakAfter: "以中國與東亞的學習為基礎，",
+        title: "學習區域知識，參與實務協作，整理貿易資訊",
+        titleBreakAfter: "學習區域知識，",
         body: [
-          "我在漢陽大學主修中語中文學，輔修中國經濟通商學。在國立臺灣大學，我用兩年時間以中文修讀專業課程，並取得中國文學系雙學位。",
-          "之後，我在EXPORUM全球戰略事業組擔任實習生，負責與海外媒體合作夥伴溝通，並協助國際活動的營運。",
-          "目前我正在參加韓國貿易協會的貿易AX大師課程，學習貿易實務、資料運用和生成式AI，累積製作網頁工具的經驗。",
-          "長期而言，我希望深入學習中國與東亞、國際政治經濟、國際貿易與貿易政策，並提升運用參考資料與數據說明國際議題的能力。我正在準備申請美國國際關係與公共政策領域的碩士班，並持續透過專案與紀錄整理探究的內容。"
+          "我在漢陽大學主修中語中文學，輔修中國經濟通商學，並在國立臺灣大學取得中國文學雙學位。在臺灣用兩年時間以中文修讀專業課程，為理解華語地區的語言與社會奠定了基礎。",
+          "擔任EXPORUM全球戰略事業組實習生期間，我協助海外媒體合作、海外講者與機構的邀請及時程協調，並進行產業活動資料調查。我累積了整理不同合作方的需求與條件、將確認後的資訊寫成文件並傳達的實務經驗。",
+          "目前，我在貿易AX培訓課程中製作協助資訊查找與比較的網頁儀表板。在個人專案Trade Data Lab中，我開發的服務讓使用者在閱讀新聞後查閱相關政策原文與統計，並觀察各國貿易結構及政策發布前後的變化。",
+          "在另一項企業合作實作專案中，我計畫參與AI諮詢聊天機器人的開發，與提供公共服務的機構合作。我希望透過專案累積理解機構需求並將其具體化為實際服務的經驗。"
         ],
         moreOpen: "展開學歷、證照與工具",
         moreClose: "收起",
@@ -1061,9 +1312,27 @@ const SITE = {
               "協調海外演講嘉賓的日程和行程，支援現場引導與活動營運"
             ],
             caseText: "我將合作條件與實際刊登成果進行比對，整理最終報告。確認了STK展覽9家媒體、TechCon大會7家媒體的刊登依據。我保留了已確認貼文的截圖與連結，並將未執行項目與尚未確認的曝光分別記錄，以釐清後續工作。",
-            skills: ["海外合作夥伴溝通", "日程協調", "進度管理", "基於證據的彙報方式"]
+            skills: ["海外合作夥伴溝通", "日程協調", "進度管理", "基於證據的彙報方式"],
+            cases: [
+              {
+                id: "buyers",
+                title: "國內外買家計畫比較調查",
+                summary: "按照支援內容、參與條件和費用核銷方式，比較國內外20個買家計畫案例，整理並彙報商談、出席與活動後評估如何和支援內容連結。",
+                workflow: ["蒐集案例", "比較支援與條件", "歸納差異", "提交工作參考資料"],
+                comparison: { headers: ["比較項目", "核對內容"], rows: [["支援內容", "機票與住宿、交通支援、休息室與交流活動"], ["參與條件", "最低商談次數、活動出席與活動後評估"], ["核銷方式", "事前提供支援，或符合參與條件後核銷費用"]] },
+                caption: "依據2026年4月的比較表與工作日誌重建調查項目，不是各計畫目前參與規則的說明。"
+              },
+              {
+                id: "verification",
+                title: "核對海外媒體合作成果",
+                workflow: ["核對合作條件", "比對實際刊登成果", "記錄連結與畫面", "區分進展狀態"],
+                caption: "依據2026年6月16日署有本人姓名的進度報告與工作日誌重建，區分約定條件、未執行項目與無法確認的項目。",
+                summary: "我將合作條件與實際刊登成果進行比對，整理最終報告。確認了STK展覽9家媒體、TechCon大會7家媒體的刊登依據。我保留了已確認貼文的截圖與連結，並將未執行項目與尚未確認的曝光分別記錄，以釐清後續工作。"
+              }
+            ]
           }
-        ]
+        ],
+        casesTitle: "資料調查與依據核對案例"
       },
       projects: {
         label: "PROJECTS",
@@ -1080,50 +1349,91 @@ const SITE = {
           limits: "限制與下一步",
           lessons: "回顧",
           report: "查看虛擬企業報告（韓文HTML）",
-          question: "核心問題", contribution: "我的核心貢獻",
-          period: "時間", type: "類型", status: "狀態",
-          problem: "想解決的問題", role: "我的工作",
-          moreOpen: "檢視詳情", moreClose: "收起", link: "檢視專案"
+          question: "核心問題",
+          contribution: "我的核心貢獻",
+          period: "時間",
+          type: "類型",
+          status: "狀態",
+          problem: "想解決的問題",
+          role: "我的工作",
+          moreOpen: "檢視詳情",
+          moreClose: "收起",
+          link: "檢視專案",
+          background: "背景與問題",
+          methodology: "探究與實作方法",
+          implications: "發現與啟示",
+          components: "組成服務",
+          working: "已確認可運作",
+          planned: "規劃階段",
+          legacyProject: "既有專案紀錄"
         },
         items: [
           {
-            id: "tradenews",
-            name: "Trade News Room | 新聞裡的貿易學習室",
-            question: "如何將全球貿易新聞的背景與概念和資料連結起來理解，並將這些理解逐步累積為學習紀錄？",
-            contribution: "我挑選真實的貿易新聞作為學習主題，親自規劃從新聞摘要與來源出發，依序連結統計、模擬器、測驗與學習紀錄的學習流程。功能實作與介面設計借助了AI。目前已公開5個學習室，並持續增加中。",
-            summary: "以全球貿易新聞為起點，同時理解概念與資料的學習網站",
+            id: "tradedatalab",
+            name: "Trade Data Lab | 結合貿易新聞、政策與貿易統計的網頁工具",
+            summary: "這是一個圍繞具體問題，將分散的新聞、政策原文與統計資料串連起來的個人專案。我正在建構一組服務，讓使用者能直接查看各國貿易結構，以及政策發布前後的貿易變化。",
+            question: "如何透過政策原文與貿易統計，查核並比較新聞中的貿易議題？",
+            contribution: "我規劃了專案的問題、各項服務的分工與共同的資訊呈現原則，製作了Trade News Room、Policyline和Tradeweave，並持續整理其他服務的架構與串連方式。",
             period: "2026",
             type: "個人專案",
-            status: "已公開5個學習室，規劃再增加5個左右",
-            problem: "我希望理解真實貿易議題背後的背景與相關概念，並記錄學習內容。",
+            status: "Trade News Room、Policyline、Tradeweave可運作 / 其餘部分規劃中",
+            problem: "新聞、政策原文與貿易統計分散於不同來源，資料的時間範圍和單位也各不相同，因此不容易串連探討一個議題所需的資料並進行比較。",
             role: [
-              "選定學習主題與新聞",
-              "規劃從新聞摘要與來源到統計、模擬器、測驗與學習紀錄的學習流程",
-              "借助AI完成功能實作與介面設計",
-              "在增加學習室的過程中改善介面與學習流程"
+              "將貿易議題拆分為圍繞具體問題的服務，規劃整體專案",
+              "製作Trade News Room、Policyline和Tradeweave，並規劃其功能配置",
+              "訂定來源、基準期間、單位以及事實與解讀的呈現原則",
+              "規劃Fact Desk、Report Plain和Trade Notebook的後續架構"
             ],
             caseStudy: {
-              process: "每個學習室都以一則真實的貿易新聞為起點。學習者先閱讀新聞摘要與來源，在統計圖表或模擬器中親自調整數字，再進行測驗、術語學習與學習筆記。我將真實的統計圖表與簡化的學習模型分開呈現，並提醒不能只憑圖表斷定變化原因，也不能把模型計算值當作實際預測。",
-              ai: {
-                delegated: "功能實作與介面設計",
-                own: "學習主題與新聞的選定、學習室的架構與順序、介面要呈現的內容，都由我親自規劃，並在確認成果後加以修改。"
-              },
-              outcome: "公開網站上已有5個學習室，每個學習室都搭配一個與新聞相關的模擬器。網站也實作了貿易新聞瀏覽、術語詞典、貿易地圖、儲存在瀏覽器中的學習紀錄，以及查找站內學習內容的導覽聊天機器人。",
-              limits: "學習紀錄儲存在目前使用的瀏覽器中，沒有帳號同步功能；導覽聊天機器人依照規則查找站內內容。模擬器是簡化的學習模型，外部新聞與統計的準確性及學習成效尚未另行驗證。我規劃再增加5個左右的學習室。",
-              lessons: "這是我為自學而做的網站，但因為時間不足，沒能持續維護，實際學習中也還幾乎沒有用上。我體會到，做出一個工具和持續使用它是兩回事。我希望繼續充實學習室，把它發展成自己真正會用的工具。"
+              background: "查核貿易議題時，需要分別查找新聞、政府公告與貿易統計。不同資料的時間範圍和單位，也讓直接比較變得困難。因此，我規劃了依問題彙整所需資料的方式，讓使用者能對照原文與數字進行查看。",
+              methodology: "Trade News Room負責新聞與貿易概念的學習，Policyline用於比較政策發布前後的貿易額，Tradeweave用於查看貿易夥伴與貿易集中度。共同原則是標明各項服務的來源、基準期間和單位，並區分已確認的事實與解讀。",
+              implications: "專案協助使用者在接受新聞中的解釋之前，先核對相關原文與數字，並找出需要進一步查看的問題。僅憑政策發布前後的變化，無法確定政策效果或確認轉道出口；服務也會說明資料所能反映的範圍與仍然存在的不確定性。",
+              limits: "規劃書中的整體架構是完成目標，各項資料串接與自動更新的實作範圍應依服務分別說明。不能將政策發布同期的貿易變化視為政策因果效果或轉道出口的證明。"
             },
-            rooms: [
-              { id: "urea", title: "尿素短缺與進口來源多元化（2021）", tool: "採購比例模擬器" },
-              { id: "graphite", title: "中國石墨出口許可制（2023）", tool: "供應減少與價格模擬器" },
-              { id: "gallium", title: "鎵與鍺出口許可制（2023）", tool: "庫存與許可等待期模擬器" },
-              { id: "tariff", title: "韓美貿易協議與15%關稅（2025）", tool: "關稅歸宿模擬器" },
-              { id: "redsea", title: "紅海危機與繞行好望角（2023）", tool: "航線與運費模擬器" }
+            components: [
+              { id: "tradenews", name: "Trade News Room", status: "working", description: "透過學習室、圖表與測驗，查看貿易新聞及相關概念的服務。" },
+              { id: "policyline", name: "Policyline", status: "working", description: "查看政策發布前後貿易額變化的服務。" },
+              { id: "tradeweave", name: "Tradeweave", status: "working", description: "查看各國貿易夥伴與貿易集中度的服務。" },
+              { id: "factdesk", name: "Fact Desk", status: "planned", description: "規劃加入Trade News Room內的功能，用於區分已確認的事實、解讀與不確定之處。" },
+              { id: "reportplain", name: "Report Plain", status: "planned", description: "正在規劃將報告的主張、證據與限制和原文頁碼一起整理的服務。" },
+              { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "正在規劃發布依問題、資料、發現與限制組成的分析筆記。" }
             ],
+            note: "Trade Data Lab是一個持續擴充的個人專案。Fact Desk是Trade News Room內部的規劃功能，Report Plain與Trade Notebook仍在規劃中。",
+            legacyProject: {
+              id: "tradenews",
+              name: "Trade News Room | 新聞裡的貿易學習室",
+              question: "如何將全球貿易新聞的背景與概念和資料連結起來理解，並將這些理解逐步累積為學習紀錄？",
+              contribution: "我挑選真實的貿易新聞作為學習主題，親自規劃從新聞摘要與來源出發，依序連結統計、模擬器、測驗與學習紀錄的學習流程。功能實作與介面設計借助了AI。目前已公開5個學習室，並持續增加中。",
+              summary: "以全球貿易新聞為起點，同時理解概念與資料的學習網站",
+              period: "2026",
+              type: "個人專案",
+              status: "已公開5個學習室，規劃再增加5個左右",
+              problem: "我希望理解真實貿易議題背後的背景與相關概念，並記錄學習內容。",
+              role: ["選定學習主題與新聞", "規劃從新聞摘要與來源到統計、模擬器、測驗與學習紀錄的學習流程", "借助AI完成功能實作與介面設計", "在增加學習室的過程中改善介面與學習流程"],
+              caseStudy: {
+                process: "每個學習室都以一則真實的貿易新聞為起點。學習者先閱讀新聞摘要與來源，在統計圖表或模擬器中親自調整數字，再進行測驗、術語學習與學習筆記。我將真實的統計圖表與簡化的學習模型分開呈現，並提醒不能只憑圖表斷定變化原因，也不能把模型計算值當作實際預測。",
+                ai: { delegated: "功能實作與介面設計", own: "學習主題與新聞的選定、學習室的架構與順序、介面要呈現的內容，都由我親自規劃，並在確認成果後加以修改。" },
+                outcome: "公開網站上已有5個學習室，每個學習室都搭配一個與新聞相關的模擬器。網站也實作了貿易新聞瀏覽、術語詞典、貿易地圖、儲存在瀏覽器中的學習紀錄，以及查找站內學習內容的導覽聊天機器人。",
+                limits: "學習紀錄儲存在目前使用的瀏覽器中，沒有帳號同步功能；導覽聊天機器人依照規則查找站內內容。模擬器是簡化的學習模型，外部新聞與統計的準確性及學習成效尚未另行驗證。我規劃再增加5個左右的學習室。",
+                lessons: "這是我為自學而做的網站，但因為時間不足，沒能持續維護，實際學習中也還幾乎沒有用上。我體會到，做出一個工具和持續使用它是兩回事。我希望繼續充實學習室，把它發展成自己真正會用的工具。"
+              },
+              rooms: [
+                { id: "urea", title: "尿素短缺與進口來源多元化（2021）", tool: "採購比例模擬器" },
+                { id: "graphite", title: "中國石墨出口許可制（2023）", tool: "供應減少與價格模擬器" },
+                { id: "gallium", title: "鎵與鍺出口許可制（2023）", tool: "庫存與許可等待期模擬器" },
+                { id: "tariff", title: "韓美貿易協議與15%關稅（2025）", tool: "關稅歸宿模擬器" },
+                { id: "redsea", title: "紅海危機與繞行好望角（2023）", tool: "航線與運費模擬器" }
+              ],
+              materials: [
+                { id: "statistics", label: "統計與來源說明頁面（韓語介面）" },
+                { id: "simulation", label: "採購比例模擬器（韓語介面）" }
+              ],
+              note: "這是我持續完善的個人專案，網站內容為韓語。"
+            },
             materials: [
-              {"id": "statistics", "label": "統計與來源說明頁面（韓語介面）"},
-              {"id": "simulation", "label": "採購比例模擬器（韓語介面）"}
-            ],
-            note: "這是我持續完善的個人專案，網站內容為韓語。"
+              { id: "statistics", label: "Trade News Room: 統計與來源說明頁面（韓語介面）" },
+              { id: "simulation", label: "Trade News Room: 採購比例模擬器（韓語介面）" }
+            ]
           },
           {
             id: "axport",
@@ -1135,21 +1445,16 @@ const SITE = {
             type: "貿易AX大師課程 團隊專案",
             status: "原型成果",
             problem: "法規、市場性、價格、物流、穩定性等資訊分散各處。即使彙整到同一個頁面，如果法規限制、商業評分與缺乏資料的項目被以同樣的分量解讀，也可能誤導判斷。",
-            role: [
-              "首頁規劃與UI/UX設計",
-              "響應式版面與多語言介面",
-              "PDF報告與分析報告的架構及用語改善",
-              "服務介紹與簡報資料製作"
-            ],
+            role: ["首頁規劃與UI/UX設計", "響應式版面與多語言介面", "PDF報告與分析報告的架構及用語改善", "服務介紹與簡報資料製作"],
             caseStudy: {
               process: "首頁透過服務介紹與使用說明，呈現五個檢視領域及使用流程。報告從摘要連結至詳細依據，並將法規檢視與商業可行性參考分數分開。缺乏資料的項目標示為資料不足，同時顯示資料基準日期。",
-              ai: {
-                delegated: "到達頁設計配置（ChatGPT Codex、Gemini）",
-                own: "首頁與報告的資訊架構，以及將法規檢視、參考分數與資料不足分開呈現的方式，都由我親自規劃，並在確認介面與用語後加以修改。"
-              },
+              ai: { delegated: "到達頁設計配置（ChatGPT Codex、Gemini）", own: "首頁與報告的資訊架構，以及將法規檢視、參考分數與資料不足分開呈現的方式，都由我親自規劃，並在確認介面與用語後加以修改。" },
               outcome: "團隊完成了將五個領域的摘要、詳細依據與報告匯出串連起來的網頁儀表板。公開的虛擬企業對美出口報告（2026-11-11產出，分析基準日2026-11-10）顯示有條件檢視狀態與56%的依據涵蓋比例，缺乏資料的價格及物流項目標示為資料不足。56%是這份範例報告中的數值。",
               limits: "部分統計查詢失敗及企業填報值的有效期限等因素，使部分項目仍未評估。參考分數與依據涵蓋比例不代表出口成功機率或判斷準確性。仍需確認統計範圍、基準日期與輸入資料的有效性。",
-              lessons: "一切都是第一次：第一次做的工作、第一次接觸的概念、第一次製作的儀表板，光是跟上整體流程就很吃力。在這樣的情況下，我專注於自己能做好的設計工作。"
+              lessons: "一切都是第一次：第一次做的工作、第一次接觸的概念、第一次製作的儀表板，光是跟上整體流程就很吃力。在這樣的情況下，我專注於自己能做好的設計工作。",
+              background: "半導體出口初步檢視需要整合規範、市場潛力、價格、物流與穩定性資訊。問題不只是彙整分散資料，也要說明規範限制、商業參考分數和資料不足代表不同的判斷依據。",
+              methodology: "培訓團隊製作了涵蓋五個領域的儀表板原型。我改善首頁與報告的資訊架構，使摘要能連結至詳細依據，並將規範檢視與參考分數分開，標示資料基準日和無法確認的資訊。",
+              implications: "我認識到，協助出口初步檢視的介面不只要呈現分數，也應展示依據的適用範圍與資料空缺。成果是初步檢視原型，不是實際出口成效或規範判斷準確性的驗證。"
             },
             note: "團隊專案。分析引擎與整體服務為團隊成果，我的貢獻為上述範圍。"
           },
@@ -1163,27 +1468,21 @@ const SITE = {
             type: "貿易AX大師課程 團隊專案",
             status: "發表版本原型，新聞影響視覺化為後續規劃",
             problem: "當地資訊與行銷活動準備日程分散，難以把握下一步該做什麼。",
-            role: [
-              "HOME頁面的規劃與實作",
-              "以目標日期為基準回推準備時程的行事曆",
-              "在一個頁面整合當地時程、新聞與工作進度",
-              "設計將新聞分為文章清單與已確認公告的標準",
-              "規劃並製作越南介紹網站與宣傳影片"
-            ],
+            role: ["HOME頁面的規劃與實作", "以目標日期為基準回推準備時程的行事曆", "在一個頁面整合當地時程、新聞與工作進度", "設計將新聞分為文章清單與已確認公告的標準", "規劃並製作越南介紹網站與宣傳影片"],
             caseStudy: {
               process: "團隊儀表板將當地研究連結至時程、內容製作、創作者合作及成效管理。我在HOME中彙整當地時程、新聞與準備情況，協助使用者決定下一步行動。我將便於探索的新聞清單與已確認的公告分開，區分資訊探索與判斷依據的確認。",
-              ai: {
-                delegated: "HOME功能實作、介紹網站設計與宣傳影片製作（Claude Code、Codex、Google Flow、Higgsfield）",
-                own: "HOME要呈現的資訊、時程回推方式、新聞分類標準，以及介紹網站與宣傳影片的架構，都由我親自規劃，並在確認成果後加以修改。"
-              },
+              ai: { delegated: "HOME功能實作、介紹網站設計與宣傳影片製作（Claude Code、Codex、Google Flow、Higgsfield）", own: "HOME要呈現的資訊、時程回推方式、新聞分類標準，以及介紹網站與宣傳影片的架構，都由我親自規劃，並在確認成果後加以修改。" },
               outcome: "團隊展示影片的HOME部分呈現行事曆、活動設定與新聞介面，並提供另外製作的越南介紹網站及宣傳影片。",
               limits: "這是以越南市場進入情境為假設的訓練原型，簡報中的工作時間比較為估計值而非實測。發表回饋建議在彙整新聞之外，呈現新聞對Hanjungsun進入越南市場的意義。我正在規劃以綠色表示機會、黃色表示注意、紅色表示風險、依據不足時以灰色暫緩判斷的影響分類與篩選，目前尚未實作。",
-              lessons: "在第二個儀表板專案中，我第一次親自規劃並實作了一個功能。雖然沒有取得顯著成果，但這是我第一次把自己規劃的內容做成可以運作的頁面。"
+              lessons: "在第二個儀表板專案中，我第一次親自規劃並實作了一個功能。雖然沒有取得顯著成果，但這是我第一次把自己規劃的內容做成可以運作的頁面。",
+              background: "這是以韓國食品品牌進入越南峴港市場為假設的團隊專案，處理當地資訊與行銷準備時程分散、負責人難以決定下一步行動的問題。",
+              methodology: "我規劃並實作HOME，串連當地活動、新聞與工作進度，從目標日期倒推準備時程。我將瀏覽用新聞與已確認的公告分開，並另外製作越南介紹網站和宣傳影片。",
+              implications: "我認識到，集中資訊後還需要連結準備時程與下一步行動。將新聞視覺化為機會與風險仍是後續改善規劃，原型不代表實際市場進入成果或已驗證的行銷成效。"
             },
             materials: [
-              {"id": "brandSite", "label": "越南介紹網站（訓練原型）"},
-              {"id": "homeDemo", "label": "HOME展示（團隊影片節錄，韓語）"},
-              {"id": "promo", "label": "越南宣傳影片"}
+              { id: "brandSite", label: "越南介紹網站（訓練原型）" },
+              { id: "homeDemo", label: "HOME展示（團隊影片節錄，韓語）" },
+              { id: "promo", label: "越南宣傳影片" }
             ],
             note: "團隊專案。整體儀表板為團隊成果，我的貢獻以上述範圍為限，以HOME、越南介紹網站與宣傳影片為主。"
           }
@@ -1192,7 +1491,6 @@ const SITE = {
         extraOpen: "展開",
         extraClose: "收起",
         extra: [
-          { name: "KOTRA公開財務資料分析", meta: "2025.10 – 2025.11 | 大學課程專案", desc: "整理ALIO 2020–2024年公開財務資料，比較財務結構與主要指標變化，並製作報告與簡報資料" },
           { name: "KITA報告研讀小組", meta: "學習活動", desc: "閱讀國際通商議題並準備導讀資料。準備導讀CPTPP相關報告的國外部分，並撰寫介紹文字" },
           { name: "其他活動", desc: "人文科學學院學生會書記（2023）、禮拜合唱志願服務（2025）、舞蹈社團 Ars Amandi（2022）、咖啡店 ZITTEN 工作（2022–2023）" }
         ]
@@ -1200,15 +1498,17 @@ const SITE = {
       now: {
         label: "NOW",
         title: "現在在做的事",
-        asOf: "基準日 2026.11.10",
-        statement: "目前我正在學習貿易實務與AI應用，將對國際議題的興趣發展為專案與紀錄。我正在補強英語與分析基礎，並準備申請研究所，以更深入地學習中國與東亞的通商及政策問題。",
+        asOf: "基準日 2026.11.15",
+        statement: "我正在貿易AX培訓課程中製作網頁儀表板，並開發個人專案Trade Data Lab。同時準備在另一項企業合作實作專案中開始開發AI諮詢聊天機器人，補強英語與分析基礎，為貿易及政策領域的後續學習和實務經驗做準備。",
         doingTitle: "進行中",
         doing: [
-          "參加貿易AX大師課程，整理團隊專案經驗",
-          "學習英語與準備TOEFL",
-          "準備申請美國國際關係與公共政策領域的碩士課程",
-          "申請國際組織與國際政策領域的實習，探索職業方向",
-          "累積個人作品集與國際議題的探究紀錄"
+          "修讀貿易AX大師課程並整理團隊專案經驗（預計2026.12.18結業）",
+          "開發Trade Data Lab，建構串連新聞、政策原文與貿易統計的服務",
+          "準備啟動企業合作實作專案，為提供公共服務的機構開發AI諮詢聊天機器人",
+          "以TOEFL 100+為目標學習英語，並補強經濟學和統計基礎",
+          "以2027年申請貿易領域研究助理或企業政府關係與貿易策略實習為目標做準備",
+          "以2028年秋季進入美國國際關係與公共政策碩士班為目標做準備",
+          "探索國際組織與國際政策領域的職涯方向，累積個人作品集與探究紀錄"
         ],
         interestsTitle: "關注領域",
         interests: [
@@ -1249,17 +1549,14 @@ const SITE = {
     ja: {
       htmlLang: "ja",
       header: { navigationLabel: "メインナビゲーション", languageLabel: "言語を選択" },
-      meta: {
-        title: "鄭主緣 Juyeon Jung | Portfolio",
-        description: "鄭主緣（Juyeon Jung）のポートフォリオ。"
-      },
+      meta: { title: "鄭主緣 Juyeon Jung | 国際通商と政策の探究", description: "貿易ニュース、政策原文、貿易統計をつなぐツール制作と国際的な協働の経験を記録します。" },
       nav: { about: "自己紹介", experience: "経歴", projects: "プロジェクト", now: "現在", notes: "探究ノート", contact: "連絡先" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "国際通商の課題を探究し、AIと協働して、その探究をツールに形にします。",
-        headlineBreakAfter: "国際通商の課題を探究し、",
-        intro: "中国と東アジアについて学び、海外パートナーと協業してきました。貿易と国際政策への関心をもとに資料を読んで整理し、AIを活用して考えを具体的なツールにしています。",
+        headline: "貿易ニュースを読み、関連する政策と貿易統計をひと目で確認できるツールを作ります。",
+        headlineBreakAfter: "貿易ニュースを読み、",
+        intro: "貿易AX研修で、散在する情報を見やすく整理するWebダッシュボードを制作しています。個人プロジェクトTrade Data Labでは、ニュース、政策原文、貿易統計を集め、国別の貿易構造や政策発表前後の変化を確認するサービスを開発しています。別の企業連携キャップストーンでは、公共サービスを提供する機関のAI相談チャットボット開発に着手する予定です。",
         politicalEconomyInterest: "国際政治経済",
         photo: "プロフィール写真",
         ctaProjects: "プロジェクトを見る",
@@ -1268,20 +1565,20 @@ const SITE = {
       strengths: {
         title: "強み",
         items: [
-          { title: "グローバルコミュニケーション", desc: "中国語と英語で海外パートナーとやり取り" },
-          { title: "AI活用", desc: "生成AIでアイデアをWebツールとして形に" },
-          { title: "粘り強さ", desc: "慣れない言語環境でも学び方を調整し、最後までやり遂げる" }
+          { title: "国際的な視野と地域理解", desc: "中国と東アジアに関する学び、台湾での修学、英語での対外コミュニケーション経験をつなげます。" },
+          { title: "貿易と市場データの分析", desc: "資料を整理し比較するWebツールを制作します。Python、pandas、NumPyは基礎学習と実習の段階です。" },
+          { title: "プロジェクトと関係者の調整", desc: "海外メディア、機関、制作協力先の要望と日程を整理し、運営チームとの情報共有を調整しました。" }
         ]
       },
       about: {
         label: "ABOUT",
-        title: "中国と東アジアの学びを、国際政治経済と通商政策につなげます",
-        titleBreakAfter: "中国と東アジアの学びを、",
+        title: "地域を学び、現場で協働し、貿易情報を整理します",
+        titleBreakAfter: "地域を学び、",
         body: [
-          "漢陽大学で中語中文学を専攻し、中国経済通商学を副専攻しました。国立台湾大学では2年間、中国語で専攻科目を履修し、中国文学科の複数学位を取得しました。",
-          "その後、EXPORUMのグローバル戦略事業チームでインターンとして、海外メディアパートナーとのやり取りと国際イベントの運営をサポートしました。",
-          "現在は韓国貿易協会の貿易AXマスター課程で、貿易実務、データ活用、生成AIを学びながらWebツールを作る経験を積んでいます。",
-          "長期的には、中国と東アジア、国際政治経済、国際通商と貿易政策を深く学び、資料とデータに基づいて国際問題を説明する力を高めたいと考えています。米国の国際関係および公共政策分野の修士課程への進学を準備しながら、探究の内容をプロジェクトや記録として積み重ねています。"
+          "漢陽大学で中語中文学を専攻、中国経済通商学を副専攻し、国立台湾大学で中国文学の複数学位を取得しました。台湾で2年間、中国語の専攻授業を履修し、中国語圏の言語と社会を理解する土台を築きました。",
+          "EXPORUMのグローバル戦略事業チームのインターンとして、海外メディアとの協業、海外登壇者と機関への招待や日程調整、産業イベントの資料調査を支援しました。異なる関係者の要望と条件を整理し、確認した内容を文書で伝える実務を経験しました。",
+          "現在は貿易AX研修で、情報の探索と比較を支援するWebダッシュボードを制作しています。個人プロジェクトTrade Data Labでは、ニュースを読んだ後に関連する政策原文と統計を確認し、国別の貿易構造や政策発表前後の変化を見られるサービスを開発しています。",
+          "別の企業連携キャップストーンでは、公共サービスを提供する機関と協働するAI相談チャットボットの開発に参加する予定です。プロジェクトを通じて機関の要件を理解し、実際のサービスとして具体化する経験を積みたいと考えています。"
         ],
         moreOpen: "学歴、資格、使用ツールを見る",
         moreClose: "閉じる",
@@ -1359,9 +1656,27 @@ const SITE = {
               "海外登壇者のスケジュールと移動の調整、現場案内とイベント運営のサポート"
             ],
             caseText: "協業条件と実際の掲載結果を照合し、最終報告書をまとめました。STK展示会では9媒体、TechConカンファレンスでは7媒体の掲載根拠を確認しました。確認済みの投稿の画面とリンクを残しました。未実施の項目と未確認の露出を分けて記録し、後続業務を把握できるよう整理しました。",
-            skills: ["海外パートナーとのコミュニケーション", "スケジュール調整", "進捗管理", "根拠を確認する報告"]
+            skills: ["海外パートナーとのコミュニケーション", "スケジュール調整", "進捗管理", "根拠を確認する報告"],
+            cases: [
+              {
+                id: "buyers",
+                title: "国内外のバイヤープログラム比較調査",
+                summary: "国内外のバイヤープログラム20事例を、支援内容、参加条件、費用精算の方法で比較しました。商談、出席、事後評価が支援内容にどう結び付くかを整理して報告しました。",
+                workflow: ["事例を収集", "支援内容と条件を比較", "相違点を要約", "業務参考資料として報告"],
+                comparison: { headers: ["比較項目", "確認した内容"], rows: [["支援内容", "航空券と宿泊、移動支援、ラウンジと交流機会"], ["参加条件", "最低商談数、イベント出席、事後評価"], ["精算方法", "事前支援、または参加条件を満たした後の費用精算"]] },
+                caption: "2026年4月の比較表と業務日誌を基に調査項目を再構成しました。各プログラムの現在の参加条件を案内する資料ではありません。"
+              },
+              {
+                id: "verification",
+                title: "海外メディアとの協業結果の確認",
+                workflow: ["協業条件を確認", "実際の掲載結果と照合", "リンクと画面を記録", "進捗状況を区分"],
+                caption: "2026年6月16日の本人名義の進捗報告書と業務日誌に基づく再構成です。約束した条件、未実施、確認できない項目を区別しました。",
+                summary: "協業条件と実際の掲載結果を照合し、最終報告書をまとめました。STK展示会では9媒体、TechConカンファレンスでは7媒体の掲載根拠を確認しました。確認済みの投稿の画面とリンクを残しました。未実施の項目と未確認の露出を分けて記録し、後続業務を把握できるよう整理しました。"
+              }
+            ]
           }
-        ]
+        ],
+        casesTitle: "資料調査と根拠確認の事例"
       },
       projects: {
         label: "PROJECTS",
@@ -1378,50 +1693,96 @@ const SITE = {
           limits: "限界と次のステップ",
           lessons: "振り返り",
           report: "架空企業の報告書を見る（韓国語HTML）",
-          question: "中心となる問い", contribution: "私の主な貢献",
-          period: "期間", type: "種類", status: "状態",
-          problem: "解決したかった課題", role: "担当したこと",
-          moreOpen: "詳しく見る", moreClose: "閉じる", link: "プロジェクトを見る"
+          question: "中心となる問い",
+          contribution: "私の主な貢献",
+          period: "期間",
+          type: "種類",
+          status: "状態",
+          problem: "解決したかった課題",
+          role: "担当したこと",
+          moreOpen: "詳しく見る",
+          moreClose: "閉じる",
+          link: "プロジェクトを見る",
+          background: "背景と課題",
+          methodology: "取り組みの方法",
+          implications: "分かったことと示唆",
+          components: "構成サービス",
+          working: "動作確認済み",
+          planned: "企画段階",
+          legacyProject: "これまでのプロジェクト記録"
         },
         items: [
           {
-            id: "tradenews",
-            name: "Trade News Room | ニュースで学ぶ貿易教室",
-            question: "世界の貿易ニュースの背景と概念をデータと結びつけて理解し、その理解を学習記録としてどう積み重ねていけるだろうか。",
-            contribution: "実際の貿易ニュースを選んで学習テーマを決め、ニュースの要約と出典から統計、シミュレーター、クイズ、学習記録へと進む学習の流れを自分で企画しました。機能の実装と画面デザインにはAIを活用しました。現在は5つの学習室を公開しており、今後も増やしていきます。",
-            summary: "世界の貿易ニュースを出発点に、概念とデータを一緒に理解する学習Webサイト",
+            id: "tradedatalab",
+            name: "Trade Data Lab | 貿易ニュース、政策、貿易統計をあわせて見るWebツール",
+            summary: "散在するニュース、政策の原文、統計を問いごとにつなぐ個人プロジェクトです。国ごとの貿易構造や政策発表前後の貿易の変化を自分で確認できるよう、サービスを構成しています。",
+            question: "ニュースで見た貿易の問題を、政策の原文と貿易統計でどう確認し、比較できるだろうか。",
+            contribution: "プロジェクトの問い、各サービスの役割、共通の情報表示の原則を企画しました。Trade News Room、Policyline、Tradeweaveを制作し、残りのサービスの構成と連携方法を整理しています。",
             period: "2026",
             type: "個人プロジェクト",
-            status: "学習室5つを公開、さらに5つ前後を追加予定",
-            problem: "実際の貿易問題の背景と関連する概念を理解し、学んだ内容を記録したいと考えました。",
+            status: "Trade News Room、Policyline、Tradeweaveは動作 / その他の構成は企画中",
+            problem: "ニュース、政策の原文、貿易統計が異なる場所にあり、資料の期間や単位も異なるため、一つの問題を調べるために必要な資料をつないで比較することが難しい状況です。",
             role: [
-              "学習テーマとニュースの選定",
-              "ニュースの要約と出典から統計、シミュレーター、クイズ、学習記録へと進む学習の流れの企画",
-              "AIを活用した機能の実装と画面デザイン",
-              "学習室を追加しながら画面と学習の流れを改善"
+              "貿易の問題を問いごとのサービスに分けるプロジェクトの企画",
+              "Trade News Room、Policyline、Tradeweaveの制作と機能構成",
+              "出典、基準期間、単位、事実と解釈を示す原則の整理",
+              "Fact Desk、Report Plain、Trade Notebookの今後の構成の企画"
             ],
             caseStudy: {
-              process: "どの学習室も、実際の貿易ニュース1本を出発点にしています。ニュースの要約と出典を読み、統計グラフやシミュレーターで数値を自分で動かしてから、クイズ、用語の確認、学習メモへと進みます。実際の統計グラフと簡略化した学習用モデルを分けて配置し、グラフだけで変化の原因を断定したり、モデルの計算値を実際の見通しとして扱ったりしないよう案内しました。",
-              ai: {
-                delegated: "機能の実装と画面デザイン",
-                own: "学習テーマとニュースの選定、学習室の構成と順序、画面に載せる内容は自分で企画し、できあがったものを確認しながら修正しました。"
-              },
-              outcome: "公開サイトに5つの学習室をつくり、それぞれにニュースと連動したシミュレーターを1つずつ置きました。貿易ニュースの閲覧、用語集、貿易マップ、ブラウザーに保存される学習記録、サイト内の学習内容を案内するチャットボットもあわせて実装しました。",
-              limits: "学習記録はアカウント同期なしで現在のブラウザーに保存され、案内チャットボットは規則に従ってサイト内の内容を検索します。シミュレーターは簡略化した学習モデルであり、外部ニュースや統計の正確性、学習効果はまだ別途検証していません。今後、学習室を5つ前後追加する予定です。",
-              lessons: "自分の勉強のためにつくりましたが、時間が足りず継続して管理できず、実際の勉強にはまだほとんど使えていません。つくることと使い続けることは別だと気づきました。学習室を充実させ、自分が実際に使うツールに育てたいと考えています。"
+              background: "貿易の問題を確認するには、ニュース、政府の発表、貿易統計をそれぞれ探す必要があります。資料ごとに期間や単位が異なり、そのまま比較することも困難です。必要な資料を問いごとにまとめ、原文と数値を行き来しながら確認できる構成を企画しました。",
+              methodology: "Trade News Roomはニュースと貿易概念の学習、Policylineは政策発表前後の貿易額の比較、Tradeweaveは貿易相手国と貿易の集中度の確認を担います。サービスごとに出典、基準期間、単位を示し、確認された事実と解釈を分けることを共通の原則としています。",
+              implications: "ニュースの説明をそのまま受け入れる前に、関連する原文や数値を確認し、さらに調べる問いを見つけることを助けます。政策発表前後の変化だけで政策の効果や迂回輸出を断定せず、データで確認できる範囲と残る不確実性をあわせて説明します。",
+              limits: "企画書の全体構成は完成時の目標です。データ接続や自動更新の実装範囲は、サービスごとに区別する必要があります。政策発表と同時期の貿易の変化を、政策の因果効果や迂回輸出の証拠とは断定しません。"
             },
-            rooms: [
-              { id: "urea", title: "尿素水不足と輸入先の多角化（2021）", tool: "調達比率シミュレーター" },
-              { id: "graphite", title: "中国の黒鉛輸出許可制（2023）", tool: "供給減少と価格のシミュレーター" },
-              { id: "gallium", title: "ガリウムとゲルマニウムの輸出許可制（2023）", tool: "在庫と許可待ち期間のシミュレーター" },
-              { id: "tariff", title: "韓米貿易合意と15%関税（2025）", tool: "関税の帰着シミュレーター" },
-              { id: "redsea", title: "紅海危機と喜望峰への迂回（2023）", tool: "航路と運賃のシミュレーター" }
+            components: [
+              { id: "tradenews", name: "Trade News Room", status: "working", description: "学習室、グラフ、クイズを通じて貿易ニュースと関連する概念を確認するサービスです。" },
+              { id: "policyline", name: "Policyline", status: "working", description: "政策発表前後の貿易額の変化を確認するサービスです。" },
+              { id: "tradeweave", name: "Tradeweave", status: "working", description: "国ごとの貿易相手国と貿易の集中度を確認するサービスです。" },
+              { id: "factdesk", name: "Fact Desk", status: "planned", description: "Trade News Room内で、確認された事実、解釈、不確実な点を分けて示す機能を企画しています。" },
+              { id: "reportplain", name: "Report Plain", status: "planned", description: "報告書の主張、根拠、限界を原文のページ番号とともに整理するサービスを企画しています。" },
+              { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "問い、データ、発見、限界で構成した分析ノートを公開する仕組みを企画しています。" }
             ],
+            note: "Trade Data Labは継続して拡張する個人プロジェクトです。Fact DeskはTrade News Room内の企画段階の機能であり、Report PlainとTrade Notebookも企画中です。",
+            legacyProject: {
+              id: "tradenews",
+              name: "Trade News Room | ニュースで学ぶ貿易教室",
+              question: "世界の貿易ニュースの背景と概念をデータと結びつけて理解し、その理解を学習記録としてどう積み重ねていけるだろうか。",
+              contribution: "実際の貿易ニュースを選んで学習テーマを決め、ニュースの要約と出典から統計、シミュレーター、クイズ、学習記録へと進む学習の流れを自分で企画しました。機能の実装と画面デザインにはAIを活用しました。現在は5つの学習室を公開しており、今後も増やしていきます。",
+              summary: "世界の貿易ニュースを出発点に、概念とデータを一緒に理解する学習Webサイト",
+              period: "2026",
+              type: "個人プロジェクト",
+              status: "学習室5つを公開、さらに5つ前後を追加予定",
+              problem: "実際の貿易問題の背景と関連する概念を理解し、学んだ内容を記録したいと考えました。",
+              role: [
+                "学習テーマとニュースの選定",
+                "ニュースの要約と出典から統計、シミュレーター、クイズ、学習記録へと進む学習の流れの企画",
+                "AIを活用した機能の実装と画面デザイン",
+                "学習室を追加しながら画面と学習の流れを改善"
+              ],
+              caseStudy: {
+                process: "どの学習室も、実際の貿易ニュース1本を出発点にしています。ニュースの要約と出典を読み、統計グラフやシミュレーターで数値を自分で動かしてから、クイズ、用語の確認、学習メモへと進みます。実際の統計グラフと簡略化した学習用モデルを分けて配置し、グラフだけで変化の原因を断定したり、モデルの計算値を実際の見通しとして扱ったりしないよう案内しました。",
+                ai: { delegated: "機能の実装と画面デザイン", own: "学習テーマとニュースの選定、学習室の構成と順序、画面に載せる内容は自分で企画し、できあがったものを確認しながら修正しました。" },
+                outcome: "公開サイトに5つの学習室をつくり、それぞれにニュースと連動したシミュレーターを1つずつ置きました。貿易ニュースの閲覧、用語集、貿易マップ、ブラウザーに保存される学習記録、サイト内の学習内容を案内するチャットボットもあわせて実装しました。",
+                limits: "学習記録はアカウント同期なしで現在のブラウザーに保存され、案内チャットボットは規則に従ってサイト内の内容を検索します。シミュレーターは簡略化した学習モデルであり、外部ニュースや統計の正確性、学習効果はまだ別途検証していません。今後、学習室を5つ前後追加する予定です。",
+                lessons: "自分の勉強のためにつくりましたが、時間が足りず継続して管理できず、実際の勉強にはまだほとんど使えていません。つくることと使い続けることは別だと気づきました。学習室を充実させ、自分が実際に使うツールに育てたいと考えています。"
+              },
+              rooms: [
+                { id: "urea", title: "尿素水不足と輸入先の多角化（2021）", tool: "調達比率シミュレーター" },
+                { id: "graphite", title: "中国の黒鉛輸出許可制（2023）", tool: "供給減少と価格のシミュレーター" },
+                { id: "gallium", title: "ガリウムとゲルマニウムの輸出許可制（2023）", tool: "在庫と許可待ち期間のシミュレーター" },
+                { id: "tariff", title: "韓米貿易合意と15%関税（2025）", tool: "関税の帰着シミュレーター" },
+                { id: "redsea", title: "紅海危機と喜望峰への迂回（2023）", tool: "航路と運賃のシミュレーター" }
+              ],
+              materials: [
+                { id: "statistics", label: "統計と出典の説明画面（韓国語UI）" },
+                { id: "simulation", label: "調達比率シミュレーター（韓国語UI）" }
+              ],
+              note: "継続して発展させている個人プロジェクトです。サイトは韓国語です。"
+            },
             materials: [
-              {"id": "statistics", "label": "統計と出典の説明画面（韓国語UI）"},
-              {"id": "simulation", "label": "調達比率シミュレーター（韓国語UI）"}
-            ],
-            note: "継続して発展させている個人プロジェクトです。サイトは韓国語です。"
+              { id: "statistics", label: "Trade News Room: 統計と出典の説明画面（韓国語UI）" },
+              { id: "simulation", label: "Trade News Room: 調達比率シミュレーター（韓国語UI）" }
+            ]
           },
           {
             id: "axport",
@@ -1433,21 +1794,16 @@ const SITE = {
             type: "貿易AXマスター課程 チームプロジェクト",
             status: "プロトタイプ",
             problem: "規制、市場性、価格、物流、安定性の情報が分散していました。一画面に集めても、規制上の制約、事業性のスコア、資料のない項目が同じ重みで読まれると、判断を誤らせるおそれがありました。",
-            role: [
-              "メインページの企画とUI/UXデザイン",
-              "レスポンシブなレイアウトと多言語画面",
-              "PDF報告書と分析報告書の構成および文言の改善",
-              "サービス紹介と発表資料の作成"
-            ],
+            role: ["メインページの企画とUI/UXデザイン", "レスポンシブなレイアウトと多言語画面", "PDF報告書と分析報告書の構成および文言の改善", "サービス紹介と発表資料の作成"],
             caseStudy: {
               process: "ホームページではサービス紹介と利用方法を通じて、5つの検討領域と利用の流れを案内しました。報告書は要約から詳細な根拠へ進む構成にし、規制の検討を事業性の参考スコアと分けました。資料のない項目は資料不足と表示し、データの基準日もあわせて示しています。",
-              ai: {
-                delegated: "ランディングページのデザイン構成（ChatGPT Codex、Gemini）",
-                own: "ホームページと報告書の情報構造、規制の検討と参考スコア、資料不足を分けて示す方法は自分で企画し、画面と文言を確認しながら修正しました。"
-              },
+              ai: { delegated: "ランディングページのデザイン構成（ChatGPT Codex、Gemini）", own: "ホームページと報告書の情報構造、規制の検討と参考スコア、資料不足を分けて示す方法は自分で企画し、画面と文言を確認しながら修正しました。" },
               outcome: "5つの領域の要約と詳細な根拠、報告書出力をつないだWebダッシュボードをチームで完成させました。公開した架空企業の米国輸出報告書（2026-11-11作成、分析基準日2026-11-10）には条件付き検討という状態と根拠の反映率56%が表示され、資料のない価格と物流の項目は資料不足と示されます。56%はこの報告書例の値です。",
               limits: "一部の統計照会の失敗や企業記載値の有効期間などにより、未評価の項目が残っています。参考スコアと根拠の反映率は輸出成功確率や判断の正確性を示しません。統計の対象範囲、基準日、入力資料の有効性は引き続き確認が必要です。",
-              lessons: "初めての業務、初めて触れる概念、初めてのダッシュボードで、全体の流れについていくだけで精一杯でした。その中で、自分にできるデザインに力を注ぎました。"
+              lessons: "初めての業務、初めて触れる概念、初めてのダッシュボードで、全体の流れについていくだけで精一杯でした。その中で、自分にできるデザインに力を注ぎました。",
+              background: "半導体輸出の事前検討では、規制、市場性、価格、物流、安定性に関する情報が必要です。資料を集約するだけでなく、規制上の制約、事業性の参考スコア、資料不足が異なる判断材料であることを示す必要がありました。",
+              methodology: "研修のチームプロジェクトで5領域を扱うダッシュボードのプロトタイプを制作しました。私はホームページと報告書の情報構造を整え、要約から詳しい根拠へ進める構成にしました。規制の確認と参考スコアを分け、データの基準日と確認できない情報を表示しました。",
+              implications: "輸出の事前検討を支える画面には、スコアだけでなく根拠の範囲と不足情報も示す必要があると学びました。成果物は事前検討用のプロトタイプであり、実際の輸出成果や規制判断の正確性を検証した事例ではありません。"
             },
             note: "チームプロジェクトです。分析エンジンとサービス全体はチームの成果物であり、私の貢献は上記の範囲です。"
           },
@@ -1476,12 +1832,15 @@ const SITE = {
               },
               outcome: "チームのデモ動画のHOME部分では、カレンダー、イベント設定、ニュース画面を確認できます。別途制作したベトナム紹介サイトと広報動画も掲載しています。",
               limits: "ベトナム市場への進出を想定した教育用プロトタイプであり、発表資料の作業時間比較は実測ではなく推定値です。発表では、ニュースを集めるだけでなくHanjungsunの進出にとっての意味を示してほしいという意見を受けました。機会は緑、注意は黄、リスクは赤、根拠不足は灰色で保留とする影響分類と絞り込みを計画しており、まだ実装していません。",
-              lessons: "2つ目のダッシュボードプロジェクトで、初めて機能を1つ自分で企画し、実装まで行いました。目立った成果にはつながりませんでしたが、企画したものを動く画面にした初めての経験でした。"
+              lessons: "2つ目のダッシュボードプロジェクトで、初めて機能を1つ自分で企画し、実装まで行いました。目立った成果にはつながりませんでしたが、企画したものを動く画面にした初めての経験でした。",
+              background: "韓国の食品ブランドがベトナムのダナン市場に進出する状況を想定したチームプロジェクトです。現地情報とマーケティング準備の日程が散在すると、担当者が次の行動を決めにくいという課題を扱いました。",
+              methodology: "私はHOMEで現地の日程、ニュース、業務の進捗をつなぎ、目標日から準備日程を逆算できるよう企画し実装しました。閲覧用の記事と確認済みの告知を分け、別途ベトナム紹介サイトと広報動画も制作しました。",
+              implications: "情報を一か所に集めた上で、準備日程と次の行動につなげる構成が重要だと分かりました。ニュースの機会とリスクを可視化する機能は改善計画の段階であり、実際の市場進出やマーケティング効果を検証した成果物ではありません。"
             },
             materials: [
-              {"id": "brandSite", "label": "ベトナム紹介サイト（教育用プロトタイプ）"},
-              {"id": "homeDemo", "label": "HOMEデモ（チーム動画の抜粋、韓国語）"},
-              {"id": "promo", "label": "ベトナム広報動画"}
+              { id: "brandSite", label: "ベトナム紹介サイト（教育用プロトタイプ）" },
+              { id: "homeDemo", label: "HOMEデモ（チーム動画の抜粋、韓国語）" },
+              { id: "promo", label: "ベトナム広報動画" }
             ],
             note: "チームプロジェクトです。ダッシュボード全体はチームの成果物であり、私の貢献はHOME、ベトナム紹介サイト、広報動画を中心とする上記の範囲です。"
           }
@@ -1490,7 +1849,6 @@ const SITE = {
         extraOpen: "開く",
         extraClose: "閉じる",
         extra: [
-          { name: "KOTRA 公開財務資料の分析", meta: "2025.10 – 2025.11 | 大学の授業プロジェクト", desc: "ALIOの2020–2024年の公開財務資料を整理し、財務構造と主要指標の変化を比較して報告書と発表資料にまとめた" },
           { name: "KITA 報告書スタディ", meta: "学習活動", desc: "国際通商の問題を読み、発表資料を準備。CPTPP関連報告書の海外パートの発表準備と紹介文の作成" },
           { name: "その他の活動", desc: "人文科学大学 学生会書記（2023）、チャペル合唱ボランティア（2025）、ダンスサークル Ars Amandi（2022）、カフェ ZITTEN 勤務（2022–2023）" }
         ]
@@ -1498,15 +1856,17 @@ const SITE = {
       now: {
         label: "NOW",
         title: "いま取り組んでいること",
-        asOf: "基準日 2026.11.10",
-        statement: "現在は貿易実務とAI活用を学びながら、国際問題への関心をプロジェクトと記録へと発展させています。英語と分析の基礎を補い、中国と東アジアの通商および政策の問題をより深く学ぶために大学院進学を準備しています。",
+        asOf: "基準日 2026.11.15",
+        statement: "貿易AX研修でWebダッシュボードを制作し、個人プロジェクトTrade Data Labを開発しています。別の企業連携キャップストーンでAI相談チャットボットの開発に着手する準備を進めながら、英語と分析の基礎を補い、通商と政策分野での次の学びと実務経験に備えています。",
         doingTitle: "進行中",
         doing: [
-          "貿易AXマスター課程の受講とチームプロジェクト経験の整理",
-          "英語とTOEFLの学習",
-          "米国の国際関係および公共政策分野の修士課程への進学準備",
-          "国際機関と国際政策分野のインターンシップ応募と進路の模索",
-          "個人ポートフォリオと国際問題に関する探究記録の蓄積"
+          "貿易AXマスター課程の受講とチームプロジェクト経験の整理（2026.12.18修了予定）",
+          "Trade Data Labの開発と、ニュース、政策原文、貿易統計をつなぐサービスの構成",
+          "別の企業連携キャップストーンで、公共サービス提供機関のAI相談チャットボット開発に着手する準備",
+          "TOEFL 100+を目標とする英語学習と、経済学および統計の基礎の補強",
+          "2027年の通商分野の研究補助、または企業の政府渉外と通商戦略インターンへの応募を目指す準備",
+          "2028年秋の米国の国際関係および公共政策分野の修士課程への入学を目指す準備",
+          "国際機関と国際政策分野の進路探索、個人ポートフォリオと探究記録の蓄積"
         ],
         interestsTitle: "関心分野",
         interests: [
