@@ -66,14 +66,14 @@ const SITE = {
     ko: {
       htmlLang: "ko",
       header: { navigationLabel: "주 메뉴", languageLabel: "언어 선택" },
-      meta: { title: "정주연 Juyeon Jung | 국제통상과 정책 탐구", description: "중국경제통상 학업과 국제행사 협업 경험, Trade Data Lab의 무역과 데이터 웹 도구 제작, 정책 원문 탐구를 기록합니다." },
+      meta: { title: "정주연 Juyeon Jung | 국제통상과 정책 탐구", description: "중국경제통상 학업과 국제행사 협업 경험을 바탕으로, 무역 뉴스와 교역 데이터를 다루는 웹 도구를 만들며 통상과 정책 분야의 연구와 실무를 준비합니다." },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "정주연",
-        headline: "무역정책이 기업과 시장에 미치는 영향을 자료와 데이터로 설명하고 싶습니다.",
-        headlineBreakAfter: "무역정책이 기업과 시장에 미치는 영향을",
-        intro: "중국경제통상을 공부하고, 국제행사에서 해외 파트너와 협업했습니다. 지금은 개인 프로젝트 Trade Data Lab에서 무역과 데이터를 주제로 여러 웹페이지와 도구를 만들고 있습니다.",
+        headline: "무역정책과 시장의 변화를 연구하기 위해, 뉴스와 교역 데이터를 비교하는 웹 도구를 만듭니다.",
+        headlineBreakAfter: "무역정책과 시장의 변화를 연구하기 위해,",
+        intro: "중국경제통상을 공부하고 대만에서 2년간 수학했습니다.\n국제행사에서는 해외 미디어와 기관의 요청과 일정을 조율했습니다.",
         politicalEconomyInterest: "국제정치경제",
         photo: "프로필 사진",
         ctaProjects: "프로젝트 보기",
@@ -82,8 +82,8 @@ const SITE = {
       strengths: {
         title: "강점",
         items: [
-          { title: "글로벌 및 지역 이해", desc: "중국과 동아시아에 대한 학업, 대만에서의 수학과 영문 대외 소통 경험을 연결합니다." },
-          { title: "무역 및 시장 데이터 분석", desc: "자료를 정리하고 비교하는 웹 도구를 만듭니다. Python과 pandas, NumPy는 기초 학습과 실습 단계입니다." },
+          { title: "글로벌 및 지역 이해", desc: "중국경제통상 학업과 대만 현지 수학을 통해 중화권의 언어와 사회를 배웠습니다." },
+          { title: "무역 및 시장 데이터 분석", desc: "무역 뉴스, 정책 원문과 교역 통계를 목적에 맞게 정리하고 비교하는 웹 도구를 만듭니다." },
           { title: "프로젝트와 이해관계자 조율", desc: "해외 미디어와 기관, 제작 협력사의 요청과 일정을 정리하고 운영팀과 전달 사항을 조율했습니다." }
         ]
       },
@@ -94,8 +94,7 @@ const SITE = {
         body: [
           "한양대학교에서 중어중문학을 전공하고 중국경제통상학을 부전공했으며, 국립대만대학교에서 중국문학 복수학위를 취득했습니다. 대만에서 2년간 중국어로 전공수업을 이수하며 중화권의 언어와 사회를 이해하는 기반을 쌓았습니다.",
           "엑스포럼 글로벌전략사업팀 인턴으로 해외 미디어 협업, 해외 연사와 기관의 초청 및 일정 조율, 산업 행사 자료 조사를 지원했습니다. 서로 다른 관계자의 요청과 조건을 정리하고, 확인한 내용을 문서로 전달하는 실무를 경험했습니다.",
-          "현재는 무역 AX 교육과정에서 정보 탐색과 비교를 돕는 웹 대시보드를 제작하고 있습니다. 이와 별도로 Trade Data Lab이라는 개인 프로젝트 아래 무역과 데이터를 주제로 여러 웹사이트를 만들고 있습니다. Trade News Room에서는 뉴스와 무역 개념을 공부하고, Policyline에서는 정책 발표 전후의 교역액을 비교하며, Tradeweave에서는 국가별 교역 상대국과 거래 집중도를 살펴볼 수 있도록 각각 구성했습니다.",
-          "별도의 기업 연계 캡스톤에서는 공공서비스 제공 기관과 협업하는 AI 상담 챗봇 개발에 참여할 예정입니다. 프로젝트를 통해 기관의 요구를 파악하고 실제 서비스로 구체화하는 경험을 쌓고자 합니다."
+          "무역 AX 교육과정에서는 흩어진 정보를 찾아보고 비교할 수 있도록 웹 대시보드를 제작하고 있습니다.\n개인 프로젝트 Trade Data Lab에서는 뉴스 학습, 정책 발표 전후의 교역액 비교, 교역 상대국과 거래 집중도 탐색을 위한 웹사이트를 각각 만들고 있습니다."
         ],
         moreOpen: "학력, 자격, 활용 도구 펼쳐 보기",
         moreClose: "접기",
@@ -494,28 +493,42 @@ const SITE = {
         ]
       },
       now: {
-        label: "NOW",
-        title: "지금 하고 있는 일",
-        asOf: "기준일 2026.11.15",
-        statement: "무역 AX 교육과정에서 웹 대시보드를 만들고 있습니다. 개인 프로젝트 Trade Data Lab에서는 무역과 데이터를 주제로 여러 웹사이트와 도구를 제작하고 있습니다. 별도 기업 연계 캡스톤의 AI 상담 챗봇 개발을 준비하며, 영어와 분석의 기초를 보완하고 통상 및 정책 분야의 다음 학업과 실무 경험을 준비합니다.",
-        doingTitle: "현재 진행 중",
-        doing: [
+        "label": "NOW",
+        "title": "지금 하고 있는 일",
+        "asOf": "기준일 2026.11.16",
+        "statement": "현재는 무역 AX 교육과 개인 웹 프로젝트를 병행하며,\n영어와 경제학 및 통계의 기초를 보완하고 있습니다.",
+        "doingTitle": "현재 진행 중",
+        "doing": [
           "무역 AX마스터 과정 수강과 팀 프로젝트 경험 정리 (2026.12.18 수료 예정)",
           "개인 프로젝트 Trade Data Lab 아래 무역과 데이터를 다루는 웹사이트 제작과 확장",
           "별도 기업 연계 캡스톤의 공공서비스 제공 기관 AI 상담 챗봇 개발 착수 준비",
           "TOEFL 100+를 목표로 영어 학습과 경제학 및 통계 기초 보완",
-          "2027년 통상 분야 RA 또는 기업 GR 및 통상전략 인턴 지원을 목표로 준비",
-          "2028년 가을 미국 국제관계 및 공공정책 분야 석사 입학을 목표로 준비",
           "국제기구와 국제정책 분야의 진로 탐색, 개인 포트폴리오와 탐구 기록 축적"
         ],
-        interestsTitle: "관심 분야",
-        interests: [
+        "interestsTitle": "관심 분야",
+        "interests": [
           "중국과 동아시아",
           "국제관계와 국제정치경제",
           "국제통상과 무역정책",
           "공급망, 수출통제와 제재",
           "미중 관계가 무역과 산업에 미치는 영향",
           "자료와 데이터를 바탕으로 국제 이슈를 설명하는 방법"
+        ],
+        "goals": [
+          {
+            "period": "2027",
+            "title": "통상과 정책 분야 실무",
+            "items": [
+              "통상 분야 RA 또는 기업 GR 및 통상전략 인턴 지원 준비"
+            ]
+          },
+          {
+            "period": "2028",
+            "title": "미국 대학원 진학",
+            "items": [
+              "가을학기 국제관계 및 공공정책 분야 석사 입학을 목표로 준비"
+            ]
+          }
         ]
       },
       notes: {
@@ -549,15 +562,15 @@ const SITE = {
       header: { navigationLabel: "Main navigation", languageLabel: "Select language" },
       meta: {
         title: "Juyeon Jung | Global Trade & Policy Research",
-        description: "A record of my studies in Chinese economy and trade, international event collaboration, Trade Data Lab web projects, and policy document reading."
+        description: "Drawing on studies in Chinese economy and trade and experience coordinating international events, I build web tools for trade news and data while preparing for research and work in trade and policy."
       },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "Juyeon Jung",
-        headline: "I want to explain how trade policy affects businesses and markets using source materials and data.",
-        headlineBreakAfter: "I want to explain how trade policy affects businesses and markets",
-        intro: "I studied Chinese economy and trade and worked with overseas partners on international events. I now build multiple websites and tools about trade and data under my personal project, Trade Data Lab.",
+        headline: "I build web tools to compare trade news and data, preparing to study changes in trade policy and markets.",
+        headlineBreakAfter: "I build web tools to compare trade news and data,",
+        intro: "I studied Chinese economy and trade and spent two years studying in Taiwan.\nAt international events, I coordinated requests and schedules with overseas media and institutions.",
         politicalEconomyInterest: "International political economy",
         photo: "Profile photo",
         ctaProjects: "View projects",
@@ -568,11 +581,11 @@ const SITE = {
         items: [
           {
             title: "Global & Regional Expertise",
-            desc: "Connecting my studies of China and East Asia, time studying in Taiwan and experience communicating with external partners in English."
+            desc: "Studied the language and societies of the Chinese-speaking world through Chinese economy and trade coursework and study in Taiwan."
           },
           {
             title: "Trade & Market Data Analytics",
-            desc: "Building web tools to organize and compare information. My Python, pandas and NumPy skills are at an introductory study and practice level."
+            desc: "Build web tools to organize and compare trade news, original policy documents and trade statistics for specific uses."
           },
           {
             title: "Project & Stakeholder Management",
@@ -587,8 +600,7 @@ const SITE = {
         body: [
           "I majored in Chinese Language and Literature at Hanyang University, with a minor in Chinese Economy and Trade, and earned a dual degree in Chinese Literature at National Taiwan University. Two years of major coursework taught in Chinese in Taiwan gave me a foundation for understanding the language and societies of the Chinese-speaking world.",
           "As an intern on EXPORUM's Global Strategy Business Team, I supported overseas media collaboration, invitations and scheduling for international speakers and institutions, and research on industry events. I gained experience organizing different stakeholders' requests and conditions and communicating verified information in writing.",
-          "I am currently building web dashboards in the Trade AX training program to support information discovery and comparison. Separately, I am creating multiple websites about trade and data under my personal project, Trade Data Lab. Trade News Room supports learning from news and trade concepts, Policyline compares trade values before and after policy announcements, and Tradeweave explores countries' trading partners and trade concentration.",
-          "In a separate capstone with an industry partner, I plan to participate in developing an AI advisory chatbot in collaboration with an organization that provides public services. Through the project, I hope to gain experience understanding an institution's requirements and turning them into a working service."
+          "In the Trade AX training program, I build web dashboards to help users find and compare scattered information.\nUnder my personal project Trade Data Lab, I create separate websites for learning from news, comparing trade values before and after policy announcements, and exploring trading partners and trade concentration."
         ],
         moreOpen: "Show education, certifications and tools",
         moreClose: "Close",
@@ -1044,28 +1056,42 @@ const SITE = {
         ]
       },
       now: {
-        label: "NOW",
-        title: "What I'm doing now",
-        asOf: "As of Nov 15, 2026",
-        statement: "I am building web dashboards in the Trade AX training program. Under my personal project, Trade Data Lab, I create multiple websites and tools about trade and data. I am preparing to begin an AI advisory chatbot in a separate industry-linked capstone, strengthening my English and analytical foundations, and preparing for further study and work in trade and policy.",
-        doingTitle: "In progress",
-        doing: [
+        "label": "NOW",
+        "title": "What I'm doing now",
+        "asOf": "As of Nov 16, 2026",
+        "statement": "I am taking the Trade AX program alongside personal web projects,\nwhile strengthening my English and foundations in economics and statistics.",
+        "doingTitle": "In progress",
+        "doing": [
           "Taking the Trade AX Master program and documenting team projects (completion expected Dec 18, 2026)",
           "Building and expanding websites about trade and data under my personal project, Trade Data Lab",
           "Preparing to begin a separate industry-linked capstone chatbot for a public-service organization",
           "Studying toward a TOEFL score of 100+ and strengthening foundations in economics and statistics",
-          "Preparing to apply for trade research assistant roles or corporate government relations and trade strategy internships in 2027",
-          "Preparing for the goal of fall 2028 entry to U.S. master's programs in international relations and public policy",
           "Exploring international organization and policy careers and building a portfolio and exploration notes"
         ],
-        interestsTitle: "Interests",
-        interests: [
+        "interestsTitle": "Interests",
+        "interests": [
           "China and East Asia",
           "International relations and international political economy",
           "International trade and trade policy",
           "Supply chains, export controls and sanctions",
           "How U.S.-China relations affect trade and industry",
           "Explaining international issues using source materials and data"
+        ],
+        "goals": [
+          {
+            "period": "2027",
+            "title": "Trade and policy experience",
+            "items": [
+              "Prepare applications for trade research assistant roles or corporate government relations and trade strategy internships"
+            ]
+          },
+          {
+            "period": "2028",
+            "title": "Graduate study in the U.S.",
+            "items": [
+              "Prepare for the goal of fall entry to master's programs in international relations and public policy"
+            ]
+          }
         ]
       },
       notes: {
@@ -1097,14 +1123,14 @@ const SITE = {
     "zh-Hans": {
       htmlLang: "zh-CN",
       header: { navigationLabel: "主导航", languageLabel: "选择语言" },
-      meta: { title: "郑主缘 Juyeon Jung | 国际贸易与政策探索", description: "记录中国经济与贸易学习、国际活动协作经验、Trade Data Lab旗下贸易与数据网页工具的制作及政策原文研读。" },
+      meta: { title: "郑主缘 Juyeon Jung | 国际贸易与政策探索", description: "以中国经济与贸易学习和国际活动协作经验为基础，制作处理贸易新闻与贸易数据的网页工具，为贸易及政策领域的研究和实务做准备。" },
       nav: { about: "关于我", experience: "经历", projects: "项目", now: "近况", notes: "探索记录", contact: "联系" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "郑主缘",
-        headline: "我希望通过资料和数据，解释贸易政策对企业与市场的影响。",
-        headlineBreakAfter: "我希望通过资料和数据，",
-        intro: "我学习了中国经济与贸易，也曾在国际活动中与海外合作伙伴协作。现在，我以个人项目Trade Data Lab为总主题，制作多个与贸易和数据有关的网站及工具。",
+        headline: "为研究贸易政策与市场的变化，我制作比较贸易新闻和贸易数据的网页工具。",
+        headlineBreakAfter: "为研究贸易政策与市场的变化，",
+        intro: "我学习了中国经济与贸易，并在台湾学习了两年。\n在国际活动中，我曾协调海外媒体和机构的需求与日程。",
         politicalEconomyInterest: "国际政治经济",
         photo: "个人照片",
         ctaProjects: "查看项目",
@@ -1113,8 +1139,8 @@ const SITE = {
       strengths: {
         title: "优势",
         items: [
-          { title: "全球视野与区域理解", desc: "结合中国与东亚相关学习、在台湾修读课程，以及用英语与外部伙伴沟通的经验。" },
-          { title: "贸易与市场数据分析", desc: "制作整理和比较资料的网页工具。Python、pandas与NumPy仍处于基础学习和练习阶段。" },
+          { title: "全球视野与区域理解", desc: "通过中国经济与贸易课程及在台湾的学习，了解华语地区的语言与社会。" },
+          { title: "贸易与市场数据分析", desc: "制作网页工具，按不同用途整理和比较贸易新闻、政策原文与贸易统计。" },
           { title: "项目与利益相关方协调", desc: "整理海外媒体、机构和制作合作方的需求及日程，并与运营团队协调信息传递。" }
         ]
       },
@@ -1125,8 +1151,7 @@ const SITE = {
         body: [
           "我在汉阳大学主修中语中文学，辅修中国经济通商学，并在国立台湾大学取得中国文学双学位。在台湾用两年时间以中文修读专业课程，为理解华语地区的语言与社会打下了基础。",
           "作为EXPORUM全球战略事业组的实习生，我协助海外媒体合作、海外演讲嘉宾与机构的邀请及日程协调，并开展产业活动资料调查。我积累了整理不同合作方的需求与条件、将确认后的信息写成文档并传达的实务经验。",
-          "目前，我在贸易AX培训课程中制作支持信息查找与比较的网页仪表板。此外，我以个人项目Trade Data Lab为总主题，制作多个与贸易和数据有关的网站。Trade News Room用于学习新闻与贸易概念，Policyline用于比较政策发布前后的贸易额，Tradeweave用于查看各国贸易伙伴与贸易集中度，各网站分别围绕不同用途设计。",
-          "在另一个企业合作结业项目中，我计划参与AI咨询聊天机器人的开发，与提供公共服务的机构合作。我希望通过项目积累理解机构需求并将其具体化为实际服务的经验。"
+          "在贸易AX培训课程中，我制作网页仪表板，帮助用户查找和比较分散的信息。\n在个人项目Trade Data Lab下，我分别制作新闻学习、政策发布前后贸易额比较，以及贸易伙伴和贸易集中度探索等用途的网站。"
         ],
         moreOpen: "展开学历、证书与工具",
         moreClose: "收起",
@@ -1503,28 +1528,42 @@ const SITE = {
         ]
       },
       now: {
-        label: "NOW",
-        title: "现在在做的事",
-        asOf: "基准日 2026.11.15",
-        statement: "我正在贸易AX培训课程中制作网页仪表板。同时，以个人项目Trade Data Lab为总主题，制作多个与贸易和数据有关的网站及工具。我也准备在另一个企业合作结业项目中开始开发AI咨询聊天机器人，补强英语与分析基础，为贸易及政策领域的后续学习和实务经验做准备。",
-        doingTitle: "进行中",
-        doing: [
+        "label": "NOW",
+        "title": "现在在做的事",
+        "asOf": "基准日 2026.11.16",
+        "statement": "目前，我同时修读贸易AX课程并开展个人网页项目，\n也在补强英语、经济学和统计基础。",
+        "doingTitle": "进行中",
+        "doing": [
           "修读贸易AX大师课程并整理团队项目经验（预计2026.12.18结业）",
           "以个人项目Trade Data Lab为总主题，制作并扩展贸易与数据相关网站",
           "准备开始企业合作结业项目，为提供公共服务的机构开发AI咨询聊天机器人",
           "以TOEFL 100+为目标学习英语，并补强经济学和统计基础",
-          "以2027年申请贸易领域研究助理或企业政府关系与贸易战略实习为目标做准备",
-          "以2028年秋季进入美国国际关系与公共政策硕士项目为目标做准备",
           "探索国际组织与国际政策领域的职业方向，积累个人作品集与探索记录"
         ],
-        interestsTitle: "关注领域",
-        interests: [
+        "interestsTitle": "关注领域",
+        "interests": [
           "中国与东亚",
           "国际关系与国际政治经济",
           "国际通商与贸易政策",
           "供应链、出口管制与制裁",
           "中美关系对贸易与产业的影响",
           "依据资料和数据解释国际议题的方法"
+        ],
+        "goals": [
+          {
+            "period": "2027",
+            "title": "贸易与政策领域实务",
+            "items": [
+              "准备申请贸易领域研究助理或企业政府关系与贸易战略实习"
+            ]
+          },
+          {
+            "period": "2028",
+            "title": "赴美攻读硕士",
+            "items": [
+              "以秋季进入国际关系与公共政策硕士项目为目标做准备"
+            ]
+          }
         ]
       },
       notes: {
@@ -1556,14 +1595,14 @@ const SITE = {
     "zh-Hant": {
       htmlLang: "zh-TW",
       header: { navigationLabel: "主要導覽", languageLabel: "選擇語言" },
-      meta: { title: "鄭主緣 Juyeon Jung | 國際貿易與政策探究", description: "記錄中國經濟與貿易學習、國際活動協作經驗、Trade Data Lab旗下貿易與資料網頁工具的製作及政策原文研讀。" },
+      meta: { title: "鄭主緣 Juyeon Jung | 國際貿易與政策探究", description: "以中國經濟與貿易學習及國際活動協作經驗為基礎，製作處理貿易新聞與貿易數據的網頁工具，為貿易及政策領域的研究與實務做準備。" },
       nav: { about: "關於我", experience: "經歷", projects: "專案", now: "近況", notes: "探究紀錄", contact: "聯絡" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "我希望透過資料與數據，說明貿易政策對企業和市場的影響。",
-        headlineBreakAfter: "我希望透過資料與數據，",
-        intro: "我曾學習中國經濟與貿易，也在國際活動中與海外夥伴協作。目前，我以個人專案Trade Data Lab為主題，製作多個與貿易及資料有關的網站與工具。",
+        headline: "為了研究貿易政策與市場的變化，我製作比較貿易新聞與貿易數據的網頁工具。",
+        headlineBreakAfter: "為了研究貿易政策與市場的變化，",
+        intro: "我曾學習中國經濟與貿易，並在臺灣就讀兩年。\n在國際活動中，我曾協調海外媒體與機構的需求及時程。",
         politicalEconomyInterest: "國際政治經濟",
         photo: "個人照片",
         ctaProjects: "檢視專案",
@@ -1572,8 +1611,8 @@ const SITE = {
       strengths: {
         title: "優勢",
         items: [
-          { title: "全球視野與區域理解", desc: "結合中國與東亞相關學習、在臺灣修讀課程，以及使用英語與外部夥伴溝通的經驗。" },
-          { title: "貿易與市場資料分析", desc: "製作整理與比較資料的網頁工具。Python、pandas與NumPy仍處於基礎學習和練習階段。" },
+          { title: "全球視野與區域理解", desc: "透過中國經濟與貿易課程及在臺灣的學習，認識華語地區的語言與社會。" },
+          { title: "貿易與市場資料分析", desc: "製作網頁工具，依不同用途整理與比較貿易新聞、政策原文及貿易統計。" },
           { title: "專案與利害關係人協調", desc: "整理海外媒體、機構和製作合作夥伴的需求及時程，並與營運團隊協調資訊傳遞。" }
         ]
       },
@@ -1584,8 +1623,7 @@ const SITE = {
         body: [
           "我在漢陽大學主修中語中文學，輔修中國經濟通商學，並在國立臺灣大學取得中國文學雙學位。在臺灣用兩年時間以中文修讀專業課程，為理解華語地區的語言與社會奠定了基礎。",
           "擔任EXPORUM全球戰略事業組實習生期間，我協助海外媒體合作、海外講者與機構的邀請及時程協調，並進行產業活動資料調查。我累積了整理不同合作方的需求與條件、將確認後的資訊寫成文件並傳達的實務經驗。",
-          "目前，我在貿易AX培訓課程中製作協助資訊查找與比較的網頁儀表板。此外，我以個人專案Trade Data Lab為主題，製作多個與貿易及資料有關的網站。Trade News Room用於學習新聞與貿易概念，Policyline用於比較政策發布前後的貿易額，Tradeweave用於查看各國貿易夥伴與貿易集中度，各網站分別依不同用途設計。",
-          "在另一項企業合作實作專案中，我計畫參與AI諮詢聊天機器人的開發，與提供公共服務的機構合作。我希望透過專案累積理解機構需求並將其具體化為實際服務的經驗。"
+          "在貿易AX培訓課程中，我製作網頁儀表板，協助使用者查找與比較分散的資訊。\n在個人專案Trade Data Lab之下，我分別製作新聞學習、政策發布前後貿易額比較，以及貿易夥伴與貿易集中度探索等用途的網站。"
         ],
         moreOpen: "展開學歷、證照與工具",
         moreClose: "收起",
@@ -1962,28 +2000,42 @@ const SITE = {
         ]
       },
       now: {
-        label: "NOW",
-        title: "現在在做的事",
-        asOf: "基準日 2026.11.15",
-        statement: "我正在貿易AX培訓課程中製作網頁儀表板。同時，以個人專案Trade Data Lab為主題，製作多個與貿易及資料有關的網站與工具。我也準備在另一項企業合作實作專案中開始開發AI諮詢聊天機器人，補強英語與分析基礎，為貿易及政策領域的後續學習和實務經驗做準備。",
-        doingTitle: "進行中",
-        doing: [
+        "label": "NOW",
+        "title": "現在在做的事",
+        "asOf": "基準日 2026.11.16",
+        "statement": "目前，我同時修讀貿易AX課程並進行個人網頁專案，\n也在補強英語、經濟學與統計基礎。",
+        "doingTitle": "進行中",
+        "doing": [
           "修讀貿易AX大師課程並整理團隊專案經驗（預計2026.12.18結業）",
           "以個人專案Trade Data Lab為主題，製作並擴充貿易與資料相關網站",
           "準備啟動企業合作實作專案，為提供公共服務的機構開發AI諮詢聊天機器人",
           "以TOEFL 100+為目標學習英語，並補強經濟學和統計基礎",
-          "以2027年申請貿易領域研究助理或企業政府關係與貿易策略實習為目標做準備",
-          "以2028年秋季進入美國國際關係與公共政策碩士班為目標做準備",
           "探索國際組織與國際政策領域的職涯方向，累積個人作品集與探究紀錄"
         ],
-        interestsTitle: "關注領域",
-        interests: [
+        "interestsTitle": "關注領域",
+        "interests": [
           "中國與東亞",
           "國際關係與國際政治經濟",
           "國際通商與貿易政策",
           "供應鏈、出口管制與制裁",
           "中美關係對貿易與產業的影響",
           "運用參考資料與數據說明國際議題的方法"
+        ],
+        "goals": [
+          {
+            "period": "2027",
+            "title": "貿易與政策領域實務",
+            "items": [
+              "準備申請貿易領域研究助理或企業政府關係與貿易策略實習"
+            ]
+          },
+          {
+            "period": "2028",
+            "title": "赴美攻讀碩士",
+            "items": [
+              "以秋季進入國際關係與公共政策碩士班為目標做準備"
+            ]
+          }
         ]
       },
       notes: {
@@ -2015,14 +2067,14 @@ const SITE = {
     ja: {
       htmlLang: "ja",
       header: { navigationLabel: "メインナビゲーション", languageLabel: "言語を選択" },
-      meta: { title: "鄭主緣 Juyeon Jung | 国際通商と政策の探究", description: "中国の経済と貿易の学習、国際イベントでの協働経験、Trade Data Labでの貿易とデータに関するWebツール制作、政策原文の検討を記録します。" },
+      meta: { title: "鄭主緣 Juyeon Jung | 国際通商と政策の探究", description: "中国の経済と貿易に関する学びと国際イベントでの協働経験を基に、貿易ニュースと貿易データを扱うWebツールを制作し、通商と政策分野での研究と実務に備えています。" },
       nav: { about: "自己紹介", experience: "経歴", projects: "プロジェクト", now: "現在", notes: "探究ノート", contact: "連絡先" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "貿易政策が企業や市場に与える影響を、資料とデータに基づいて説明していきたいと考えています。",
-        headlineBreakAfter: "貿易政策が企業や市場に与える影響を、",
-        intro: "中国の経済と貿易を学び、国際イベントでは海外のパートナーと協働してきました。現在は個人プロジェクトTrade Data Labのもとで、貿易とデータをテーマに複数のWebサイトやツールを制作しています。",
+        headline: "貿易政策と市場の変化を研究するため、貿易ニュースと貿易データを比較するWebツールを制作しています。",
+        headlineBreakAfter: "貿易政策と市場の変化を研究するため、",
+        intro: "中国の経済と貿易を学び、台湾で2年間修学しました。\n国際イベントでは、海外メディアや機関の要望と日程を調整しました。",
         politicalEconomyInterest: "国際政治経済",
         photo: "プロフィール写真",
         ctaProjects: "プロジェクトを見る",
@@ -2031,8 +2083,8 @@ const SITE = {
       strengths: {
         title: "強み",
         items: [
-          { title: "国際的な視野と地域理解", desc: "中国と東アジアに関する学び、台湾での修学、英語での対外コミュニケーション経験をつなげます。" },
-          { title: "貿易と市場データの分析", desc: "資料を整理し比較するWebツールを制作します。Python、pandas、NumPyは基礎学習と実習の段階です。" },
+          { title: "国際的な視野と地域理解", desc: "中国の経済と貿易に関する学びと台湾での修学を通じて、中国語圏の言語と社会を学びました。" },
+          { title: "貿易と市場データの分析", desc: "貿易ニュース、政策原文、貿易統計を目的に応じて整理し比較するWebツールを制作しています。" },
           { title: "プロジェクトと関係者の調整", desc: "海外メディア、機関、制作協力先の要望と日程を整理し、運営チームとの情報共有を調整しました。" }
         ]
       },
@@ -2043,8 +2095,7 @@ const SITE = {
         body: [
           "漢陽大学で中語中文学を専攻、中国経済通商学を副専攻し、国立台湾大学で中国文学の複数学位を取得しました。台湾で2年間、中国語の専攻授業を履修し、中国語圏の言語と社会を理解する土台を築きました。",
           "EXPORUMのグローバル戦略事業チームのインターンとして、海外メディアとの協業、海外登壇者と機関への招待や日程調整、産業イベントの資料調査を支援しました。異なる関係者の要望と条件を整理し、確認した内容を文書で伝える実務を経験しました。",
-          "現在は貿易AX研修で、情報の探索と比較を支援するWebダッシュボードを制作しています。これとは別に、個人プロジェクトTrade Data Labのもとで、貿易とデータをテーマに複数のWebサイトを制作しています。Trade News Roomはニュースと貿易概念の学習、Policylineは政策発表前後の貿易額の比較、Tradeweaveは国別の貿易相手国と取引集中度の確認を目的として、それぞれ構成しました。",
-          "別の企業連携キャップストーンでは、公共サービスを提供する機関と協働するAI相談チャットボットの開発に参加する予定です。プロジェクトを通じて機関の要件を理解し、実際のサービスとして具体化する経験を積みたいと考えています。"
+          "貿易AX研修では、分散した情報の探索と比較を支援するWebダッシュボードを制作しています。\n個人プロジェクトTrade Data Labでは、ニュース学習、政策発表前後の貿易額比較、貿易相手国と取引集中度の探索を目的とするWebサイトをそれぞれ制作しています。"
         ],
         moreOpen: "学歴、資格、使用ツールを見る",
         moreClose: "閉じる",
@@ -2435,28 +2486,42 @@ const SITE = {
         ]
       },
       now: {
-        label: "NOW",
-        title: "いま取り組んでいること",
-        asOf: "基準日 2026.11.15",
-        statement: "貿易AX研修でWebダッシュボードを制作しています。個人プロジェクトTrade Data Labのもとでは、貿易とデータをテーマに複数のWebサイトやツールを制作しています。別の企業連携キャップストーンでAI相談チャットボットの開発に着手する準備を進めながら、英語と分析の基礎を補い、通商と政策分野での次の学びと実務経験に備えています。",
-        doingTitle: "進行中",
-        doing: [
+        "label": "NOW",
+        "title": "いま取り組んでいること",
+        "asOf": "基準日 2026.11.16",
+        "statement": "現在は貿易AX課程と個人のWebプロジェクトを並行しながら、\n英語と経済学および統計の基礎を補強しています。",
+        "doingTitle": "進行中",
+        "doing": [
           "貿易AXマスター課程の受講とチームプロジェクト経験の整理（2026.12.18修了予定）",
           "個人プロジェクトTrade Data Labのもとで貿易とデータに関するWebサイトを制作し拡充",
           "別の企業連携キャップストーンで、公共サービス提供機関のAI相談チャットボット開発に着手する準備",
           "TOEFL 100+を目標とする英語学習と、経済学および統計の基礎の補強",
-          "2027年の通商分野の研究補助、または企業の政府渉外と通商戦略インターンへの応募を目指す準備",
-          "2028年秋の米国の国際関係および公共政策分野の修士課程への入学を目指す準備",
           "国際機関と国際政策分野の進路探索、個人ポートフォリオと探究記録の蓄積"
         ],
-        interestsTitle: "関心分野",
-        interests: [
+        "interestsTitle": "関心分野",
+        "interests": [
           "中国と東アジア",
           "国際関係と国際政治経済",
           "国際通商と貿易政策",
           "サプライチェーン、輸出管理と制裁",
           "米中関係が貿易と産業に与える影響",
           "資料とデータに基づいて国際問題を説明する方法"
+        ],
+        "goals": [
+          {
+            "period": "2027",
+            "title": "通商と政策分野の実務",
+            "items": [
+              "通商分野の研究補助、または企業の政府渉外と通商戦略インターンへの応募準備"
+            ]
+          },
+          {
+            "period": "2028",
+            "title": "米国大学院への進学",
+            "items": [
+              "秋学期の国際関係および公共政策分野の修士課程入学を目標に準備"
+            ]
+          }
         ]
       },
       notes: {

@@ -281,7 +281,13 @@
       <p class="now-as-of">${esc(n.asOf)}</p>
       <div class="now-statement"><p class="statement">${sentences(n.statement, t.htmlLang)}</p></div>
       <div class="now-grid">
-        <div><h3>${esc(n.doingTitle)}</h3>${list(n.doing)}</div>
+        <div class="now-plan-groups">
+          <section class="now-plan-group"><h3>${esc(n.doingTitle)}</h3>${list(n.doing)}</section>
+          ${n.goals.map((goal) => `<section class="now-plan-group">
+            <h3 class="now-plan-title"><span class="now-plan-period">${esc(goal.period)}</span>${esc(goal.title)}</h3>
+            ${list(goal.items)}
+          </section>`).join("")}
+        </div>
         <div><h3>${esc(n.interestsTitle)}</h3>${tags(n.interests)}</div>
       </div>
     </div>`;
