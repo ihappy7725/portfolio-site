@@ -88,7 +88,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .eyebrow { color: var(--primary); font-weight: 700; letter-spacing: 0.14em; font-size: 18px; }
 .hero h1 { font-size: 68px; line-height: 1.2; letter-spacing: -0.03em; margin: 8px 0 24px; }
 .headline { font-size: 34px; font-weight: 700; line-height: 1.5; letter-spacing: -0.025em; margin-bottom: 24px; }
-.headline-phrase { display: inline-block; max-width: 100%; text-wrap: pretty; }
+.headline-phrase { display: inline-block; max-width: 100%; text-wrap: balance; }
 .hero-intro { color: var(--text-sub); font-size: 20px; line-height: 1.85; max-width: 760px; }
 .sentence { display: block; }
 .hero-intro .sentence { text-wrap: pretty; }
@@ -201,11 +201,12 @@ details.more:not([open]) > summary .when-open { display: none; }
 .project { min-width: 0; border-radius: 16px; box-shadow: none; padding: 28px 32px; }
 .project-topline { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 12px; color: var(--text-muted); font-size: 13px; }
 .project-period { margin-left: auto; font-variant-numeric: tabular-nums; }
-.project h3 { font-size: 25px; margin: 0 0 10px; line-height: 1.4; letter-spacing: -0.02em; }
-.project .summary { color: var(--text); font-size: 16px; line-height: 1.8; max-width: 76ch; text-wrap: pretty; }
-.project-role { border-left: 2px solid var(--sky); padding-left: 14px; margin-top: 18px; max-width: 76ch; }
-.project-role-label { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 3px; }
-.project-role > p:last-child { font-size: 15px; color: var(--text-sub); line-height: 1.8; text-wrap: pretty; }
+.project h3 { font-size: 25px; margin: 0 0 22px; line-height: 1.45; letter-spacing: -0.02em; text-wrap: balance; }
+.project-story { display: grid; gap: 14px; max-width: 880px; }
+.project-story > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 16px; align-items: baseline; }
+.project-story dt { color: var(--primary-dark); font-size: 13px; font-weight: 600; }
+.project-story dd { margin: 0; color: var(--text-sub); font-size: 15px; line-height: 1.85; text-wrap: pretty; }
+.project-story > div:last-child dd { color: var(--text); }
 .project .link-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .project .link-row .btn { font-size: 13px; padding: 8px 15px; border-width: 1px; border-radius: 10px; }
 .project .link-row .btn:hover { border-color: var(--primary-dark); }
@@ -230,12 +231,14 @@ details.project-details > summary:hover { color: var(--primary); }
 .statement { font-size: 17px; color: var(--text); line-height: 1.9; text-wrap: pretty; }
 
 /* ===== Notes ===== */
-.notes-list { display: grid; gap: 16px; }
-.note-card { min-width: 0; }
-.note-card h3 { font-size: 20px; line-height: 1.4; margin: 6px 0 10px; }
+.notes-list { display: grid; border-top: 1px solid var(--line); }
+.note-card { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 8px 28px; min-width: 0; padding: 24px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; box-shadow: none; }
+.note-card > time { grid-column: 1; grid-row: 1 / 4; padding-top: 4px; font-variant-numeric: tabular-nums; }
+.note-card > h3, .note-card > p, .note-card > .tags { grid-column: 2; }
+.note-card h3 { font-size: 20px; line-height: 1.5; margin: 0; max-width: 65ch; text-wrap: balance; }
 .note-card h3 a { text-underline-offset: 4px; overflow-wrap: anywhere; }
 .note-card h3 a:hover { color: var(--primary); }
-.note-summary { color: var(--text-sub); font-size: 15px; margin-bottom: 16px; }
+.note-summary { color: var(--text-sub); font-size: 15px; line-height: 1.8; max-width: 76ch; }
 
 /* ===== Contact ===== */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; }
@@ -289,11 +292,16 @@ details.project-details > summary:hover { color: var(--primary); }
   .comparison-table th, .comparison-table td { padding: 10px; }
   .project-topline { gap: 10px; }
   .project h3 { font-size: 21px; }
+  .project-story { gap: 16px; }
+  .project-story > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .now-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .now-statement { padding: 20px; }
   .contact-address { font-size: 20px; }
   .card { padding: 22px; }
   .project { padding: 22px; }
+  .note-card { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 22px 0; }
+  .note-card > time, .note-card > h3, .note-card > p, .note-card > .tags { grid-column: 1; grid-row: auto; }
+  .note-card > time { padding-top: 0; }
 }
 
 /* 첫 화면 관심 분야 */

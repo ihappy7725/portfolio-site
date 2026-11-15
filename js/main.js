@@ -227,8 +227,11 @@
       return `<article class="card project" id="project-${esc(it.id)}">
         <div class="project-topline"><p class="project-type">${esc(view.type)}</p><p class="project-period">${esc(it.period)}</p></div>
         <h3>${esc(view.title || it.name)}</h3>
-        <p class="summary">${sentences(view.summary, t.htmlLang)}</p>
-        <div class="project-role"><p class="project-role-label">${esc(L.role)}</p><p>${sentences(view.contribution, t.htmlLang)}</p></div>
+        <dl class="project-story">${[
+          [L.storyProblem, view.problem],
+          [L.storyAction, view.action],
+          [L.storyChange, view.change]
+        ].map(([label, text]) => `<div><dt>${esc(label)}</dt><dd>${sentences(text, t.htmlLang)}</dd></div>`).join("")}</dl>
         ${links ? `<div class="link-row"${serviceLinks.length ? ` role="group" aria-label="${esc(L.workingServices)}"` : ""}>${links}</div>` : ""}
         ${details}
       </article>`;

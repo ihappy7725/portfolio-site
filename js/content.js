@@ -1,5 +1,5 @@
 /*
- * 사이트의 모든 문구와 링크를 이 파일에서 관리합니다.
+ * 메인 페이지의 문구와 링크, Notes 목록을 이 파일에서 관리합니다.
  * - 문구 수정: 아래 ko / en / zh-Hans(간체) / zh-Hant(번체) / ja 에서 해당 문장을 고치세요.
  *   (모든 언어를 함께 고쳐야 언어 전환 시 내용이 맞습니다. 번체는 대만식 표현 기준입니다.)
  * - 대시보드 링크: SITE.links.projects 또는 projectComponents 에 실제 주소를 넣습니다.
@@ -62,14 +62,14 @@ const SITE = {
     ko: {
       htmlLang: "ko",
       header: { navigationLabel: "주 메뉴", languageLabel: "언어 선택" },
-      meta: { title: "정주연 Juyeon Jung | 국제통상과 정책 탐구", description: "무역 뉴스와 정책 원문, 교역 통계를 연결하는 도구와 국제 협업 경험을 기록합니다." },
+      meta: { title: "정주연 Juyeon Jung | 국제통상과 정책 탐구", description: "중국경제통상 학업과 국제행사 협업 경험, Trade Data Lab 개발과 정책 원문 탐구를 기록합니다." },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "정주연",
-        headline: "무역 뉴스를 읽고, 관련 정책과 교역 통계를 한눈에 살펴보는 도구를 만듭니다.",
-        headlineBreakAfter: "무역 뉴스를 읽고,",
-        intro: "무역 AX 교육과정에서 흩어진 정보를 보기 쉽게 정리하는 웹 대시보드를 제작하고 있습니다. 개인 프로젝트 Trade Data Lab에서는 뉴스와 정책 원문, 교역 통계를 모아 국가별 거래 구조와 정책 발표 전후의 변화를 살펴보는 서비스를 개발하고 있습니다. 별도의 기업 연계 캡스톤에서는 공공서비스 제공 기관의 AI 상담 챗봇 개발을 시작할 예정입니다.",
+        headline: "무역정책이 기업과 시장에 미치는 영향을 자료와 데이터로 설명하고 싶습니다.",
+        headlineBreakAfter: "무역정책이 기업과 시장에 미치는 영향을",
+        intro: "중국경제통상을 공부하고, 국제행사에서 해외 파트너와 협업했습니다. 지금은 Trade Data Lab에서 무역 뉴스와 정책 원문, 교역 통계를 함께 살펴볼 수 있는 서비스를 만들고 있습니다.",
         politicalEconomyInterest: "국제정치경제",
         photo: "프로필 사진",
         ctaProjects: "프로젝트 보기",
@@ -203,6 +203,9 @@ const SITE = {
         title: "대표 프로젝트",
         intro: "무역과 국제 이슈에서 출발한 질문을 자료와 데이터로 풀어 보는 웹 도구로 정리해 온 기록입니다.",
         labels: {
+          storyProblem: "문제의식",
+          storyAction: "내가 한 일",
+          storyChange: "달라진 구성",
           dashboard: "대시보드 웹페이지",
           workingServices: "동작 서비스",
           materials: "프로젝트 자료",
@@ -238,14 +241,17 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab",
+              "title": "Trade Data Lab | 무역 뉴스와 정책, 교역 통계 탐구",
               "type": "개인 프로젝트 (개발 중)",
               "summary": "무역 뉴스와 정책, 국가별 교역 통계를 살펴보는 웹 도구입니다.",
               "contribution": "질문별 서비스 구성과 화면을 기획하고 제작했습니다.",
               "details": [
                 "현재 Trade News Room, Policyline, Tradeweave가 동작합니다.",
                 "서비스별로 출처와 기준 기간, 단위, 사실과 해석을 구분하는 표시 원칙을 정했습니다."
-              ]
+              ],
+              "problem": "뉴스와 정책 원문, 교역 통계가 흩어져 있고 기간과 단위도 달라 함께 비교하기 어려웠습니다.",
+              "action": "Trade News Room, Policyline, Tradeweave를 질문별로 나누어 기획하고 제작했습니다.",
+              "change": "뉴스와 개념 학습, 정책 발표 전후의 교역액, 교역 상대국과 집중도를 각 서비스에서 살펴보도록 구성했습니다."
             },
             name: "Trade Data Lab | 무역 뉴스와 정책, 교역 통계를 함께 보는 웹 도구",
             summary: "흩어진 뉴스와 정책 원문, 통계를 질문별로 연결하는 개인 프로젝트입니다. 국가별 거래 구조와 정책 발표 전후의 교역 변화를 직접 살펴볼 수 있도록 서비스를 구성하고 있습니다.",
@@ -320,14 +326,17 @@ const SITE = {
           {
             id: "axport",
             presentation: {
-              "title": "AXPORT",
+              "title": "AXPORT | 반도체 수출 의사결정 대시보드",
               "type": "팀 프로젝트 (프로토타입)",
               "summary": "반도체 수출에 필요한 규제와 시장 정보를 모은 사전 검토 대시보드입니다.",
               "contribution": "홈페이지를 기획하고, 규제 확인과 사업성 점수가 구분되도록 보고서 구성과 문구를 다듬었습니다.",
               "details": [
                 "반응형 레이아웃과 다국어 화면을 구성했습니다.",
                 "보고서 요약에서 상세 근거로 이어지는 정보 구조를 정리했습니다."
-              ]
+              ],
+              "problem": "규제상 제약과 사업성 점수, 자료가 없는 항목이 한데 제시되면 판단 기준을 구분하기 어려웠습니다.",
+              "action": "홈페이지를 기획하고, 규제 확인과 사업성 평가가 나뉘도록 보고서의 구성과 표현을 다듬었습니다.",
+              "change": "요약에서 상세 근거로 이어지게 하고, 데이터 기준일과 자료 부족을 표시해 결과의 근거를 살펴보도록 했습니다."
             },
             name: "AXPORT | 반도체 수출 의사결정 대시보드",
             question: "반도체 수출에서 규제에 따른 제약과 시장의 기회를 어떻게 구분해 검토하고, 판단의 근거를 전달할 수 있을까?",
@@ -353,14 +362,17 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
-              "title": "한정선",
+              "title": "한정선 | 베트남 진출 마케팅 대시보드",
               "type": "팀 프로젝트 (프로토타입)",
               "summary": "식품 브랜드의 베트남 다낭 진출을 가정해 현지 정보와 준비 일정을 모은 대시보드입니다.",
               "contribution": "HOME을 기획하고 구현해 현지 일정과 뉴스, 오늘 할 일을 한 화면에 연결했습니다.",
               "details": [
                 "목표일부터 준비 일정을 역산하고, 탐색용 기사와 확인된 공지를 구분했습니다.",
                 "별도로 베트남 소개 홈페이지와 홍보영상을 기획하고 제작했습니다."
-              ]
+              ],
+              "problem": "베트남 현지 정보와 마케팅 준비 일정이 흩어져, 담당자가 다음에 할 일을 정하기 어려웠습니다.",
+              "action": "HOME을 기획하고 구현하며 목표일부터 준비 일정을 역산하고, 현지 일정과 뉴스, 업무 진척을 연결했습니다.",
+              "change": "오늘 할 일과 캠페인 진행 상태를 한 화면에서 살펴보고, 탐색용 기사와 확인된 공지를 구분하도록 구성했습니다."
             },
             name: "한정선 | 베트남 진출 마케팅 대시보드",
             question: "한국 식품 브랜드의 베트남 진출을 준비할 때, 현지 정보를 어떻게 실행 가능한 마케팅 계획으로 연결할 수 있을까?",
@@ -435,7 +447,15 @@ const SITE = {
         label: "NOTES",
         title: "탐구 기록",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: []
+        items: [
+          {
+            title: "2023년 중국 흑연 수출통제, 품목 조건부터 읽기",
+            summary: "공식 공고와 FAQ를 읽고 인조흑연과 천연흑연의 품목 조건, 허가 요건과 시장 영향의 구분을 정리했습니다.",
+            tags: ["중국","수출통제","정책 원문"],
+            date: "2026-11-15",
+            link: "notes/2023-china-graphite-controls.html?from=ko"
+          }
+        ]
       },
       contact: {
         label: "CONTACT",
@@ -462,15 +482,15 @@ const SITE = {
       header: { navigationLabel: "Main navigation", languageLabel: "Select language" },
       meta: {
         title: "Juyeon Jung | Global Trade & Policy Research",
-        description: "A record of building tools that connect trade news, original policy documents and trade statistics, alongside international collaboration experience."
+        description: "A record of my studies in Chinese economy and trade, international event collaboration, Trade Data Lab development and policy document reading."
       },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "Juyeon Jung",
-        headline: "I read trade news and build tools to view related policies and trade statistics at a glance.",
-        headlineBreakAfter: "I read trade news",
-        intro: "In the Trade AX training program, I am building web dashboards that make scattered information easier to review. In my personal project, Trade Data Lab, I am developing services that bring news, original policy documents and trade statistics together to explore country-level trade structures and changes before and after policy announcements. In a separate capstone with an industry partner, I am preparing to begin developing an AI advisory chatbot for an organization that provides public services.",
+        headline: "I want to explain how trade policy affects businesses and markets using source materials and data.",
+        headlineBreakAfter: "I want to explain how trade policy affects businesses and markets",
+        intro: "I studied Chinese economy and trade and worked with overseas partners on international events. I am now developing services in Trade Data Lab to explore trade news, original policy documents and trade statistics together.",
         politicalEconomyInterest: "International political economy",
         photo: "Profile photo",
         ctaProjects: "View projects",
@@ -623,6 +643,9 @@ const SITE = {
         title: "Selected projects",
         intro: "A record of turning questions from trade and international issues into web tools that work through sources and data.",
         labels: {
+          storyProblem: "The problem",
+          storyAction: "My work",
+          storyChange: "What changed",
           dashboard: "Open dashboard",
           workingServices: "Live services",
           materials: "Project materials",
@@ -657,14 +680,17 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab",
+              "title": "Trade Data Lab | Exploring trade news, policy and statistics",
               "type": "Personal project (in development)",
               "summary": "Web tools for exploring trade news, policy and country-level trade statistics.",
               "contribution": "I planned and built the service structure and screens around specific trade questions.",
               "details": [
                 "Trade News Room, Policyline and Tradeweave are currently working.",
                 "I defined shared principles for displaying sources, reference periods and units, and separating facts from interpretations."
-              ]
+              ],
+              "problem": "News, original policy documents and trade statistics were scattered, with different periods and units making comparison difficult.",
+              "action": "I planned and built Trade News Room, Policyline and Tradeweave around distinct questions.",
+              "change": "The services support learning from news, comparing trade values around policy announcements, and examining trading partners and concentration."
             },
             name: "Trade Data Lab | Web tools for trade news, policy and trade statistics",
             summary: "A personal project connecting scattered news, original policy documents and statistics around specific questions. I am building a set of services for exploring countries' trading relationships and changes in trade around policy announcements.",
@@ -772,14 +798,17 @@ const SITE = {
           {
             id: "axport",
             presentation: {
-              "title": "AXPORT",
+              "title": "AXPORT | Semiconductor export decision dashboard",
               "type": "Team project (prototype)",
               "summary": "A dashboard bringing together regulatory and market information for semiconductor export reviews.",
               "contribution": "I planned the website and refined the report structure and wording to distinguish regulatory checks from commercial viability scores.",
               "details": [
                 "I built the responsive layout and multilingual screens.",
                 "I organized the information flow from the report summary to detailed evidence."
-              ]
+              ],
+              "problem": "Regulatory restrictions, commercial viability scores and missing information could look equivalent when presented together.",
+              "action": "I planned the website and refined the report structure and wording to separate regulatory checks from commercial assessments.",
+              "change": "The report leads from summaries to detailed evidence, with reference dates and labels for missing information showing what supports the result."
             },
             name: "AXPORT | Semiconductor Export Decision Dashboard",
             question: "How can regulatory constraints and market opportunities in semiconductor exports be reviewed as distinct considerations, and how can the reasoning behind decisions be communicated?",
@@ -813,14 +842,17 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
-              "title": "Hanjungsun",
+              "title": "Hanjungsun | Marketing dashboard for entering Vietnam",
               "type": "Team project (prototype)",
               "summary": "A dashboard gathering local information and preparation schedules for a hypothetical food brand launch in Da Nang, Vietnam.",
               "contribution": "I planned and implemented HOME, bringing local schedules, news and daily tasks together on one screen.",
               "details": [
                 "I built preparation schedules backward from target dates and separated browsable articles from confirmed announcements.",
                 "I also planned and produced the Vietnam introduction website and promotional video."
-              ]
+              ],
+              "problem": "Scattered local information and preparation schedules made it difficult to identify the next task for a hypothetical Vietnam launch.",
+              "action": "I planned and implemented HOME, working backward from target dates and linking local schedules, news and task progress.",
+              "change": "HOME brings daily tasks and campaign progress into one view, while separating browsable articles from confirmed announcements."
             },
             name: "Hanjungsun | Vietnam Market Entry Marketing Dashboard",
             question: "When preparing a Korean food brand to enter Vietnam, how can local information be translated into an actionable marketing plan?",
@@ -902,7 +934,15 @@ const SITE = {
         label: "NOTES",
         title: "Exploration notes",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: []
+        items: [
+          {
+            title: "Reading the product conditions in China's 2023 graphite export controls",
+            summary: "A Korean-language reading note on product scope and licensing requirements, distinguishing policy conditions from market outcomes.",
+            tags: ["China","Export controls","Policy documents"],
+            date: "2026-11-15",
+            link: "notes/2023-china-graphite-controls.html?from=en"
+          }
+        ]
       },
       contact: {
         label: "CONTACT",
@@ -927,14 +967,14 @@ const SITE = {
     "zh-Hans": {
       htmlLang: "zh-CN",
       header: { navigationLabel: "主导航", languageLabel: "选择语言" },
-      meta: { title: "郑主缘 Juyeon Jung | 国际贸易与政策探索", description: "记录连接贸易新闻、政策原文与贸易统计的工具制作，以及国际协作经验。" },
+      meta: { title: "郑主缘 Juyeon Jung | 国际贸易与政策探索", description: "记录中国经济与贸易的学习、国际活动协作经验、Trade Data Lab开发及政策原文研读。" },
       nav: { about: "关于我", experience: "经历", projects: "项目", now: "近况", notes: "探索记录", contact: "联系" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "郑主缘",
-        headline: "我阅读贸易新闻，并开发工具，让相关政策与贸易统计一目了然。",
-        headlineBreakAfter: "我阅读贸易新闻，",
-        intro: "我正在贸易AX培训课程中制作网页仪表板，将分散的信息整理得更便于查看。在个人项目Trade Data Lab中，我汇集新闻、政策原文与贸易统计，开发用于观察各国贸易结构及政策发布前后变化的服务。在另一个企业合作结业项目中，我计划开始为提供公共服务的机构开发AI咨询聊天机器人。",
+        headline: "我希望通过资料和数据，解释贸易政策对企业与市场的影响。",
+        headlineBreakAfter: "我希望通过资料和数据，",
+        intro: "我学习了中国经济与贸易，也曾在国际活动中与海外合作伙伴协作。现在，我正在开发Trade Data Lab，让用户能综合查看贸易新闻、政策原文与贸易统计。",
         politicalEconomyInterest: "国际政治经济",
         photo: "个人照片",
         ctaProjects: "查看项目",
@@ -1061,6 +1101,9 @@ const SITE = {
         title: "代表项目",
         intro: "从贸易与国际议题出发，借助资料与数据把问题整理成网页工具的记录。",
         labels: {
+          storyProblem: "问题意识",
+          storyAction: "我的工作",
+          storyChange: "调整后的呈现",
           dashboard: "查看仪表板",
           workingServices: "可运行服务",
           materials: "项目资料",
@@ -1095,14 +1138,17 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab",
+              "title": "Trade Data Lab | 贸易新闻、政策与贸易统计探索",
               "type": "个人项目（开发中）",
               "summary": "用于查看贸易新闻、政策和各国贸易统计的网页工具。",
               "contribution": "我围绕具体的贸易问题，规划并制作了服务结构与页面。",
               "details": [
                 "Trade News Room、Policyline和Tradeweave目前已可运行。",
                 "我制定了标注来源、基准时间和单位，以及区分事实与解读的共同呈现原则。"
-              ]
+              ],
+              "problem": "新闻、政策原文和贸易统计分散在不同来源，基准时间与单位也不同，难以放在一起比较。",
+              "action": "我按不同问题，规划并制作了Trade News Room、Policyline和Tradeweave。",
+              "change": "用户可分别在各服务中学习新闻与贸易概念、比较政策发布前后的贸易额，并查看贸易伙伴和集中度。"
             },
             name: "Trade Data Lab | 结合贸易新闻、政策与贸易统计的网页工具",
             summary: "这是一个围绕具体问题，将分散的新闻、政策原文与统计资料连接起来的个人项目。我正在构建一组服务，让使用者可以直接查看各国贸易结构，以及政策发布前后的贸易变化。",
@@ -1172,14 +1218,17 @@ const SITE = {
           {
             id: "axport",
             presentation: {
-              "title": "AXPORT",
+              "title": "AXPORT | 半导体出口决策仪表板",
               "type": "团队项目（原型）",
               "summary": "汇集半导体出口审查所需法规与市场信息的仪表板。",
               "contribution": "我规划了主页，并调整报告结构与措辞，使法规核查与商业可行性评分得到区分。",
               "details": [
                 "我制作了响应式布局与多语言页面。",
                 "我整理了从报告摘要连接至详细依据的信息结构。"
-              ]
+              ],
+              "problem": "法规限制、商业可行性评分和缺失信息放在一起呈现时，判断依据容易混淆。",
+              "action": "我规划了主页，并调整报告结构与措辞，将法规核查与商业可行性评估分开。",
+              "change": "报告从摘要连接至详细依据，并标注数据基准日期和资料不足的项目，让用户能查看结果的支撑信息。"
             },
             name: "AXPORT | 半导体出口决策仪表板",
             question: "在半导体出口中，如何区分监管限制与市场机会进行评估，并传达判断所依据的信息？",
@@ -1205,14 +1254,17 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
-              "title": "Hanjungsun",
+              "title": "Hanjungsun | 进入越南市场的营销仪表板",
               "type": "团队项目（原型）",
               "summary": "以食品品牌进入越南岘港为假设，汇集当地信息与准备日程的仪表板。",
               "contribution": "我规划并实现了HOME，在一个页面连接当地日程、新闻与当天任务。",
               "details": [
                 "我从目标日期倒推准备日程，并区分供浏览的文章与已确认的公告。",
                 "我还单独策划并制作了越南介绍网站与宣传视频。"
-              ]
+              ],
+              "problem": "越南当地信息与营销准备日程分散，负责人难以判断下一步该做什么。",
+              "action": "我规划并实现了HOME，从目标日期倒推准备日程，并连接当地日程、新闻与任务进度。",
+              "change": "HOME在一个页面呈现当天任务与活动进展，并区分供浏览的文章与已确认的公告。"
             },
             name: "Hanjungsun | 越南市场进入营销仪表板",
             question: "韩国食品品牌准备进入越南市场时，如何将当地信息转化为可执行的营销计划？",
@@ -1278,7 +1330,15 @@ const SITE = {
         label: "NOTES",
         title: "探索记录",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: []
+        items: [
+          {
+            title: "从产品条件读懂中国2023年石墨出口管制",
+            summary: "阅读官方公告与问答，梳理产品范围及许可要求，并区分政策条件与市场变化。正文为韩语。",
+            tags: ["中国","出口管制","政策原文"],
+            date: "2026-11-15",
+            link: "notes/2023-china-graphite-controls.html?from=zh-Hans"
+          }
+        ]
       },
       contact: {
         label: "CONTACT",
@@ -1303,14 +1363,14 @@ const SITE = {
     "zh-Hant": {
       htmlLang: "zh-TW",
       header: { navigationLabel: "主要導覽", languageLabel: "選擇語言" },
-      meta: { title: "鄭主緣 Juyeon Jung | 國際貿易與政策探究", description: "記錄串連貿易新聞、政策原文與貿易統計的工具製作，以及國際協作經驗。" },
+      meta: { title: "鄭主緣 Juyeon Jung | 國際貿易與政策探究", description: "記錄中國經濟與貿易的學習、國際活動協作經驗、Trade Data Lab開發及政策原文研讀。" },
       nav: { about: "關於我", experience: "經歷", projects: "專案", now: "近況", notes: "探究紀錄", contact: "聯絡" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "我閱讀貿易新聞，並製作工具，讓相關政策與貿易統計一目了然。",
-        headlineBreakAfter: "我閱讀貿易新聞，",
-        intro: "我正在貿易AX培訓課程中製作網頁儀表板，將分散的資訊整理得更便於查看。在個人專案Trade Data Lab中，我彙整新聞、政策原文與貿易統計，開發用來觀察各國貿易結構及政策發布前後變化的服務。在另一項企業合作實作專案中，我計畫開始為提供公共服務的機構開發AI諮詢聊天機器人。",
+        headline: "我希望透過資料與數據，說明貿易政策對企業和市場的影響。",
+        headlineBreakAfter: "我希望透過資料與數據，",
+        intro: "我曾學習中國經濟與貿易，也在國際活動中與海外夥伴協作。目前，我正開發Trade Data Lab，讓使用者能一併查閱貿易新聞、政策原文與貿易統計。",
         politicalEconomyInterest: "國際政治經濟",
         photo: "個人照片",
         ctaProjects: "檢視專案",
@@ -1437,6 +1497,9 @@ const SITE = {
         title: "代表專案",
         intro: "從貿易與國際議題出發，藉由資料與數據把問題整理成網頁工具的紀錄。",
         labels: {
+          storyProblem: "問題意識",
+          storyAction: "我的工作",
+          storyChange: "調整後的呈現",
           dashboard: "開啟儀表板",
           workingServices: "可運作服務",
           materials: "專案資料",
@@ -1471,14 +1534,17 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab",
+              "title": "Trade Data Lab | 貿易新聞、政策與貿易統計探究",
               "type": "個人專案（開發中）",
               "summary": "用來查看貿易新聞、政策與各國貿易統計的網頁工具。",
               "contribution": "我依具體的貿易問題，規劃並製作服務架構與頁面。",
               "details": [
                 "Trade News Room、Policyline與Tradeweave目前已可運作。",
                 "我訂定了標示來源、基準期間與單位，以及區分事實與解讀的共同呈現原則。"
-              ]
+              ],
+              "problem": "新聞、政策原文與貿易統計分散在不同來源，基準期間和單位也不同，難以放在一起比較。",
+              "action": "我依不同問題，規劃並製作了Trade News Room、Policyline與Tradeweave。",
+              "change": "使用者可分別在各服務中學習新聞與貿易概念、比較政策發布前後的貿易額，並查看貿易夥伴與集中度。"
             },
             name: "Trade Data Lab | 結合貿易新聞、政策與貿易統計的網頁工具",
             summary: "這是一個圍繞具體問題，將分散的新聞、政策原文與統計資料串連起來的個人專案。我正在建構一組服務，讓使用者能直接查看各國貿易結構，以及政策發布前後的貿易變化。",
@@ -1548,14 +1614,17 @@ const SITE = {
           {
             id: "axport",
             presentation: {
-              "title": "AXPORT",
+              "title": "AXPORT | 半導體出口決策儀表板",
               "type": "團隊專案（原型）",
               "summary": "彙集半導體出口評估所需法規與市場資訊的儀表板。",
               "contribution": "我規劃首頁，並調整報告架構與用語，讓法規確認與商業可行性評分能清楚區分。",
               "details": [
                 "我製作了響應式版面與多語言介面。",
                 "我整理了從報告摘要連結至詳細依據的資訊架構。"
-              ]
+              ],
+              "problem": "法規限制、商業可行性評分與缺少資料的項目一起呈現時，判斷依據容易混淆。",
+              "action": "我規劃首頁，並調整報告架構與用語，將法規確認與商業可行性評估分開。",
+              "change": "報告從摘要連結至詳細依據，並標示資料基準日期及資料不足的項目，讓使用者能查看結果的依據。"
             },
             name: "AXPORT | 半導體出口決策儀表板",
             question: "在半導體出口中，如何區分法規限制與市場機會進行評估，並傳達判斷所依據的資訊？",
@@ -1581,14 +1650,17 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
-              "title": "Hanjungsun",
+              "title": "Hanjungsun | 進入越南市場的行銷儀表板",
               "type": "團隊專案（原型）",
               "summary": "以食品品牌進入越南峴港為情境，彙集當地資訊與準備時程的儀表板。",
               "contribution": "我規劃並實作HOME，在一個頁面連結當地時程、新聞與當日待辦事項。",
               "details": [
                 "我從目標日期回推準備時程，並區分供瀏覽的文章與已確認的公告。",
                 "我也另外規劃並製作了越南介紹網站與宣傳影片。"
-              ]
+              ],
+              "problem": "越南當地資訊與行銷準備時程分散，負責人難以判斷下一步該做什麼。",
+              "action": "我規劃並實作HOME，從目標日期回推準備時程，並連結當地時程、新聞與任務進度。",
+              "change": "HOME在一個頁面呈現當日待辦事項與活動進度，並區分供瀏覽的文章和已確認的公告。"
             },
             name: "Hanjungsun | 越南市場進入行銷儀表板",
             question: "韓國食品品牌準備進入越南市場時，如何將當地資訊轉化為可執行的行銷計畫？",
@@ -1654,7 +1726,15 @@ const SITE = {
         label: "NOTES",
         title: "探究紀錄",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: []
+        items: [
+          {
+            title: "從產品條件理解中國2023年石墨出口管制",
+            summary: "閱讀官方公告與問答，整理產品範圍及許可要求，並區分政策條件與市場變化。正文為韓文。",
+            tags: ["中國","出口管制","政策原文"],
+            date: "2026-11-15",
+            link: "notes/2023-china-graphite-controls.html?from=zh-Hant"
+          }
+        ]
       },
       contact: {
         label: "CONTACT",
@@ -1679,14 +1759,14 @@ const SITE = {
     ja: {
       htmlLang: "ja",
       header: { navigationLabel: "メインナビゲーション", languageLabel: "言語を選択" },
-      meta: { title: "鄭主緣 Juyeon Jung | 国際通商と政策の探究", description: "貿易ニュース、政策原文、貿易統計をつなぐツール制作と国際的な協働の経験を記録します。" },
+      meta: { title: "鄭主緣 Juyeon Jung | 国際通商と政策の探究", description: "中国の経済と貿易の学習、国際イベントでの協働経験、Trade Data Labの開発と政策原文の検討を記録します。" },
       nav: { about: "自己紹介", experience: "経歴", projects: "プロジェクト", now: "現在", notes: "探究ノート", contact: "連絡先" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "貿易ニュースを読み、関連する政策と貿易統計をひと目で確認できるツールを作ります。",
-        headlineBreakAfter: "貿易ニュースを読み、",
-        intro: "貿易AX研修で、散在する情報を見やすく整理するWebダッシュボードを制作しています。個人プロジェクトTrade Data Labでは、ニュース、政策原文、貿易統計を集め、国別の貿易構造や政策発表前後の変化を確認するサービスを開発しています。別の企業連携キャップストーンでは、公共サービスを提供する機関のAI相談チャットボット開発に着手する予定です。",
+        headline: "貿易政策が企業や市場に与える影響を、資料とデータに基づいて説明していきたいと考えています。",
+        headlineBreakAfter: "貿易政策が企業や市場に与える影響を、",
+        intro: "中国の経済と貿易を学び、国際イベントでは海外のパートナーと協働してきました。現在はTrade Data Labで、貿易ニュース、政策原文、貿易統計をあわせて確認できるサービスを開発しています。",
         politicalEconomyInterest: "国際政治経済",
         photo: "プロフィール写真",
         ctaProjects: "プロジェクトを見る",
@@ -1813,6 +1893,9 @@ const SITE = {
         title: "代表プロジェクト",
         intro: "貿易と国際問題から出発した問いを、資料とデータで読み解くWebツールとして形にしてきた記録です。",
         labels: {
+          storyProblem: "問題意識",
+          storyAction: "担当したこと",
+          storyChange: "構成の変化",
           dashboard: "ダッシュボードを見る",
           workingServices: "稼働中のサービス",
           materials: "プロジェクト資料",
@@ -1847,14 +1930,17 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab",
+              "title": "Trade Data Lab | 貿易ニュースと政策、貿易統計の探究",
               "type": "個人プロジェクト（開発中）",
               "summary": "貿易ニュース、政策、国別の貿易統計を確認するWebツールです。",
               "contribution": "貿易に関する問いに沿って、サービスの構成と画面を企画し制作しました。",
               "details": [
                 "現在、Trade News Room、Policyline、Tradeweaveが動作しています。",
                 "出典、基準期間、単位を示し、事実と解釈を区別する共通の表示原則を定めました。"
-              ]
+              ],
+              "problem": "ニュース、政策原文、貿易統計が分散し、基準期間や単位も異なるため、一緒に比較することが困難でした。",
+              "action": "問いごとにTrade News Room、Policyline、Tradeweaveを企画し制作しました。",
+              "change": "各サービスでニュースと貿易概念の学習、政策発表前後の貿易額の比較、貿易相手国と集中度の確認ができる構成にしました。"
             },
             name: "Trade Data Lab | 貿易ニュース、政策、貿易統計をあわせて見るWebツール",
             summary: "散在するニュース、政策の原文、統計を問いごとにつなぐ個人プロジェクトです。国ごとの貿易構造や政策発表前後の貿易の変化を自分で確認できるよう、サービスを構成しています。",
@@ -1929,14 +2015,17 @@ const SITE = {
           {
             id: "axport",
             presentation: {
-              "title": "AXPORT",
+              "title": "AXPORT | 半導体輸出の意思決定ダッシュボード",
               "type": "チームプロジェクト（試作版）",
               "summary": "半導体輸出の事前検討に必要な規制と市場の情報を集めたダッシュボードです。",
               "contribution": "ホームページを企画し、規制の確認と事業性の参考スコアを区別できるよう、報告書の構成と表現を整えました。",
               "details": [
                 "レスポンシブなレイアウトと多言語画面を制作しました。",
                 "報告書の要約から詳細な根拠へ進める情報構造を整理しました。"
-              ]
+              ],
+              "problem": "規制上の制約、事業性の参考スコア、資料がない項目を一緒に示すと、判断の根拠を区別しにくくなります。",
+              "action": "ホームページを企画し、規制の確認と事業性の評価を分けるよう報告書の構成と表現を整えました。",
+              "change": "要約から詳細な根拠へ進める構成にし、データの基準日と資料不足を示して、結果の根拠を確認できるようにしました。"
             },
             name: "AXPORT | 半導体輸出の意思決定ダッシュボード",
             question: "半導体輸出において、規制による制約と市場の機会をどう区別して検討し、判断の根拠を伝えられるだろうか。",
@@ -1962,14 +2051,17 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
-              "title": "Hanjungsun",
+              "title": "Hanjungsun | ベトナム進出マーケティングダッシュボード",
               "type": "チームプロジェクト（試作版）",
               "summary": "食品ブランドのベトナムのダナンへの進出を想定し、現地情報と準備日程を集めたダッシュボードです。",
               "contribution": "HOMEを企画し実装して、現地の予定、ニュース、今日のタスクを一画面につなげました。",
               "details": [
                 "目標日から準備日程を逆算し、閲覧用の記事と確認済みのお知らせを分けました。",
                 "別途、ベトナム紹介サイトと広報動画も企画し制作しました。"
-              ]
+              ],
+              "problem": "ベトナムの現地情報と準備日程が分散し、担当者が次に行うことを判断しにくいという問題がありました。",
+              "action": "HOMEを企画し実装して、目標日から準備日程を逆算し、現地の予定、ニュース、作業の進捗をつなげました。",
+              "change": "今日のタスクとキャンペーンの進捗を一画面で確認し、閲覧用の記事と確認済みのお知らせを区別できる構成にしました。"
             },
             name: "Hanjungsun | ベトナム進出マーケティングダッシュボード",
             question: "韓国の食品ブランドがベトナム進出を準備する際、現地情報をどう実行可能なマーケティング計画につなげられるだろうか。",
@@ -2044,7 +2136,15 @@ const SITE = {
         label: "NOTES",
         title: "探究ノート",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: []
+        items: [
+          {
+            title: "中国の2023年黒鉛輸出管理を品目の条件から読む",
+            summary: "公式公告とFAQから対象品目と許可要件を整理し、政策上の条件と市場の変化を区別するノートです。本文は韓国語です。",
+            tags: ["中国","輸出管理","政策原文"],
+            date: "2026-11-15",
+            link: "notes/2023-china-graphite-controls.html?from=ja"
+          }
+        ]
       },
       contact: {
         label: "CONTACT",
