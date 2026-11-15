@@ -2,7 +2,7 @@
  * 메인 페이지의 문구와 링크, Notes 목록을 이 파일에서 관리합니다.
  * - 문구 수정: 아래 ko / en / zh-Hans(간체) / zh-Hant(번체) / ja 에서 해당 문장을 고치세요.
  *   (모든 언어를 함께 고쳐야 언어 전환 시 내용이 맞습니다. 번체는 대만식 표현 기준입니다.)
- * - 대시보드 링크: SITE.links.projects 또는 projectComponents 에 실제 주소를 넣습니다.
+ * - 대시보드 링크: SITE.links.projects, projectComponents 또는 activities 에 실제 주소를 넣습니다.
  *   보고서와 영상 등의 자료 링크는 기록용이며 현재 화면에 표시하지 않습니다.
  * - SITE.profile.photo 는 이전 설정 보관용입니다. 현재 사진 프레임은 표시하지 않습니다.
  * - 새 프로젝트 추가: 각 언어의 projects.items 에 같은 id 로 항목을 하나씩 추가하세요.
@@ -28,6 +28,10 @@ const SITE = {
       hanjeongseon: "https://hanjungsun-marketing-project-2nd-gamma.vercel.app/home/?lang=ko",
       tradenews: "https://trade-news-room.vercel.app/",
       tradedatalab: ""
+    },
+    // KITA 스터디 대시보드가 배포되면 실제 주소를 입력합니다. 비어 있으면 버튼을 표시하지 않습니다.
+    activities: {
+      kitaStudy: ""
     },
     // 기존 한국어 보고서의 보관용 주소입니다. 현재 카드에 자료 버튼을 만들지 않습니다.
     reports: {
@@ -62,14 +66,14 @@ const SITE = {
     ko: {
       htmlLang: "ko",
       header: { navigationLabel: "주 메뉴", languageLabel: "언어 선택" },
-      meta: { title: "정주연 Juyeon Jung | 국제통상과 정책 탐구", description: "중국경제통상 학업과 국제행사 협업 경험, Trade Data Lab 개발과 정책 원문 탐구를 기록합니다." },
+      meta: { title: "정주연 Juyeon Jung | 국제통상과 정책 탐구", description: "중국경제통상 학업과 국제행사 협업 경험, Trade Data Lab의 무역과 데이터 웹 도구 제작, 정책 원문 탐구를 기록합니다." },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "정주연",
         headline: "무역정책이 기업과 시장에 미치는 영향을 자료와 데이터로 설명하고 싶습니다.",
         headlineBreakAfter: "무역정책이 기업과 시장에 미치는 영향을",
-        intro: "중국경제통상을 공부하고, 국제행사에서 해외 파트너와 협업했습니다. 지금은 Trade Data Lab에서 무역 뉴스와 정책 원문, 교역 통계를 함께 살펴볼 수 있는 서비스를 만들고 있습니다.",
+        intro: "중국경제통상을 공부하고, 국제행사에서 해외 파트너와 협업했습니다. 지금은 개인 프로젝트 Trade Data Lab에서 무역과 데이터를 주제로 여러 웹페이지와 도구를 만들고 있습니다.",
         politicalEconomyInterest: "국제정치경제",
         photo: "프로필 사진",
         ctaProjects: "프로젝트 보기",
@@ -90,7 +94,7 @@ const SITE = {
         body: [
           "한양대학교에서 중어중문학을 전공하고 중국경제통상학을 부전공했으며, 국립대만대학교에서 중국문학 복수학위를 취득했습니다. 대만에서 2년간 중국어로 전공수업을 이수하며 중화권의 언어와 사회를 이해하는 기반을 쌓았습니다.",
           "엑스포럼 글로벌전략사업팀 인턴으로 해외 미디어 협업, 해외 연사와 기관의 초청 및 일정 조율, 산업 행사 자료 조사를 지원했습니다. 서로 다른 관계자의 요청과 조건을 정리하고, 확인한 내용을 문서로 전달하는 실무를 경험했습니다.",
-          "현재는 무역 AX 교육과정에서 정보 탐색과 비교를 돕는 웹 대시보드를 제작하고 있습니다. 개인 프로젝트 Trade Data Lab에서는 뉴스를 읽은 뒤 관련 정책 원문과 통계를 확인하고, 국가별 교역 구조와 정책 발표 전후의 변화를 살펴볼 수 있는 서비스를 개발합니다.",
+          "현재는 무역 AX 교육과정에서 정보 탐색과 비교를 돕는 웹 대시보드를 제작하고 있습니다. 이와 별도로 Trade Data Lab이라는 개인 프로젝트 아래 무역과 데이터를 주제로 여러 웹사이트를 만들고 있습니다. Trade News Room에서는 뉴스와 무역 개념을 공부하고, Policyline에서는 정책 발표 전후의 교역액을 비교하며, Tradeweave에서는 국가별 교역 상대국과 거래 집중도를 살펴볼 수 있도록 각각 구성했습니다.",
           "별도의 기업 연계 캡스톤에서는 공공서비스 제공 기관과 협업하는 AI 상담 챗봇 개발에 참여할 예정입니다. 프로젝트를 통해 기관의 요구를 파악하고 실제 서비스로 구체화하는 경험을 쌓고자 합니다."
         ],
         moreOpen: "학력, 자격, 활용 도구 펼쳐 보기",
@@ -241,35 +245,35 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab | 무역 뉴스와 정책, 교역 통계 탐구",
+              "title": "Trade Data Lab | 무역과 데이터 웹 프로젝트 모음",
               "type": "개인 프로젝트 (개발 중)",
-              "summary": "무역 뉴스와 정책, 국가별 교역 통계를 살펴보는 웹 도구입니다.",
-              "contribution": "질문별 서비스 구성과 화면을 기획하고 제작했습니다.",
+              "summary": "무역과 데이터를 주제로 서로 다른 목적의 웹사이트를 만드는 개인 프로젝트입니다.",
+              "contribution": "Trade Data Lab이라는 이름 아래 웹사이트별 질문과 화면을 정하고 기획부터 제작까지 진행했습니다.",
               "details": [
-                "현재 Trade News Room, Policyline, Tradeweave가 동작합니다.",
-                "서비스별로 출처와 기준 기간, 단위, 사실과 해석을 구분하는 표시 원칙을 정했습니다."
+                "Trade News Room은 뉴스와 개념 학습, Policyline은 정책 발표 전후의 교역액 비교, Tradeweave는 교역 상대국과 집중도 탐색을 위한 사이트입니다.",
+                "세 웹사이트는 현재 동작합니다. Fact Desk는 Trade News Room 내부 기능으로, Report Plain과 Trade Notebook은 별도 후속 구성으로 기획 중입니다."
               ],
-              "problem": "뉴스와 정책 원문, 교역 통계가 흩어져 있고 기간과 단위도 달라 함께 비교하기 어려웠습니다.",
-              "action": "Trade News Room, Policyline, Tradeweave를 질문별로 나누어 기획하고 제작했습니다.",
-              "change": "뉴스와 개념 학습, 정책 발표 전후의 교역액, 교역 상대국과 집중도를 각 서비스에서 살펴보도록 구성했습니다."
+              "problem": "뉴스 학습, 정책 발표 전후 비교, 교역 구조 탐색은 각각 필요한 자료와 화면 구성이 달랐습니다.",
+              "action": "개인 프로젝트 Trade Data Lab 아래 Trade News Room, Policyline, Tradeweave를 각각 기획하고 제작했습니다.",
+              "change": "뉴스와 개념 학습, 정책 발표 전후의 교역액, 교역 상대국과 집중도를 목적에 맞는 웹사이트에서 살펴보도록 구성했습니다."
             },
-            name: "Trade Data Lab | 무역 뉴스와 정책, 교역 통계를 함께 보는 웹 도구",
-            summary: "흩어진 뉴스와 정책 원문, 통계를 질문별로 연결하는 개인 프로젝트입니다. 국가별 거래 구조와 정책 발표 전후의 교역 변화를 직접 살펴볼 수 있도록 서비스를 구성하고 있습니다.",
-            question: "뉴스에서 본 무역 이슈를 정책 원문과 교역 통계로 어떻게 확인하고 비교할 수 있을까?",
-            contribution: "프로젝트의 질문, 서비스별 역할과 공통 표시 원칙을 기획했습니다. Trade News Room, Policyline, Tradeweave를 제작하고, 나머지 서비스의 구성과 연결 방식을 정리하고 있습니다.",
+            name: "Trade Data Lab | 무역과 데이터 웹 프로젝트 모음",
+            summary: "무역과 데이터를 주제로 여러 웹사이트와 도구를 만드는 개인 프로젝트입니다. Trade News Room, Policyline, Tradeweave는 각각 다른 질문을 다루는 웹사이트이며, 이 프로젝트 아래 후속 도구도 기획하고 있습니다.",
+            question: "무역 뉴스 학습, 정책 발표 전후의 비교, 교역 구조 탐색에 맞는 웹 도구를 각각 어떻게 만들 수 있을까?",
+            contribution: "Trade Data Lab의 주제와 웹사이트별 질문, 공통 표시 원칙을 기획했습니다. Trade News Room, Policyline, Tradeweave를 각각 제작하고, 후속 도구의 구성을 정리하고 있습니다.",
             period: "2026",
             type: "개인 프로젝트",
             status: "Trade News Room, Policyline, Tradeweave 동작 / 나머지 구성 기획 중",
-            problem: "뉴스, 정책 원문과 교역 통계가 서로 다른 곳에 있고 자료의 기간과 단위도 달라, 하나의 이슈에 필요한 자료를 연결해 비교하기 어렵습니다.",
+            problem: "뉴스를 통해 무역 개념을 배우는 일, 정책 발표 전후의 교역액을 비교하는 일, 국가별 거래 구조를 살펴보는 일에는 서로 다른 자료와 탐색 방식이 필요합니다.",
             role: [
-              "무역 이슈를 질문별 서비스로 나누는 프로젝트 기획",
-              "Trade News Room, Policyline, Tradeweave의 제작과 기능 구성",
+              "무역과 데이터 웹사이트를 지속적으로 만드는 개인 프로젝트 기획",
+              "Trade News Room, Policyline, Tradeweave의 개별 제작과 기능 구성",
               "출처, 기준 기간과 단위, 사실과 해석의 표시 원칙 정리",
               "Fact Desk, Report Plain, Trade Notebook의 후속 구성 기획"
             ],
             caseStudy: {
-              background: "무역 이슈를 확인하려면 뉴스, 정부 발표와 교역 통계를 각각 찾아봐야 합니다. 자료마다 기간과 단위가 달라 바로 비교하기도 어렵습니다. 필요한 자료를 질문별로 모아, 원문과 숫자를 오가며 살펴볼 수 있도록 기획했습니다.",
-              methodology: "Trade News Room은 뉴스와 무역 개념의 학습을, Policyline은 정책 발표 전후의 교역액 비교를, Tradeweave는 교역 상대국과 거래 집중도의 확인을 담당합니다. 서비스별로 출처와 기준 기간, 단위를 표시하고, 확인된 사실과 해석을 구분하는 것을 공통 원칙으로 삼았습니다.",
+              background: "무역 뉴스 학습, 정책 발표 전후의 비교, 국가별 교역 구조 탐색에 필요한 자료와 화면은 서로 다릅니다. Trade Data Lab은 이러한 목적에 맞춰 웹사이트와 도구를 하나씩 만들어 가는 개인 프로젝트입니다.",
+              methodology: "Trade Data Lab 아래 Trade News Room은 뉴스와 무역 개념의 학습을, Policyline은 정책 발표 전후의 교역액 비교를, Tradeweave는 교역 상대국과 거래 집중도의 확인을 위한 별도 웹사이트로 제작했습니다. 서비스별로 출처와 기준 기간, 단위를 표시하고, 확인된 사실과 해석을 구분하는 것을 공통 원칙으로 삼았습니다.",
               implications: "뉴스의 설명을 그대로 받아들이기 전에 관련 원문과 수치를 확인하고, 더 살펴볼 질문을 찾도록 돕습니다. 정책 발표 전후의 변화만으로 정책 효과나 우회 수출을 확정하지 않으며, 데이터로 확인할 수 있는 범위와 남는 불확실성을 함께 설명합니다.",
               limits: "기획서의 전체 구성은 완성 목표이며, 데이터 연결과 자동 갱신의 실제 구현 범위는 서비스별로 구분해야 합니다. 정책 발표와 같은 시기의 교역 변화를 정책의 인과효과나 우회 수출의 증거로 단정하지 않습니다."
             },
@@ -281,7 +285,7 @@ const SITE = {
               { id: "reportplain", name: "Report Plain", status: "planned", description: "보고서의 주장, 근거와 한계를 원문 쪽수와 함께 정리하는 서비스를 기획하고 있습니다." },
               { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "질문, 데이터, 발견과 한계를 담은 분석 노트를 공개하는 구성을 기획하고 있습니다." }
             ],
-            note: "Trade Data Lab은 계속 확장하는 개인 프로젝트입니다. Fact Desk는 Trade News Room 내부의 계획 기능이며, Report Plain과 Trade Notebook은 기획 중입니다.",
+            note: "Trade Data Lab은 무역과 데이터 관련 웹사이트와 도구를 계속 만들어 가는 개인 프로젝트입니다. Fact Desk는 Trade News Room 내부의 계획 기능이며, Report Plain과 Trade Notebook은 기획 중입니다.",
             legacyProject: {
               id: "tradenews",
               name: "Trade News Room | 뉴스 속 무역 공부방",
@@ -414,7 +418,13 @@ const SITE = {
         extraOpen: "펼쳐 보기",
         extraClose: "접기",
         extra: [
-          { name: "KITA 보고서 스터디", meta: "학습 활동", desc: "국제통상 이슈를 읽고 발제 자료 준비. CPTPP 관련 보고서의 국외 파트 발제 준비와 소개글 작성" },
+          { id: "kita-study", linkKey: "kitaStudy", period: "2026.08 – 2026.12", dashboardLabel: "대시보드 바로가기", name: "KITA 보고서 스터디", meta: "무역 AX 교육과 병행한 보고서 스터디", desc: "국제통상 이슈를 읽고 발제 자료 준비. CPTPP 관련 보고서의 국외 파트 발제 준비와 소개글 작성" },
+          {
+            "id": "kotra-finance",
+            "name": "공공기관 재무자료 읽기 | KOTRA",
+            "meta": "학부 개인 과제",
+            "desc": "학부 수업에서 KOTRA의 2020~2024년 공개 재무자료를 바탕으로 자산과 부채, 수입과 지출의 변화를 정리했습니다. 공공기관의 재원 구조를 살펴본 개인 과제입니다."
+          },
           { name: "그 외 활동", desc: "인문과학대학 학생회 서기 (2023), 목요채플 합창 봉사 (2025), 댄스동아리 Ars Amandi (2022), 카페 ZITTEN 근무 (2022–2023)" }
         ]
       },
@@ -422,11 +432,11 @@ const SITE = {
         label: "NOW",
         title: "지금 하고 있는 일",
         asOf: "기준일 2026.11.15",
-        statement: "무역 AX 교육과정에서 웹 대시보드를 만들고, 개인 프로젝트 Trade Data Lab을 개발하고 있습니다. 별도 기업 연계 캡스톤의 AI 상담 챗봇 개발을 준비하며, 영어와 분석의 기초를 보완하고 통상 및 정책 분야의 다음 학업과 실무 경험을 준비합니다.",
+        statement: "무역 AX 교육과정에서 웹 대시보드를 만들고 있습니다. 개인 프로젝트 Trade Data Lab에서는 무역과 데이터를 주제로 여러 웹사이트와 도구를 제작하고 있습니다. 별도 기업 연계 캡스톤의 AI 상담 챗봇 개발을 준비하며, 영어와 분석의 기초를 보완하고 통상 및 정책 분야의 다음 학업과 실무 경험을 준비합니다.",
         doingTitle: "현재 진행 중",
         doing: [
           "무역 AX마스터 과정 수강과 팀 프로젝트 경험 정리 (2026.12.18 수료 예정)",
-          "Trade Data Lab 개발과 뉴스, 정책 원문 및 교역 통계를 연결하는 서비스 구성",
+          "개인 프로젝트 Trade Data Lab 아래 무역과 데이터를 다루는 웹사이트 제작과 확장",
           "별도 기업 연계 캡스톤의 공공서비스 제공 기관 AI 상담 챗봇 개발 착수 준비",
           "TOEFL 100+를 목표로 영어 학습과 경제학 및 통계 기초 보완",
           "2027년 통상 분야 RA 또는 기업 GR 및 통상전략 인턴 지원을 목표로 준비",
@@ -482,7 +492,7 @@ const SITE = {
       header: { navigationLabel: "Main navigation", languageLabel: "Select language" },
       meta: {
         title: "Juyeon Jung | Global Trade & Policy Research",
-        description: "A record of my studies in Chinese economy and trade, international event collaboration, Trade Data Lab development and policy document reading."
+        description: "A record of my studies in Chinese economy and trade, international event collaboration, Trade Data Lab web projects, and policy document reading."
       },
       nav: { about: "About", experience: "Experience", projects: "Projects", now: "Now", notes: "Notes", contact: "Contact" },
       hero: {
@@ -490,7 +500,7 @@ const SITE = {
         name: "Juyeon Jung",
         headline: "I want to explain how trade policy affects businesses and markets using source materials and data.",
         headlineBreakAfter: "I want to explain how trade policy affects businesses and markets",
-        intro: "I studied Chinese economy and trade and worked with overseas partners on international events. I am now developing services in Trade Data Lab to explore trade news, original policy documents and trade statistics together.",
+        intro: "I studied Chinese economy and trade and worked with overseas partners on international events. I now build multiple websites and tools about trade and data under my personal project, Trade Data Lab.",
         politicalEconomyInterest: "International political economy",
         photo: "Profile photo",
         ctaProjects: "View projects",
@@ -520,7 +530,7 @@ const SITE = {
         body: [
           "I majored in Chinese Language and Literature at Hanyang University, with a minor in Chinese Economy and Trade, and earned a dual degree in Chinese Literature at National Taiwan University. Two years of major coursework taught in Chinese in Taiwan gave me a foundation for understanding the language and societies of the Chinese-speaking world.",
           "As an intern on EXPORUM's Global Strategy Business Team, I supported overseas media collaboration, invitations and scheduling for international speakers and institutions, and research on industry events. I gained experience organizing different stakeholders' requests and conditions and communicating verified information in writing.",
-          "I am currently building web dashboards in the Trade AX training program to support information discovery and comparison. In my personal project, Trade Data Lab, I am developing services that let users move from news to original policy documents and statistics and explore country-level trade structures and changes before and after policy announcements.",
+          "I am currently building web dashboards in the Trade AX training program to support information discovery and comparison. Separately, I am creating multiple websites about trade and data under my personal project, Trade Data Lab. Trade News Room supports learning from news and trade concepts, Policyline compares trade values before and after policy announcements, and Tradeweave explores countries' trading partners and trade concentration.",
           "In a separate capstone with an industry partner, I plan to participate in developing an AI advisory chatbot in collaboration with an organization that provides public services. Through the project, I hope to gain experience understanding an institution's requirements and turning them into a working service."
         ],
         moreOpen: "Show education, certifications and tools",
@@ -680,35 +690,35 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab | Exploring trade news, policy and statistics",
+              "title": "Trade Data Lab | A collection of trade and data web projects",
               "type": "Personal project (in development)",
-              "summary": "Web tools for exploring trade news, policy and country-level trade statistics.",
-              "contribution": "I planned and built the service structure and screens around specific trade questions.",
+              "summary": "A personal project for creating separate websites about trade and data, each with its own purpose.",
+              "contribution": "Under the Trade Data Lab name, I defined each website's questions and screens and worked from planning through implementation.",
               "details": [
-                "Trade News Room, Policyline and Tradeweave are currently working.",
-                "I defined shared principles for displaying sources, reference periods and units, and separating facts from interpretations."
+                "Trade News Room supports news and concept learning, Policyline compares trade values around policy announcements, and Tradeweave explores trading partners and concentration.",
+                "These three websites are working. Fact Desk is planned within Trade News Room; Report Plain and Trade Notebook are planned additions."
               ],
-              "problem": "News, original policy documents and trade statistics were scattered, with different periods and units making comparison difficult.",
-              "action": "I planned and built Trade News Room, Policyline and Tradeweave around distinct questions.",
-              "change": "The services support learning from news, comparing trade values around policy announcements, and examining trading partners and concentration."
+              "problem": "Learning from news, comparing trade around policy announcements, and exploring trade structures each called for different materials and screen layouts.",
+              "action": "I planned and built Trade News Room, Policyline and Tradeweave as separate websites under my personal project, Trade Data Lab.",
+              "change": "Each website has a distinct purpose: learning from news and concepts, comparing trade values around policy announcements, or exploring trading partners and concentration."
             },
-            name: "Trade Data Lab | Web tools for trade news, policy and trade statistics",
-            summary: "A personal project connecting scattered news, original policy documents and statistics around specific questions. I am building a set of services for exploring countries' trading relationships and changes in trade around policy announcements.",
-            question: "How can trade issues in the news be checked and compared using original policy documents and trade statistics?",
-            contribution: "I planned the project's questions, the role of each service and shared presentation principles. I built Trade News Room, Policyline and Tradeweave, and am planning the structure and connections of the remaining services.",
+            name: "Trade Data Lab | A collection of trade and data web projects",
+            summary: "A personal project under which I create multiple websites and tools about trade and data. Trade News Room, Policyline and Tradeweave are separate websites addressing different questions, with further tools being planned under the same project.",
+            question: "How can separate web tools support learning from trade news, comparing trade around policy announcements, and exploring trade structures?",
+            contribution: "I defined the project's themes, each website's questions and shared presentation principles. I built Trade News Room, Policyline and Tradeweave separately and am planning further tools.",
             period: "2026",
             type: "Personal project",
             status: "Trade News Room, Policyline and Tradeweave working / remaining components planned",
-            problem: "News, original policy documents and trade statistics are scattered across different sources. Different periods and units make it difficult to connect and compare the materials needed to examine an issue.",
+            problem: "Learning trade concepts through news, comparing trade values around policy announcements, and examining countries' trading structures require different materials and ways of exploring them.",
             role: [
-              "Planned a project organized around services for specific trade questions",
-              "Built and structured the features of Trade News Room, Policyline and Tradeweave",
+              "Planned a personal project for creating a growing collection of trade and data websites",
+              "Built Trade News Room, Policyline and Tradeweave separately and structured their features",
               "Defined principles for displaying sources, reference periods, units, facts and interpretations",
               "Planned the further structure of Fact Desk, Report Plain and Trade Notebook"
             ],
             caseStudy: {
-              background: "Examining a trade issue requires finding news, government announcements and trade statistics separately. Different periods and units also make direct comparison difficult. I planned a way to bring the necessary materials together around specific questions so users can move between original documents and figures.",
-              methodology: "Trade News Room supports learning from news and trade concepts, Policyline compares trade values before and after policy announcements, and Tradeweave explores trading partners and concentration. Shared principles are to display each service's sources, reference periods and units, and to distinguish confirmed facts from interpretation.",
+              background: "Learning from trade news, comparing trade around policy announcements, and exploring countries' trade structures call for different materials and screens. Trade Data Lab is my personal project for creating websites and tools suited to these purposes, one at a time.",
+              methodology: "Under Trade Data Lab, I built Trade News Room for learning from news and trade concepts, Policyline for comparing trade values before and after policy announcements, and Tradeweave for exploring trading partners and concentration as separate websites. Shared principles are to display each service's sources, reference periods and units, and to distinguish confirmed facts from interpretation.",
               implications: "The project helps users check original documents and figures before accepting a news account, and identify questions that need further examination. Changes before and after an announcement alone do not establish policy effects or confirm rerouted exports. The services explain both what the data can show and the uncertainty that remains.",
               limits: "The full structure in the plan is a target state. Data connections and automatic updates must be distinguished by what each service actually implements. Trade changes around an announcement are not treated as proof of a policy's causal effect or export rerouting."
             },
@@ -750,7 +760,7 @@ const SITE = {
                 description: "A planned format for publishing analytical notes structured around a question, data, findings and limitations."
               }
             ],
-            note: "Trade Data Lab is an evolving personal project. Fact Desk is planned as a feature within Trade News Room; Report Plain and Trade Notebook are at the planning stage.",
+            note: "Trade Data Lab is my ongoing personal project for creating websites and tools about trade and data. Fact Desk is planned as a feature within Trade News Room; Report Plain and Trade Notebook are at the planning stage.",
             legacyProject: {
               id: "tradenews",
               name: "Trade News Room | Learning trade through the news",
@@ -895,9 +905,15 @@ const SITE = {
         extraClose: "Close",
         extra: [
           {
-            name: "KITA report study group",
-            meta: "Study activity",
+            id: "kita-study", linkKey: "kitaStudy", period: "2026.08 – 2026.12", dashboardLabel: "Open dashboard", name: "KITA report study group",
+            meta: "Report study group alongside the Trade AX training program",
             desc: "Read about international trade issues and prepared discussion materials. Prepared to present the overseas section of a CPTPP-related report and wrote an introductory text"
+          },
+          {
+            "id": "kotra-finance",
+            "name": "Reading public-institution financial data | KOTRA",
+            "meta": "Individual undergraduate assignment",
+            "desc": "In an undergraduate course, I used KOTRA's public financial data for 2020–2024 to compare assets and liabilities, income and expenditure. This individual assignment examined how a public institution is funded."
           },
           {
             name: "Other activities",
@@ -909,11 +925,11 @@ const SITE = {
         label: "NOW",
         title: "What I'm doing now",
         asOf: "As of Nov 15, 2026",
-        statement: "I am building web dashboards in the Trade AX training program and developing my personal project, Trade Data Lab. I am preparing to begin an AI advisory chatbot in a separate industry-linked capstone, strengthening my English and analytical foundations, and preparing for further study and work in trade and policy.",
+        statement: "I am building web dashboards in the Trade AX training program. Under my personal project, Trade Data Lab, I create multiple websites and tools about trade and data. I am preparing to begin an AI advisory chatbot in a separate industry-linked capstone, strengthening my English and analytical foundations, and preparing for further study and work in trade and policy.",
         doingTitle: "In progress",
         doing: [
           "Taking the Trade AX Master program and documenting team projects (completion expected Dec 18, 2026)",
-          "Developing Trade Data Lab and services that connect news, original policy documents and trade statistics",
+          "Building and expanding websites about trade and data under my personal project, Trade Data Lab",
           "Preparing to begin a separate industry-linked capstone chatbot for a public-service organization",
           "Studying toward a TOEFL score of 100+ and strengthening foundations in economics and statistics",
           "Preparing to apply for trade research assistant roles or corporate government relations and trade strategy internships in 2027",
@@ -967,14 +983,14 @@ const SITE = {
     "zh-Hans": {
       htmlLang: "zh-CN",
       header: { navigationLabel: "主导航", languageLabel: "选择语言" },
-      meta: { title: "郑主缘 Juyeon Jung | 国际贸易与政策探索", description: "记录中国经济与贸易的学习、国际活动协作经验、Trade Data Lab开发及政策原文研读。" },
+      meta: { title: "郑主缘 Juyeon Jung | 国际贸易与政策探索", description: "记录中国经济与贸易学习、国际活动协作经验、Trade Data Lab旗下贸易与数据网页工具的制作及政策原文研读。" },
       nav: { about: "关于我", experience: "经历", projects: "项目", now: "近况", notes: "探索记录", contact: "联系" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "郑主缘",
         headline: "我希望通过资料和数据，解释贸易政策对企业与市场的影响。",
         headlineBreakAfter: "我希望通过资料和数据，",
-        intro: "我学习了中国经济与贸易，也曾在国际活动中与海外合作伙伴协作。现在，我正在开发Trade Data Lab，让用户能综合查看贸易新闻、政策原文与贸易统计。",
+        intro: "我学习了中国经济与贸易，也曾在国际活动中与海外合作伙伴协作。现在，我以个人项目Trade Data Lab为总主题，制作多个与贸易和数据有关的网站及工具。",
         politicalEconomyInterest: "国际政治经济",
         photo: "个人照片",
         ctaProjects: "查看项目",
@@ -995,7 +1011,7 @@ const SITE = {
         body: [
           "我在汉阳大学主修中语中文学，辅修中国经济通商学，并在国立台湾大学取得中国文学双学位。在台湾用两年时间以中文修读专业课程，为理解华语地区的语言与社会打下了基础。",
           "作为EXPORUM全球战略事业组的实习生，我协助海外媒体合作、海外演讲嘉宾与机构的邀请及日程协调，并开展产业活动资料调查。我积累了整理不同合作方的需求与条件、将确认后的信息写成文档并传达的实务经验。",
-          "目前，我在贸易AX培训课程中制作支持信息查找与比较的网页仪表板。在个人项目Trade Data Lab中，我开发的服务让用户在阅读新闻后查看相关政策原文与统计，并观察各国贸易结构及政策发布前后的变化。",
+          "目前，我在贸易AX培训课程中制作支持信息查找与比较的网页仪表板。此外，我以个人项目Trade Data Lab为总主题，制作多个与贸易和数据有关的网站。Trade News Room用于学习新闻与贸易概念，Policyline用于比较政策发布前后的贸易额，Tradeweave用于查看各国贸易伙伴与贸易集中度，各网站分别围绕不同用途设计。",
           "在另一个企业合作结业项目中，我计划参与AI咨询聊天机器人的开发，与提供公共服务的机构合作。我希望通过项目积累理解机构需求并将其具体化为实际服务的经验。"
         ],
         moreOpen: "展开学历、证书与工具",
@@ -1138,35 +1154,35 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab | 贸易新闻、政策与贸易统计探索",
+              "title": "Trade Data Lab | 贸易与数据网页项目集",
               "type": "个人项目（开发中）",
-              "summary": "用于查看贸易新闻、政策和各国贸易统计的网页工具。",
-              "contribution": "我围绕具体的贸易问题，规划并制作了服务结构与页面。",
+              "summary": "围绕贸易与数据，制作多个用途各异的网站的个人项目。",
+              "contribution": "以Trade Data Lab为总主题，确定各网站的问题与页面，并从策划推进到制作。",
               "details": [
-                "Trade News Room、Policyline和Tradeweave目前已可运行。",
-                "我制定了标注来源、基准时间和单位，以及区分事实与解读的共同呈现原则。"
+                "Trade News Room用于学习新闻与贸易概念，Policyline用于比较政策发布前后的贸易额，Tradeweave用于查看贸易伙伴与集中度。",
+                "这三个网站目前已运行。Fact Desk拟作为Trade News Room的内部功能，Report Plain与Trade Notebook仍在规划中。"
               ],
-              "problem": "新闻、政策原文和贸易统计分散在不同来源，基准时间与单位也不同，难以放在一起比较。",
-              "action": "我按不同问题，规划并制作了Trade News Room、Policyline和Tradeweave。",
-              "change": "用户可分别在各服务中学习新闻与贸易概念、比较政策发布前后的贸易额，并查看贸易伙伴和集中度。"
+              "problem": "新闻学习、政策发布前后的比较与贸易结构探索，各自需要不同的资料和页面设计。",
+              "action": "以个人项目Trade Data Lab为总主题，分别策划并制作了Trade News Room、Policyline与Tradeweave。",
+              "change": "让用户在符合各自用途的网站中学习新闻与概念、比较政策发布前后的贸易额，或查看贸易伙伴与集中度。"
             },
-            name: "Trade Data Lab | 结合贸易新闻、政策与贸易统计的网页工具",
-            summary: "这是一个围绕具体问题，将分散的新闻、政策原文与统计资料连接起来的个人项目。我正在构建一组服务，让使用者可以直接查看各国贸易结构，以及政策发布前后的贸易变化。",
-            question: "如何通过政策原文与贸易统计，核查并比较新闻中的贸易议题？",
-            contribution: "我规划了项目的问题、各项服务的分工与共同的信息呈现原则，制作了Trade News Room、Policyline和Tradeweave，并正在整理其他服务的结构与连接方式。",
+            name: "Trade Data Lab | 贸易与数据网页项目集",
+            summary: "围绕贸易与数据，持续制作多个网站及工具的个人项目。Trade News Room、Policyline与Tradeweave是分别处理不同问题的网站，其他后续工具也在同一项目下规划中。",
+            question: "如何分别制作适合贸易新闻学习、政策发布前后比较和贸易结构探索的网页工具？",
+            contribution: "确定了项目主题、各网站的问题与共同展示原则。分别制作了Trade News Room、Policyline与Tradeweave，并继续规划后续工具。",
             period: "2026",
             type: "个人项目",
             status: "Trade News Room、Policyline、Tradeweave可运行 / 其余部分规划中",
-            problem: "新闻、政策原文与贸易统计分散在不同来源中，资料的时间范围和单位也各不相同，难以将研究一个议题所需的资料连接起来进行比较。",
+            problem: "通过新闻学习贸易概念、比较政策发布前后的贸易额、查看各国贸易结构，需要不同的资料和探索方式。",
             role: [
-              "将贸易议题拆分为围绕具体问题的服务，规划整体项目",
-              "制作Trade News Room、Policyline和Tradeweave，并组织其功能",
-              "制定来源、基准时间、单位以及事实与解读的呈现原则",
-              "规划Fact Desk、Report Plain和Trade Notebook的后续结构"
+              "策划持续制作贸易与数据相关网站的个人项目",
+              "分别制作Trade News Room、Policyline与Tradeweave并设计功能",
+              "整理来源、基准期间、单位、事实与解读的展示原则",
+              "规划Fact Desk、Report Plain与Trade Notebook的后续结构"
             ],
             caseStudy: {
-              background: "核查贸易议题时，需要分别查找新闻、政府公告与贸易统计。不同资料的时间范围和单位也使直接比较变得困难。因此，我规划了按问题汇集所需资料的方式，让使用者能够对照原文与数字进行查看。",
-              methodology: "Trade News Room负责新闻与贸易概念的学习，Policyline用于比较政策发布前后的贸易额，Tradeweave用于查看贸易伙伴与贸易集中度。共同原则是标明各项服务的来源、基准时间和单位，并区分已确认的事实与解读。",
+              background: "贸易新闻学习、政策发布前后的比较和各国贸易结构探索，需要不同的资料和页面。Trade Data Lab是根据这些用途，逐步制作网站与工具的个人项目。",
+              methodology: "在Trade Data Lab项目下，分别制作了用于学习新闻与贸易概念的Trade News Room、比较政策发布前后贸易额的Policyline，以及查看贸易伙伴与集中度的Tradeweave。各服务共同遵循标注来源、基准期间与单位，并区分已确认事实与解读的原则。",
               implications: "项目帮助使用者在接受新闻中的解释之前，先核对相关原文与数字，并找到需要继续查看的问题。仅凭政策发布前后的变化，不能确定政策效果或确认转道出口；服务同时说明数据能反映的范围与仍然存在的不确定性。",
               limits: "规划书中的整体结构是最终目标，各项数据连接与自动更新的实际实现范围应按服务分别说明。不能将政策发布同期的贸易变化视为政策因果效果或转道出口的证明。"
             },
@@ -1178,7 +1194,7 @@ const SITE = {
               { id: "reportplain", name: "Report Plain", status: "planned", description: "正在规划将报告的主张、证据与局限同原文页码一起整理的服务。" },
               { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "正在规划发布按问题、数据、发现与局限组织的分析笔记。" }
             ],
-            note: "Trade Data Lab是一个持续扩展的个人项目。Fact Desk是Trade News Room内部的计划功能，Report Plain与Trade Notebook仍在规划中。",
+            note: "Trade Data Lab是持续制作贸易与数据相关网站及工具的个人项目。Fact Desk是Trade News Room内部的计划功能，Report Plain与Trade Notebook仍在规划中。",
             legacyProject: {
               id: "tradenews",
               name: "Trade News Room | 新闻里的贸易学习室",
@@ -1297,7 +1313,13 @@ const SITE = {
         extraOpen: "展开",
         extraClose: "收起",
         extra: [
-          { name: "KITA报告研读小组", meta: "学习活动", desc: "阅读国际通商议题并准备讨论材料。准备就CPTPP相关报告的国外部分作专题分享，并撰写介绍文字" },
+          { id: "kita-study", linkKey: "kitaStudy", period: "2026.08 – 2026.12", dashboardLabel: "打开仪表板", name: "KITA报告研读小组", meta: "与贸易AX培训同期开展的报告研读活动", desc: "阅读国际通商议题并准备讨论材料。准备就CPTPP相关报告的国外部分作专题分享，并撰写介绍文字" },
+          {
+            "id": "kotra-finance",
+            "name": "公共机构财务资料研读 | KOTRA",
+            "meta": "本科个人课程作业",
+            "desc": "在本科课程中，我基于KOTRA2020至2024年的公开财务资料，整理了资产与负债、收入与支出的变化。这是一项了解公共机构资金来源结构的个人作业。"
+          },
           { name: "其他活动", desc: "人文科学学院学生会书记（2023）、礼拜合唱志愿服务（2025）、舞蹈社团 Ars Amandi（2022）、咖啡店 ZITTEN 工作（2022–2023）" }
         ]
       },
@@ -1305,11 +1327,11 @@ const SITE = {
         label: "NOW",
         title: "现在在做的事",
         asOf: "基准日 2026.11.15",
-        statement: "我正在贸易AX培训课程中制作网页仪表板，并开发个人项目Trade Data Lab。同时准备在另一个企业合作结业项目中开始开发AI咨询聊天机器人，补强英语与分析基础，为贸易及政策领域的后续学习和实务经验做准备。",
+        statement: "我正在贸易AX培训课程中制作网页仪表板。同时，以个人项目Trade Data Lab为总主题，制作多个与贸易和数据有关的网站及工具。我也准备在另一个企业合作结业项目中开始开发AI咨询聊天机器人，补强英语与分析基础，为贸易及政策领域的后续学习和实务经验做准备。",
         doingTitle: "进行中",
         doing: [
           "修读贸易AX大师课程并整理团队项目经验（预计2026.12.18结业）",
-          "开发Trade Data Lab，构建连接新闻、政策原文与贸易统计的服务",
+          "以个人项目Trade Data Lab为总主题，制作并扩展贸易与数据相关网站",
           "准备开始企业合作结业项目，为提供公共服务的机构开发AI咨询聊天机器人",
           "以TOEFL 100+为目标学习英语，并补强经济学和统计基础",
           "以2027年申请贸易领域研究助理或企业政府关系与贸易战略实习为目标做准备",
@@ -1363,14 +1385,14 @@ const SITE = {
     "zh-Hant": {
       htmlLang: "zh-TW",
       header: { navigationLabel: "主要導覽", languageLabel: "選擇語言" },
-      meta: { title: "鄭主緣 Juyeon Jung | 國際貿易與政策探究", description: "記錄中國經濟與貿易的學習、國際活動協作經驗、Trade Data Lab開發及政策原文研讀。" },
+      meta: { title: "鄭主緣 Juyeon Jung | 國際貿易與政策探究", description: "記錄中國經濟與貿易學習、國際活動協作經驗、Trade Data Lab旗下貿易與資料網頁工具的製作及政策原文研讀。" },
       nav: { about: "關於我", experience: "經歷", projects: "專案", now: "近況", notes: "探究紀錄", contact: "聯絡" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
         headline: "我希望透過資料與數據，說明貿易政策對企業和市場的影響。",
         headlineBreakAfter: "我希望透過資料與數據，",
-        intro: "我曾學習中國經濟與貿易，也在國際活動中與海外夥伴協作。目前，我正開發Trade Data Lab，讓使用者能一併查閱貿易新聞、政策原文與貿易統計。",
+        intro: "我曾學習中國經濟與貿易，也在國際活動中與海外夥伴協作。目前，我以個人專案Trade Data Lab為主題，製作多個與貿易及資料有關的網站與工具。",
         politicalEconomyInterest: "國際政治經濟",
         photo: "個人照片",
         ctaProjects: "檢視專案",
@@ -1391,7 +1413,7 @@ const SITE = {
         body: [
           "我在漢陽大學主修中語中文學，輔修中國經濟通商學，並在國立臺灣大學取得中國文學雙學位。在臺灣用兩年時間以中文修讀專業課程，為理解華語地區的語言與社會奠定了基礎。",
           "擔任EXPORUM全球戰略事業組實習生期間，我協助海外媒體合作、海外講者與機構的邀請及時程協調，並進行產業活動資料調查。我累積了整理不同合作方的需求與條件、將確認後的資訊寫成文件並傳達的實務經驗。",
-          "目前，我在貿易AX培訓課程中製作協助資訊查找與比較的網頁儀表板。在個人專案Trade Data Lab中，我開發的服務讓使用者在閱讀新聞後查閱相關政策原文與統計，並觀察各國貿易結構及政策發布前後的變化。",
+          "目前，我在貿易AX培訓課程中製作協助資訊查找與比較的網頁儀表板。此外，我以個人專案Trade Data Lab為主題，製作多個與貿易及資料有關的網站。Trade News Room用於學習新聞與貿易概念，Policyline用於比較政策發布前後的貿易額，Tradeweave用於查看各國貿易夥伴與貿易集中度，各網站分別依不同用途設計。",
           "在另一項企業合作實作專案中，我計畫參與AI諮詢聊天機器人的開發，與提供公共服務的機構合作。我希望透過專案累積理解機構需求並將其具體化為實際服務的經驗。"
         ],
         moreOpen: "展開學歷、證照與工具",
@@ -1534,35 +1556,35 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab | 貿易新聞、政策與貿易統計探究",
+              "title": "Trade Data Lab | 貿易與資料網頁專案集",
               "type": "個人專案（開發中）",
-              "summary": "用來查看貿易新聞、政策與各國貿易統計的網頁工具。",
-              "contribution": "我依具體的貿易問題，規劃並製作服務架構與頁面。",
+              "summary": "以貿易與資料為主題，製作多個不同用途網站的個人專案。",
+              "contribution": "以Trade Data Lab為主題，訂定各網站的問題與頁面，從規劃到製作皆親自進行。",
               "details": [
-                "Trade News Room、Policyline與Tradeweave目前已可運作。",
-                "我訂定了標示來源、基準期間與單位，以及區分事實與解讀的共同呈現原則。"
+                "Trade News Room用於學習新聞與貿易概念，Policyline用於比較政策發布前後的貿易額，Tradeweave用於查看貿易夥伴與集中度。",
+                "這三個網站目前已可運作。Fact Desk規劃為Trade News Room內部功能，Report Plain與Trade Notebook仍在規劃中。"
               ],
-              "problem": "新聞、政策原文與貿易統計分散在不同來源，基準期間和單位也不同，難以放在一起比較。",
-              "action": "我依不同問題，規劃並製作了Trade News Room、Policyline與Tradeweave。",
-              "change": "使用者可分別在各服務中學習新聞與貿易概念、比較政策發布前後的貿易額，並查看貿易夥伴與集中度。"
+              "problem": "新聞學習、政策發布前後的比較與貿易結構探索，各自需要不同的資料與頁面設計。",
+              "action": "以個人專案Trade Data Lab為主題，分別規劃並製作Trade News Room、Policyline與Tradeweave。",
+              "change": "讓使用者在符合各自用途的網站中學習新聞與概念、比較政策發布前後的貿易額，或查看貿易夥伴與集中度。"
             },
-            name: "Trade Data Lab | 結合貿易新聞、政策與貿易統計的網頁工具",
-            summary: "這是一個圍繞具體問題，將分散的新聞、政策原文與統計資料串連起來的個人專案。我正在建構一組服務，讓使用者能直接查看各國貿易結構，以及政策發布前後的貿易變化。",
-            question: "如何透過政策原文與貿易統計，查核並比較新聞中的貿易議題？",
-            contribution: "我規劃了專案的問題、各項服務的分工與共同的資訊呈現原則，製作了Trade News Room、Policyline和Tradeweave，並持續整理其他服務的架構與串連方式。",
+            name: "Trade Data Lab | 貿易與資料網頁專案集",
+            summary: "以貿易與資料為主題，持續製作多個網站與工具的個人專案。Trade News Room、Policyline與Tradeweave是分別處理不同問題的網站，其他後續工具也在同一專案下規劃中。",
+            question: "如何分別製作適合貿易新聞學習、政策發布前後比較與貿易結構探索的網頁工具？",
+            contribution: "訂定了專案主題、各網站的問題與共同呈現原則。分別製作了Trade News Room、Policyline與Tradeweave，並持續規劃後續工具。",
             period: "2026",
             type: "個人專案",
             status: "Trade News Room、Policyline、Tradeweave可運作 / 其餘部分規劃中",
-            problem: "新聞、政策原文與貿易統計分散於不同來源，資料的時間範圍和單位也各不相同，因此不容易串連探討一個議題所需的資料並進行比較。",
+            problem: "透過新聞學習貿易概念、比較政策發布前後的貿易額、查看各國貿易結構，需要不同的資料與探索方式。",
             role: [
-              "將貿易議題拆分為圍繞具體問題的服務，規劃整體專案",
-              "製作Trade News Room、Policyline和Tradeweave，並規劃其功能配置",
-              "訂定來源、基準期間、單位以及事實與解讀的呈現原則",
-              "規劃Fact Desk、Report Plain和Trade Notebook的後續架構"
+              "規劃持續製作貿易與資料相關網站的個人專案",
+              "分別製作Trade News Room、Policyline與Tradeweave並規劃功能",
+              "整理來源、基準期間、單位、事實與解讀的呈現原則",
+              "規劃Fact Desk、Report Plain與Trade Notebook的後續架構"
             ],
             caseStudy: {
-              background: "查核貿易議題時，需要分別查找新聞、政府公告與貿易統計。不同資料的時間範圍和單位，也讓直接比較變得困難。因此，我規劃了依問題彙整所需資料的方式，讓使用者能對照原文與數字進行查看。",
-              methodology: "Trade News Room負責新聞與貿易概念的學習，Policyline用於比較政策發布前後的貿易額，Tradeweave用於查看貿易夥伴與貿易集中度。共同原則是標明各項服務的來源、基準期間和單位，並區分已確認的事實與解讀。",
+              background: "貿易新聞學習、政策發布前後的比較與各國貿易結構探索，需要不同的資料與頁面。Trade Data Lab是依這些用途，逐步製作網站與工具的個人專案。",
+              methodology: "在Trade Data Lab專案下，分別製作了用於學習新聞與貿易概念的Trade News Room、比較政策發布前後貿易額的Policyline，以及查看貿易夥伴與集中度的Tradeweave。各服務共同遵循標示來源、基準期間與單位，並區分已確認事實與解讀的原則。",
               implications: "專案協助使用者在接受新聞中的解釋之前，先核對相關原文與數字，並找出需要進一步查看的問題。僅憑政策發布前後的變化，無法確定政策效果或確認轉道出口；服務也會說明資料所能反映的範圍與仍然存在的不確定性。",
               limits: "規劃書中的整體架構是完成目標，各項資料串接與自動更新的實作範圍應依服務分別說明。不能將政策發布同期的貿易變化視為政策因果效果或轉道出口的證明。"
             },
@@ -1574,7 +1596,7 @@ const SITE = {
               { id: "reportplain", name: "Report Plain", status: "planned", description: "正在規劃將報告的主張、證據與限制和原文頁碼一起整理的服務。" },
               { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "正在規劃發布依問題、資料、發現與限制組成的分析筆記。" }
             ],
-            note: "Trade Data Lab是一個持續擴充的個人專案。Fact Desk是Trade News Room內部的規劃功能，Report Plain與Trade Notebook仍在規劃中。",
+            note: "Trade Data Lab是持續製作貿易與資料相關網站及工具的個人專案。Fact Desk是Trade News Room內部的規劃功能，Report Plain與Trade Notebook仍在規劃中。",
             legacyProject: {
               id: "tradenews",
               name: "Trade News Room | 新聞裡的貿易學習室",
@@ -1693,7 +1715,13 @@ const SITE = {
         extraOpen: "展開",
         extraClose: "收起",
         extra: [
-          { name: "KITA報告研讀小組", meta: "學習活動", desc: "閱讀國際通商議題並準備導讀資料。準備導讀CPTPP相關報告的國外部分，並撰寫介紹文字" },
+          { id: "kita-study", linkKey: "kitaStudy", period: "2026.08 – 2026.12", dashboardLabel: "開啟儀表板", name: "KITA報告研讀小組", meta: "與貿易AX培訓同期進行的報告研讀活動", desc: "閱讀國際通商議題並準備導讀資料。準備導讀CPTPP相關報告的國外部分，並撰寫介紹文字" },
+          {
+            "id": "kotra-finance",
+            "name": "公共機構財務資料研讀 | KOTRA",
+            "meta": "大學個人課堂作業",
+            "desc": "在大學課程中，我運用KOTRA2020至2024年的公開財務資料，整理資產與負債、收入與支出的變化。這是一份探討公共機構財源結構的個人作業。"
+          },
           { name: "其他活動", desc: "人文科學學院學生會書記（2023）、禮拜合唱志願服務（2025）、舞蹈社團 Ars Amandi（2022）、咖啡店 ZITTEN 工作（2022–2023）" }
         ]
       },
@@ -1701,11 +1729,11 @@ const SITE = {
         label: "NOW",
         title: "現在在做的事",
         asOf: "基準日 2026.11.15",
-        statement: "我正在貿易AX培訓課程中製作網頁儀表板，並開發個人專案Trade Data Lab。同時準備在另一項企業合作實作專案中開始開發AI諮詢聊天機器人，補強英語與分析基礎，為貿易及政策領域的後續學習和實務經驗做準備。",
+        statement: "我正在貿易AX培訓課程中製作網頁儀表板。同時，以個人專案Trade Data Lab為主題，製作多個與貿易及資料有關的網站與工具。我也準備在另一項企業合作實作專案中開始開發AI諮詢聊天機器人，補強英語與分析基礎，為貿易及政策領域的後續學習和實務經驗做準備。",
         doingTitle: "進行中",
         doing: [
           "修讀貿易AX大師課程並整理團隊專案經驗（預計2026.12.18結業）",
-          "開發Trade Data Lab，建構串連新聞、政策原文與貿易統計的服務",
+          "以個人專案Trade Data Lab為主題，製作並擴充貿易與資料相關網站",
           "準備啟動企業合作實作專案，為提供公共服務的機構開發AI諮詢聊天機器人",
           "以TOEFL 100+為目標學習英語，並補強經濟學和統計基礎",
           "以2027年申請貿易領域研究助理或企業政府關係與貿易策略實習為目標做準備",
@@ -1759,14 +1787,14 @@ const SITE = {
     ja: {
       htmlLang: "ja",
       header: { navigationLabel: "メインナビゲーション", languageLabel: "言語を選択" },
-      meta: { title: "鄭主緣 Juyeon Jung | 国際通商と政策の探究", description: "中国の経済と貿易の学習、国際イベントでの協働経験、Trade Data Labの開発と政策原文の検討を記録します。" },
+      meta: { title: "鄭主緣 Juyeon Jung | 国際通商と政策の探究", description: "中国の経済と貿易の学習、国際イベントでの協働経験、Trade Data Labでの貿易とデータに関するWebツール制作、政策原文の検討を記録します。" },
       nav: { about: "自己紹介", experience: "経歴", projects: "プロジェクト", now: "現在", notes: "探究ノート", contact: "連絡先" },
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
         headline: "貿易政策が企業や市場に与える影響を、資料とデータに基づいて説明していきたいと考えています。",
         headlineBreakAfter: "貿易政策が企業や市場に与える影響を、",
-        intro: "中国の経済と貿易を学び、国際イベントでは海外のパートナーと協働してきました。現在はTrade Data Labで、貿易ニュース、政策原文、貿易統計をあわせて確認できるサービスを開発しています。",
+        intro: "中国の経済と貿易を学び、国際イベントでは海外のパートナーと協働してきました。現在は個人プロジェクトTrade Data Labのもとで、貿易とデータをテーマに複数のWebサイトやツールを制作しています。",
         politicalEconomyInterest: "国際政治経済",
         photo: "プロフィール写真",
         ctaProjects: "プロジェクトを見る",
@@ -1787,7 +1815,7 @@ const SITE = {
         body: [
           "漢陽大学で中語中文学を専攻、中国経済通商学を副専攻し、国立台湾大学で中国文学の複数学位を取得しました。台湾で2年間、中国語の専攻授業を履修し、中国語圏の言語と社会を理解する土台を築きました。",
           "EXPORUMのグローバル戦略事業チームのインターンとして、海外メディアとの協業、海外登壇者と機関への招待や日程調整、産業イベントの資料調査を支援しました。異なる関係者の要望と条件を整理し、確認した内容を文書で伝える実務を経験しました。",
-          "現在は貿易AX研修で、情報の探索と比較を支援するWebダッシュボードを制作しています。個人プロジェクトTrade Data Labでは、ニュースを読んだ後に関連する政策原文と統計を確認し、国別の貿易構造や政策発表前後の変化を見られるサービスを開発しています。",
+          "現在は貿易AX研修で、情報の探索と比較を支援するWebダッシュボードを制作しています。これとは別に、個人プロジェクトTrade Data Labのもとで、貿易とデータをテーマに複数のWebサイトを制作しています。Trade News Roomはニュースと貿易概念の学習、Policylineは政策発表前後の貿易額の比較、Tradeweaveは国別の貿易相手国と取引集中度の確認を目的として、それぞれ構成しました。",
           "別の企業連携キャップストーンでは、公共サービスを提供する機関と協働するAI相談チャットボットの開発に参加する予定です。プロジェクトを通じて機関の要件を理解し、実際のサービスとして具体化する経験を積みたいと考えています。"
         ],
         moreOpen: "学歴、資格、使用ツールを見る",
@@ -1930,35 +1958,35 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
-              "title": "Trade Data Lab | 貿易ニュースと政策、貿易統計の探究",
+              "title": "Trade Data Lab | 貿易とデータのWebプロジェクト集",
               "type": "個人プロジェクト（開発中）",
-              "summary": "貿易ニュース、政策、国別の貿易統計を確認するWebツールです。",
-              "contribution": "貿易に関する問いに沿って、サービスの構成と画面を企画し制作しました。",
+              "summary": "貿易とデータをテーマに、目的の異なる複数のWebサイトを制作する個人プロジェクトです。",
+              "contribution": "Trade Data Labのもとで各サイトの問いと画面を定め、企画から制作まで進めました。",
               "details": [
-                "現在、Trade News Room、Policyline、Tradeweaveが動作しています。",
-                "出典、基準期間、単位を示し、事実と解釈を区別する共通の表示原則を定めました。"
+                "Trade News Roomはニュースと概念の学習、Policylineは政策発表前後の貿易額の比較、Tradeweaveは貿易相手国と集中度の確認を目的としています。",
+                "この3サイトは現在動作しています。Fact DeskはTrade News Room内の機能として、Report PlainとTrade Notebookは追加の構成として企画中です。"
               ],
-              "problem": "ニュース、政策原文、貿易統計が分散し、基準期間や単位も異なるため、一緒に比較することが困難でした。",
-              "action": "問いごとにTrade News Room、Policyline、Tradeweaveを企画し制作しました。",
-              "change": "各サービスでニュースと貿易概念の学習、政策発表前後の貿易額の比較、貿易相手国と集中度の確認ができる構成にしました。"
+              "problem": "ニュースの学習、政策発表前後の比較、貿易構造の探索には、それぞれ異なる資料と画面構成が必要でした。",
+              "action": "個人プロジェクトTrade Data Labのもとで、Trade News Room、Policyline、Tradeweaveをそれぞれ企画し制作しました。",
+              "change": "ニュースと概念の学習、政策発表前後の貿易額、貿易相手国と集中度を、各目的に合ったWebサイトで確認できる構成にしました。"
             },
-            name: "Trade Data Lab | 貿易ニュース、政策、貿易統計をあわせて見るWebツール",
-            summary: "散在するニュース、政策の原文、統計を問いごとにつなぐ個人プロジェクトです。国ごとの貿易構造や政策発表前後の貿易の変化を自分で確認できるよう、サービスを構成しています。",
-            question: "ニュースで見た貿易の問題を、政策の原文と貿易統計でどう確認し、比較できるだろうか。",
-            contribution: "プロジェクトの問い、各サービスの役割、共通の情報表示の原則を企画しました。Trade News Room、Policyline、Tradeweaveを制作し、残りのサービスの構成と連携方法を整理しています。",
+            name: "Trade Data Lab | 貿易とデータのWebプロジェクト集",
+            summary: "貿易とデータをテーマに、複数のWebサイトやツールを制作する個人プロジェクトです。Trade News Room、Policyline、Tradeweaveはそれぞれ異なる問いを扱うWebサイトであり、同じプロジェクトのもとで次のツールも企画しています。",
+            question: "貿易ニュースの学習、政策発表前後の比較、貿易構造の探索に適したWebツールを、それぞれどのように作れるだろうか。",
+            contribution: "プロジェクトのテーマ、各サイトの問い、共通の表示原則を定めました。Trade News Room、Policyline、Tradeweaveを個別に制作し、次のツールの構成も整理しています。",
             period: "2026",
             type: "個人プロジェクト",
             status: "Trade News Room、Policyline、Tradeweaveは動作 / その他の構成は企画中",
-            problem: "ニュース、政策の原文、貿易統計が異なる場所にあり、資料の期間や単位も異なるため、一つの問題を調べるために必要な資料をつないで比較することが難しい状況です。",
+            problem: "ニュースから貿易概念を学ぶこと、政策発表前後の貿易額を比較すること、国別の取引構造を調べることには、それぞれ異なる資料と探索方法が必要です。",
             role: [
-              "貿易の問題を問いごとのサービスに分けるプロジェクトの企画",
-              "Trade News Room、Policyline、Tradeweaveの制作と機能構成",
-              "出典、基準期間、単位、事実と解釈を示す原則の整理",
+              "貿易とデータに関するWebサイトを継続して制作する個人プロジェクトの企画",
+              "Trade News Room、Policyline、Tradeweaveの個別制作と機能構成",
+              "出典、基準期間、単位、事実と解釈の表示原則の整理",
               "Fact Desk、Report Plain、Trade Notebookの今後の構成の企画"
             ],
             caseStudy: {
-              background: "貿易の問題を確認するには、ニュース、政府の発表、貿易統計をそれぞれ探す必要があります。資料ごとに期間や単位が異なり、そのまま比較することも困難です。必要な資料を問いごとにまとめ、原文と数値を行き来しながら確認できる構成を企画しました。",
-              methodology: "Trade News Roomはニュースと貿易概念の学習、Policylineは政策発表前後の貿易額の比較、Tradeweaveは貿易相手国と貿易の集中度の確認を担います。サービスごとに出典、基準期間、単位を示し、確認された事実と解釈を分けることを共通の原則としています。",
+              background: "貿易ニュースの学習、政策発表前後の比較、国別の貿易構造の探索には、異なる資料と画面が必要です。Trade Data Labは、これらの目的に合うWebサイトやツールを一つずつ制作する個人プロジェクトです。",
+              methodology: "Trade Data Labのもとで、Trade News Roomはニュースと貿易概念の学習、Policylineは政策発表前後の貿易額の比較、Tradeweaveは貿易相手国と取引集中度の確認を目的とする個別のWebサイトとして制作しました。各サービスで出典、基準期間、単位を示し、確認できた事実と解釈を分けることを共通原則としました。",
               implications: "ニュースの説明をそのまま受け入れる前に、関連する原文や数値を確認し、さらに調べる問いを見つけることを助けます。政策発表前後の変化だけで政策の効果や迂回輸出を断定せず、データで確認できる範囲と残る不確実性をあわせて説明します。",
               limits: "企画書の全体構成は完成時の目標です。データ接続や自動更新の実装範囲は、サービスごとに区別する必要があります。政策発表と同時期の貿易の変化を、政策の因果効果や迂回輸出の証拠とは断定しません。"
             },
@@ -1970,7 +1998,7 @@ const SITE = {
               { id: "reportplain", name: "Report Plain", status: "planned", description: "報告書の主張、根拠、限界を原文のページ番号とともに整理するサービスを企画しています。" },
               { id: "tradenotebook", name: "Trade Notebook", status: "planned", description: "問い、データ、発見、限界で構成した分析ノートを公開する仕組みを企画しています。" }
             ],
-            note: "Trade Data Labは継続して拡張する個人プロジェクトです。Fact DeskはTrade News Room内の企画段階の機能であり、Report PlainとTrade Notebookも企画中です。",
+            note: "Trade Data Labは、貿易とデータに関するWebサイトやツールを継続して制作する個人プロジェクトです。Fact DeskはTrade News Room内の企画段階の機能であり、Report PlainとTrade Notebookも企画中です。",
             legacyProject: {
               id: "tradenews",
               name: "Trade News Room | ニュースで学ぶ貿易教室",
@@ -2103,7 +2131,13 @@ const SITE = {
         extraOpen: "開く",
         extraClose: "閉じる",
         extra: [
-          { name: "KITA 報告書スタディ", meta: "学習活動", desc: "国際通商の問題を読み、発表資料を準備。CPTPP関連報告書の海外パートの発表準備と紹介文の作成" },
+          { id: "kita-study", linkKey: "kitaStudy", period: "2026.08 – 2026.12", dashboardLabel: "ダッシュボードを開く", name: "KITA 報告書スタディ", meta: "貿易AX研修と並行して取り組んだ報告書の学習活動", desc: "国際通商の問題を読み、発表資料を準備。CPTPP関連報告書の海外パートの発表準備と紹介文の作成" },
+          {
+            "id": "kotra-finance",
+            "name": "公的機関の財務資料を読む | KOTRA",
+            "meta": "大学の個人課題",
+            "desc": "大学の授業でKOTRAの2020～2024年の公開財務資料を用い、資産と負債、収入と支出の変化を整理しました。公的機関の財源構造を確認した個人課題です。"
+          },
           { name: "その他の活動", desc: "人文科学大学 学生会書記（2023）、チャペル合唱ボランティア（2025）、ダンスサークル Ars Amandi（2022）、カフェ ZITTEN 勤務（2022–2023）" }
         ]
       },
@@ -2111,11 +2145,11 @@ const SITE = {
         label: "NOW",
         title: "いま取り組んでいること",
         asOf: "基準日 2026.11.15",
-        statement: "貿易AX研修でWebダッシュボードを制作し、個人プロジェクトTrade Data Labを開発しています。別の企業連携キャップストーンでAI相談チャットボットの開発に着手する準備を進めながら、英語と分析の基礎を補い、通商と政策分野での次の学びと実務経験に備えています。",
+        statement: "貿易AX研修でWebダッシュボードを制作しています。個人プロジェクトTrade Data Labのもとでは、貿易とデータをテーマに複数のWebサイトやツールを制作しています。別の企業連携キャップストーンでAI相談チャットボットの開発に着手する準備を進めながら、英語と分析の基礎を補い、通商と政策分野での次の学びと実務経験に備えています。",
         doingTitle: "進行中",
         doing: [
           "貿易AXマスター課程の受講とチームプロジェクト経験の整理（2026.12.18修了予定）",
-          "Trade Data Labの開発と、ニュース、政策原文、貿易統計をつなぐサービスの構成",
+          "個人プロジェクトTrade Data Labのもとで貿易とデータに関するWebサイトを制作し拡充",
           "別の企業連携キャップストーンで、公共サービス提供機関のAI相談チャットボット開発に着手する準備",
           "TOEFL 100+を目標とする英語学習と、経済学および統計の基礎の補強",
           "2027年の通商分野の研究補助、または企業の政府渉外と通商戦略インターンへの応募を目指す準備",

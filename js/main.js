@@ -237,12 +237,15 @@
       </article>`;
     }).join("");
 
-    const extra = p.extra
-      .map(
-        (e) => `<div class="extra-item"><strong>${esc(e.name)}</strong>
-          ${e.meta ? `<p class="meta">${esc(e.meta)}</p>` : ""}<p class="tool-item">${sentences(e.desc, t.htmlLang)}</p></div>`
-      )
-      .join("");
+    const extra = p.extra.map((e) => {
+      const url = (SITE.links.activities || {})[e.linkKey || e.id];
+      const meta = [e.period, e.meta].filter(Boolean);
+      return `<div class="extra-item"><strong>${esc(e.name)}</strong>
+        ${meta.length ? `<p class="meta extra-meta">${meta.map((part) => `<span>${esc(part)}</span>`).join("")}</p>` : ""}
+        <p class="tool-item">${sentences(e.desc, t.htmlLang)}</p>
+        ${url && e.dashboardLabel ? `<a class="btn btn-outline activity-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(e.dashboardLabel)} <span aria-hidden="true">↗</span></a>` : ""}
+      </div>`;
+    }).join("");
 
     $("projects").innerHTML = `<div class="container">
       ${sectionHead(p.label, p.title)}

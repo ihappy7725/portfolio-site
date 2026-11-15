@@ -220,6 +220,8 @@ details.project-details > summary:hover { color: var(--primary); }
 .extra-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
 .extra-item { background: var(--bg-alt); border-radius: 14px; padding: 16px 18px; }
 .extra-item strong { display: block; font-size: 15px; }
+.extra-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; }
+.activity-link { margin-top: 10px; padding: 8px 15px; font-size: 13px; border-width: 1px; border-radius: 10px; }
 
 /* ===== Now ===== */
 .now-as-of { color: var(--primary); font-size: 15px; margin-bottom: 24px; }
