@@ -457,15 +457,7 @@ const SITE = {
         label: "NOTES",
         title: "탐구 기록",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: [
-          {
-            title: "2023년 중국 흑연 수출통제, 품목 조건부터 읽기",
-            summary: "공식 공고와 FAQ를 읽고 인조흑연과 천연흑연의 품목 조건, 허가 요건과 시장 영향의 구분을 정리했습니다.",
-            tags: ["중국","수출통제","정책 원문"],
-            date: "2026-11-15",
-            link: "notes/2023-china-graphite-controls.html?from=ko"
-          }
-        ]
+        items: []
       },
       contact: {
         label: "CONTACT",
@@ -950,15 +942,7 @@ const SITE = {
         label: "NOTES",
         title: "Exploration notes",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: [
-          {
-            title: "Reading the product conditions in China's 2023 graphite export controls",
-            summary: "A Korean-language reading note on product scope and licensing requirements, distinguishing policy conditions from market outcomes.",
-            tags: ["China","Export controls","Policy documents"],
-            date: "2026-11-15",
-            link: "notes/2023-china-graphite-controls.html?from=en"
-          }
-        ]
+        items: []
       },
       contact: {
         label: "CONTACT",
@@ -1352,15 +1336,7 @@ const SITE = {
         label: "NOTES",
         title: "探索记录",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: [
-          {
-            title: "从产品条件读懂中国2023年石墨出口管制",
-            summary: "阅读官方公告与问答，梳理产品范围及许可要求，并区分政策条件与市场变化。正文为韩语。",
-            tags: ["中国","出口管制","政策原文"],
-            date: "2026-11-15",
-            link: "notes/2023-china-graphite-controls.html?from=zh-Hans"
-          }
-        ]
+        items: []
       },
       contact: {
         label: "CONTACT",
@@ -1754,15 +1730,7 @@ const SITE = {
         label: "NOTES",
         title: "探究紀錄",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: [
-          {
-            title: "從產品條件理解中國2023年石墨出口管制",
-            summary: "閱讀官方公告與問答，整理產品範圍及許可要求，並區分政策條件與市場變化。正文為韓文。",
-            tags: ["中國","出口管制","政策原文"],
-            date: "2026-11-15",
-            link: "notes/2023-china-graphite-controls.html?from=zh-Hant"
-          }
-        ]
+        items: []
       },
       contact: {
         label: "CONTACT",
@@ -2170,15 +2138,7 @@ const SITE = {
         label: "NOTES",
         title: "探究ノート",
         // 실제 글만 추가합니다. 비어 있으면 이 언어의 섹션과 메뉴가 숨겨집니다.
-        items: [
-          {
-            title: "中国の2023年黒鉛輸出管理を品目の条件から読む",
-            summary: "公式公告とFAQから対象品目と許可要件を整理し、政策上の条件と市場の変化を区別するノートです。本文は韓国語です。",
-            tags: ["中国","輸出管理","政策原文"],
-            date: "2026-11-15",
-            link: "notes/2023-china-graphite-controls.html?from=ja"
-          }
-        ]
+        items: []
       },
       contact: {
         label: "CONTACT",
