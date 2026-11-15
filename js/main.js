@@ -210,90 +210,29 @@
   function renderProjects(t) {
     const p = t.projects;
     const L = p.labels;
-    const renderAi = (cs) => cs.ai
-      ? `<p class="sub-title">${esc(L.aiUse)}</p><dl class="ai-split">
-          <div><dt>${esc(L.aiDelegated)}</dt><dd>${sentences(cs.ai.delegated, t.htmlLang)}</dd></div>
-          <div><dt>${esc(L.aiOwn)}</dt><dd>${sentences(cs.ai.own, t.htmlLang)}</dd></div>
-        </dl>` : "";
-    const block = (cs, key) => cs[key]
-      ? `<p class="sub-title">${esc(L[key])}</p><p class="body">${sentences(cs[key], t.htmlLang)}</p>` : "";
-    const renderRooms = (project) => {
-      const url = SITE.links.projects[project.id];
-      if (!url || !project.rooms?.length) return "";
-      return `<p class="sub-title">${esc(L.rooms)} <span class="count">${project.rooms.length}</span></p>
-        <ol class="room-list">${project.rooms.map((room) => `<li><a href="${esc(url.replace(/#.*$/, "") + "#learn-" + room.id)}" target="_blank" rel="noopener">${esc(room.title)}</a><span class="meta">${esc(room.tool)}</span></li>`).join("")}</ol>`;
-    };
-    const cards = p.items
-      .map((it) => {
-        const url = (SITE.links.projects || {})[it.id];
-        const reportUrl = (SITE.links.reports || {})[it.id];
-        const reportType = /\.pdf(?:[?#]|$)/i.test(reportUrl || "") ? "application/pdf" : "text/html";
-        const note = it.note ? `<p class="note">${sentences(it.note, t.htmlLang)}</p>` : "";
-        const cs = it.caseStudy || {};
-        const caseStudy = block(cs, "process") + renderAi(cs) + block(cs, "outcome") + renderRooms(it) + block(cs, "limits") + block(cs, "lessons");
-        const research = ["background", "methodology", "implications"].filter((key) => cs[key])
-          .map((key) => `<section class="research-stage research-${key}"><h4>${esc(L[key])}</h4><p class="body">${sentences(cs[key], t.htmlLang)}</p></section>`).join("");
-        const componentLinks = SITE.links.projectComponents || {};
-        const components = it.components?.length ? `<h4 class="sub-title">${esc(L.components)}</h4><ul class="component-list">
-          ${it.components.map((component) => {
-            const componentUrl = componentLinks[component.id] || (component.id === "tradenews" ? SITE.links.projects.tradenews : "");
-            const name = componentUrl ? `<a href="${esc(componentUrl)}" target="_blank" rel="noopener">${esc(component.name)}</a>` : esc(component.name);
-            return `<li><div class="component-head"><strong>${name}</strong><span class="component-state ${component.status === "working" ? "working" : "planned"}">${esc(component.status === "working" ? L.working : L.planned)}</span></div><p>${sentences(component.description, t.htmlLang)}</p></li>`;
-          }).join("")}</ul>` : "";
-        const legacy = it.legacyProject;
-        const legacyStudy = legacy?.caseStudy || {};
-        const legacyRecord = legacy ? `<details class="disclosure legacy-project"><summary>${esc(L.legacyProject)}: ${esc(legacy.name)}</summary>
-          <div class="disclosure-body"><p>${sentences(legacy.summary, t.htmlLang)}</p>
-            <p class="sub-title">${esc(L.question)}</p><p>${sentences(legacy.question, t.htmlLang)}</p>
-            <p class="sub-title">${esc(L.problem)}</p><p>${sentences(legacy.problem, t.htmlLang)}</p>
-            <p class="sub-title">${esc(L.contribution)}</p><p>${sentences(legacy.contribution, t.htmlLang)}</p>
-            <p class="sub-title">${esc(L.role)}</p>${list(legacy.role || [])}
-            ${block(legacyStudy, "process")}${renderAi(legacyStudy)}${block(legacyStudy, "outcome")}${renderRooms(legacy)}${block(legacyStudy, "limits")}${block(legacyStudy, "lessons")}
-            ${legacy.note ? `<p class="note">${sentences(legacy.note, t.htmlLang)}</p>` : ""}
-          </div></details>` : "";
-        const materialUrls = (SITE.links.projectMaterials || {})[it.id] || {};
-        const materials = (it.materials || []).map((material) => {
-          const materialUrl = materialUrls[material.id];
-          if (!materialUrl) return "";
-          const type = /\.mp4(?:[?#]|$)/i.test(materialUrl) ? ' type="video/mp4"' : "";
-          return `<a class="btn btn-outline" href="${esc(materialUrl)}" target="_blank" rel="noopener"${type}>${esc(material.label)}</a>`;
-        }).join("");
-        const materialLinks = materials
-          ? `<p class="sub-title">${esc(L.materials)}</p><div class="link-row">${materials}</div>`
-          : "";
-        const buttons = [
-          url ? `<a class="btn btn-outline" href="${esc(url)}" target="_blank" rel="noopener">${esc(L.link)}</a>` : "",
-          reportUrl ? `<a class="btn btn-outline" href="${esc(reportUrl)}" target="_blank" rel="noopener" type="${reportType}" hreflang="ko">${esc(L.report)}</a>` : ""
-        ].join("");
-        const link = buttons ? `<div class="link-row">${buttons}</div>` : "";
-        return `<article class="card project">
-          <div class="project-topline">
-            <dl class="project-meta">
-              <div><dt class="sr-only">${esc(L.type)}</dt><dd>${esc(it.type)}</dd></div>
-              <div><dt class="sr-only">${esc(L.period)}</dt><dd>${esc(it.period)}</dd></div>
-            </dl>
-          </div>
-          <h3>${esc(it.name)}</h3>
-          <p class="summary">${sentences(it.summary, t.htmlLang)}</p>
-          ${it.question ? `<p class="project-question"><strong>${esc(L.question)}</strong>${sentences(it.question, t.htmlLang)}</p>` : ""}
-          ${research ? `<div class="research-grid">${research}</div>` : `<p class="body">${sentences(it.problem, t.htmlLang)}</p>`}
-          ${it.contribution ? `<div class="project-contribution"><h4>${esc(L.contribution)}</h4><p class="body">${sentences(it.contribution, t.htmlLang)}</p></div>` : ""}
-          <details class="more project-details">${toggle(L.moreOpen, L.moreClose)}
-            <div class="project-details-body">
-              <dl class="project-status"><dt>${esc(L.status)}</dt><dd>${esc(it.status)}</dd></dl>
-              ${research ? block(it, "problem") : ""}
-              <p class="sub-title">${esc(L.role)}</p>${list(it.role)}
-              ${components}
-              ${caseStudy}
-              ${legacyRecord}
-              ${materialLinks}
-              ${note}
-            </div>
-          </details>
-          ${link}
-        </article>`;
-      })
-      .join("");
+    const cards = p.items.map((it) => {
+      const view = it.presentation || it;
+      const url = (SITE.links.projects || {})[it.id];
+      // 서비스 묶음에는 실제로 동작하는 서비스의 주소만 연결합니다.
+      const serviceLinks = (it.components || [])
+        .filter((component) => component.status === "working" && SITE.links.projectComponents?.[component.id])
+        .map((component) => ({ name: component.name, url: SITE.links.projectComponents[component.id] }));
+      const links = serviceLinks.length
+        ? serviceLinks.map((service) => `<a class="btn btn-outline" href="${esc(service.url)}" target="_blank" rel="noopener" aria-label="${esc(service.name)}: ${esc(L.dashboard)}">${esc(service.name)} <span aria-hidden="true">↗</span></a>`).join("")
+        : url ? `<a class="btn btn-outline" href="${esc(url)}" target="_blank" rel="noopener">${esc(L.dashboard)} <span aria-hidden="true">↗</span></a>` : "";
+      const details = view.details?.length ? `<details class="more project-details">
+        ${toggle(L.moreOpen, L.moreClose)}
+        <div class="project-details-body">${list(view.details)}</div>
+      </details>` : "";
+      return `<article class="card project" id="project-${esc(it.id)}">
+        <div class="project-topline"><p class="project-type">${esc(view.type)}</p><p class="project-period">${esc(it.period)}</p></div>
+        <h3>${esc(view.title || it.name)}</h3>
+        <p class="summary">${sentences(view.summary, t.htmlLang)}</p>
+        <div class="project-role"><p class="project-role-label">${esc(L.role)}</p><p>${sentences(view.contribution, t.htmlLang)}</p></div>
+        ${links ? `<div class="link-row"${serviceLinks.length ? ` role="group" aria-label="${esc(L.workingServices)}"` : ""}>${links}</div>` : ""}
+        ${details}
+      </article>`;
+    }).join("");
 
     const extra = p.extra
       .map(
@@ -304,8 +243,7 @@
 
     $("projects").innerHTML = `<div class="container">
       ${sectionHead(p.label, p.title)}
-      <p class="lead">${sentences(p.intro, t.htmlLang)}</p>
-      <div class="projects-grid" style="margin-top:20px">${cards}</div>
+      <div class="projects-grid">${cards}</div>
       <div class="card extra">
         <details class="more" style="margin-top:0;border-top:0;padding-top:0">
           <summary><span>${esc(p.extraTitle)}</span></summary>
