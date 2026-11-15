@@ -10,7 +10,7 @@ HTML, CSS, JavaScript만으로 만든 포트폴리오입니다. 실제 프로젝
 
 2027년 RA 및 GR 지원을 준비하고, 2028년 가을 미국 국제관계 또는 공공정책 대학원 진학을 목표로 합니다. 지원과 진학은 앞으로의 목표이며 현재의 직위나 입학 실적으로 표시하지 않습니다. 영어와 TOEFL 준비, 2026년 8월부터 12월까지의 무역 AX마스터 과정 수강과 12월 18일 수료 예정도 진행 상태에 맞춰 관리합니다.
 
-대표 프로젝트는 개발 중인 **Trade Data Lab**, 팀 프로젝트 **AXPORT**, **Hanjungsun** 순서입니다. 설명형 제목과 유형 및 기간 아래에 **문제의식 → 내가 한 일 → 달라진 구성**을 짧은 세 행으로 보여줍니다. 기본 목적과 역할만 남겼던 이전 구조에서 문제와 변화가 빠진 점을 보완한 구성입니다. 펼친 상세는 작업 설명 두 항목으로 제한하고, 기존의 긴 원문과 요약은 데이터에 보존합니다.
+대표 프로젝트는 개발 중인 **Trade Data Lab**, 팀 프로젝트 **AXPORT**, **Hanjungsun** 순서입니다. 사용자가 선택한 **짧은 카드와 펼친 상세**에 맞춰 가이드의 한 줄 요약, 문제 정의, 해결 과정, AI 적용, 결과를 나눠 보여줍니다. 기본 카드에는 설명형 제목과 유형 및 기간, 요약과 본인 역할, 짧은 문제 및 결과를 두고 상세에는 해결 과정 세 단계와 AI의 작업 및 본인의 판단과 확인 범위를 둡니다. 기존의 세 행 설명과 긴 원문은 기록으로 보존합니다.
 
 About에서는 학업 배경, 실무 경험과 Trade Data Lab 개발을 구분합니다. 공공서비스 AI 상담 챗봇 캡스톤은 별도로 착수할 예정인 활동이며 Trade Data Lab의 구성 요소나 이미 완성한 결과물로 표시하지 않습니다. 취업용 PPT나 PDF가 필요하면 같은 자료에서 지원 목적에 맞는 부분을 별도로 구성합니다.
 
@@ -52,8 +52,8 @@ portfolio-site/
 | 상단바 | `SITE.profile.headerName`의 이름, 가운데 메뉴와 언어 선택을 표시합니다. 언어 선택은 현재 언어 버튼 하나로 접혀 있고, 처음 방문하면 한국어입니다. 마우스, 터치와 키보드로 목록을 열 수 있습니다. URL의 `lang`과 선택한 언어의 저장 동작은 유지합니다. |
 | 페이지 제목과 검색용 설명 | `meta.title`은 브라우저 탭 제목입니다. 검색용 설명은 `hero.headline` 뒤에 `meta.description`을 붙여 만들며 언어 전환 시 함께 갱신합니다. 메인 문구를 바꿀 때 `index.html`의 기본 한국어 설명도 함께 수정합니다. |
 | About | 학업, 실무 경험과 도구 개발, 향후 활동을 구분합니다. 학력과 교육, 언어와 자격, 활용 도구의 상세는 독립된 접이식 바로 관리합니다. 취미는 표시하지 않습니다. |
-| 프로젝트 카드 | 가로 카드를 한 줄에 하나씩 배치합니다. 각 항목의 `presentation.title`은 이름과 용도를 함께 설명합니다. `type`과 기간 아래에 `problem`, `action`, `change`를 문제의식, 내가 한 일, 달라진 구성의 세 행으로 읽으며 각 행은 짧은 한 문장입니다. 상세 `details`는 두 항목으로 유지합니다. |
-| 기존 프로젝트 원문 | `question`, `problem`, `contribution`, `role`, `caseStudy`, `note`와 이전 `presentation.summary`, `presentation.contribution`은 기록으로 보존합니다. 현재의 짧은 세 행은 `presentation.problem`, `presentation.action`, `presentation.change`에서 관리합니다. 기존 장문과 별도의 한계 및 다음 단계, 회고, AI 분담은 반복 출력하지 않습니다. |
+| 프로젝트 카드 | 가로 카드를 한 줄에 하나씩 배치합니다. `presentation.title`은 이름과 용도를 함께 설명합니다. `type`과 기간 아래에 `presentation.guide`의 `summary`, `role`, `problem`, `result`를 짧게 표시합니다. 상세에는 `process` 세 단계와 `ai`의 도구, AI 지원 작업, 본인의 판단 및 확인을 표시합니다. |
+| 기존 프로젝트 원문 | `question`, `problem`, `contribution`, `role`, `caseStudy`, `note`와 이전 `presentation.summary`, `presentation.contribution`, `presentation.problem`, `action`, `change`, `details`는 기록으로 보존합니다. 현재 카드 문구는 `presentation.guide`에서 관리하며 기존 장문과 별도의 한계 및 다음 단계, 회고, 보조 자료를 반복 출력하지 않습니다. |
 | Trade Data Lab | 공통 id는 `tradedatalab`입니다. 여러 개별 웹 프로젝트를 만드는 개인 프로젝트로 소개하며 웹사이트별 목적과 구현 상태 및 주소를 관리합니다. |
 | 이전 Trade News Room | Trade Data Lab의 `legacyProject`에 원문과 학습실 목록을 보존합니다. 포트폴리오의 중첩 상세와 학습실별 링크는 제거했으며 Trade News Room 서비스 버튼으로 이동합니다. |
 | 구성 요소의 링크 | `components`에서 `status`가 `working`인 서비스만 `SITE.links.projectComponents`의 주소로 연결합니다. 사용자 선택에 따라 Trade Data Lab은 동작하는 서비스 세 개의 버튼을 유지합니다. 전체 프로젝트 주소와 개별 서비스 주소를 혼용하지 않습니다. |
@@ -105,16 +105,31 @@ portfolio-site/
 | GitHub, LinkedIn 버튼 | `SITE.links.github`, `SITE.links.linkedin`에 주소 입력 (비워두면 버튼이 숨겨짐) |
 | 프로젝트 링크 버튼 | `SITE.links.projects`의 해당 id에 실제 주소를 입력합니다. Trade Data Lab의 구성 요소는 `SITE.links.projectComponents`를 사용하며 전체 프로젝트와 개별 구성 요소를 구분합니다. |
 | 기존 보고서와 자료 관리 | 보고서 주소와 자료 경로는 기록 보관용입니다. `reports`, `projectMaterials`나 `materials`를 수정해도 현재 프로젝트 카드에는 자료 버튼이 생기지 않습니다. |
-| 새 프로젝트 추가 | 다섯 언어의 `projects.items`에 같은 `id`로 항목을 추가하고 `period`와 `presentation`의 `title`, `type`, `problem`, `action`, `change`, `details`를 작성합니다. 상세 `details`는 두 항목을 기준으로 짧게 작성합니다. |
-| 프로젝트 제목과 문제의식 고치기 | 다섯 언어의 `presentation.title`에 이름과 용도를 쓰고 `presentation.problem`에 어떤 정보나 판단의 문제가 있었는지 한 문장으로 씁니다. 기존 `summary`와 `question`은 기록용입니다. |
-| 개인 기여와 달라진 구성 고치기 | 다섯 언어의 `presentation.action`, `presentation.change`를 함께 수정합니다. 직접 맡은 일과 실제 구현된 화면 및 정보 구조의 변화를 각각 한 문장으로 쓰고, 기존 `contribution`과 `role`의 사실관계를 확인합니다. |
-| 화면의 상세 고치기 | 다섯 언어의 `presentation.details`를 함께 수정합니다. 실제 작업을 설명하는 두 항목으로 제한하고 별도의 한계, 회고나 결과 설명을 반복해 붙이지 않습니다. 기존 `caseStudy`는 보존용 데이터입니다. |
+| 새 프로젝트 추가 | 다섯 언어의 `projects.items`에 같은 `id`로 항목을 추가하고 `period`, `presentation.title`, `type`, `guide`를 작성합니다. `guide`의 필드는 아래 표를 따르며 팀 결과물과 직접 맡은 범위를 구분합니다. |
+| 프로젝트 제목과 요약 고치기 | 다섯 언어의 `presentation.title`에 이름과 용도를 쓰고 `presentation.guide.summary`에 만든 도구와 달라진 구성을 한 문장으로 씁니다. |
+| 문제와 결과 고치기 | 다섯 언어의 `presentation.guide.problem`, `result`를 함께 수정합니다. 문제는 대상과 불편을, 결과는 실제 구현된 화면 및 정보 구조의 변화를 짧게 씁니다. 확인하지 않은 시간 절감이나 정책 효과를 만들지 않습니다. |
+| 개인 기여 고치기 | 다섯 언어의 `presentation.guide.role`, `ai.owned`를 함께 수정합니다. `role`은 기본 카드의 짧은 담당 범위이며 `ai.owned`는 상세의 본인 판단과 확인입니다. 기존 `contribution`과 `role`의 사실관계도 확인합니다. |
+| 화면의 상세 고치기 | 다섯 언어의 `presentation.guide.process`, `ai.tools`, `ai.assisted`, `ai.owned`를 함께 수정합니다. 해결 과정은 실제 작업 세 단계로 쓰고 AI 지원 작업과 본인 작업을 구분합니다. 별도의 한계와 다음 단계, 긴 회고는 추가하지 않습니다. 기존 `caseStudy`와 `presentation.details`는 보존용 데이터입니다. |
 | 대시보드 버튼 문구 고치기 | 다섯 언어의 `projects.labels.dashboard`를 함께 수정합니다. Trade Data Lab의 서비스 버튼은 실제 서비스 이름을 사용합니다. |
 | 실무 사례 고치기 | 다섯 언어의 `experience.items[].cases` 안에서 `buyers`와 `verification`의 `summary`, `workflow`, `caption`을 함께 맞춥니다. 바이어 사례의 비교 표는 `comparison.headers`, `comparison.rows`를 사용합니다. 내부 자료, 제3자의 이름과 연락처, 미검증 광고 지표를 가져오지 않습니다. |
 | 이전 Trade News Room 기록 고치기 | 다섯 언어의 id가 `tradedatalab`인 항목의 `legacyProject`를 찾습니다. 이 원문은 보존용이며 현재 화면에 출력하지 않습니다. 서비스 소개와 실제 동작 상태를 바꿀 때는 `presentation`과 `components`도 따로 확인합니다. |
 | 새 탐구 기록 연결 | 사용자가 실제 글을 보여주기로 정한 경우에만 다섯 언어의 `notes.items`에 추가하고 제목, 요약, 태그를 해당 언어로 작성 |
 | 연락폼 문구 고치기 | 다섯 언어의 `contact.form`을 함께 수정합니다. 버튼과 안내는 이메일 앱의 작성창을 여는 동작을 설명하며 사이트에서 전송 완료라고 표시하지 않습니다. |
 | 메인 색 바꾸기 | `css/style.css` 맨 위 `--primary` 값 변경 |
+
+### 프로젝트의 다섯 요소 관리하기
+
+`presentation.guide`는 가이드의 다섯 요소를 웹 카드에 맞춰 저장합니다. 기본 카드와 상세는 같은 정보를 반복하지 않도록 나눕니다.
+
+| 요소 | 필드 | 작성 기준 |
+|---|---|---|
+| 한 줄 요약 | `summary`, `role` | 만든 것과 용도를 요약하고, 개인 프로젝트인지 또는 팀에서 무엇을 맡았는지 짧게 표시합니다. 제목, 유형과 기간은 기존 `presentation.title`, `type`, `period`를 사용합니다. |
+| 문제 정의 | `problem` | 어떤 사용자나 검토 업무에서 무엇이 흩어져 있거나 구분하기 어려웠는지 씁니다. |
+| 해결 과정 | `process` | 실제 작업 순서나 정보가 이어지는 과정을 짧은 문자열 세 개로 작성합니다. 확인되지 않은 실패와 수정 이력을 만들지 않습니다. |
+| AI 적용 | `ai.tools`, `ai.assisted`, `ai.owned` | 도구 이름, AI가 지원한 작업, 본인이 정하고 검토한 일을 구분합니다. Trade Data Lab은 사용자 확인에 따라 Claude Code로 기획과 구현을 진행한 것으로 기록합니다. |
+| 결과 | `result` | 실제로 확인할 수 있는 도구, 기능과 화면 구성을 씁니다. 실측하지 않은 생산성 향상이나 기업의 사업 성과로 확대하지 않습니다. |
+
+가이드의 PPT 장수와 QR 제출 방식은 별도의 채용박람회 자료에 해당합니다. 이 사이트에 PPT 구성이나 희망 직무 표기를 추가하는 지침으로 적용하지 않습니다.
 
 ## 활동 대시보드 연결하기
 
@@ -165,7 +180,7 @@ KOTRA 항목의 id는 `kotra-finance`입니다. 공개 문구는 실제 학부 �
 
 1. VS Code의 확장 프로그램에서 Ritwick Dey의 **Live Server**를 설치합니다.
 2. `index.html`을 열고 오른쪽 아래 **Go Live**를 누르거나, 파일을 우클릭해 **Open with Live Server**를 선택합니다.
-3. 데스크톱에서 다섯 언어를 전환하며 메인 문구, 관심 분야 태그, 설명형 프로젝트 제목과 문제의식, 내가 한 일, 달라진 구성의 세 행을 확인합니다. “자세히 보기”에는 작업 설명 두 항목만 보여야 합니다. 주소 뒤에 `?lang=ko`, `?lang=en`, `?lang=zh-Hans`, `?lang=zh-Hant`, `?lang=ja`를 붙여 각 언어로 바로 열 수도 있습니다.
+3. 데스크톱에서 다섯 언어를 전환하며 메인 문구, 관심 분야 태그와 설명형 프로젝트 제목을 확인합니다. 기본 카드에는 짧은 요약과 본인 역할, 문제 및 결과가 보이고, “자세히 보기”에는 해결 과정 세 단계와 AI 도구 및 AI와 본인의 역할이 구분되어야 합니다. 주소 뒤에 `?lang=ko`, `?lang=en`, `?lang=zh-Hans`, `?lang=zh-Hant`, `?lang=ja`를 붙여 각 언어로 바로 열 수도 있습니다.
 4. 브라우저 개발자 도구의 기기 모드에서 너비를 **390px**로 설정하고 긴 제목과 태그의 줄바꿈, 버튼 간격, 가로 넘침을 확인합니다.
 5. 다섯 언어에서 Now 다음에 Contact가 이어지고, Notes 섹션과 상단 메뉴 및 빈 공간이 없는지 확인합니다. 향후 실제 글을 연결하면 목록과 메뉴가 함께 표시되는 구조를 유지합니다.
 6. 상단에는 현재 언어 버튼 하나만 보이는지 확인합니다. 데스크톱에서는 마우스를 올려 목록을 열고, 모바일에서는 버튼을 눌러 언어를 고릅니다. 키보드로는 버튼에 초점을 둔 뒤 Enter 또는 아래 화살표로 열고, 위아래 화살표로 이동하며 Escape로 닫을 수 있습니다.
@@ -229,6 +244,6 @@ Notes의 사이트 내부 상대 링크는 Live Server나 배포된 사이트에
 
 ## 저장소와 배포 관리
 
-현재 사용자가 확인하는 배포 주소는 <https://portfolio-site-pi-dusky.vercel.app/>이며 Git 원격 저장소는 <https://github.com/ihappy7725/portfolio-site>입니다. 이전 GitHub Pages 주소 <https://ihappy7725.github.io/portfolio-site/>와 혼동하지 않습니다. 로컬 파일 수정, Git 커밋과 push, Vercel 반영은 구분해 확인합니다. 로컬에서 문구가 바뀌어도 커밋과 push가 전달되지 않으면 배포 화면에는 이전 버전이 남을 수 있습니다. 배포 확인은 실제 Vercel 주소에서 메인 문구와 프로젝트 설명, 노트 링크를 다시 열어 수행합니다.
+현재 사용자가 확인하는 배포 주소는 <https://portfolio-site-pi-dusky.vercel.app/>이며 Git 원격 저장소는 <https://github.com/ihappy7725/portfolio-site>입니다. 이전 GitHub Pages 주소 <https://ihappy7725.github.io/portfolio-site/>와 혼동하지 않습니다. 로컬 파일 수정, Git 커밋과 push, Vercel 반영은 구분해 확인합니다. 로컬에서 문구가 바뀌어도 커밋과 push가 전달되지 않으면 배포 화면에는 이전 버전이 남을 수 있습니다. 배포 확인은 실제 Vercel 주소에서 메인 문구와 프로젝트의 기본 및 펼친 상세, Notes 숨김을 다시 확인합니다.
 
 로컬 Claude Code에는 별도로 `.claude/hooks/auto-deploy.sh`와 `.claude/settings.local.json`이 존재하며, 이 로컬 설정은 정적 사이트의 필수 구성 요소가 아닙니다. 해당 도구의 자동 동작은 Claude Code의 `/hooks`와 로컬 설정에서 관리합니다. 사용자가 승인한 사이트 수정은 로컬 검증, 커밋과 push, 실제 Vercel 화면 확인의 순서로 마무리합니다. 로컬 자동 훅의 존재만으로 배포 완료를 판단하지 않으며, 승인 범위 밖의 변경을 추가하지 않습니다.

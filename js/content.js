@@ -207,6 +207,13 @@ const SITE = {
         title: "대표 프로젝트",
         intro: "무역과 국제 이슈에서 출발한 질문을 자료와 데이터로 풀어 보는 웹 도구로 정리해 온 기록입니다.",
         labels: {
+          problemTitle: "문제",
+          resultTitle: "결과",
+          roleTitle: "내 역할",
+          processTitle: "해결 과정",
+          aiTitle: "AI 활용",
+          aiAssisted: "AI가 도운 일",
+          aiOwned: "내가 판단하고 확인한 일",
           storyProblem: "문제의식",
           storyAction: "내가 한 일",
           storyChange: "달라진 구성",
@@ -245,6 +252,24 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
+              guide: {
+                "summary": "무역 학습과 데이터 탐색을 위한 웹사이트 세 개를 제작했습니다.",
+                "role": "웹사이트별 질문과 화면 구성, 제작 및 결과 확인",
+                "problem": "뉴스 학습과 정책 발표 전후 비교, 교역 구조 탐색에는 서로 다른 자료와 화면이 필요했습니다.",
+                "process": [
+                  "웹사이트마다 다룰 질문과 탐색 목적을 정했습니다.",
+                  "뉴스 학습, 정책 전후 비교, 교역 구조 탐색에 맞춰 각각 제작했습니다.",
+                  "출처와 기준 기간, 단위를 보여 주는 공통 원칙을 정했습니다."
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code"
+                  ],
+                  "assisted": "각 웹사이트의 기획과 기능 구현에 Claude Code의 도움을 받았습니다.",
+                  "owned": "웹사이트별 주제와 필요한 기능을 정하고, 결과를 확인해 수정했습니다."
+                },
+                "result": "Trade News Room, Policyline, Tradeweave를 각각 동작하는 웹사이트로 만들었습니다."
+              },
               "title": "Trade Data Lab | 무역과 데이터 웹 프로젝트 모음",
               "type": "개인 프로젝트 (개발 중)",
               "summary": "무역과 데이터를 주제로 서로 다른 목적의 웹사이트를 만드는 개인 프로젝트입니다.",
@@ -330,6 +355,25 @@ const SITE = {
           {
             id: "axport",
             presentation: {
+              guide: {
+                "summary": "반도체 수출 검토에서 규제와 사업성 참고점수, 자료 부족을 구분하도록 구성했습니다.",
+                "role": "홈페이지 기획과 UI/UX, 보고서 정보 구조와 표현 개선",
+                "problem": "규제상 제약과 사업성 점수, 미확인 정보가 함께 제시되면 판단 기준을 구분하기 어려웠습니다.",
+                "process": [
+                  "홈페이지에서 다섯 검토 영역과 이용 흐름을 안내했습니다.",
+                  "보고서의 규제 검토를 사업성 참고점수와 나눴습니다.",
+                  "요약을 상세 근거와 연결하고 기준일과 자료 부족을 표시했습니다."
+                ],
+                "ai": {
+                  "tools": [
+                    "ChatGPT (Codex)",
+                    "Gemini"
+                  ],
+                  "assisted": "랜딩페이지 디자인 구성을 지원받았습니다.",
+                  "owned": "정보 구조와 표시 기준을 정하고 화면과 문구를 확인해 수정했습니다."
+                },
+                "result": "팀은 요약과 상세 근거, 보고서 내보내기를 연결한 대시보드 프로토타입을 완성했습니다."
+              },
               "title": "AXPORT | 반도체 수출 의사결정 대시보드",
               "type": "팀 프로젝트 (프로토타입)",
               "summary": "반도체 수출에 필요한 규제와 시장 정보를 모은 사전 검토 대시보드입니다.",
@@ -366,6 +410,27 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
+              guide: {
+                "summary": "베트남 진출 준비에 필요한 현지 정보와 오늘 할 일을 HOME에 연결했습니다.",
+                "role": "HOME 기획과 구현, 소개 홈페이지와 홍보영상 제작",
+                "problem": "현지 정보와 마케팅 준비 일정이 흩어져 다음에 할 일을 파악하기 어려웠습니다.",
+                "process": [
+                  "HOME에 현지 일정과 뉴스, 업무 진척을 모았습니다.",
+                  "목표일부터 준비 일정을 역산하도록 구성했습니다.",
+                  "탐색용 기사와 확인된 공지를 나눴습니다."
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code",
+                    "Codex",
+                    "Google Flow",
+                    "Higgsfield"
+                  ],
+                  "assisted": "HOME의 코드 구현과 별도 소개 홈페이지 및 홍보영상 제작을 지원받았습니다.",
+                  "owned": "HOME 정보와 일정 방식, 뉴스 구분 및 홈페이지와 영상 구성을 정하고 결과를 직접 확인해 수정했습니다."
+                },
+                "result": "베트남 진출을 가정한 팀 프로토타입에 일정과 준비 상황을 확인하는 HOME을 구현했습니다."
+              },
               "title": "한정선 | 베트남 진출 마케팅 대시보드",
               "type": "팀 프로젝트 (프로토타입)",
               "summary": "식품 브랜드의 베트남 다낭 진출을 가정해 현지 정보와 준비 일정을 모은 대시보드입니다.",
@@ -645,6 +710,13 @@ const SITE = {
         title: "Selected projects",
         intro: "A record of turning questions from trade and international issues into web tools that work through sources and data.",
         labels: {
+          problemTitle: "Problem",
+          resultTitle: "Result",
+          roleTitle: "My role",
+          processTitle: "Approach",
+          aiTitle: "AI use",
+          aiAssisted: "AI support",
+          aiOwned: "My decisions and checks",
           storyProblem: "The problem",
           storyAction: "My work",
           storyChange: "What changed",
@@ -682,6 +754,24 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
+              guide: {
+                "summary": "I built three websites for learning about trade and exploring trade data.",
+                "role": "Defined each website’s questions and layout, built it and checked the results",
+                "problem": "Learning from news, comparing trade around policy announcements and exploring trade structures called for different data and screens.",
+                "process": [
+                  "Defined the question and purpose of each website.",
+                  "Built separate websites for news learning, policy comparisons and trade structures.",
+                  "Set shared principles for showing sources, reference periods and units."
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code"
+                  ],
+                  "assisted": "Claude Code supported planning and feature implementation for each website.",
+                  "owned": "I chose each website’s focus and required features, then checked and refined the results."
+                },
+                "result": "Trade News Room, Policyline and Tradeweave are three separate working websites."
+              },
               "title": "Trade Data Lab | A collection of trade and data web projects",
               "type": "Personal project (in development)",
               "summary": "A personal project for creating separate websites about trade and data, each with its own purpose.",
@@ -800,6 +890,25 @@ const SITE = {
           {
             id: "axport",
             presentation: {
+              guide: {
+                "summary": "I separated regulatory checks, commercial reference scores and missing evidence in the semiconductor export report.",
+                "role": "Home page planning and UI/UX; report structure and wording",
+                "problem": "Presenting regulatory constraints, commercial scores and unverified information together made their different roles in a decision difficult to distinguish.",
+                "process": [
+                  "Explained the five review areas and user flow on the home page.",
+                  "Separated regulatory checks from commercial reference scores in the report.",
+                  "Linked summaries to detailed evidence and marked reference dates and missing data."
+                ],
+                "ai": {
+                  "tools": [
+                    "ChatGPT (Codex)",
+                    "Gemini"
+                  ],
+                  "assisted": "AI supported the landing page design layout.",
+                  "owned": "I defined the information structure and display criteria, then reviewed and revised screens and wording."
+                },
+                "result": "The team completed a dashboard prototype linking summaries, detailed evidence and report export."
+              },
               "title": "AXPORT | Semiconductor export decision dashboard",
               "type": "Team project (prototype)",
               "summary": "A dashboard bringing together regulatory and market information for semiconductor export reviews.",
@@ -844,6 +953,27 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
+              guide: {
+                "summary": "I brought local information and today’s tasks together on HOME for preparing to enter Vietnam.",
+                "role": "HOME planning and implementation; introduction website and promotional video",
+                "problem": "Scattered local information and marketing preparation schedules made it difficult to identify the next task.",
+                "process": [
+                  "Brought local events, news and work progress together on HOME.",
+                  "Worked preparation schedules backward from a target date.",
+                  "Separated articles for browsing from verified notices."
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code",
+                    "Codex",
+                    "Google Flow",
+                    "Higgsfield"
+                  ],
+                  "assisted": "AI supported HOME implementation and the separate introduction website and promotional video.",
+                  "owned": "I planned HOME’s information, scheduling, news categories, website and video structure, then checked and revised the results."
+                },
+                "result": "I implemented HOME for viewing schedules and preparation progress in the team’s hypothetical Vietnam entry prototype."
+              },
               "title": "Hanjungsun | Marketing dashboard for entering Vietnam",
               "type": "Team project (prototype)",
               "summary": "A dashboard gathering local information and preparation schedules for a hypothetical food brand launch in Da Nang, Vietnam.",
@@ -1101,6 +1231,13 @@ const SITE = {
         title: "代表项目",
         intro: "从贸易与国际议题出发，借助资料与数据把问题整理成网页工具的记录。",
         labels: {
+          problemTitle: "问题",
+          resultTitle: "成果",
+          roleTitle: "我的职责",
+          processTitle: "解决过程",
+          aiTitle: "AI应用",
+          aiAssisted: "AI辅助的工作",
+          aiOwned: "我的判断与核查",
           storyProblem: "问题意识",
           storyAction: "我的工作",
           storyChange: "调整后的呈现",
@@ -1138,6 +1275,24 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
+              guide: {
+                "summary": "我制作了三个用于贸易学习和数据探索的网站。",
+                "role": "确定各网站的问题与页面结构，制作并检查成果",
+                "problem": "新闻学习、政策发布前后比较和贸易结构探索，需要不同的资料与页面。",
+                "process": [
+                  "确定各网站要回答的问题与使用目的。",
+                  "分别制作新闻学习、政策前后比较和贸易结构探索网站。",
+                  "制定标注来源、基准期间和单位的共同原则。"
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code"
+                  ],
+                  "assisted": "使用Claude Code辅助各网站的策划与功能实现。",
+                  "owned": "由我确定各网站的主题与所需功能，并检查和修改成果。"
+                },
+                "result": "Trade News Room、Policyline与Tradeweave分别作为独立网站运行。"
+              },
               "title": "Trade Data Lab | 贸易与数据网页项目集",
               "type": "个人项目（开发中）",
               "summary": "围绕贸易与数据，制作多个用途各异的网站的个人项目。",
@@ -1218,6 +1373,25 @@ const SITE = {
           {
             id: "axport",
             presentation: {
+              guide: {
+                "summary": "我调整了信息呈现方式，使半导体出口审查中的监管核查、商业参考分数与资料不足能够分开查看。",
+                "role": "主页策划与UI/UX，报告信息结构与措辞改进",
+                "problem": "监管限制、商业评分与未经确认的信息混在一起呈现时，很难分清各自的判断作用。",
+                "process": [
+                  "在主页说明五个审查领域与使用流程。",
+                  "在报告中将监管核查与商业参考分数分开呈现。",
+                  "将摘要连接到详细依据，并标注基准日与资料不足。"
+                ],
+                "ai": {
+                  "tools": [
+                    "ChatGPT (Codex)",
+                    "Gemini"
+                  ],
+                  "assisted": "使用AI辅助设计首页版式。",
+                  "owned": "由我确定信息结构与呈现标准，并检查和修改页面及措辞。"
+                },
+                "result": "团队完成了连接摘要、详细依据和报告导出的仪表板原型。"
+              },
               "title": "AXPORT | 半导体出口决策仪表板",
               "type": "团队项目（原型）",
               "summary": "汇集半导体出口审查所需法规与市场信息的仪表板。",
@@ -1254,6 +1428,27 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
+              guide: {
+                "summary": "我在HOME中连接当地信息与今日任务，支持越南市场进入准备。",
+                "role": "HOME策划与实现，介绍网站与宣传视频制作",
+                "problem": "当地信息与营销准备日程分散，难以确定接下来要做的事。",
+                "process": [
+                  "将当地日程、新闻与工作进度集中到HOME。",
+                  "以目标日期为基准倒推准备日程。",
+                  "区分供浏览的文章与已核实的公告。"
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code",
+                    "Codex",
+                    "Google Flow",
+                    "Higgsfield"
+                  ],
+                  "assisted": "使用AI辅助实现HOME，并制作独立的介绍网站与宣传视频。",
+                  "owned": "由我规划HOME信息、日程方式、新闻分类以及网站和视频结构，并亲自检查和修改成果。"
+                },
+                "result": "在团队假设进入越南市场的原型中，实现了查看日程与准备进度的HOME。"
+              },
               "title": "Hanjungsun | 进入越南市场的营销仪表板",
               "type": "团队项目（原型）",
               "summary": "以食品品牌进入越南岘港为假设，汇集当地信息与准备日程的仪表板。",
@@ -1495,6 +1690,13 @@ const SITE = {
         title: "代表專案",
         intro: "從貿易與國際議題出發，藉由資料與數據把問題整理成網頁工具的紀錄。",
         labels: {
+          problemTitle: "問題",
+          resultTitle: "成果",
+          roleTitle: "我的角色",
+          processTitle: "解決過程",
+          aiTitle: "AI運用",
+          aiAssisted: "AI協助的工作",
+          aiOwned: "我的判斷與確認",
           storyProblem: "問題意識",
           storyAction: "我的工作",
           storyChange: "調整後的呈現",
@@ -1532,6 +1734,24 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
+              guide: {
+                "summary": "我製作了三個用於貿易學習與資料探索的網站。",
+                "role": "訂定各網站的問題與介面架構，製作並確認成果",
+                "problem": "新聞學習、政策發布前後比較與貿易結構探索，需要不同的資料與介面。",
+                "process": [
+                  "訂定各網站要回答的問題與使用目的。",
+                  "分別製作新聞學習、政策前後比較與貿易結構探索網站。",
+                  "訂定標示來源、基準期間與單位的共同原則。"
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code"
+                  ],
+                  "assisted": "運用Claude Code協助各網站的規劃與功能實作。",
+                  "owned": "由我訂定各網站的主題與所需功能，並確認及修改成果。"
+                },
+                "result": "Trade News Room、Policyline與Tradeweave分別作為獨立網站運作。"
+              },
               "title": "Trade Data Lab | 貿易與資料網頁專案集",
               "type": "個人專案（開發中）",
               "summary": "以貿易與資料為主題，製作多個不同用途網站的個人專案。",
@@ -1612,6 +1832,25 @@ const SITE = {
           {
             id: "axport",
             presentation: {
+              guide: {
+                "summary": "我調整了資訊呈現方式，讓半導體出口檢視中的法規確認、商業參考分數與資料不足能分開閱讀。",
+                "role": "首頁規劃與UI/UX，報告資訊架構與用語改善",
+                "problem": "法規限制、商業評分與未確認資訊一起呈現時，難以分辨各自的判斷意義。",
+                "process": [
+                  "在首頁說明五個檢視領域與使用流程。",
+                  "在報告中將法規確認與商業參考分數分開呈現。",
+                  "將摘要連結至詳細依據，並標示基準日與資料不足。"
+                ],
+                "ai": {
+                  "tools": [
+                    "ChatGPT (Codex)",
+                    "Gemini"
+                  ],
+                  "assisted": "運用AI協助設計網站首頁版面。",
+                  "owned": "由我訂定資訊架構與呈現標準，並確認及修改介面與用語。"
+                },
+                "result": "團隊完成了串連摘要、詳細依據與報告匯出的儀表板原型。"
+              },
               "title": "AXPORT | 半導體出口決策儀表板",
               "type": "團隊專案（原型）",
               "summary": "彙集半導體出口評估所需法規與市場資訊的儀表板。",
@@ -1648,6 +1887,27 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
+              guide: {
+                "summary": "我在HOME串連當地資訊與今日待辦工作，協助準備進入越南市場。",
+                "role": "HOME規劃與實作，介紹網站與宣傳影片製作",
+                "problem": "當地資訊與行銷準備時程分散，難以掌握接下來要做的事。",
+                "process": [
+                  "將當地行程、新聞與工作進度集中至HOME。",
+                  "以目標日期為基準回推準備時程。",
+                  "區分供瀏覽的文章與已確認的公告。"
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code",
+                    "Codex",
+                    "Google Flow",
+                    "Higgsfield"
+                  ],
+                  "assisted": "運用AI協助實作HOME，並製作獨立的介紹網站與宣傳影片。",
+                  "owned": "由我規劃HOME資訊、時程方式、新聞分類及網站與影片架構，並親自確認及修改成果。"
+                },
+                "result": "在團隊假設進入越南市場的原型中，實作了查看時程與準備進度的HOME。"
+              },
               "title": "Hanjungsun | 進入越南市場的行銷儀表板",
               "type": "團隊專案（原型）",
               "summary": "以食品品牌進入越南峴港為情境，彙集當地資訊與準備時程的儀表板。",
@@ -1889,6 +2149,13 @@ const SITE = {
         title: "代表プロジェクト",
         intro: "貿易と国際問題から出発した問いを、資料とデータで読み解くWebツールとして形にしてきた記録です。",
         labels: {
+          problemTitle: "課題",
+          resultTitle: "結果",
+          roleTitle: "担当範囲",
+          processTitle: "取り組みの流れ",
+          aiTitle: "AIの活用",
+          aiAssisted: "AIの支援",
+          aiOwned: "自分で判断し確認したこと",
           storyProblem: "問題意識",
           storyAction: "担当したこと",
           storyChange: "構成の変化",
@@ -1926,6 +2193,24 @@ const SITE = {
           {
             id: "tradedatalab",
             presentation: {
+              guide: {
+                "summary": "貿易の学習とデータ探索のために、3つのWebサイトを制作しました。",
+                "role": "各サイトの問いと画面構成の決定、制作、結果の確認",
+                "problem": "ニュース学習、政策発表前後の比較、貿易構造の探索には、それぞれ異なる資料と画面が必要でした。",
+                "process": [
+                  "各サイトで扱う問いと利用目的を定めました。",
+                  "ニュース学習、政策前後の比較、貿易構造の探索に合わせて別々に制作しました。",
+                  "出典、基準期間、単位を示す共通の原則を定めました。"
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code"
+                  ],
+                  "assisted": "各サイトの企画と機能実装にClaude Codeの支援を受けました。",
+                  "owned": "各サイトのテーマと必要な機能を自分で決め、結果を確認して修正しました。"
+                },
+                "result": "Trade News Room、Policyline、Tradeweaveを、それぞれ動作する独立したWebサイトとして制作しました。"
+              },
               "title": "Trade Data Lab | 貿易とデータのWebプロジェクト集",
               "type": "個人プロジェクト（開発中）",
               "summary": "貿易とデータをテーマに、目的の異なる複数のWebサイトを制作する個人プロジェクトです。",
@@ -2011,6 +2296,25 @@ const SITE = {
           {
             id: "axport",
             presentation: {
+              guide: {
+                "summary": "半導体輸出の検討で、規制の確認、事業性の参考スコア、資料不足を区別して読める構成にしました。",
+                "role": "ホームページの企画とUI/UX、報告書の情報構造と表現の改善",
+                "problem": "規制上の制約、事業性スコア、未確認情報が一緒に示されると、判断上の意味を区別しにくくなります。",
+                "process": [
+                  "ホームページで5つの検討領域と利用の流れを案内しました。",
+                  "報告書で規制の確認と事業性の参考スコアを分けました。",
+                  "要約から詳細な根拠へつなぎ、基準日と資料不足を示しました。"
+                ],
+                "ai": {
+                  "tools": [
+                    "ChatGPT (Codex)",
+                    "Gemini"
+                  ],
+                  "assisted": "ランディングページのデザイン構成にAIの支援を受けました。",
+                  "owned": "情報構造と表示基準を自分で定め、画面と文言を確認して修正しました。"
+                },
+                "result": "チームで要約、詳細な根拠、報告書出力をつなぐダッシュボードの試作版を完成させました。"
+              },
               "title": "AXPORT | 半導体輸出の意思決定ダッシュボード",
               "type": "チームプロジェクト（試作版）",
               "summary": "半導体輸出の事前検討に必要な規制と市場の情報を集めたダッシュボードです。",
@@ -2047,6 +2351,27 @@ const SITE = {
           {
             id: "hanjeongseon",
             presentation: {
+              guide: {
+                "summary": "ベトナム進出の準備に必要な現地情報と今日のタスクをHOMEにつなぎました。",
+                "role": "HOMEの企画と実装、紹介サイトと広報動画の制作",
+                "problem": "現地情報とマーケティングの準備日程が分散し、次に行うことを把握しにくい状態でした。",
+                "process": [
+                  "現地日程、ニュース、業務の進捗をHOMEに集めました。",
+                  "目標日から準備日程を逆算する構成にしました。",
+                  "閲覧用の記事と確認済みの告知を分けました。"
+                ],
+                "ai": {
+                  "tools": [
+                    "Claude Code",
+                    "Codex",
+                    "Google Flow",
+                    "Higgsfield"
+                  ],
+                  "assisted": "HOMEの実装と、別途制作した紹介サイトと広報動画にAIの支援を受けました。",
+                  "owned": "HOMEの情報、日程の組み方、ニュースの区分、サイトと動画の構成を自分で決め、結果を直接確認して修正しました。"
+                },
+                "result": "ベトナム進出を想定したチームの試作版に、日程と準備状況を確認するHOMEを実装しました。"
+              },
               "title": "Hanjungsun | ベトナム進出マーケティングダッシュボード",
               "type": "チームプロジェクト（試作版）",
               "summary": "食品ブランドのベトナムのダナンへの進出を想定し、現地情報と準備日程を集めたダッシュボードです。",

@@ -201,7 +201,10 @@ details.more:not([open]) > summary .when-open { display: none; }
 .project { min-width: 0; border-radius: 16px; box-shadow: none; padding: 28px 32px; }
 .project-topline { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 12px; color: var(--text-muted); font-size: 13px; }
 .project-period { margin-left: auto; font-variant-numeric: tabular-nums; }
-.project h3 { font-size: 25px; margin: 0 0 22px; line-height: 1.45; letter-spacing: -0.02em; text-wrap: balance; }
+.project h3 { font-size: 25px; margin: 0 0 10px; line-height: 1.45; letter-spacing: -0.02em; text-wrap: balance; }
+.guide-summary { color: var(--text); font-size: 16px; line-height: 1.8; max-width: 80ch; text-wrap: pretty; }
+.guide-role { color: var(--text-sub); font-size: 13px; line-height: 1.8; margin: 10px 0 20px; max-width: 90ch; text-wrap: pretty; }
+.guide-role > span { color: var(--primary-dark); font-weight: 600; margin-right: 10px; white-space: nowrap; }
 .project-story { display: grid; gap: 14px; max-width: 880px; }
 .project-story > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 16px; align-items: baseline; }
 .project-story dt { color: var(--primary-dark); font-size: 13px; font-weight: 600; }
@@ -214,8 +217,20 @@ details.more:not([open]) > summary .when-open { display: none; }
 details.project-details { margin-top: 18px; padding-top: 0; border-top: 0; }
 details.project-details > summary { font-size: 13px; color: var(--text-muted); }
 details.project-details > summary:hover { color: var(--primary); }
-.project-details-body { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); max-width: 76ch; }
-.project-details-body .bullets li { font-size: 15px; line-height: 1.85; margin: 6px 0; }
+.project-details-body { margin-top: 14px; padding-top: 18px; border-top: 1px solid var(--line); }
+.project-details-body h4 { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+.project-process { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; list-style: none; }
+.project-process li { position: relative; min-width: 0; border-top: 1px solid var(--line); padding-top: 10px; }
+.step-count { display: block; color: var(--primary); font-size: 12px; font-weight: 600; margin-bottom: 5px; }
+.project-process p { color: var(--text-sub); font-size: 14px; line-height: 1.85; text-wrap: pretty; }
+.process-arrow { position: absolute; right: -17px; top: 6px; color: var(--text-muted); font-size: 16px; }
+.guide-ai { margin-top: 24px; }
+.guide-ai h4 { margin-bottom: 4px; }
+.guide-tools { color: var(--primary-dark); font-size: 13px; margin-bottom: 14px; }
+.guide-ai-duties { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.guide-ai-duties > div { min-width: 0; border-left: 2px solid var(--sky); padding-left: 12px; }
+.guide-ai-duties dt { color: var(--text); font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+.guide-ai-duties dd { margin: 0; color: var(--text-sub); font-size: 14px; line-height: 1.85; text-wrap: pretty; }
 .extra { margin-top: 28px; }
 .extra-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
 .extra-item { background: var(--bg-alt); border-radius: 14px; padding: 16px 18px; }
@@ -296,6 +311,11 @@ details.project-details > summary:hover { color: var(--primary); }
   .project h3 { font-size: 21px; }
   .project-story { gap: 16px; }
   .project-story > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .project-process { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .project-process li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; }
+  .step-count { margin-bottom: 0; }
+  .process-arrow { display: none; }
+  .guide-ai-duties { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .now-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .now-statement { padding: 20px; }
   .contact-address { font-size: 20px; }

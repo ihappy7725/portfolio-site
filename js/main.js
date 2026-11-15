@@ -212,6 +212,7 @@
     const L = p.labels;
     const cards = p.items.map((it) => {
       const view = it.presentation || it;
+      const guide = view.guide;
       const url = (SITE.links.projects || {})[it.id];
       // 서비스 묶음에는 실제로 동작하는 서비스의 주소만 연결합니다.
       const serviceLinks = (it.components || [])
@@ -220,17 +221,31 @@
       const links = serviceLinks.length
         ? serviceLinks.map((service) => `<a class="btn btn-outline" href="${esc(service.url)}" target="_blank" rel="noopener" aria-label="${esc(service.name)}: ${esc(L.dashboard)}">${esc(service.name)} <span aria-hidden="true">↗</span></a>`).join("")
         : url ? `<a class="btn btn-outline" href="${esc(url)}" target="_blank" rel="noopener">${esc(L.dashboard)} <span aria-hidden="true">↗</span></a>` : "";
-      const details = view.details?.length ? `<details class="more project-details">
+      const details = guide ? `<details class="more project-details">
         ${toggle(L.moreOpen, L.moreClose)}
-        <div class="project-details-body">${list(view.details)}</div>
+        <div class="project-details-body">
+          <section class="guide-process" aria-labelledby="${esc(it.id)}-process-title">
+            <h4 id="${esc(it.id)}-process-title">${esc(L.processTitle)}</h4>
+            <ol class="project-process">${guide.process.map((step, index) => `<li><span class="step-count" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span><p>${sentences(step, t.htmlLang)}</p>${index < guide.process.length - 1 ? '<span class="process-arrow" aria-hidden="true">→</span>' : ""}</li>`).join("")}</ol>
+          </section>
+          <section class="guide-ai" aria-labelledby="${esc(it.id)}-ai-title">
+            <h4 id="${esc(it.id)}-ai-title">${esc(L.aiTitle)}</h4>
+            <p class="guide-tools">${guide.ai.tools.map(esc).join(", ")}</p>
+            <dl class="guide-ai-duties">
+              <div><dt>${esc(L.aiAssisted)}</dt><dd>${sentences(guide.ai.assisted, t.htmlLang)}</dd></div>
+              <div><dt>${esc(L.aiOwned)}</dt><dd>${sentences(guide.ai.owned, t.htmlLang)}</dd></div>
+            </dl>
+          </section>
+        </div>
       </details>` : "";
       return `<article class="card project" id="project-${esc(it.id)}">
         <div class="project-topline"><p class="project-type">${esc(view.type)}</p><p class="project-period">${esc(it.period)}</p></div>
         <h3>${esc(view.title || it.name)}</h3>
+        ${guide ? `<p class="guide-summary">${sentences(guide.summary, t.htmlLang)}</p><p class="guide-role"><span>${esc(L.roleTitle)}</span>${esc(guide.role)}</p>` : ""}
         <dl class="project-story">${[
-          [L.storyProblem, view.problem],
-          [L.storyAction, view.action],
-          [L.storyChange, view.change]
+          [guide ? L.problemTitle : L.storyProblem, guide ? guide.problem : view.problem],
+          ...(guide ? [] : [[L.storyAction, view.action]]),
+          [guide ? L.resultTitle : L.storyChange, guide ? guide.result : view.change]
         ].map(([label, text]) => `<div><dt>${esc(label)}</dt><dd>${sentences(text, t.htmlLang)}</dd></div>`).join("")}</dl>
         ${links ? `<div class="link-row"${serviceLinks.length ? ` role="group" aria-label="${esc(L.workingServices)}"` : ""}>${links}</div>` : ""}
         ${details}
