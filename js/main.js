@@ -110,7 +110,6 @@
 
   function renderHero(t) {
     const h = t.hero;
-    $("hero-eyebrow").textContent = h.eyebrow;
     $("hero-name").textContent = h.name;
     const breakAfter = h.headlineBreakAfter || "";
     const breakIndex = breakAfter ? h.headline.indexOf(breakAfter) : -1;
@@ -120,11 +119,9 @@
     $("hero-headline").innerHTML = breakAt > 0
       ? `<span class="headline-phrase">${esc(h.headline.slice(0, breakAt))}</span>${esc(headlineGap)}<wbr><span class="headline-phrase">${esc(headlineTail.slice(headlineGap.length))}</span>`
       : esc(h.headline);
-    $("hero-intro").innerHTML = sentences(h.intro, t.htmlLang);
     // 국제정치경제는 첫 화면용 짧은 명칭, 통상 분야는 Now의 기존 항목을 사용합니다.
     $("hero-interests").innerHTML = tags([h.politicalEconomyInterest, t.now.interests[2]]);
 
-    $("strengths-title").textContent = t.strengths.title;
     $("strengths").innerHTML = t.strengths.items
       .map(
         (s, i) => `<article class="strength">
@@ -347,9 +344,8 @@
         ${L.email ? `<form class="card contact-form" id="contact-form" action="mailto:${esc(L.email)}">
           <div class="form-field"><label for="contact-name">${esc(f.nameLabel)}</label><input id="contact-name" name="name" autocomplete="name" required value="${esc(contactDraft.name)}" /></div>
           <div class="form-field"><label for="contact-email">${esc(f.emailLabel)}</label><input id="contact-email" name="email" type="email" autocomplete="email" required value="${esc(contactDraft.email)}" /></div>
-          <div class="form-field"><label for="contact-message">${esc(f.messageLabel)}</label><textarea id="contact-message" name="message" rows="6" required>${esc(contactDraft.message)}</textarea></div>
-          <button class="btn btn-primary" type="submit" aria-describedby="contact-form-hint">${esc(f.submitLabel)}</button>
-          <p class="form-hint" id="contact-form-hint">${esc(f.hint)}</p>
+          <div class="form-field form-field-message"><label for="contact-message">${esc(f.messageLabel)}</label><textarea id="contact-message" name="message" rows="4" required>${esc(contactDraft.message)}</textarea></div>
+          <button class="btn btn-primary" type="submit">${esc(f.submitLabel)}</button>
           <a id="contact-draft-link" hidden></a>
         </form>` : ""}
       </div>

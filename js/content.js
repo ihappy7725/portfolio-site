@@ -71,8 +71,8 @@ const SITE = {
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "정주연",
-        headline: "무역정책과 시장의 변화를 연구하기 위해, 뉴스와 교역 데이터를 비교하는 웹 도구를 만듭니다.",
-        headlineBreakAfter: "무역정책과 시장의 변화를 연구하기 위해,",
+        headline: "중화권 이해와 국제 협업 경험을 바탕으로, 국제통상·정책 분야의 조사와 분석 역량을 쌓고 있습니다.",
+        headlineBreakAfter: "중화권 이해와 국제 협업 경험을 바탕으로,",
         intro: "중국경제통상을 공부하고 대만에서 2년간 수학했습니다.\n국제행사에서는 해외 미디어와 기관의 요청과 일정을 조율했습니다.",
         politicalEconomyInterest: "국제정치경제",
         photo: "프로필 사진",
@@ -539,8 +539,8 @@ const SITE = {
       },
       contact: {
         label: "CONTACT",
-        title: "연락하기",
-        text: "협업 제안이나 문의는 이메일로 편하게 연락해 주세요.",
+        title: "연락",
+        text: "문의와 협업 제안은 이메일로 보내주세요.",
         form: {
           nameLabel: "이름",
           emailLabel: "회신받을 이메일",
@@ -568,8 +568,8 @@ const SITE = {
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "Juyeon Jung",
-        headline: "I build web tools to compare trade news and data, preparing to study changes in trade policy and markets.",
-        headlineBreakAfter: "I build web tools to compare trade news and data,",
+        headline: "Drawing on my understanding of the Chinese-speaking world and experience in international collaboration, I am developing research and analytical skills in international trade and policy.",
+        headlineBreakAfter: "Drawing on my understanding of the Chinese-speaking world and experience in international collaboration,",
         intro: "I studied Chinese economy and trade and spent two years studying in Taiwan.\nAt international events, I coordinated requests and schedules with overseas media and institutions.",
         politicalEconomyInterest: "International political economy",
         photo: "Profile photo",
@@ -1102,8 +1102,8 @@ const SITE = {
       },
       contact: {
         label: "CONTACT",
-        title: "Get in touch",
-        text: "For collaboration or questions, feel free to reach out by email.",
+        title: "Contact",
+        text: "For inquiries and collaboration, please email me.",
         form: {
           nameLabel: "Name",
           emailLabel: "Reply email",
@@ -1128,8 +1128,8 @@ const SITE = {
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "郑主缘",
-        headline: "为研究贸易政策与市场的变化，我制作比较贸易新闻和贸易数据的网页工具。",
-        headlineBreakAfter: "为研究贸易政策与市场的变化，",
+        headline: "以对华语地区的了解和国际协作经验为基础，我正在培养国际贸易与政策领域的调研和分析能力。",
+        headlineBreakAfter: "以对华语地区的了解和国际协作经验为基础，",
         intro: "我学习了中国经济与贸易，并在台湾学习了两年。\n在国际活动中，我曾协调海外媒体和机构的需求与日程。",
         politicalEconomyInterest: "国际政治经济",
         photo: "个人照片",
@@ -1574,8 +1574,8 @@ const SITE = {
       },
       contact: {
         label: "CONTACT",
-        title: "联系我",
-        text: "如有合作提议或问题，欢迎通过邮件联系我。",
+        title: "联系",
+        text: "咨询与合作提议，请通过邮件联系。",
         form: {
           nameLabel: "姓名",
           emailLabel: "回复邮箱",
@@ -1600,8 +1600,8 @@ const SITE = {
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "為了研究貿易政策與市場的變化，我製作比較貿易新聞與貿易數據的網頁工具。",
-        headlineBreakAfter: "為了研究貿易政策與市場的變化，",
+        headline: "以對華語地區的理解與國際協作經驗為基礎，我正在培養國際貿易與政策領域的調查和分析能力。",
+        headlineBreakAfter: "以對華語地區的理解與國際協作經驗為基礎，",
         intro: "我曾學習中國經濟與貿易，並在臺灣就讀兩年。\n在國際活動中，我曾協調海外媒體與機構的需求及時程。",
         politicalEconomyInterest: "國際政治經濟",
         photo: "個人照片",
@@ -2046,8 +2046,8 @@ const SITE = {
       },
       contact: {
         label: "CONTACT",
-        title: "聯絡我",
-        text: "如有合作提議或問題，歡迎透過電子郵件聯絡我。",
+        title: "聯絡",
+        text: "洽詢與合作提案，歡迎來信。",
         form: {
           nameLabel: "姓名",
           emailLabel: "回覆用電子郵件地址",
@@ -2072,8 +2072,8 @@ const SITE = {
       hero: {
         eyebrow: "JUYEON JUNG",
         name: "鄭主緣",
-        headline: "貿易政策と市場の変化を研究するため、貿易ニュースと貿易データを比較するWebツールを制作しています。",
-        headlineBreakAfter: "貿易政策と市場の変化を研究するため、",
+        headline: "中国語圏への理解と国際協働の経験を基に、国際通商と政策分野の調査と分析の力を磨いています。",
+        headlineBreakAfter: "中国語圏への理解と国際協働の経験を基に、",
         intro: "中国の経済と貿易を学び、台湾で2年間修学しました。\n国際イベントでは、海外メディアや機関の要望と日程を調整しました。",
         politicalEconomyInterest: "国際政治経済",
         photo: "プロフィール写真",
@@ -2533,7 +2533,7 @@ const SITE = {
       contact: {
         label: "CONTACT",
         title: "連絡先",
-        text: "協業のご提案やお問い合わせは、メールでお気軽にご連絡ください。",
+        text: "お問い合わせや協業のご提案はメールでお寄せください。",
         form: {
           nameLabel: "お名前",
           emailLabel: "返信先メールアドレス",
