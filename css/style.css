@@ -99,13 +99,12 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .btn-outline { border: 1.5px solid var(--primary); color: var(--primary); background: #fff; }
 .btn-outline:hover { background: var(--primary-soft); }
 
-.strengths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 52px; }
-.strength {
-  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 24px;
-}
-.strength .num { color: #6dd1f2; font-weight: 700; font-size: 14px; }
-.strength h3 { font-size: 18px; margin: 6px 0 4px; }
+.strengths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 52px; }
+.strength { min-width: 0; padding-inline: 24px; }
+.strength:first-child { padding-inline-start: 0; }
+.strength:last-child { padding-inline-end: 0; }
+.strength + .strength { border-inline-start: 1px solid var(--line); }
+.strength h2 { font-size: 18px; line-height: 1.4; margin-bottom: 8px; }
 .strength p { color: var(--text-sub); font-size: 15px; }
 
 /* ===== 공통 섹션 ===== */
@@ -286,6 +285,8 @@ details.project-details > summary:hover { color: var(--primary); }
   html { scroll-padding-top: 92px; }
   .hero { padding-top: 64px; padding-bottom: 72px; }
   .strengths { grid-template-columns: 1fr; }
+  .strengths > .strength { padding-inline: 0; }
+  .strength + .strength { border-inline-start: 0; border-top: 1px solid var(--line); margin-top: 18px; padding-top: 18px; }
   .extra-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {

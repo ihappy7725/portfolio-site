@@ -82,9 +82,9 @@ const SITE = {
       strengths: {
         title: "강점",
         items: [
-          { title: "글로벌 및 지역 이해", desc: "중국경제통상 학업과 대만 현지 수학을 통해 중화권의 언어와 사회를 배웠습니다." },
-          { title: "무역 및 시장 데이터 분석", desc: "무역 뉴스, 정책 원문과 교역 통계를 목적에 맞게 정리하고 비교하는 웹 도구를 만듭니다." },
-          { title: "프로젝트와 이해관계자 조율", desc: "해외 미디어와 기관, 제작 협력사의 요청과 일정을 정리하고 운영팀과 전달 사항을 조율했습니다." }
+          { title: "중화권 학업과 현지 경험", desc: "중국경제통상 학업과 대만 현지 수학을 통해 중화권의 언어와 사회를 배웠습니다." },
+          { title: "국제행사 협업과 조율", desc: "해외 미디어와 기관, 제작 협력사의 요청과 일정을 정리하고 운영팀과 전달 사항을 조율했습니다." },
+          { title: "통상 자료 조사와 비교", desc: "무역 뉴스와 정책 원문을 정리하고, 정책 발표 전후 교역액과 국가별 교역 구조를 비교합니다." }
         ]
       },
       about: {
@@ -579,18 +579,9 @@ const SITE = {
       strengths: {
         title: "Strengths",
         items: [
-          {
-            title: "Global & Regional Expertise",
-            desc: "Studied the language and societies of the Chinese-speaking world through Chinese economy and trade coursework and study in Taiwan."
-          },
-          {
-            title: "Trade & Market Data Analytics",
-            desc: "Build web tools to organize and compare trade news, original policy documents and trade statistics for specific uses."
-          },
-          {
-            title: "Project & Stakeholder Management",
-            desc: "Organized requests and schedules across overseas media, institutions and production partners, and coordinated information with the operations team."
-          }
+          { title: "Chinese studies and experience in Taiwan", desc: "Studied the language and societies of the Chinese-speaking world through Chinese economy and trade coursework and study in Taiwan." },
+          { title: "International event coordination", desc: "Organized requests and schedules across overseas media, institutions and production partners, and coordinated information with the operations team." },
+          { title: "Trade research and data comparison", desc: "I organize trade news and original policy documents, compare trade values before and after policy announcements, and examine trade patterns by country." }
         ]
       },
       about: {
@@ -1139,9 +1130,9 @@ const SITE = {
       strengths: {
         title: "优势",
         items: [
-          { title: "全球视野与区域理解", desc: "通过中国经济与贸易课程及在台湾的学习，了解华语地区的语言与社会。" },
-          { title: "贸易与市场数据分析", desc: "制作网页工具，按不同用途整理和比较贸易新闻、政策原文与贸易统计。" },
-          { title: "项目与利益相关方协调", desc: "整理海外媒体、机构和制作合作方的需求及日程，并与运营团队协调信息传递。" }
+          { title: "华语地区研究与在台求学经历", desc: "通过中国经济与贸易课程及在台湾的学习，了解华语地区的语言与社会。" },
+          { title: "国际活动协作与协调", desc: "整理海外媒体、机构和制作合作方的需求及日程，并与运营团队协调信息传递。" },
+          { title: "贸易资料调研与比较", desc: "整理贸易新闻和政策原文，比较政策发布前后的贸易额，了解各国的贸易结构。" }
         ]
       },
       about: {
@@ -1611,9 +1602,9 @@ const SITE = {
       strengths: {
         title: "優勢",
         items: [
-          { title: "全球視野與區域理解", desc: "透過中國經濟與貿易課程及在臺灣的學習，認識華語地區的語言與社會。" },
-          { title: "貿易與市場資料分析", desc: "製作網頁工具，依不同用途整理與比較貿易新聞、政策原文及貿易統計。" },
-          { title: "專案與利害關係人協調", desc: "整理海外媒體、機構和製作合作夥伴的需求及時程，並與營運團隊協調資訊傳遞。" }
+          { title: "華語地區研究與在臺求學經歷", desc: "透過中國經濟與貿易課程及在臺灣的學習，認識華語地區的語言與社會。" },
+          { title: "國際活動協作與協調", desc: "整理海外媒體、機構和製作合作夥伴的需求及時程，並與營運團隊協調資訊傳遞。" },
+          { title: "貿易資料調查與比較", desc: "整理貿易新聞與政策原文，比較政策公告前後的貿易額，了解各國的貿易結構。" }
         ]
       },
       about: {
@@ -2083,9 +2074,9 @@ const SITE = {
       strengths: {
         title: "強み",
         items: [
-          { title: "国際的な視野と地域理解", desc: "中国の経済と貿易に関する学びと台湾での修学を通じて、中国語圏の言語と社会を学びました。" },
-          { title: "貿易と市場データの分析", desc: "貿易ニュース、政策原文、貿易統計を目的に応じて整理し比較するWebツールを制作しています。" },
-          { title: "プロジェクトと関係者の調整", desc: "海外メディア、機関、制作協力先の要望と日程を整理し、運営チームとの情報共有を調整しました。" }
+          { title: "中国語圏に関する学びと台湾留学", desc: "中国の経済と貿易に関する学びと台湾での修学を通じて、中国語圏の言語と社会を学びました。" },
+          { title: "国際イベントでの連携と調整", desc: "海外メディア、機関、制作協力先の要望と日程を整理し、運営チームとの情報共有を調整しました。" },
+          { title: "通商資料の調査と比較", desc: "貿易ニュースや政策の原文を整理し、政策発表前後の貿易額や国別の貿易構造を比較しています。" }
         ]
       },
       about: {

@@ -49,7 +49,7 @@
     const n = t.nav;
     $("header-name").textContent = SITE.profile.headerName;
     $("site-nav").setAttribute("aria-label", t.header.navigationLabel);
-    $("site-nav").innerHTML = ["about", "projects", "experience", "now", "notes", "contact"]
+    $("site-nav").innerHTML = ["about", "experience", "projects", "now", "notes", "contact"]
       .filter((k) => k !== "notes" || t.notes.items.length > 0)
       .map((k) => `<a href="#${k}">${esc(n[k])}</a>`)
       .join("");
@@ -124,9 +124,8 @@
 
     $("strengths").innerHTML = t.strengths.items
       .map(
-        (s, i) => `<article class="strength">
-          <span class="num">${String(i + 1).padStart(2, "0")}</span>
-          <h3>${esc(s.title)}</h3><p>${sentences(s.desc, t.htmlLang)}</p></article>`
+        (s) => `<article class="strength">
+          <h2>${esc(s.title)}</h2><p>${sentences(s.desc, t.htmlLang)}</p></article>`
       )
       .join("");
   }
